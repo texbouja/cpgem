@@ -4,7 +4,7 @@
   <id>http://localhost:4000/cpgem/</id>
   <title>cpGEM</title>
   <subtitle>Site web pour les maths en classes préparatoires. Simple mais moderne et efficace.</subtitle>
-  <updated>2025-03-12T08:44:45+00:00</updated>
+  <updated>2025-03-12T09:47:40+00:00</updated>
   <author>
     <name>Sadik Boujaida</name>
     <uri>http://localhost:4000/cpgem/</uri>
@@ -17,6 +17,30 @@
   <icon>/cpgem/assets/img/favicons/favicon.ico</icon>
   <logo>/cpgem/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Préparation aux concours</title>
+    <link href="http://localhost:4000/cpgem/posts/preparation/" rel="alternate" type="text/html" title="Préparation aux concours" />
+    <published>2025-03-12T09:31:00+00:00</published>
+  
+    <updated>2025-03-12T09:31:00+00:00</updated>
+  
+    <id>http://localhost:4000/cpgem/posts/preparation/</id>
+    <content type="text/html" src="http://localhost:4000/cpgem/posts/preparation/" />
+    <author>
+      <name>Sadik Boujaida</name>
+    </author>
+
+  
+    
+    <category term="PRÉPARATION" />
+    
+  
+
+  <summary>programme de préparation 2025</summary>
+
+  </entry>
 
   
   <entry>
