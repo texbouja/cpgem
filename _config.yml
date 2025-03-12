@@ -226,3 +226,7 @@ jekyll-archives:
     category: /categories/:name/
 
 math: mathjax
+
+extra_js: 
+  - /assets/js/extra.js
+
