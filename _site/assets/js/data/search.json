@@ -20,8 +20,8 @@
   {
     "title": "sujet-02",
     "url": "/cpgem/posts/sujet-02/",
-    "categories": "",
-    "tags": "",
+    "categories": "PRÉPARATION",
+    "tags": "mines, mp, probas, marche, intparam",
     "date": "2025-03-12 19:45:00 +0000",
     
 
@@ -30,8 +30,8 @@
 
 
     
-    "snippet": "",
-    "content": ""
+    "snippet": "Mines 2024, MP, Maths 1  L’objectif est d’établir certaines identités à base d’intégrales à paramètres et de sommes de séries de fonctions et ensuite de les utilsier de manière originale dans le ca...",
+    "content": "Mines 2024, MP, Maths 1  L’objectif est d’établir certaines identités à base d’intégrales à paramètres et de sommes de séries de fonctions et ensuite de les utilsier de manière originale dans le calcul de l’espérence d’une variable aléatoire.Les outils utilisés sont ceux standards de l’analyse et du calcul de probabilités :  intégrale à paramètre dont le but est détablir la relation\\[\\int_0^{+\\infty}\\frac{t^{x-1}}{1+t}\\mathrm dt=\\frac{\\pi}{\\sin(\\pi x)}\\]  utilisation de la relation précédente pour établir l’identité\\[\\forall y\\in{}]0,\\pi[,\\;\\frac1{\\sin y}-\\frac1y=\\sum_{n=1}^{+\\infty}(-1)^n\\frac{2y}{y^2-n^2\\pi^2}\\]  en déduire la relation\\[\\int_{0}^{+\\infty} \\frac{1-\\left( \\cos t \\right)^{2p+1}}{t^{2}} \\, \\mathrm dt = (2p+1) \\int_{0}^{+\\infty} \\left( \\cos t \\right)^{2p} \\frac{\\sin(t)}{t} \\, \\mathrm dt.\\]  \\({}\\)calcul de l’espérance \\(E(|S_n|)\\) lorsque \\(S_n\\) est la position à l’instant \\(n\\) dans une marche aléatoire sur \\(\\mathbb Z\\).Liens  page web dédié : [HTML]  énoncé original : [PDF]  rapport de l’épreuve : [PDF]  Les solutions dans la page dédiée sont générées par le LLM DeepSeek. Elles sont parfois incomplètes et peuvent souffrir d’un manque de précision mais offrent en général un bon apperçu des techniques requises pour répondre à une question."
   },
   
   {
