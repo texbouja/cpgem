@@ -2,9 +2,9 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://localhost:4000/cpgem/</id>
-  <title>cpGEM</title>
+  <title>CPGEM</title>
   <subtitle>Site web pour les maths en classes préparatoires. Simple mais moderne et efficace.</subtitle>
-  <updated>2025-03-12T09:47:40+00:00</updated>
+  <updated>2025-03-13T00:16:45+00:00</updated>
   <author>
     <name>Sadik Boujaida</name>
     <uri>http://localhost:4000/cpgem/</uri>
@@ -17,6 +17,80 @@
   <icon>/cpgem/assets/img/favicons/favicon.ico</icon>
   <logo>/cpgem/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>sujet-03</title>
+    <link href="http://localhost:4000/cpgem/posts/sujet-03/" rel="alternate" type="text/html" title="sujet-03" />
+    <published>2025-03-12T19:45:00+00:00</published>
+  
+    <updated>2025-03-12T19:45:00+00:00</updated>
+  
+    <id>http://localhost:4000/cpgem/posts/sujet-03/</id>
+    <content type="text/html" src="http://localhost:4000/cpgem/posts/sujet-03/" />
+    <author>
+      <name>Sadik Boujaida</name>
+    </author>
+
+  
+    
+  
+
+  <summary></summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>sujet-02</title>
+    <link href="http://localhost:4000/cpgem/posts/sujet-02/" rel="alternate" type="text/html" title="sujet-02" />
+    <published>2025-03-12T19:45:00+00:00</published>
+  
+    <updated>2025-03-12T19:45:00+00:00</updated>
+  
+    <id>http://localhost:4000/cpgem/posts/sujet-02/</id>
+    <content type="text/html" src="http://localhost:4000/cpgem/posts/sujet-02/" />
+    <author>
+      <name>Sadik Boujaida</name>
+    </author>
+
+  
+    
+  
+
+  <summary></summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Sujet 01</title>
+    <link href="http://localhost:4000/cpgem/posts/sujet-01/" rel="alternate" type="text/html" title="Sujet 01" />
+    <published>2025-03-12T19:45:00+00:00</published>
+  
+    <updated>2025-03-12T19:45:00+00:00</updated>
+  
+    <id>http://localhost:4000/cpgem/posts/sujet-01/</id>
+    <content type="text/html" src="http://localhost:4000/cpgem/posts/sujet-01/" />
+    <author>
+      <name>Sadik Boujaida</name>
+    </author>
+
+  
+    
+    <category term="PRÉPARATION" />
+    
+  
+
+  <summary>Mines 2020, MP, Maths 1
+
+
+  L’objectif est d’étudier certains comportements asymptotiques dans une marche aléatoire. Y sont étudié le temps d’attente du premier retour vers l’origine ainsi que le nombre moyen de points visités par la marche. Le sujet ne se limite pas au cas d’une marche aléatoire sur \(\mathbb Z\) mais traite aussi du cas d’une marche dans le plan.
+
+
+Les outils utilisés sont ce...</summary>
+
+  </entry>
 
   
   <entry>
@@ -67,34 +141,6 @@
   
 
   <summary>Cours avec exercices résolus sur les probabilités discrètes.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Équations différentielles linéaires</title>
-    <link href="http://localhost:4000/cpgem/posts/eqdiff/" rel="alternate" type="text/html" title="Équations différentielles linéaires" />
-    <published>2025-03-10T21:20:00+00:00</published>
-  
-    <updated>2025-03-12T08:02:15+00:00</updated>
-  
-    <id>http://localhost:4000/cpgem/posts/eqdiff/</id>
-    <content type="text/html" src="http://localhost:4000/cpgem/posts/eqdiff/" />
-    <author>
-      <name>texbouja</name>
-    </author>
-
-  
-    
-    <category term="COURS" />
-    
-    <category term="EXERCICES" />
-    
-    <category term="PYTHON" />
-    
-  
-
-  <summary>Cours avec exercices résolus sur les équations différentielles linéaires.</summary>
 
   </entry>
 
