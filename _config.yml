@@ -230,6 +230,8 @@ jekyll-archives:
 
 baseurl: "/cpgem"
 
+pdf_path: "/cpgem/assets/pdf"
+
 math: mathjax
 
 extra_js: 
@@ -238,5 +240,4 @@ extra_js:
 plugins:
   - jekyll-pdf-embed
 
-pdf_path: "/cpgem/assets/pdf"
 
