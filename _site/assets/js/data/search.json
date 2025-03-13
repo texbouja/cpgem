@@ -1,10 +1,10 @@
 [
   
   {
-    "title": "sujet-03",
+    "title": "Sujet 03",
     "url": "/cpgem/posts/sujet-03/",
-    "categories": "",
-    "tags": "",
+    "categories": "PRÉPARATION",
+    "tags": "xens, mp, eqdiff, calcdiff, reduc, expmat",
     "date": "2025-03-12 19:45:00 +0000",
     
 
@@ -13,8 +13,8 @@
 
 
     
-    "snippet": "",
-    "content": ""
+    "snippet": "X-ENS 2024, MP, Maths B  L’objectif est d’étudier dans quelle mesure une équation différentielle dont les coefficients sont périodiques peut avoir des solutions périodiques. Sont traités le cas d’u...",
+    "content": "X-ENS 2024, MP, Maths B  L’objectif est d’étudier dans quelle mesure une équation différentielle dont les coefficients sont périodiques peut avoir des solutions périodiques. Sont traités le cas d’une équation différentielle scalaire normale d’ordre \\(2\\) et celui d’une équation différentielle linéaire du premier ordre.PrérequisLes outils utilisés couvrent plusieurs chapitres :  équations différentielles linéaires (du premier et du second ordre).  topologie et calcul différentiel ;  exponentielle matricielle ;  réductions des matrices carrées.Liens  page web dédié : [HTML]  Énoncé avec corrigé : [PDF avec hyperliens]  énoncé original : [PDF]  rapport de l’épreuve : [PDF]  Les solutions sont rédigés avec soin par un opérateur humain."
   },
   
   {
@@ -52,10 +52,10 @@
   },
   
   {
-    "title": "Préparation aux concours",
+    "title": "Préparation 2025",
     "url": "/cpgem/posts/preparation/",
     "categories": "PRÉPARATION",
-    "tags": "sujet, concours, xens, mines, centrale, mp",
+    "tags": "concours, xens, mines, mp",
     "date": "2025-03-12 09:31:00 +0000",
     
 
@@ -64,8 +64,8 @@
 
 
     
-    "snippet": "Semaine 1 : Probabilités  Mines-Ponts 2020, MP, Maths II : [HTML]  Mines-Ponts 2024, MP, Maths I : [HTML]Semaine 2 : Équations et clacul différentiels  Exercices d’entraînement : [HTML]  X-ENS 2024...",
-    "content": "Semaine 1 : Probabilités  Mines-Ponts 2020, MP, Maths II : [HTML]  Mines-Ponts 2024, MP, Maths I : [HTML]Semaine 2 : Équations et clacul différentiels  Exercices d’entraînement : [HTML]  X-ENS 2024, MP, Maths B : [HTML]"
+    "snippet": "Phase 1 : analyse et probabilitésSemaine 1 : séries, intégrales et probabilités  Mines-Ponts 2020, MP, Maths II  Mines-Ponts 2024, MP, Maths ISemaine 2 : équations et calcul différentiels  Exercice...",
+    "content": "Phase 1 : analyse et probabilitésSemaine 1 : séries, intégrales et probabilités  Mines-Ponts 2020, MP, Maths II  Mines-Ponts 2024, MP, Maths ISemaine 2 : équations et calcul différentiels  Exercices d’entraînement  X-ENS 2024, MP, Maths B"
   },
   
   {

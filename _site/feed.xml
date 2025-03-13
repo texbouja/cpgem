@@ -4,7 +4,7 @@
   <id>http://localhost:4000/cpgem/</id>
   <title>CPGEM</title>
   <subtitle>Site web pour les maths en classes préparatoires. Simple mais moderne et efficace.</subtitle>
-  <updated>2025-03-13T01:16:04+00:00</updated>
+  <updated>2025-03-13T19:40:04+00:00</updated>
   <author>
     <name>Sadik Boujaida</name>
     <uri>http://localhost:4000/cpgem/</uri>
@@ -20,8 +20,8 @@
 
   
   <entry>
-    <title>sujet-03</title>
-    <link href="http://localhost:4000/cpgem/posts/sujet-03/" rel="alternate" type="text/html" title="sujet-03" />
+    <title>Sujet 03</title>
+    <link href="http://localhost:4000/cpgem/posts/sujet-03/" rel="alternate" type="text/html" title="Sujet 03" />
     <published>2025-03-12T19:45:00+00:00</published>
   
     <updated>2025-03-12T19:45:00+00:00</updated>
@@ -34,9 +34,11 @@
 
   
     
+    <category term="PRÉPARATION" />
+    
   
 
-  <summary></summary>
+  <summary>XENS 2024, MP, Maths B : équations différentielles</summary>
 
   </entry>
 
@@ -46,7 +48,7 @@
     <link href="http://localhost:4000/cpgem/posts/sujet-02/" rel="alternate" type="text/html" title="Sujet 02" />
     <published>2025-03-12T19:45:00+00:00</published>
   
-    <updated>2025-03-13T01:14:06+00:00</updated>
+    <updated>2025-03-12T19:45:00+00:00</updated>
   
     <id>http://localhost:4000/cpgem/posts/sujet-02/</id>
     <content type="text/html" src="http://localhost:4000/cpgem/posts/sujet-02/" />
@@ -60,18 +62,7 @@
     
   
 
-  <summary>Mines 2024, MP, Maths 1
-
-
-  L’objectif est d’établir certaines identités à base d’intégrales à paramètres et de sommes de séries de fonctions et ensuite de les utilsier de manière originale dans le calcul de l’espérence d’une variable aléatoire.
-
-
-Les outils utilisés sont ceux standards de l’analyse et du calcul de probabilités :
-
-  intégrale à paramètre dont le but est détablir la relation
-
-
-[...</summary>
+  <summary>Mines 2024, MP, Maths 1 : Analyse et probabilités</summary>
 
   </entry>
 
@@ -95,23 +86,17 @@ Les outils utilisés sont ceux standards de l’analyse et du calcul de probabil
     
   
 
-  <summary>Mines 2020, MP, Maths 1
-
-
-  L’objectif est d’étudier certains comportements asymptotiques dans une marche aléatoire. Y sont étudié le temps d’attente du premier retour vers l’origine ainsi que le nombre moyen de points visités par la marche. Le sujet ne se limite pas au cas d’une marche aléatoire sur \(\mathbb Z\) mais traite aussi du cas d’une marche dans le plan.
-
-
-Les outils utilisés sont ce...</summary>
+  <summary>Mines 2024, MP, Maths 1 : Analyse et probabilités</summary>
 
   </entry>
 
   
   <entry>
-    <title>Préparation aux concours</title>
-    <link href="http://localhost:4000/cpgem/posts/preparation/" rel="alternate" type="text/html" title="Préparation aux concours" />
+    <title>Préparation 2025</title>
+    <link href="http://localhost:4000/cpgem/posts/preparation/" rel="alternate" type="text/html" title="Préparation 2025" />
     <published>2025-03-12T09:31:00+00:00</published>
   
-    <updated>2025-03-13T00:26:03+00:00</updated>
+    <updated>2025-03-12T09:31:00+00:00</updated>
   
     <id>http://localhost:4000/cpgem/posts/preparation/</id>
     <content type="text/html" src="http://localhost:4000/cpgem/posts/preparation/" />
@@ -125,7 +110,7 @@ Les outils utilisés sont ce...</summary>
     
   
 
-  <summary>programme de préparation 2025</summary>
+  <summary>Programme de préparation 2025</summary>
 
   </entry>
 

@@ -14,7 +14,7 @@ timezone: Africa/Casablanca
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title:  CPGEM # the main title
+title: CPGEM # the main title
 
 tagline: Maths en Prépas # it will display as the subtitle
 
@@ -235,7 +235,7 @@ pdf_path: "/cpgem/assets/pdf"
 math: mathjax
 
 extra_js: 
-  - /assets/js/extra.js
+  - /cpgem/assets/js/extra.js
 
 plugins:
   - jekyll-pdf-embed
