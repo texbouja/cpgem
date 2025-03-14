@@ -16,3 +16,4 @@ date: 2025-03-12 09:31 +0000
 ## Semaine 2 : équations et calcul différentiels
 -  [Exercices d'entraînement](https://texbouja.github.io/cpge-eqdiff/ch-eqdiff-exercices.html){:target="_blank" rel="noopener noreferrer"}
 -  [X-ENS 2024, MP, Maths B](https://texbouja.github.io/cpge-preparation/part-anaproba-4.html){:target="_blank" rel="noopener noreferrer"}
+-  [Centrale 2018, MP, Maths 2](https://texbouja.github.io/cpge-preparation/part-anaproba-5.html){:target="_blank" rel="noopener noreferrer"}

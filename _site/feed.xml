@@ -4,7 +4,7 @@
   <id>http://localhost:4000/cpgem/</id>
   <title>CPGEM</title>
   <subtitle>Site web pour les maths en classes préparatoires. Simple mais moderne et efficace.</subtitle>
-  <updated>2025-03-14T03:17:22+00:00</updated>
+  <updated>2025-03-14T09:17:56+00:00</updated>
   <author>
     <name>Sadik Boujaida</name>
     <uri>http://localhost:4000/cpgem/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/cpgem/posts/sujet-04/" rel="alternate" type="text/html" title="Sujet 04" />
     <published>2025-03-13T21:09:00+00:00</published>
   
-    <updated>2025-03-13T21:09:00+00:00</updated>
+    <updated>2025-03-14T03:17:38+00:00</updated>
   
     <id>http://localhost:4000/cpgem/posts/sujet-04/</id>
     <content type="text/html" src="http://localhost:4000/cpgem/posts/sujet-04/" />
