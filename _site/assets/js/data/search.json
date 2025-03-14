@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Sujet 04",
+    "url": "/cpgem/posts/sujet-04/",
+    "categories": "PRÉPARATION",
+    "tags": "centrale, mp, calcdiff",
+    "date": "2025-03-13 21:09:00 +0000",
+    
+
+
+
+
+
+    
+    "snippet": "Centrale 2018, MP, Maths II  L’objectif est d’étudier les fonctions dites harmoniques et de démontrer le principe du maximum pour celles-ci. Plusieurs applications en sont proposées : une démonstra...",
+    "content": "Centrale 2018, MP, Maths II  L’objectif est d’étudier les fonctions dites harmoniques et de démontrer le principe du maximum pour celles-ci. Plusieurs applications en sont proposées : une démonstration du théorème fondamental de l’algèbre et la résolution du problème dit de Dirichlet.PrérequisLes outils utilisés couvrent plusieurs chapitres :  calcul différentiel ;  équations différentielles ;  séries entières ;  intégrales à paramètres.Liens  page web dédié : [HTML]  Énoncé avec corrigé : [PDF avec hyperliens]  énoncé original : [PDF]  rapport de l’épreuve : [PDF]  Les solutions sont gracieusement offertes par M.Sadik Omar, professeur agrégé au lycée Moulay Driss, Fès."
+  },
+  
+  {
     "title": "Sujet 03",
     "url": "/cpgem/posts/sujet-03/",
     "categories": "PRÉPARATION",
@@ -88,7 +105,7 @@
   {
     "title": "Équations différentielles linéaires",
     "url": "/cpgem/posts/eqdiff/",
-    "categories": "COURS, EXERCICES, PYTHON",
+    "categories": "COURS, EXERCICES",
     "tags": "eqdiff, analyse, edl, serent",
     "date": "2025-03-10 21:20:00 +0000",
     
@@ -98,8 +115,8 @@
 
 
     
-    "snippet": "Cours avec exercices résolus sur les équations différentielles linéaires.  Cours : [HTML]  Exercices d’approfondissements : [HTML]  Exercices d’entraînement : [HTML]",
-    "content": "Cours avec exercices résolus sur les équations différentielles linéaires.  Cours : [HTML]  Exercices d’approfondissements : [HTML]  Exercices d’entraînement : [HTML]"
+    "snippet": "Présentation  Cours avec exercices résolus sur les équations différentielles linéaires. Le cours est augmenté d’une partie descriptive sur les thèmes les plus abordées dans les sujets de concours. ...",
+    "content": "Présentation  Cours avec exercices résolus sur les équations différentielles linéaires. Le cours est augmenté d’une partie descriptive sur les thèmes les plus abordées dans les sujets de concours. Les exercices sont séparés en deux sections. Une section sur des exercices d’approfondissements dont le but est d’enrichir le cours par des résultats annexes hors programme. Une autre sur des exercices d’entrainement qui reprennent les mêmes thèmes mais sur lesquels on peut s’exercer à la mise en oeuvre des connaissances acquises à travers les différentes autres parties.Liens  Cours : [HTML]  Exercices d’approfondissements : [HTML]  Exercices d’entraînement : [HTML]"
   }
   
 ]

@@ -4,7 +4,7 @@
   <id>http://localhost:4000/cpgem/</id>
   <title>CPGEM</title>
   <subtitle>Site web pour les maths en classes préparatoires. Simple mais moderne et efficace.</subtitle>
-  <updated>2025-03-13T19:40:04+00:00</updated>
+  <updated>2025-03-14T03:00:08+00:00</updated>
   <author>
     <name>Sadik Boujaida</name>
     <uri>http://localhost:4000/cpgem/</uri>
@@ -17,6 +17,30 @@
   <icon>/cpgem/assets/img/favicons/favicon.ico</icon>
   <logo>/cpgem/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Sujet 04</title>
+    <link href="http://localhost:4000/cpgem/posts/sujet-04/" rel="alternate" type="text/html" title="Sujet 04" />
+    <published>2025-03-13T21:09:00+00:00</published>
+  
+    <updated>2025-03-13T21:09:00+00:00</updated>
+  
+    <id>http://localhost:4000/cpgem/posts/sujet-04/</id>
+    <content type="text/html" src="http://localhost:4000/cpgem/posts/sujet-04/" />
+    <author>
+      <name>Sadik Boujaida</name>
+    </author>
+
+  
+    
+    <category term="PRÉPARATION" />
+    
+  
+
+  <summary>CENTRALE 2018, MP, Maths II : fonctions harmoniques et principe du maximum</summary>
+
+  </entry>
 
   
   <entry>
@@ -111,34 +135,6 @@
   
 
   <summary>Programme de préparation 2025</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Probabilités discrètes</title>
-    <link href="http://localhost:4000/cpgem/posts/probas/" rel="alternate" type="text/html" title="Probabilités discrètes" />
-    <published>2025-03-10T21:43:00+00:00</published>
-  
-    <updated>2025-03-10T21:43:00+00:00</updated>
-  
-    <id>http://localhost:4000/cpgem/posts/probas/</id>
-    <content type="text/html" src="http://localhost:4000/cpgem/posts/probas/" />
-    <author>
-      <name>texbouja</name>
-    </author>
-
-  
-    
-    <category term="COURS" />
-    
-    <category term="EXERCICES" />
-    
-    <category term="PYTHON" />
-    
-  
-
-  <summary>Cours avec exercices résolus sur les probabilités discrètes.</summary>
 
   </entry>
 
