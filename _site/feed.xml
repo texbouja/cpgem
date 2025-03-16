@@ -4,7 +4,7 @@
   <id>http://localhost:4000/cpgem/</id>
   <title>CPGEM</title>
   <subtitle>Site web pour les maths en classes préparatoires. Simple mais moderne et efficace.</subtitle>
-  <updated>2025-03-14T09:17:56+00:00</updated>
+  <updated>2025-03-16T23:01:39+00:00</updated>
   <author>
     <name>Sadik Boujaida</name>
     <uri>http://localhost:4000/cpgem/</uri>
@@ -17,6 +17,30 @@
   <icon>/cpgem/assets/img/favicons/favicon.ico</icon>
   <logo>/cpgem/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Polynômes orthogonaux</title>
+    <link href="http://localhost:4000/cpgem/posts/polorth/" rel="alternate" type="text/html" title="Polynômes orthogonaux" />
+    <published>2025-03-16T21:45:00+00:00</published>
+  
+    <updated>2025-03-16T21:45:00+00:00</updated>
+  
+    <id>http://localhost:4000/cpgem/posts/polorth/</id>
+    <content type="text/html" src="http://localhost:4000/cpgem/posts/polorth/" />
+    <author>
+      <name>Sadik Boujaida</name>
+    </author>
+
+  
+    
+    <category term="CONCENTRATION" />
+    
+  
+
+  <summary>une collection de problèmes de synthèse qui couvrent toutes les proriétés des polynômes orthogonaux.</summary>
+
+  </entry>
 
   
   <entry>
@@ -111,30 +135,6 @@
   
 
   <summary>Mines 2024, MP, Maths 1 : Analyse et probabilités</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Préparation 2025</title>
-    <link href="http://localhost:4000/cpgem/posts/preparation/" rel="alternate" type="text/html" title="Préparation 2025" />
-    <published>2025-03-12T09:31:00+00:00</published>
-  
-    <updated>2025-03-12T09:31:00+00:00</updated>
-  
-    <id>http://localhost:4000/cpgem/posts/preparation/</id>
-    <content type="text/html" src="http://localhost:4000/cpgem/posts/preparation/" />
-    <author>
-      <name>Sadik Boujaida</name>
-    </author>
-
-  
-    
-    <category term="PRÉPARATION" />
-    
-  
-
-  <summary>Programme de préparation 2025</summary>
 
   </entry>
 

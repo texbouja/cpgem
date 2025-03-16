@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Polynômes orthogonaux",
+    "url": "/cpgem/posts/polorth/",
+    "categories": "CONCENTRATION",
+    "tags": "espreh, synth, polorth, int, intparam, eqdiff, alglin, reduc, matpos",
+    "date": "2025-03-16 21:45:00 +0000",
+    
+
+
+
+
+
+    
+    "snippet": "Sujets de synthèse : polynômes orthogonaux  Une collection de sujets de synthèse qui couvrent toutes les propriétés des polynômes orthogonaux. Sont couvertes :      les propriétés de base telles qu...",
+    "content": "Sujets de synthèse : polynômes orthogonaux  Une collection de sujets de synthèse qui couvrent toutes les propriétés des polynômes orthogonaux. Sont couvertes :      les propriétés de base telles que l’existence et les propriétés de récurrence ;    leurs caractère en tant que polynômes scindés à racines simples dans \\(\\mathbb R\\) ;    équations différentielles auto-adjointes associée ;    propriétés de densité dans l’espace préhilbertien considéré ;    approximation d’une fonction continue par des polynômes orthogonaux  PrérequisLes sujets balaillent une grandes partie du programme, algèbre et analyse :  intégrales sur un intervalle quelconque et intégrales à paramètre ;  espaces préhilbertiens et orthogonalité ;  propriétés de densité ;  équations différentielles ;  réduction de matrices ;  matrices symétriques positives ;Liens  pour impression : [PDF]  pour tablettes numériques : [PDF]  pour smartphones : [PDF]  Dans tous les PDF, les intitulés des problèmes ainsi que chaque numéro de question non grisé est un hyperlien qui renvoit de l’énoncé vers sa solution et vice-versa."
+  },
+  
+  {
     "title": "Sujet 04",
     "url": "/cpgem/posts/sujet-04/",
     "categories": "PRÉPARATION",
