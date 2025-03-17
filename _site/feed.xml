@@ -4,7 +4,7 @@
   <id>http://localhost:4000/cpgem/</id>
   <title>CPGEM</title>
   <subtitle>Site web pour les maths en classes préparatoires. Simple mais moderne et efficace.</subtitle>
-  <updated>2025-03-17T01:59:34+00:00</updated>
+  <updated>2025-03-17T02:08:17+00:00</updated>
   <author>
     <name>Sadik Boujaida</name>
     <uri>http://localhost:4000/cpgem/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/cpgem/posts/polorth/" rel="alternate" type="text/html" title="Polynômes orthogonaux" />
     <published>2025-03-16T21:45:00+00:00</published>
   
-    <updated>2025-03-16T21:45:00+00:00</updated>
+    <updated>2025-03-17T02:04:59+00:00</updated>
   
     <id>http://localhost:4000/cpgem/posts/polorth/</id>
     <content type="text/html" src="http://localhost:4000/cpgem/posts/polorth/" />
