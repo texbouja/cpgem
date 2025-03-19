@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Matrices positives et applications",
+    "url": "/cpgem/posts/matpos/",
+    "categories": "CONCENTRATION",
+    "tags": "alglin, reduc, int, intparam, probas, graphe",
+    "date": "2025-03-19 01:52:00 +0000",
+    
+
+
+
+
+
+    
+    "snippet": "Exercice et sujets de concours pour s’entrainer  Les matrices carrées réelles à coeffcients positives ont des propriétés remarquables et ont fait l’objet d’une étude intensive encore très active. E...",
+    "content": "Exercice et sujets de concours pour s’entrainer  Les matrices carrées réelles à coeffcients positives ont des propriétés remarquables et ont fait l’objet d’une étude intensive encore très active. Elles interviennent dans des secteurs très porteurs comme lae chaînes de Markon en théorie des probabilités et en théories des graphes. C’est aussi un thème qui assez fréquement abordé dans les sujets de concours.Dans cette séance on commence par citer les résultats les plus remrquables sous forme d’exercices. Une collection de sujets de concours qui reprennent les mêmes idées (de façon plus détaillée) vous est proposé pour compléter les travaux assistés.Prérequis  une bonne maîtrise de la réduction des matrices et du calcul matriciel en général ;  intégrales à paramètres ;  mathématiques discrètes (dénombrement, ensembles finis, notions sur les graphes …)  calcul de probabilité ;Liens  pour impression : [PDF]  pour tablettes numériques : [PDF]  pour smartphones : [PDF]"
+  },
+  
+  {
     "title": "Polynômes orthogonaux",
     "url": "/cpgem/posts/polorth/",
     "categories": "CONCENTRATION",
