@@ -4,7 +4,7 @@
   <id>http://localhost:4000/cpgem/</id>
   <title>CPGEM</title>
   <subtitle>Site web pour les maths en classes préparatoires. Simple mais moderne et efficace.</subtitle>
-  <updated>2025-03-19T02:51:16+00:00</updated>
+  <updated>2025-03-20T03:30:25+00:00</updated>
   <author>
     <name>Sadik Boujaida</name>
     <uri>http://localhost:4000/cpgem/</uri>
@@ -20,11 +20,35 @@
 
   
   <entry>
+    <title>Exponentielle matricielle</title>
+    <link href="http://localhost:4000/cpgem/posts/expmat/" rel="alternate" type="text/html" title="Exponentielle matricielle" />
+    <published>2025-03-20T03:14:00+00:00</published>
+  
+    <updated>2025-03-20T03:14:00+00:00</updated>
+  
+    <id>http://localhost:4000/cpgem/posts/expmat/</id>
+    <content type="text/html" src="http://localhost:4000/cpgem/posts/expmat/" />
+    <author>
+      <name>Sadik Boujaida</name>
+    </author>
+
+  
+    
+    <category term="CONCENTRATION" />
+    
+  
+
+  <summary>Sujets de concours autour de l&amp;#39;exponentielle matricielle</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>Matrices positives et applications</title>
     <link href="http://localhost:4000/cpgem/posts/matpos/" rel="alternate" type="text/html" title="Matrices positives et applications" />
     <published>2025-03-19T01:52:00+00:00</published>
   
-    <updated>2025-03-19T01:52:00+00:00</updated>
+    <updated>2025-03-19T02:51:30+00:00</updated>
   
     <id>http://localhost:4000/cpgem/posts/matpos/</id>
     <content type="text/html" src="http://localhost:4000/cpgem/posts/matpos/" />
@@ -111,30 +135,6 @@
   
 
   <summary>XENS 2024, MP, Maths B : équations différentielles</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Sujet 02</title>
-    <link href="http://localhost:4000/cpgem/posts/sujet-02/" rel="alternate" type="text/html" title="Sujet 02" />
-    <published>2025-03-12T19:45:00+00:00</published>
-  
-    <updated>2025-03-12T19:45:00+00:00</updated>
-  
-    <id>http://localhost:4000/cpgem/posts/sujet-02/</id>
-    <content type="text/html" src="http://localhost:4000/cpgem/posts/sujet-02/" />
-    <author>
-      <name>Sadik Boujaida</name>
-    </author>
-
-  
-    
-    <category term="PRÉPARATION" />
-    
-  
-
-  <summary>Mines 2024, MP, Maths 1 : Analyse et probabilités</summary>
 
   </entry>
 

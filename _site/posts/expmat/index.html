@@ -30,22 +30,23 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="CPGEM" />
+<meta property="og:title" content="Exponentielle matricielle" />
 <meta property="og:locale" content="fr" />
-<meta name="description" content="Site web pour les maths en classes préparatoires. Simple mais moderne et efficace." />
-<meta property="og:description" content="Site web pour les maths en classes préparatoires. Simple mais moderne et efficace." />
-<link rel="canonical" href="http://localhost:4000/cpgem/" />
-<meta property="og:url" content="http://localhost:4000/cpgem/" />
+<meta name="description" content="Sujets de concours autour de l’exponentielle matricielle" />
+<meta property="og:description" content="Sujets de concours autour de l’exponentielle matricielle" />
+<link rel="canonical" href="http://localhost:4000/cpgem/posts/expmat/" />
+<meta property="og:url" content="http://localhost:4000/cpgem/posts/expmat/" />
 <meta property="og:site_name" content="CPGEM" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-03-20T03:14:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="CPGEM" />
+<meta property="twitter:title" content="Exponentielle matricielle" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"Site web pour les maths en classes préparatoires. Simple mais moderne et efficace.","headline":"CPGEM","name":"Sadik Boujaida","sameAs":["https://github.com/texbouja"],"url":"http://localhost:4000/cpgem/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-03-20T03:14:00+00:00","datePublished":"2025-03-20T03:14:00+00:00","description":"Sujets de concours autour de l’exponentielle matricielle","headline":"Exponentielle matricielle","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/cpgem/posts/expmat/"},"url":"http://localhost:4000/cpgem/posts/expmat/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>CPGEM
+  <title>Exponentielle matricielle | CPGEM
   </title>
 
   <!--
@@ -109,11 +110,16 @@
   <!-- 3rd-party Dependencies -->
 
   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css">
+  
 
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
   
 
+  
+    <!-- Image Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
   
 
   <!-- Scripts -->
@@ -132,6 +138,9 @@
   
 
   
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
 
 
 
@@ -189,9 +198,30 @@
 
   
 
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -199,11 +229,15 @@
 
 
 
-<script defer src="/cpgem/assets/js/dist/home.min.js"></script>
+<script defer src="/cpgem/assets/js/dist/post.min.js"></script>
 
 
 
 <!-- Pageviews -->
+
+  
+
+  
 
 
 
@@ -229,7 +263,7 @@
   <nav class="flex-column flex-grow-1 w-100 ps-0">
     <ul class="nav">
       <!-- home -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a href="/cpgem/" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
           <span>HOME</span>
@@ -393,9 +427,23 @@
       
 
       
-        <!-- index page -->
-        <span>Home</span>
+        
+          
+            <span>
+              <a href="/cpgem/">Home</a>
+            </span>
 
+          
+        
+          
+        
+          
+            
+              <span>Exponentielle matricielle</span>
+            
+
+          
+        
       
     </nav>
     <!-- endof #breadcrumb -->
@@ -405,7 +453,7 @@
     </button>
 
     <div id="topbar-title">
-      CPGEM
+      Post
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link">
@@ -474,6 +522,38 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -503,40 +583,19 @@
 
 
 
-<!-- Get pinned posts on current page -->
 
+<article class="px-1" data-toc="true">
+  <header>
+    <h1 data-toc-skip>Exponentielle matricielle</h1>
+    
+      <p class="post-desc fw-light mb-4">Sujets de concours autour de l'exponentielle matricielle</p>
+    
 
-
-
-
-
-<!-- Get normal posts on current page -->
-
-
-
-
-
-<div id="post-list" class="flex-grow-1 px-xl-1">
-  
-    <article class="card-wrapper card">
-      <a href="/cpgem/posts/expmat/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Exponentielle matricielle</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>Sujets de concours autour de l&#39;exponentielle matricielle</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -549,532 +608,241 @@
   data-ts="1742440440"
   data-df="ll"
   
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
 >
   Mar 20, 2025
 </time>
 
+      </span>
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      CONCENTRATION
-                  </span>
-                
-              </div>
+      <!-- lastmod date -->
+      
 
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/cpgem/posts/matpos/" class="post-preview row g-0 flex-md-row-reverse">
-        
+      
 
-        
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Matrices positives et applications</h1>
+          By
 
-            <div class="card-text content mt-0 mb-3">
-              <p>Une exploration des propriétés des matrices positives et de leurs applications.</p>
-            </div>
+          <em>
+            
+              <a href="https://github.com/texbouja">Sadik Boujaida</a>
+            
+          </em>
+        </span>
 
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+        <div>
+          <!-- pageviews -->
+          
+
+          <!-- read time -->
+          <!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
 
 
 
 
-<time
-  
-  data-ts="1742349120"
-  data-df="ll"
-  
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="113 words"
 >
-  Mar 19, 2025
-</time>
+  <em>1 min</em> read</span>
 
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      CONCENTRATION
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
         </div>
+      </div>
+    </div>
+  </header>
+
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Exponentielle matricielle</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Exponentielle matricielle</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
+
+  <div class="content">
+    <h1 id="sujets-de-concours--exponentielle-matricielle">Sujets de concours : exponentielle matricielle</h1>
+<blockquote class="prompt-info">
+  <p>une collection de sujets de concours ayant en commun d’aborder l’exponentielle matricielle mais selon différents angles d’étude. Cela inclu l’étude des propriétés algébriques de l’exponentielle mais aussi certaines de ces propriétés analytiques non triviales.</p>
+</blockquote>
+
+<h2 id="prérequis"><span class="me-2">Prérequis</span><a href="#prérequis" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Les trois sujets exigent une maîtrise d’une partie assez large du programme. Les notions utilisées incluent :</p>
+<ul>
+  <li>réduction des matrices et calcul matriciel en général ;</li>
+  <li>algèbre bilinéaire ;</li>
+  <li>exponentielle d’une matrice et propriétés de base ;</li>
+  <li>notions de topologie ;</li>
+  <li>séries numériques ;</li>
+  <li>dérivation et intégration des fonctions vectorielles ;</li>
+  <li>équations différentielles linéaires ;</li>
+  <li>calcul différentiel ;</li>
+</ul>
+
+<h2 id="liens"><span class="me-2">Liens</span><a href="#liens" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>pour impression : <a href="/cpgem/assets/pdf/expmat_print.pdf">[PDF]</a></li>
+  <li>pour tablettes numériques : <a href="/cpgem/assets/pdf/expmat_tablet.pdf">[PDF]</a></li>
+  <li>pour smartphones : <a href="/cpgem/assets/pdf/expmat_phone.pdf">[PDF]</a></li>
+</ul>
+
+  </div>
+
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/cpgem/categories/concentration/">CONCENTRATION</a>
+      </div>
+    
+
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/cpgem/tags/expmat/"
+            class="post-tag no-text-decoration"
+          >expmat</a>
+        
+          <a
+            href="/cpgem/tags/alglin/"
+            class="post-tag no-text-decoration"
+          >alglin</a>
+        
+          <a
+            href="/cpgem/tags/reduc/"
+            class="post-tag no-text-decoration"
+          >reduc</a>
+        
+          <a
+            href="/cpgem/tags/eqdiff/"
+            class="post-tag no-text-decoration"
+          >eqdiff</a>
+        
+          <a
+            href="/cpgem/tags/calcdiff/"
+            class="post-tag no-text-decoration"
+          >calcdiff</a>
+        
+          <a
+            href="/cpgem/tags/serint/"
+            class="post-tag no-text-decoration"
+          >serint</a>
+        
+          <a
+            href="/cpgem/tags/topologie/"
+            class="post-tag no-text-decoration"
+          >topologie</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
+
+      <!-- Post sharing snippet -->
+
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+
+      
+
+      <a href="https://twitter.com/intent/tweet?text=Exponentielle%20matricielle%20-%20CPGEM&url=http%3A%2F%2Flocalhost%3A4000%2Fcpgem%2Fposts%2Fexpmat%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/cpgem/posts/polorth/" class="post-preview row g-0 flex-md-row-reverse">
-        
+    
 
-        
+      
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Polynômes orthogonaux</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>une collection de problèmes de synthèse qui couvrent toutes les proriétés des polynômes orthogonaux.</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1742161500"
-  data-df="ll"
-  
->
-  Mar 16, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      CONCENTRATION
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Exponentielle%20matricielle%20-%20CPGEM&u=http%3A%2F%2Flocalhost%3A4000%2Fcpgem%2Fposts%2Fexpmat%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+        <i class="fa-fw fab fa-facebook-square"></i>
       </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/cpgem/posts/sujet-04/" class="post-preview row g-0 flex-md-row-reverse">
-        
+    
 
-        
+      
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Sujet 04</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>CENTRALE 2018, MP, Maths II : fonctions harmoniques et principe du maximum</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1741900140"
-  data-df="ll"
-  
->
-  Mar 13, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      PRÉPARATION
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fcpgem%2Fposts%2Fexpmat%2F&text=Exponentielle%20matricielle%20-%20CPGEM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+        <i class="fa-fw fab fa-telegram"></i>
       </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/cpgem/posts/sujet-03/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Sujet 03</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>XENS 2024, MP, Maths B : équations différentielles</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1741808700"
-  data-df="ll"
-  
->
-  Mar 12, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      PRÉPARATION
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/cpgem/posts/sujet-02/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Sujet 02</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>Mines 2024, MP, Maths 1 : Analyse et probabilités</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1741808700"
-  data-df="ll"
-  
->
-  Mar 12, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      PRÉPARATION
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/cpgem/posts/sujet-01/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Sujet 01</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>Mines 2024, MP, Maths 1 : Analyse et probabilités</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1741808700"
-  data-df="ll"
-  
->
-  Mar 12, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      PRÉPARATION
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/cpgem/posts/preparation/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Préparation 2025</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>Programme de préparation 2025</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1741771860"
-  data-df="ll"
-  
->
-  Mar 12, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      PRÉPARATION
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/cpgem/posts/probas/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Probabilités discrètes</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>Cours avec exercices résolus sur les probabilités discrètes.</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1741642980"
-  data-df="ll"
-  
->
-  Mar 10, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      COURS,
-                      EXERCICES,
-                      PYTHON
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/cpgem/posts/eqdiff/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Équations différentielles linéaires</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>Cours avec exercices résolus sur les équations différentielles linéaires.</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1741641600"
-  data-df="ll"
-  
->
-  Mar 10, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      COURS,
-                      EXERCICES
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
+    
+
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
 </div>
-<!-- #post-list -->
 
-
+    </div>
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
+</article>
 
 
             
@@ -1980,12 +1748,246 @@
             </div>
 
             
+              
+              
+
+
+
+
+
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+            
           </aside>
         </div>
 
         <div class="row">
           <!-- tail -->
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/cpgem/posts/sujet-03/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1741808700"
+  data-df="ll"
+  
+>
+  Mar 12, 2025
+</time>
+
+              <h4 class="pt-0 my-2">Sujet 03</h4>
+              <div class="text-muted">
+                <p>XENS 2024, MP, Maths B : équations différentielles</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/cpgem/posts/polorth/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1742161500"
+  data-df="ll"
+  
+>
+  Mar 16, 2025
+</time>
+
+              <h4 class="pt-0 my-2">Polynômes orthogonaux</h4>
+              <div class="text-muted">
+                <p>une collection de problèmes de synthèse qui couvrent toutes les proriétés des polynômes orthogonaux.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/cpgem/posts/matpos/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1742349120"
+  data-df="ll"
+  
+>
+  Mar 19, 2025
+</time>
+
+              <h4 class="pt-0 my-2">Matrices positives et applications</h4>
+              <div class="text-muted">
+                <p>Une exploration des propriétés des matrices positives et de leurs applications.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
+  <!-- #related-posts -->
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/cpgem/posts/matpos/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>Matrices positives et applications</p>
+    </a>
+  
+
+  
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
+  
+</nav>
+
             
 
             <!-- The Footer -->
@@ -2912,6 +2914,11 @@
     
 
     <!-- Embedded scripts -->
+
+    
+      
+      <!-- The comments switcher -->
+
 
     
 

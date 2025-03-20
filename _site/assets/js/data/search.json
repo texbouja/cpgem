@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Exponentielle matricielle",
+    "url": "/cpgem/posts/expmat/",
+    "categories": "CONCENTRATION",
+    "tags": "expmat, alglin, reduc, eqdiff, calcdiff, serint, topologie",
+    "date": "2025-03-20 03:14:00 +0000",
+    
+
+
+
+
+
+    
+    "snippet": "Sujets de concours : exponentielle matricielle  une collection de sujets de concours ayant en commun d’aborder l’exponentielle matricielle mais selon différents angles d’étude. Cela inclu l’étude d...",
+    "content": "Sujets de concours : exponentielle matricielle  une collection de sujets de concours ayant en commun d’aborder l’exponentielle matricielle mais selon différents angles d’étude. Cela inclu l’étude des propriétés algébriques de l’exponentielle mais aussi certaines de ces propriétés analytiques non triviales.PrérequisLes trois sujets exigent une maîtrise d’une partie assez large du programme. Les notions utilisées incluent :  réduction des matrices et calcul matriciel en général ;  algèbre bilinéaire ;  exponentielle d’une matrice et propriétés de base ;  notions de topologie ;  séries numériques ;  dérivation et intégration des fonctions vectorielles ;  équations différentielles linéaires ;  calcul différentiel ;Liens  pour impression : [PDF]  pour tablettes numériques : [PDF]  pour smartphones : [PDF]"
+  },
+  
+  {
     "title": "Matrices positives et applications",
     "url": "/cpgem/posts/matpos/",
     "categories": "CONCENTRATION",
