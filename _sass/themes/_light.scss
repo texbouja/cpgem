@@ -12,7 +12,7 @@
   --text-color: #{$nord0};
   --text-muted-color: #{$nord1};
   --text-muted-highlight-color: inherit;
-  --heading-color: #{$nord0};
+  --heading-color: #{$nord12bis};
   --label-color: #{$nord1};
   --blockquote-border-color: #{$nord4};
   --blockquote-text-color: #{$nord2};
@@ -33,16 +33,16 @@
   );
 
   /* Sidebar */
-  --site-title-color: #{$nord2};
-  --site-subtitle-color: #{$nord3};
-  --sidebar-bg: #{$nord5};
-  --sidebar-border-color: #{$nord4};
-  --sidebar-muted-color: #{$nord2};
-  --sidebar-active-color: #{$nord0};
-  --sidebar-hover-bg: #{$nord4};
+  --site-title-color: #{$nord14};
+  --site-subtitle-color: #{$nord14};
+  --sidebar-bg: #{$nord1};
+  --sidebar-border-color: #{$nord14};
+  --sidebar-muted-color: #{$nord6}90;
+  --sidebar-active-color: #{$nord6};
+  --sidebar-hover-bg: #{$nord14}a0;
   --sidebar-btn-bg: #{$nord6};
   --sidebar-btn-color: #{$nord3};
-  --avatar-border-color: #{$nord6};
+  --avatar-border-color: #{$nord14};
 
   /* Topbar */
   --topbar-bg: #{$nord6}d0;
@@ -61,10 +61,10 @@
   --toc-popup-border-color: #{$nord4};
   --btn-share-color: #{$nord3};
   --btn-share-hover-color: #{$nord10};
-  --card-bg: #{$nord6};
+  --card-bg: #{$nord4}80;
   --card-hovor-bg: #{$nord5};
-  --card-shadow: rgb(104, 104, 104, 0.05) 0 2px 6px 0,
-    rgba(211, 209, 209, 0.15) 0 0 0 1px;
+  --card-shadow: rgb(104, 104, 104, 0.72) 0 2px 6px 0,
+    rgba(211, 209, 209, 0.4) 0 0 0 1px;
   --footnote-target-bg: #{$nord8};
   --tb-odd-bg: #{$nord6};
   --tb-border-color: #{$nord4};
@@ -75,8 +75,8 @@
   --prompt-text-color: #{$nord0}d0;
   --prompt-tip-bg: #{$nord14}33;
   --prompt-tip-icon-color: #{$nord14};
-  --prompt-info-bg: #{$nord8}33;
-  --prompt-info-icon-color: #{$nord8};
+  --prompt-info-bg: #{$nord9}33;
+  --prompt-info-icon-color: #{$nord9};
   --prompt-warning-bg: #{$nord13}33;
   --prompt-warning-icon-color: #{$nord13};
   --prompt-danger-bg: #{$nord11}33;

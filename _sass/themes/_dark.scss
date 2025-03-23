@@ -34,16 +34,16 @@
   );
 
   /* Sidebar */
-  --site-title-color: #{$nord12};
-  --site-subtitle-color: #{$nord12}a0;
-  --sidebar-bg: #{$nord1}a0;
+  --site-title-color: #{$nord14};
+  --site-subtitle-color: #{$nord14};
+  --sidebar-bg: #{$nord1};
   --sidebar-border-color: #{$nord1};
   --sidebar-muted-color: #{$nord6}80;
   --sidebar-active-color: #{$nord6};
-  --sidebar-hover-bg: #{$nord12}9f;
+  --sidebar-hover-bg: #{$nord14}9f;
   --sidebar-btn-bg: #{$nord1};
   --sidebar-btn-color: #{$nord4};
-  --avatar-border-color: #{$nord12};
+  --avatar-border-color: #{$nord14};
 
   /* Topbar */
   --topbar-bg: #{$nord0}cc;
@@ -77,8 +77,8 @@
   --prompt-text-color: #{$nord6}c0;
   --prompt-tip-bg: #{$nord14}33;
   --prompt-tip-icon-color: #{$nord14};
-  --prompt-info-bg: #{$nord8}33;
-  --prompt-info-icon-color: #{$nord8};
+  --prompt-info-bg: #{$nord9}33;
+  --prompt-info-icon-color: #{$nord9};
   --prompt-warning-bg: #{$nord13}33;
   --prompt-warning-icon-color: #{$nord13};
   --prompt-danger-bg: #{$nord11}33;

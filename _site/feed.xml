@@ -4,7 +4,7 @@
   <id>http://localhost:4000/cpgem/</id>
   <title>CPGEM</title>
   <subtitle>Site web pour les maths en classes préparatoires. Simple mais moderne et efficace.</subtitle>
-  <updated>2025-03-23T04:48:27+00:00</updated>
+  <updated>2025-03-23T15:01:12+00:00</updated>
   <author>
     <name>Sadik Boujaida</name>
     <uri>http://localhost:4000/cpgem/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/cpgem/posts/expmat/" rel="alternate" type="text/html" title="Exponentielle matricielle" />
     <published>2025-03-20T03:14:00+00:00</published>
   
-    <updated>2025-03-20T22:32:25+00:00</updated>
+    <updated>2025-03-20T03:14:00+00:00</updated>
   
     <id>http://localhost:4000/cpgem/posts/expmat/</id>
     <content type="text/html" src="http://localhost:4000/cpgem/posts/expmat/" />
@@ -48,7 +48,7 @@
     <link href="http://localhost:4000/cpgem/posts/matpos/" rel="alternate" type="text/html" title="Matrices positives et applications" />
     <published>2025-03-19T01:52:00+00:00</published>
   
-    <updated>2025-03-19T02:51:30+00:00</updated>
+    <updated>2025-03-19T01:52:00+00:00</updated>
   
     <id>http://localhost:4000/cpgem/posts/matpos/</id>
     <content type="text/html" src="http://localhost:4000/cpgem/posts/matpos/" />
@@ -72,7 +72,7 @@
     <link href="http://localhost:4000/cpgem/posts/polorth/" rel="alternate" type="text/html" title="Polynômes orthogonaux" />
     <published>2025-03-16T21:45:00+00:00</published>
   
-    <updated>2025-03-17T02:08:31+00:00</updated>
+    <updated>2025-03-16T21:45:00+00:00</updated>
   
     <id>http://localhost:4000/cpgem/posts/polorth/</id>
     <content type="text/html" src="http://localhost:4000/cpgem/posts/polorth/" />
@@ -86,7 +86,7 @@
     
   
 
-  <summary>une collection de problèmes de synthèse qui couvrent toutes les proriétés des polynômes orthogonaux.</summary>
+  <summary>une collection de problèmes de synthèse sur les polynômes orthogonaux.</summary>
 
   </entry>
 
