@@ -1,80 +1,78 @@
 @use '../themes/chirpynord' as *;
 
 @mixin styles {
-  color-scheme: dark;
+  color-scheme: light;
 
   /* Framework color */
-  --main-bg: #{$nord0};
-  --mask-bg: #{$nord1};
-  --main-border-color: #{$nord1};
+  --main-bg: #{$nord6};
+  --mask-bg: #{$nord5};
+  --main-border-color: #{$nord4};
 
   /* Common color */
-  --text-color: #{$nord4};
-  --text-muted-color: #{$nord6}a0;
-  --text-muted-highlight-color: #{$nord5};
-  --heading-color: #{$nord12};
-  --label-color: #{$nord5};
-  --blockquote-border-color: #{$nord2};
-  --blockquote-text-color: #{$nord4};
-  --link-color: #{$nord8};
-  --link-underline-color: #{$nord9};
-  --button-bg: #{$nord1};
-  --btn-border-color: #{$nord2};
-  --btn-backtotop-color: var(--text-color);
-  --btn-backtotop-border-color: #{$nord1};
-  --card-header-bg: #{$nord12}9f;
-  --checkbox-color: #{$nord3};
+  --text-color: #{$nord0};
+  --text-muted-color: #{$nord1};
+  --text-muted-highlight-color: inherit;
+  --heading-color: #{$nord0};
+  --label-color: #{$nord1};
+  --blockquote-border-color: #{$nord4};
+  --blockquote-text-color: #{$nord2};
+  --link-color: #{$nord10};
+  --link-underline-color: #{$nord5};
+  --button-bg: #{$nord6};
+  --btn-border-color: #{$nord5};
+  --btn-backtotop-color: #{$nord3};
+  --btn-backtotop-border-color: #{$nord5};
+  --checkbox-color: #{$nord4};
   --checkbox-checked-color: #{$nord8};
-  --img-bg: radial-gradient(circle, #{$nord0}00, #{$nord1}ff);
+  --img-bg: radial-gradient(circle, #{$nord6} 0%, #{$nord5} 100%);
   --shimmer-bg: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(46, 52, 64, 0.4) 50%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(250, 250, 250, 0) 0%,
+    rgba(232, 230, 230, 1) 50%,
+    rgba(250, 250, 250, 0) 100%
   );
 
   /* Sidebar */
-  --site-title-color: #{$nord12};
-  --site-subtitle-color: #{$nord12}a0;
-  --sidebar-bg: #{$nord1}a0;
-  --sidebar-border-color: #{$nord1};
-  --sidebar-muted-color: #{$nord6}80;
-  --sidebar-active-color: #{$nord6};
-  --sidebar-hover-bg: #{$nord12}9f;
-  --sidebar-btn-bg: #{$nord1};
-  --sidebar-btn-color: #{$nord4};
-  --avatar-border-color: #{$nord12};
+  --site-title-color: #{$nord2};
+  --site-subtitle-color: #{$nord3};
+  --sidebar-bg: #{$nord5};
+  --sidebar-border-color: #{$nord4};
+  --sidebar-muted-color: #{$nord2};
+  --sidebar-active-color: #{$nord0};
+  --sidebar-hover-bg: #{$nord4};
+  --sidebar-btn-bg: #{$nord6};
+  --sidebar-btn-color: #{$nord3};
+  --avatar-border-color: #{$nord6};
 
   /* Topbar */
-  --topbar-bg: #{$nord0}cc;
-  --topbar-text-color: var(--text-color);
-  --search-border-color: #{$nord2};
-  --search-icon-color: #{$nord3};
-  --input-focus-border-color: #{$nord7};
+  --topbar-bg: #{$nord6}d0;
+  --topbar-text-color: #{$nord1};
+  --search-border-color: #{$nord4};
+  --search-icon-color: #{$nord4};
+  --input-focus-border-color: #{$nord8};
 
   /* Home page */
-  --post-list-text-color: #{$nord4};
-  --btn-patinator-text-color: var(--text-color);
-  --btn-paginator-hover-color: #{$nord1};
+  --post-list-text-color: #{$nord1};
+  --btn-patinator-text-color: #{$nord2};
+  --btn-paginator-hover-color: var(--sidebar-bg);
 
   /* Posts */
-  --toc-highlight: #{$nord8};
-  --toc-popup-border-color: #{$nord2};
-  --tag-hover: #{$nord2};
-  --tb-odd-bg: #{$nord1}; /* odd rows of the posts' table */
-  --tb-even-bg: #{$nord0}; /* even rows of the posts' table */
-  --tb-border-color: var(--tb-odd-bg);
-  --footnote-target-bg: #{$nord10};
+  --toc-highlight: #{$nord10};
+  --toc-popup-border-color: #{$nord4};
   --btn-share-color: #{$nord3};
-  --btn-share-hover-color: #{$nord6};
-  --card-bg: #{$nord1}33;
-  --card-hovor-bg: #{$nord1};
-  --card-shadow: rgb(21, 21, 21, 0.72) 0 6px 18px 0,
-    rgb(137, 135, 135, 0.24) 0 0 0 1px;
-  --kbd-wrap-color: #{$nord3};
-  --kbd-text-color: #{$nord6};
-  --kbd-bg-color: #{$nord1};
-  --prompt-text-color: #{$nord6}c0;
+  --btn-share-hover-color: #{$nord10};
+  --card-bg: #{$nord6};
+  --card-hovor-bg: #{$nord5};
+  --card-shadow: rgb(104, 104, 104, 0.05) 0 2px 6px 0,
+    rgba(211, 209, 209, 0.15) 0 0 0 1px;
+  --footnote-target-bg: #{$nord8};
+  --tb-odd-bg: #{$nord6};
+  --tb-border-color: #{$nord4};
+  --dash-color: #{$nord4};
+  --kbd-wrap-color: #{$nord4};
+  --kbd-text-color: var(--text-color);
+  --kbd-bg-color: #{$nord6};
+  --prompt-text-color: #{$nord0}d0;
   --prompt-tip-bg: #{$nord14}33;
   --prompt-tip-icon-color: #{$nord14};
   --prompt-info-bg: #{$nord8}33;
@@ -85,78 +83,42 @@
   --prompt-danger-icon-color: #{$nord11};
 
   /* Tags */
-  --tag-border: #{$nord2};
-  --tag-shadow: #{$nord1};
-  --dash-color: #{$nord3};
-  --search-tag-bg: #{$nord1};
+  --tag-border: #{$nord4};
+  --tag-shadow: var(--btn-border-color);
+  --tag-hover: #{$nord5};
+  --search-tag-bg: #{$nord6};
 
   /* Categories */
-  --categories-border: #{$nord3}80;
-  --categories-hover-bg: #{$nord2};
-  --categories-icon-hover-color: #{$nord6};
+  --categories-border: #{$nord2}10;
+  --categories-hover-bg: #{$nord5};
+  --categories-icon-hover-color: #{$nord0};
 
   /* Archive */
+  --timeline-color: #{$nord3}33;
   --timeline-node-bg: #{$nord4};
-  --timeline-color: #{$nord3};
-  --timeline-year-dot-color: var(--timeline-color);
+  --timeline-year-dot-color: #{$nord6};
 
-  /* Code highlight colors */
-  --language-border-color: #{$nord12}64;
-  --highlight-bg-color: #{$nord1};
-  --highlighter-rouge-color: #{$nord8};
+  /* --- Custom code light mode colors --- */
+  --language-border-color: #{$nord4};
+  --highlight-bg-color: #{$nord6};
+  --highlighter-rouge-color: #{$nord10};
   --highlight-lineno-color: #{$nord3};
-  --inline-code-bg: #{$nord6}1a;
-  --code-color: #{$nord4};
-  --code-header-text-color: #{$nord6}80;
-  --code-header-muted-color: #{$nord6}20;
-  --code-header-icon-color: #{$nord6}20;
+  --inline-code-bg: #{$nord0}10;
+  --code-color: #{$nord1};
+  --code-header-text-color: #{$nord3};
+  --code-header-muted-color: #{$nord5};
+  --code-header-icon-color: #{$nord4};
   --clipboard-checked-color: #{$nord14};
-  --filepath-text-color: #{$nord5};
 
-  .light {
+  [class^='prompt-'] {
+    --link-underline-color: #{$nord4};
+  }
+
+  .dark {
     display: none;
   }
 
-  /* Categories */
-  .categories.card,
-  .list-group-item {
-    background-color: var(--card-bg);
-  }
-
-  .categories {
-    .card-header {
-      background-color: var(--card-header-bg);
-    }
-
-    .list-group-item {
-      border-left: none;
-      border-right: none;
-      padding-left: 2rem;
-      border-color: var(--categories-border);
-
-      &:last-child {
-        border-bottom-color: var(--card-bg);
-      }
-    }
-  }
-
-  #archives li:nth-child(odd) {
-    background-image: linear-gradient(
-      to left,
-      #{$nord0},
-      #{$nord1},
-      #{$nord1},
-      #{$nord1},
-      #{$nord0}
-    );
-  }
-
-  /* stylelint-disable-next-line selector-id-pattern */
-  #disqus_thread {
-    color-scheme: none;
-  }
-
-  /* Nord-themed syntax highlighting */
+  /* Nord-themed syntax highlighting for light mode */
   .highlight table td {
     padding: 5px;
   }
@@ -167,44 +129,22 @@
 
   .highlight,
   .highlight .w {
-    color: #{$nord4};
-    background-color: #{$nord0};
+    color: #{$nord1};
+    background-color: #{$nord6};
   }
 
-  .highlight .err {
-    color: #{$nord11};
+  .highlight .k,
+  .highlight .kd,
+  .highlight .kn,
+  .highlight .kp,
+  .highlight .kr,
+  .highlight .kt,
+  .highlight .kv {
+    color: #{$nord10};
   }
 
-  .highlight .c,
-  .highlight .ch,
-  .highlight .cd,
-  .highlight .cm,
-  .highlight .cpf,
-  .highlight .c1,
-  .highlight .cs {
-    color: #{$nord3};
-  }
-
-  .highlight .cp {
-    color: #{$nord9};
-  }
-
-  .highlight .nt {
-    color: #{$nord9};
-  }
-
-  .highlight .o,
-  .highlight .ow {
+  .highlight .gr {
     color: #{$nord6};
-  }
-
-  .highlight .p,
-  .highlight .pi {
-    color: #{$nord5};
-  }
-
-  .highlight .gi {
-    color: #{$nord14};
   }
 
   .highlight .gd {
@@ -212,76 +152,45 @@
     background-color: #{$nord11}33;
   }
 
-  .highlight .gh {
-    color: #{$nord8};
-    background-color: #{$nord0};
-    font-weight: bold;
-  }
-
-  .highlight .k,
-  .highlight .kn,
-  .highlight .kp,
-  .highlight .kr,
-  .highlight .kv {
-    color: #{$nord10};
-  }
-
-  .highlight .kc {
-    color: #{$nord9};
-  }
-
-  .highlight .kt {
-    color: #{$nord9};
-  }
-
-  .highlight .kd {
-    color: #{$nord9};
-  }
-
-  .highlight .s,
-  .highlight .sb,
-  .highlight .sc,
-  .highlight .dl,
-  .highlight .sd,
-  .highlight .s2,
-  .highlight .sh,
-  .highlight .sx,
-  .highlight .s1 {
-    color: #{$nord14};
-  }
-
-  .highlight .sa {
-    color: #{$nord10};
-  }
-
-  .highlight .sr {
+  .highlight .nb {
     color: #{$nord7};
   }
 
-  .highlight .si {
-    color: #{$nord13};
-  }
-
-  .highlight .se {
-    color: #{$nord13};
-  }
-
-  .highlight .nn {
-    color: #{$nord9};
-  }
-
   .highlight .nc {
-    color: #{$nord9};
+    color: #{$nord7};
   }
 
   .highlight .no {
-    color: #{$nord9};
+    color: #{$nord7};
+  }
+
+  .highlight .nn {
+    color: #{$nord7};
+  }
+
+  .highlight .sr {
+    color: #{$nord14};
   }
 
   .highlight .na {
     color: #{$nord8};
   }
 
+  .highlight .nt {
+    color: #{$nord8};
+  }
+
+  .highlight .gi {
+    color: #{$nord14};
+    background-color: #{$nord14}33;
+  }
+
+  .highlight .kc {
+    color: #{$nord9};
+  }
+
+  .highlight .l,
+  .highlight .ld,
   .highlight .m,
   .highlight .mb,
   .highlight .mf,
@@ -293,7 +202,112 @@
     color: #{$nord15};
   }
 
+  .highlight .sb {
+    color: #{$nord14};
+  }
+
+  .highlight .bp {
+    color: #{$nord9};
+  }
+
+  .highlight .ne {
+    color: #{$nord9};
+  }
+
+  .highlight .nl {
+    color: #{$nord9};
+  }
+
+  .highlight .py {
+    color: #{$nord9};
+  }
+
+  .highlight .nv,
+  .highlight .vc,
+  .highlight .vg,
+  .highlight .vi,
+  .highlight .vm {
+    color: #{$nord9};
+  }
+
+  .highlight .o,
+  .highlight .ow {
+    color: #{$nord9};
+  }
+
+  .highlight .gh {
+    color: #{$nord9};
+    font-weight: bold;
+  }
+
+  .highlight .gu {
+    color: #{$nord9};
+    font-weight: bold;
+  }
+
+  .highlight .s,
+  .highlight .sa,
+  .highlight .sc,
+  .highlight .dl,
+  .highlight .sd,
+  .highlight .s2,
+  .highlight .se,
+  .highlight .sh,
+  .highlight .sx,
+  .highlight .s1,
   .highlight .ss {
     color: #{$nord14};
   }
+
+  .highlight .nd {
+    color: #{$nord10};
+  }
+
+  .highlight .nf,
+  .highlight .fm {
+    color: #{$nord10};
+  }
+
+  .highlight .err {
+    color: #{$nord6};
+    background-color: #{$nord11};
+  }
+
+  .highlight .c,
+  .highlight .ch,
+  .highlight .cd,
+  .highlight .cm,
+  .highlight .cp,
+  .highlight .cpf,
+  .highlight .c1,
+  .highlight .cs {
+    color: #{$nord3};
+  }
+
+  .highlight .gl {
+    color: #{$nord3};
+  }
+
+  .highlight .gt {
+    color: #{$nord3};
+  }
+
+  .highlight .ni {
+    color: #{$nord1};
+  }
+
+  .highlight .si {
+    color: #{$nord1};
+  }
+
+  .highlight .ge {
+    color: #{$nord1};
+    font-style: italic;
+  }
+
+  .highlight .gs {
+    color: #{$nord1};
+    font-weight: bold;
+  }
 }
+
