@@ -5,6 +5,7 @@ description: Programme de préparation 2025
 categories: [PRÉPARATION]
 tags: [concours,xens,mines,mp]
 date: 2025-03-12 09:31 +0000
+pin: true
 ---
 
 # Phase 1 : analyse et probabilités
@@ -15,10 +16,10 @@ date: 2025-03-12 09:31 +0000
 
 ## Semaine 2 : équations et calcul différentiels
 -  [Exercices d'entraînement](https://texbouja.github.io/cpge-eqdiff/ch-eqdiff-exercices.html){:target="_blank" rel="noopener noreferrer"}
--  [X-ENS 2024, MP, Maths B](https://texbouja.github.io/cpge-preparation/part-anaproba-4.html){:target="_blank" rel="noopener noreferrer"}
--  [Centrale 2018, MP, Maths 2](https://texbouja.github.io/cpge-preparation/part-anaproba-5.html){:target="_blank" rel="noopener noreferrer"}
+-  [X-ENS 2024, MP, Maths B](/cpgem/posts/sujet-03/)
+-  [Centrale 2018, MP, Maths 2](/cpgem/posts/sujet-05/)
 
 # Phase 2 : algèbre et probabilités 
 
-## Semiane 1
+## Semaine 1
 - [Centrale 2022, MP, Maths I](/cpgem/posts/sujet-05/)
