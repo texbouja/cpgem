@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Sujet 05",
+    "url": "/cpgem/posts/sujet-05/",
+    "categories": "PRÉPARATION",
+    "tags": "centrale, mp, alglin, algbilin, calcmat, symplectique",
+    "date": "2025-03-24 01:49:00 +0000",
+    
+
+
+
+
+
+    
+    "snippet": "Centrale 2022, MP, Maths 1  Le sujet traite des matrices symplectiques. Un thème qui est revenu dans beaucoup de sujets de concours ces dernières années. Il est abordé dans le sujet de manière asse...",
+    "content": "Centrale 2022, MP, Maths 1  Le sujet traite des matrices symplectiques. Un thème qui est revenu dans beaucoup de sujets de concours ces dernières années. Il est abordé dans le sujet de manière assez exhaustive.PrérequisUne bonne connaissance du cours d’algèbre bilinéaire. Il ne suffit pas de connaître les résultats car le sujet traite des formes bilinéaires symplectiques et examine leurs propriétés au même titre que le cours examine les propriétés des formes bilinéaires définies positives (les produits scalaires).Liens  Énoncé avec corrigé en PDF :          [print]      [tablet]      [smartphone]        Énoncé originale : [PDF]  Rapport de l’épreuve : [PDF]  Le corrigé est rédigé par Jennifer Mirebeau"
+  },
+  
+  {
     "title": "Exponentielle matricielle",
     "url": "/cpgem/posts/expmat/",
     "categories": "CONCENTRATION",
@@ -133,7 +150,7 @@
 
     
     "snippet": "Phase 1 : analyse et probabilitésSemaine 1 : séries, intégrales et probabilités  Mines-Ponts 2020, MP, Maths II  Mines-Ponts 2024, MP, Maths ISemaine 2 : équations et calcul différentiels  Exercice...",
-    "content": "Phase 1 : analyse et probabilitésSemaine 1 : séries, intégrales et probabilités  Mines-Ponts 2020, MP, Maths II  Mines-Ponts 2024, MP, Maths ISemaine 2 : équations et calcul différentiels  Exercices d’entraînement  X-ENS 2024, MP, Maths B  Centrale 2018, MP, Maths 2"
+    "content": "Phase 1 : analyse et probabilitésSemaine 1 : séries, intégrales et probabilités  Mines-Ponts 2020, MP, Maths II  Mines-Ponts 2024, MP, Maths ISemaine 2 : équations et calcul différentiels  Exercices d’entraînement  X-ENS 2024, MP, Maths B  Centrale 2018, MP, Maths 2Phase 2 : algèbre et probabilitésSemiane 1  Centrale 2022, MP, Maths I"
   },
   
   {
