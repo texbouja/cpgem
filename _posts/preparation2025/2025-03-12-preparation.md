@@ -3,7 +3,7 @@ layout: page
 title: Préparation 2025
 description: Programme de préparation 2025
 categories: [PRÉPARATION]
-tags: [concours,xens,mines,mp]
+tags: [concours,xens,mines,centrale]
 date: 2025-03-12 09:31 +0000
 pin: true
 ---
@@ -18,6 +18,11 @@ pin: true
 -  [Exercices d'entraînement](https://texbouja.github.io/cpge-eqdiff/ch-eqdiff-exercices.html){:target="_blank" rel="noopener noreferrer"}
 -  [X-ENS 2024, MP, Maths B](/cpgem/posts/sujet-03/)
 -  [Centrale 2018, MP, Maths 2](/cpgem/posts/sujet-05/)
+
+# Contration du 16-21 mars
+- [Polynômes orthogonaux](/cpgem/posts/polorth)
+- [Matrices positives](/cpgem/posts/matpos)
+- [Exponentielle matricielle](/cpgem/posts/expmat)
 
 # Phase 2 : algèbre et probabilités 
 
