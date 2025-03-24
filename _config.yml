@@ -120,7 +120,7 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
     repo: texbouja/cpgem
-    repo_id: 
+    repo_id: 944151963
     category:
     category_id:
     mapping: # optional, default to 'pathname'
