@@ -28,3 +28,4 @@ pin: true
 
 ## Semaine 1
 - [Centrale 2022, MP, Maths I](/cpgem/posts/sujet-05/)
+- [Mines 2020, MP, Maths I](/cpgem/posts/sujet-06/)
