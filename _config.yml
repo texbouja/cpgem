@@ -228,7 +228,7 @@ jekyll-archives:
 
 # Ajouts personnels 
 
-baseurl: "/cpgem"
+# baseurl: "/cpgem"
 
 pdf_path: "/cpgem/assets/pdf"
 
