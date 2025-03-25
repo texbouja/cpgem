@@ -11,20 +11,20 @@ pin: true
 # Phase 1 : analyse et probabilités
  
 ## Semaine 1 : séries, intégrales et probabilités
-- [Mines-Ponts 2020, MP, Maths II](/posts/sujet-01/)
-- [Mines-Ponts 2024, MP, Maths I](/posts/sujet-02/)
+- [Mines-Ponts 2020, MP, Maths II](/cpgem/posts/sujet-01/)
+- [Mines-Ponts 2024, MP, Maths I](/cpgem/posts/sujet-02/)
 
 ## Semaine 2 : équations et calcul différentiels
 -  [Exercices d'entraînement](https://texbouja.github.io/cpge-eqdiff/ch-eqdiff-exercices.html){:target="_blank" rel="noopener noreferrer"}
--  [X-ENS 2024, MP, Maths B](/posts/sujet-03/)
--  [Centrale 2018, MP, Maths 2](/posts/sujet-05/)
+-  [X-ENS 2024, MP, Maths B](/cpgem/posts/sujet-03/)
+-  [Centrale 2018, MP, Maths 2](/cpgem/posts/sujet-05/)
 
 # Contration du 16-21 mars
-- [Polynômes orthogonaux](/posts/polorth)
-- [Matrices positives](/posts/matpos)
-- [Exponentielle matricielle](/posts/expmat)
+- [Polynômes orthogonaux](/cpgem/posts/polorth)
+- [Matrices positives](/cpgem/posts/matpos)
+- [Exponentielle matricielle](/cpgem/posts/expmat)
 
 # Phase 2 : algèbre et probabilités 
 
 ## Semaine 1
-- [Centrale 2022, MP, Maths I](/posts/sujet-05/)
+- [Centrale 2022, MP, Maths I](/cpgem/posts/sujet-05/)
