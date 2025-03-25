@@ -17,7 +17,7 @@ pin: true
 ## Semaine 2 : équations et calcul différentiels
 -  [Exercices d'entraînement](https://texbouja.github.io/cpge-eqdiff/ch-eqdiff-exercices.html){:target="_blank" rel="noopener noreferrer"}
 -  [X-ENS 2024, MP, Maths B](/cpgem/posts/sujet-03/)
--  [Centrale 2018, MP, Maths 2](/cpgem/posts/sujet-05/)
+-  [Centrale 2018, MP, Maths 2](/cpgem/posts/sujet-04/)
 
 # Contration du 16-21 mars
 - [Polynômes orthogonaux](/cpgem/posts/polorth)
