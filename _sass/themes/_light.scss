@@ -16,8 +16,8 @@
   --label-color: #{$nord1};
   --blockquote-border-color: #{$nord4};
   --blockquote-text-color: #{$nord2};
-  --link-color: #{$nord10};
-  --link-underline-color: #{$nord5};
+  --link-color: #{$nord10bis};
+  --link-underline-color: var(--main-bg);
   --button-bg: #{$nord6};
   --btn-border-color: #{$nord5};
   --btn-backtotop-color: #{$nord3};
@@ -34,16 +34,16 @@
   );
 
   /* Sidebar */
-  --site-title-color: #{$nord8};
-  --site-subtitle-color: #{$nord8}a0;
-  --sidebar-bg: #{$nord1};
-  --sidebar-border-color: #{$nord1};
-  --sidebar-muted-color: #{$nord6}80;
-  --sidebar-active-color: #{$nord6};
-  --sidebar-hover-bg: #{$nord8}9f;
-  --sidebar-btn-bg: #{$nord1};
-  --sidebar-btn-color: #{$nord4};
-  --avatar-border-color: #{$nord8};
+  --site-title-color: #25817D;
+  --site-subtitle-color: #25817Daa;
+  --sidebar-bg: #{$nord5};
+  --sidebar-border-color: #{$nord9}96;
+  --sidebar-muted-color: #{$nord3}80;
+  --sidebar-active-color: #{$nord2};
+  --sidebar-hover-bg: #{$nord9}80;
+  --sidebar-btn-bg: #{$nord9}96;
+  --sidebar-btn-color: #{$nord3}96;
+  --avatar-border-color: #{$nord9}96;
 
   /* Topbar */
   --topbar-bg: #{$nord6}d0;
@@ -64,7 +64,7 @@
   --btn-share-hover-color: #{$nord10};
   --card-bg: #{$nord6};
   --card-hovor-bg: #{$nord5};
-  --card-shadow: rgb(104, 104, 104, 0.72) 0 2px 6px 0,
+  --card-shadow: rgb(104, 104, 104, 0.3) 0 2px 6px 0,
     rgba(211, 209, 209, 0.4) 0 0 0 1px;
   --footnote-target-bg: #{$nord8};
   --tb-odd-bg: #{$nord6};

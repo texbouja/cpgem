@@ -18,7 +18,7 @@
   --blockquote-border-color: #{$nord2};
   --blockquote-text-color: #{$nord4};
   --link-color: #{$nord9};
-  --link-underline-color: #{$nord0};
+  --link-underline-color: var(--main-bg);
   --button-bg: #{$nord1};
   --btn-border-color: #{$nord2};
   --btn-backtotop-color: var(--text-color);
@@ -37,7 +37,7 @@
   /* Sidebar */
   --site-title-color: #{$nord8};
   --site-subtitle-color: #{$nord8}a0;
-  --sidebar-bg: #{$nord1};
+  --sidebar-bg: #{$nord0};
   --sidebar-border-color: #{$nord2};
   --sidebar-muted-color: #{$nord6}80;
   --sidebar-active-color: #{$nord6};
@@ -70,7 +70,7 @@
   --btn-share-hover-color: #{$nord6};
   --card-bg: #{$nord0};
   --card-hovor-bg: #{$nord1};
-  --card-shadow: rgb(21, 21, 21, 0.72) 0 6px 18px 0,
+  --card-shadow: rgb(21, 21, 21, 0.20) 0 6px 18px 0,
     rgb(137, 135, 135, 0.24) 0 0 0 1px;
   --kbd-wrap-color: #{$nord3};
   --kbd-text-color: #{$nord6};
