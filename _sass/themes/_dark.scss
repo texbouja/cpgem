@@ -5,7 +5,7 @@
   color-scheme: dark;
 
   /* Framework color */
-  --main-bg: #{$nord0};
+  --main-bg: #{$nord1};
   --mask-bg: #{$nord1};
   --main-border-color: #{$nord9}80;
 
@@ -17,13 +17,13 @@
   --label-color: #{$nord5};
   --blockquote-border-color: #{$nord2};
   --blockquote-text-color: #{$nord4};
-  --link-color: #{$nord8};
+  --link-color: #{$nord9};
   --link-underline-color: #{$nord0};
   --button-bg: #{$nord1};
   --btn-border-color: #{$nord2};
   --btn-backtotop-color: var(--text-color);
   --btn-backtotop-border-color: #{$nord2};
-  --card-header-bg: #{$nord3}9f;
+  --card-header-bg: #{$nord3}80;
   --checkbox-color: #{$nord3};
   --checkbox-checked-color: #{$nord8};
   --img-bg: radial-gradient(circle, #{$nord0}00, #{$nord1}ff);
@@ -68,7 +68,7 @@
   --footnote-target-bg: #{$nord10};
   --btn-share-color: #{$nord3};
   --btn-share-hover-color: #{$nord6};
-  --card-bg: #{$nord1}33;
+  --card-bg: #{$nord0};
   --card-hovor-bg: #{$nord1};
   --card-shadow: rgb(21, 21, 21, 0.72) 0 6px 18px 0,
     rgb(137, 135, 135, 0.24) 0 0 0 1px;
@@ -92,8 +92,8 @@
   --search-tag-bg: #{$nord1};
 
   /* Categories */
-  --categories-border: #{$nord2};
-  --categories-hover-bg: #{$nord2};
+  --categories-border: #{$nord9}80;
+  --categories-hover-bg: #{$nord9};
   --categories-icon-hover-color: #{$nord6};
 
   /* Archive */
