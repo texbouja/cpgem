@@ -6,8 +6,8 @@ math: true
   .concours-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin: 2rem 0;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
   }
 
   .concours-card {
@@ -38,18 +38,16 @@ math: true
   }
 
   .concours-content::-webkit-scrollbar {
-    width: 6px;
+    width: 3px;
   }
 
   .concours-content::-webkit-scrollbar-thumb {
-    background-color: var(--border-color);
+    background-color: var(--main-border-color);
     border-radius: 3px;
   }
 
   .sujet-item {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px dashed var(--border-color);
+    margin-bottom: .5rem;
   }
 
   .sujet-item:last-child {
@@ -60,11 +58,12 @@ math: true
   .sujet-title {
     position: relative;
     margin-top: 0;
-    padding-left: 1rem;
+    padding-left: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.25em;
+    line height 1; 
   }
 
   .sujet-title::before {
@@ -73,11 +72,14 @@ math: true
     content: "\f5a2"; 
     color: var(--heading-color);
     position: absolute;
-    left: -1rem;
+    left: -1.15rem;
+    top: 1.05em;
+    transform: translateY(-50%); 
+    line-height: 1;
   }
-
+  
   .sujet-objectif {
-    margin: 0.5rem 0 0.75rem 1rem;
+    margin: 0 0 0.75rem 0.75rem;
     color: var(--text-color);
     line-height: 1.3;
   }
