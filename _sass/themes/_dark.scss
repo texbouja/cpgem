@@ -1,28 +1,29 @@
 @use '../themes/chirpynord' as *;
 
+
 @mixin styles {
   color-scheme: dark;
 
   /* Framework color */
   --main-bg: #{$nord0};
   --mask-bg: #{$nord1};
-  --main-border-color: #{$nord1};
+  --main-border-color: #{$nord9}80;
 
   /* Common color */
   --text-color: #{$nord4};
   --text-muted-color: #{$nord6}a0;
-  --text-muted-highlight-color: #{$nord5};
+  --text-muted-highlight-color: inherit; 
   --heading-color: #{$nord12};
   --label-color: #{$nord5};
   --blockquote-border-color: #{$nord2};
   --blockquote-text-color: #{$nord4};
   --link-color: #{$nord8};
-  --link-underline-color: #{$nord9};
+  --link-underline-color: #{$nord0};
   --button-bg: #{$nord1};
   --btn-border-color: #{$nord2};
   --btn-backtotop-color: var(--text-color);
-  --btn-backtotop-border-color: #{$nord1};
-  --card-header-bg: #{$nord2};
+  --btn-backtotop-border-color: #{$nord2};
+  --card-header-bg: #{$nord3}9f;
   --checkbox-color: #{$nord3};
   --checkbox-checked-color: #{$nord8};
   --img-bg: radial-gradient(circle, #{$nord0}00, #{$nord1}ff);
@@ -34,16 +35,16 @@
   );
 
   /* Sidebar */
-  --site-title-color: #{$nord14};
-  --site-subtitle-color: #{$nord14};
+  --site-title-color: #{$nord8};
+  --site-subtitle-color: #{$nord8}a0;
   --sidebar-bg: #{$nord1};
-  --sidebar-border-color: #{$nord1};
+  --sidebar-border-color: #{$nord2};
   --sidebar-muted-color: #{$nord6}80;
   --sidebar-active-color: #{$nord6};
-  --sidebar-hover-bg: #{$nord14}9f;
+  --sidebar-hover-bg: #{$nord8}9f;
   --sidebar-btn-bg: #{$nord1};
   --sidebar-btn-color: #{$nord4};
-  --avatar-border-color: #{$nord14};
+  --avatar-border-color: #{$nord8};
 
   /* Topbar */
   --topbar-bg: #{$nord0}cc;
@@ -61,7 +62,7 @@
   --toc-highlight: #{$nord8};
   --toc-popup-border-color: #{$nord2};
   --tag-hover: #{$nord2};
-  --tb-odd-bg: #{$nord1}; /* odd rows of the posts' table */
+  --tb-odd-bg: #{$nord2}; /* odd rows of the posts' table */
   --tb-even-bg: #{$nord0}; /* even rows of the posts' table */
   --tb-border-color: var(--tb-odd-bg);
   --footnote-target-bg: #{$nord10};
@@ -77,8 +78,8 @@
   --prompt-text-color: #{$nord6}c0;
   --prompt-tip-bg: #{$nord14}33;
   --prompt-tip-icon-color: #{$nord14};
-  --prompt-info-bg: #{$nord9}33;
-  --prompt-info-icon-color: #{$nord9};
+  --prompt-info-bg: #{$nord8}33;
+  --prompt-info-icon-color: #{$nord8};
   --prompt-warning-bg: #{$nord13}33;
   --prompt-warning-icon-color: #{$nord13};
   --prompt-danger-bg: #{$nord11}33;
@@ -91,7 +92,7 @@
   --search-tag-bg: #{$nord1};
 
   /* Categories */
-  --categories-border: #{$nord3}80;
+  --categories-border: #{$nord2};
   --categories-hover-bg: #{$nord2};
   --categories-icon-hover-color: #{$nord6};
 

@@ -1,0 +1,235 @@
+---
+layout: page
+math: true
+---
+<style>
+  .concours-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .concours-card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--main-border-color);
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+  }
+
+  .concours-header {
+    padding: 0 1rem;
+    font-size: 1.25rem;
+    color: var(--heading-color);
+    background: var(--card-header-bg);
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .concours-content {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 0.5rem 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) var(--card-bg);
+  }
+
+  .concours-content::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .concours-content::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 3px;
+  }
+
+  .sujet-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--border-color);
+  }
+
+  .sujet-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .sujet-title {
+    position: relative;
+    margin-top: 0;
+    padding-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25em;
+  }
+
+  .sujet-title::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: "\f5a2"; 
+    color: var(--heading-color);
+    position: absolute;
+    left: -1rem;
+  }
+
+  .sujet-objectif {
+    margin: 0.5rem 0 0.75rem 1rem;
+    color: var(--text-color);
+    line-height: 1.3;
+  }
+
+  .sujet-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin: 0.5rem 0 0.75rem 1rem;
+    font-size: 0.7rem;
+  }
+
+  .meta-item {
+    position: relative;
+    padding-left: 1.25rem;
+    color: var(--text-muted);
+  }
+
+  .meta-item::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--heading-color);
+  }
+
+  .meta-filiere::before { content: "\f501"; }
+  .meta-session::before { content: "\f073"; }
+  .meta-epreuve::before { content: "\f573"; }
+  .meta-duree::before { content: "\f017"; }
+  .meta-difficulte::before { content: "\f06a"; }
+
+  .sujet-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .sujet-tag {
+    padding: 0 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .concours-content {
+      max-height: 420px;
+    }
+  }
+  .prerequis-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.4rem;
+    font-size: 0.75rem;
+    position: relative;
+    padding-left: 2.5rem; 
+    align-items: center; 
+    min-height: 1.5em; 
+
+    &::before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: "\f02c";
+        font-size: 1.5em;
+        position: absolute;
+        left: .9rem;
+        top: 0.75em;
+        transform: translateY(-50%); 
+        line-height: 1; 
+    }
+  .prerequis-item {
+      display: inline-block;
+      position: relative;
+      margin-right: 1.2rem; 
+  }
+
+  .prerequis-item:not(:last-child)::after {
+      content: "•";
+      font-size: 2em;
+      position: absolute;
+      right: -1rem; 
+      color: var(--heading-color); 
+      line-height: 1; 
+  }
+}
+
+  
+</style>
+
+<div class="concours-container">
+  {% assign concours_groups = site.posts | where_exp: "post", "post.concours != nil" | group_by: "concours" | sort: "name" %}
+
+  
+  
+  {% for concours in concours_groups %}
+    <div class="concours-card">
+      <div class="concours-header">
+        <div>
+          {{ concours.name }}
+        </div>
+        <span>{{ concours.items | size }} </span>
+      </div>
+      
+      <div class="concours-content">
+        {% assign sessions = concours.items | group_by: "session" | sort: "name" | reverse %}
+        
+        {% for session in sessions %}
+          {% for post in session.items %}
+            <div class="sujet-item">
+              <div class="sujet-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              <div class="sujet-meta">
+                {% if post.filiere %}
+                  <span class="meta-item meta-filiere">{{ post.filiere }}</span>
+                {% endif %}
+                
+                <span class="meta-item meta-session">{{ post.session }}</span>
+
+                {% if post.epreuve %}
+                  <span class="meta-item meta-epreuve">{{ post.epreuve }}</span>
+                {% endif %}
+
+                {% if post.duree %}
+                  <span class="meta-item meta-duree">{{ post.duree }}</span>
+                {% endif %}
+
+                {% if post.difficulte %}
+                  <span class="meta-item meta-difficulte">{{ post.difficulte }}</span>
+                {% endif %}
+              </div>
+            </div>
+              
+              {% if post.objectif %}
+                <p class="sujet-objectif">
+                  {{ post.objectif }}</p>
+              {% endif %}
+              
+              
+              {% if post.tags %}
+                  <div class="prerequis-list">
+                    {% for tag in post.tags %}
+                      {% if site.data.variables.keywords[tag] %}
+                        <a href="{{ '/tags/' | relative_url }}{{ tag | slugify }}" class="prerequis-item"> {{ site.data.variables.keywords[tag] }}</a>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              
+            </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

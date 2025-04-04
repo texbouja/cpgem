@@ -6,7 +6,7 @@
   /* Framework color */
   --main-bg: #{$nord6};
   --mask-bg: #{$nord5};
-  --main-border-color: #{$nord4};
+  --main-border-color: #{$nord8}80;
 
   /* Common color */
   --text-color: #{$nord0};
@@ -22,7 +22,7 @@
   --btn-border-color: #{$nord5};
   --btn-backtotop-color: #{$nord3};
   --btn-backtotop-border-color: #{$nord5};
-  --card-header-bg: #{$nord9}30;
+  --card-header-bg: #{$nord9}80;
   --checkbox-color: #{$nord4};
   --checkbox-checked-color: #{$nord8};
   --img-bg: radial-gradient(circle, #{$nord6} 0%, #{$nord5} 100%);
@@ -34,16 +34,16 @@
   );
 
   /* Sidebar */
-  --site-title-color: #{$nord14};
-  --site-subtitle-color: #{$nord14};
+  --site-title-color: #{$nord8};
+  --site-subtitle-color: #{$nord8}a0;
   --sidebar-bg: #{$nord1};
-  --sidebar-border-color: #{$nord14};
-  --sidebar-muted-color: #{$nord6}90;
+  --sidebar-border-color: #{$nord1};
+  --sidebar-muted-color: #{$nord6}80;
   --sidebar-active-color: #{$nord6};
-  --sidebar-hover-bg: #{$nord14}a0;
-  --sidebar-btn-bg: #{$nord6};
-  --sidebar-btn-color: #{$nord3};
-  --avatar-border-color: #{$nord14};
+  --sidebar-hover-bg: #{$nord8}9f;
+  --sidebar-btn-bg: #{$nord1};
+  --sidebar-btn-color: #{$nord4};
+  --avatar-border-color: #{$nord8};
 
   /* Topbar */
   --topbar-bg: #{$nord6}d0;
@@ -62,7 +62,7 @@
   --toc-popup-border-color: #{$nord4};
   --btn-share-color: #{$nord3};
   --btn-share-hover-color: #{$nord10};
-  --card-bg: #{$nord4}80;
+  --card-bg: #{$nord6};
   --card-hovor-bg: #{$nord5};
   --card-shadow: rgb(104, 104, 104, 0.72) 0 2px 6px 0,
     rgba(211, 209, 209, 0.4) 0 0 0 1px;
@@ -90,9 +90,14 @@
   --search-tag-bg: #{$nord6};
 
   /* Categories */
-  --categories-border: #{$nord2}10;
-  --categories-hover-bg: #{$nord5};
+  --categories-border: #{$nord3}96;
+  --categories-hover-bg: #{$nord9};
   --categories-icon-hover-color: #{$nord0};
+
+  /* Concours */
+  --concours-border: #{$nord2}10;
+  --concours-hover-bg: #{$nord5};
+  --concours-icon-hover-color: #{$nord0};
 
   /* Archive */
   --timeline-color: #{$nord3}33;
@@ -120,6 +125,44 @@
   }
 
   /* Nord-themed syntax highlighting for light mode */
+   /* Categories */
+   .categories.card,
+   .list-group-item {
+     background-color: var(--card-bg);
+   }
+ 
+   .categories {
+     .card-header {
+       background-color: var(--card-header-bg);
+     }
+ 
+     .list-group-item {
+       border-left: none;
+       border-right: none;
+       padding-left: 2rem;
+       border-color: var(--categories-border);
+ 
+       &:last-child {
+         border-bottom-color: var(--card-bg);
+       }
+     }
+   }
+ 
+   #archives li:nth-child(odd) {
+     background-image: linear-gradient(
+       to left,
+       #{$nord6},
+       #{$nord5},
+       #{$nord6},
+       #{$nord6},
+       #{$nord5}
+     );
+   }
+ 
+   /* stylelint-disable-next-line selector-id-pattern */
+   #disqus_thread {
+     color-scheme: none;
+   }
   .highlight table td {
     padding: 5px;
   }
@@ -134,6 +177,53 @@
     background-color: #{$nord6};
   }
 
+  .highlight .err {
+    color: #{$nord11};
+  }
+
+  .highlight .c,
+  .highlight .ch,
+  .highlight .cd,
+  .highlight .cm,
+  .highlight .cpf,
+  .highlight .c1,
+  .highlight .cs {
+    color: #{$nord3};
+  }
+
+  .highlight .cp {
+    color: #{$nord9};
+  }
+
+  .highlight .nt {
+    color: #{$nord9};
+  }
+
+  .highlight .o,
+  .highlight .ow {
+    color: #{$nord6};
+  }
+
+  .highlight .p,
+  .highlight .pi {
+    color: #{$nord5};
+  }
+
+  .highlight .gi {
+    color: #{$nord14};
+  }
+
+  .highlight .gd {
+    color: #{$nord11};
+    background-color: #{$nord11}33;
+  }
+
+  .highlight .gh {
+    color: #{$nord8};
+    background-color: #{$nord0};
+    font-weight: bold;
+  }
+
   .highlight .k,
   .highlight .kd,
   .highlight .kn,
@@ -144,7 +234,7 @@
     color: #{$nord10};
   }
 
-  .highlight .gr {
+  .highlight .gr {    
     color: #{$nord6};
   }
 

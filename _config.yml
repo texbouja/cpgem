@@ -24,6 +24,7 @@ description: >- # used by seo meta and the atom feed
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: 'https://texbouja.github.io/cpgem'
+baseurl: "/cpgem"
 
 github:
   username: texbouja # change to your GitHub username
@@ -127,7 +128,7 @@ comments:
     strict: 0 # optional, default to '0'
     input_position: bottom # optional, default to 'bottom'
     lang: fr-FR # optional, default to the value of `site.lang`
-    reactions_enabled: 1 # optional, default to the value of `1`
+    reactions_enabled: 0 # optional, default to the value of `1`
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:
@@ -191,6 +192,7 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+  
 
 
 sass:
@@ -226,18 +228,19 @@ jekyll-archives:
     category: /categories/:name/
 
 
-# Ajouts personnels 
-
-baseurl: "/cpgem"
+# Ajouts personnels
 
 pdf_path: "/cpgem/assets/pdf"
 
 math: mathjax
 
-extra_js: 
+extra_js:
   - /cpgem/assets/js/extra.js
+  - /assets/js/scrolling.js
 
 plugins:
   - jekyll-pdf-embed
 
+concours: []
+all_concours: []
 

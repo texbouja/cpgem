@@ -1,0 +1,206 @@
+  
+
+    
+
+  .generic {
+  background-color: var(--card-bg);
+  margin: 2rem 0;
+  border-left: 3px solid var(--main-border-color);
+  border-radius: 0.5rem;
+  box-shadow: var(--card-shadow);
+  
+  h1, h2, h3, h4 {
+    position: relative;
+    margin-top: 0;
+    color: var(--heading-color);
+    
+    
+    &::before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--main-border-color);
+      font-size: 1em;
+    }
+  }
+
+  ul {
+    padding-left: 1.5rem;
+    margin-bottom: 0;
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  .content {
+    margin-top: 1rem;
+    color: var(--text-color);
+  }
+}
+
+.generic-card {
+  @extend .generic;
+  padding: 1rem;
+}
+  
+  // Composant carte avec entête personnalisable
+.card-with-scrolling {
+  @extend .generic;
+  overflow: hidden;
+
+  // Entête automatique (premier élément)
+  & > :first-child {
+    padding: 0.25rem 1rem;
+    font-size: 1.25rem;
+    color: var(--heading-color);
+    background: var(--card-header-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin: 0 !important; // Surcharge les styles par défaut
+  }
+
+  // Contenu scrollable (tout sauf l'entête)
+  & > :not(:first-child) {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 0.5rem 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) var(--card-bg);
+    
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--border-color);
+      border-radius: 3px;
+    }
+  }
+}
+
+.card-concours {
+  @extend .card-with-scrolling;
+
+  .concours-list {
+    list-style: none;
+    padding: 0.5rem ;
+    margin: 0;
+  }
+
+  .concours-item {
+    padding: 0.25rem 0;
+    border-bottom: 1px dashed var(--border-color);
+  }
+
+  .concours-item:last-child {
+    border-bottom: none;
+  }
+
+  .prerequis-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 0.4rem; /* Espace horizontal seulement */
+    
+    .prerequis-item {
+      position: relative;
+      padding: 0 0.4rem;
+      
+      &:not(:last-child)::after {
+        content: "•"; /* Gros point */
+        color: var(--heading-color);
+        position: absolute;
+        right: -0.4rem;
+        font-size: 1.75em;
+        line-height: .95;
+      }
+    }
+  }
+
+  .badge {
+    margin-left: auto;
+    background: rgba(0,0,0,0.2);
+    padding: 0.25rem 0.5rem;    font-size: 0.8em;
+    border-radius: 1rem;
+  }
+
+  .nowrap {
+    white-space: nowrap;
+    padding-left: 0.5rem;
+    display: inline-block;
+  }
+}
+
+
+  .prerequis {
+    @extend .generic-card;
+    
+    h2 {
+      padding-left: 2.2rem;
+      &::before {content: "\f5da";}
+    }
+    .prerequis-content {
+      @extend .content;
+    }
+  }
+
+
+  
+  .objectif {
+    @extend .generic-card;
+
+    h2 {
+      padding-left: 2.2rem;
+      &::before {content: "\f140";}
+    }
+    .objectif-content {
+      @extend .content;
+    }
+  }
+
+  .links {
+    @extend .generic-card;
+
+    h2 {
+      padding-left: 2.2rem;
+      &::before {content: "\f0c1";}
+    }
+    .links-content {
+      @extend .content;
+    }
+  }
+  
+  
+  
+  
+  
+  
+
+  
+
+  .two-column-list {
+    // Configuration desktop
+    column-count: 2;          // Deux colonnes
+    column-gap: 2rem;         // Espace entre colonnes
+    padding-left: 1rem;
+  
+    // Style des éléments
+    li {
+      break-inside: avoid-column; // Bloque la coupure d'items
+      margin-bottom: 0.75rem;
+    }
+  
+    // Media query pour mobile
+    @media (max-width: 767px) {
+      column-count: 1;        // Une seule colonne
+      padding-left: 1.5rem;   // Alignement standard des listes
+    }
+  }
+
+
+  
