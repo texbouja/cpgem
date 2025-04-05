@@ -45,7 +45,6 @@ body {
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   font-family: v.$font-family-base;
-  margin-top: 2rem;
 }
 
 h1.dynamic-title {
@@ -409,9 +408,17 @@ mjx-container {
 }
 
 #main-wrapper {
-  position: relative;
+  // position: relative;
 
+  // @include mx.pl-pr(0);
+
+  // @include bp.lt(bp.get(lg)) {
+  //   @include mx.slide;
+  // }
+  position: relative;
   @include mx.pl-pr(0);
+  // Ajouter cette marge pour compenser la hauteur de la topbar fixe
+  margin-top: v.$topbar-height;
 
   @include bp.lt(bp.get(lg)) {
     @include mx.slide;

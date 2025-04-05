@@ -3,19 +3,68 @@
 @use '../abstracts/breakpoints' as bp;
 @use '../abstracts/placeholders';
 
+// #topbar-wrapper {
+//   height: v.$topbar-height;
+//   background-color: var(--topbar-bg);
+
+//   @include bp.lt(bp.get(lg)) {
+//     @include mx.slide(top 0.2s ease);
+
+//     left: 0;
+//   }
+// }
+// #topbar-wrapper {
+//   height: v.$topbar-height;
+//   background-color: var(--topbar-bg);
+  
+//   position: fixed;
+//   top: 0;
+//   width: calc(100% - v.$sidebar-width); // Soustraire la largeur de la sidebar
+//   z-index: 1000;
+//   right: 0; // Aligner à droite pour qu'il s'ajuste à côté de la sidebar
+//   left: auto; // Annuler left:0 pour permettre l'alignement à droite
+
+//   // @include bp.lt(bp.get(lg)) {
+//   //   width: 100%; // Sur petits écrans, largeur complète
+//   //   left: 0;
+//   //   right: auto;
+//   //   @include mx.slide(top 0.2s ease);
+//   // }
+  
+//   @include bp.lt(bp.get(lg)) {
+//     width: 100%;
+//     left: 0;
+//     right: auto;
+//     transition: transform 0.2s ease; // Ajouter une transition pour le déplacement
+//   }
+
+//   @include bp.xxxl {
+//     width: calc(100% - v.$sidebar-width-large); // Ajuster pour les très grands écrans
+//   }
+// }
+
 #topbar-wrapper {
-  position: fixed; 
-  top: 0;         
-  left: 0;       
-  right: 0;   
-  z-index: 1020;
   height: v.$topbar-height;
   background-color: var(--topbar-bg);
+  
+  position: fixed;
+  margin-top: - v.$topbar-height;
+  width: calc(100% - v.$sidebar-width);
+  z-index: 1000;
+  right: 0;
+  left: auto;
 
   @include bp.lt(bp.get(lg)) {
-    @include mx.slide(top 0.2s ease);
-
+    width: 100%;
     left: 0;
+    right: auto;
+    transition: transform 0.2s ease;
+    // Enlever la transition sur top qui peut causer le décalage vertical
+    // @include mx.slide(top 0.2s ease);
+  }
+  
+  @include bp.xxxl {
+    width: calc(100% - v.$sidebar-width-large);
   }
 }
 
