@@ -1,0 +1,39 @@
+{%- comment -%}
+  Get post description or generate it from the post content.
+{%- endcomment -%}
+
+{%- assign max_length = include.max_length | default: 200 -%}
+
+{%- capture description -%}
+  {%- if page.concours -%}
+  {%- assign description_parts = "" | split: "" -%}    
+    {%- if page.concours != empty -%}
+      {%- assign part = "Concours : " | append: page.concours -%}
+      {%- assign description_parts = description_parts | push: part -%}
+    {%- endif -%}
+    
+    {%- if page.session != empty -%}
+      {%- assign part = "Session : " | append: page.session -%}
+      {%- assign description_parts = description_parts | push: part -%}
+    {%- endif -%}
+    
+    {%- if page.filiere != empty -%}
+      {%- assign part = "Filière : " | append: page.filiere -%}
+      {%- assign description_parts = description_parts | push: part -%}
+    {%- endif -%}
+    
+    {%- if page.epreuve != empty -%}
+      {%- assign part = "Épreuve : " | append: page.epreuve -%}
+      {%- assign description_parts = description_parts | push: part -%}
+    {%- endif -%}
+        
+    {%- assign description_parts = description_parts | join: " | " | strip -%}
+    {{- description_parts -}}
+  {%- elsif page.cours -%}
+    {{- Cours avec exercices résolus | markdonify -}}
+  {%- endif -%}
+{%- endcapture -%}
+
+{{- description | strip | truncate: max_length | escape -}}
+
+

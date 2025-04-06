@@ -324,27 +324,32 @@
     }
   }
   .prerequis-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 0.4rem;
-    font-size: 0.75rem;
-    position: relative;
-    padding-left: 2.5rem; 
-    align-items: center; 
-    line-height: 1.5; 
+  background-color: var(--card-bg);
+  padding: 0.3rem 0;
+  margin: .5rem 0;
+  border : 1px solid var(--main-border-color);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.4rem;
+  font-size: 0.75rem;
+  position: relative;
+  padding-left: 2.5rem; 
+  align-items: center; 
 
-    &::before {
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        content: "\f02c";
-        font-size: 1.5em;
-        color: var(--heading-color);
-        position: absolute;
-        left: .9rem;
-        top: 0.75em;
-        transform: translateY(-50%); 
-        line-height: 1; 
-    }
+  &::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: "\f02c";
+    font-size: 1.75em;
+    color: var(--main-border-color);
+    position: absolute;
+    left: .5rem;
+    top: 1.25em;
+    transform: translateY(-50%); 
+    line-height: 1; 
+    
+  }
   .prerequis-item {
       display: inline-block;
       position: relative;
@@ -357,6 +362,61 @@
       position: absolute;
       right: -.65rem; 
       color: var(--heading-color); 
-      line-height: 90%; 
+      line-height: 1; 
   }
+}
+.download-concours {
+  background-color: var(--card-bg);
+  padding: 0.3rem 0;
+  margin: .5rem 0;
+  border : 1px solid var(--main-border-color);
+  border-radius: 0.5rem;
+  
+  
+}
+.download-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.4rem;
+  font-size: 0.75rem;
+  position: relative;
+  padding-left: 2.5rem; 
+  align-items: center; 
+
+  &::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: "\f019";
+    font-size: 1.75em;
+    color: var(--main-border-color);
+    position: absolute;
+    left: .5rem;
+    top: 0.75em;
+    transform: translateY(-50%); 
+    line-height: 1; 
+    
+  }
+
+.download-item {
+  position: relative;
+  padding-left: 1.5rem;
+  padding-right:2rem;
+  color: var(--text-muted);
+}
+
+.download-item::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  font-size: 1.25rem;
+  color: var(--heading-color);
+  left: 0;
+}
+
+.download-original::before { content: "\f1c1"; }
+.download-report::before { content: "\e0e3"; }
+.download-print::before { content: "\f02f"; }
+.download-tablet::before { content: "\f3fa"; }
+.download-phone::before { content: "\f3cd"; }
+.download-web::before { content: "\f0ac"; }
 }

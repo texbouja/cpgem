@@ -1,0 +1,8 @@
+{% if page.concours & page.auteur %}
+{% capture concours_auteur %}
+ Corrigé proposé par : {{ page.auteur }} 
+{% endcapture %}
+<blockquote class="prompt-tip">
+    {{concours_auteur}} 
+</blockquote>
+{% endif %}

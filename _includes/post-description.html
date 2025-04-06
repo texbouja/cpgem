@@ -1,0 +1,43 @@
+{%- comment -%}
+  Get post description or generate it from the post content.
+{%- endcomment -%}
+
+{%- assign max_length = include.max_length | default: 200 -%}
+
+{%- capture description -%}
+{%- if post.description -%}
+  {{- post.description -}}
+{%- elsif post.concours -%}
+  {%- assign description_parts = "" | split: "" -%}
+    
+    {%- if post.concours != empty -%}
+      {%- assign part = "Concours : " | append: post.concours -%}
+      {%- assign description_parts = description_parts | push: part -%}
+    {%- endif -%}
+    
+    {%- if post.session != empty -%}
+      {%- assign part = "Session : " | append: post.session -%}
+      {%- assign description_parts = description_parts | push: part -%}
+    {%- endif -%}
+    
+    {%- if post.filiere != empty -%}
+      {%- assign part = "Filière : " | append: post.filiere -%}
+      {%- assign description_parts = description_parts | push: part -%}
+    {%- endif -%}
+    
+    {%- if post.epreuve != empty -%}
+      {%- assign part = "Épreuve : " | append: post.epreuve -%}
+      {%- assign description_parts = description_parts | push: part -%}
+    {%- endif -%}
+        
+    {%- assign description_parts = description_parts | join: " | " | strip -%}
+    {{- description_parts -}}
+{%- else -%}
+  {%- include no-linenos.html content=post.content -%}
+  {{- content | markdownify | strip_html -}}
+{%- endif -%}
+{%- endcapture -%}
+
+{{- description | strip | truncate: max_length | escape -}}
+
+

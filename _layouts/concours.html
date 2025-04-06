@@ -6,8 +6,6 @@ math: true
 <div class="concours-container">
   {% assign concours_groups = site.posts | where_exp: "post", "post.concours != nil" | group_by: "concours" | sort: "name" %}
 
-  
-  
   {% for concours in concours_groups %}
     <div class="concours-card">
       <div class="concours-header">
@@ -50,6 +48,8 @@ math: true
                 <p class="sujet-objectif">
                   {{ post.objectif }}</p>
               {% endif %}
+
+              {% include links.html page=post %}
               
               
               {% if post.tags %}

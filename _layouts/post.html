@@ -16,43 +16,18 @@ script_includes:
 
 
 
-{% if page.description %}
-  {% assign page_description = page.description %}
-{% else %}
-  {% if page.concours %}
-    {% assign description_parts = "" | split: "" %}
-    
-    {% if page.concours != empty %}
-      {% assign part = "Concours : " | append: page.concours %}
-      {% assign description_parts = description_parts | push: part %}
-    {% endif %}
-    
-    {% if page.session != empty %}
-      {% assign part = "Session : " | append: page.session %}
-      {% assign description_parts = description_parts | push: part %}
-    {% endif %}
-    
-    {% if page.filiere != empty %}
-      {% assign part = "Filière : " | append: page.filiere %}
-      {% assign description_parts = description_parts | push: part %}
-    {% endif %}
-    
-    {% if page.epreuve != empty %}
-      {% assign part = "Épreuve : " | append: page.epreuve %}
-      {% assign description_parts = description_parts | push: part %}
-    {% endif %}
-        
-    {% assign page_description = description_parts | join: " | " | strip %}
-  {% endif %}
-{% endif %}
-
-
 <article class="px-1" data-toc="{{ enable_toc }}">
   <header>
-    <h1 data-toc-skip>{{ page.title }}</h1>
-    {% if page_description.size > 0 %}
-      <p class="post-desc fw-light mb-4">{{ page_description }}</p>
-    {% endif %}
+    <h1 data-toc-skip>
+      {{ page.title }}
+    </h1>
+    <p class="post-desc fw-light mb-4">
+      {% if page.description %}
+          {{ page.description }}
+      {% else %}
+        {% include page-description.html  %}
+      {% endif %}
+    </p>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -169,6 +144,11 @@ script_includes:
     <!-- SECTION PREREQUIS -->
     {% if page.concours %}
       {% include prerequis.html %}
+    {% endif %}
+
+    <!-- SECTION LIENS -->
+    {% if page.concours %}
+      {% include links.html %}
     {% endif %}
 
   <div class="content">
