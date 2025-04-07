@@ -305,27 +305,27 @@
   .prerequis-list {
   background-color: var(--card-bg);
   padding: 0.3rem 0;
-  margin: .5rem 0;
+  margin: .5rem -.75rem;
   border : 1px solid var(--main-border-color);
   border-radius: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0 0.4rem;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   position: relative;
-  padding-left: 2.5rem; 
+  padding-left: 3rem; 
   align-items: center; 
 
   &::before {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    content: "\f02c";
+    content: "\f02c"; // fa-tag
     font-size: 1.75em;
     color: var(--main-border-color);
     position: absolute;
-    left: .5rem;
+    left: 0.75rem;
     top: 1.25em;
-    transform: translateY(-50%); 
+    transform: translateY(-100%); 
     line-height: 1; 
     
   }
@@ -339,9 +339,9 @@
       content: "•";
       font-size: 2em;
       position: absolute;
-      right: -.65rem; 
+      right: -.75rem; 
       color: var(--heading-color); 
-      line-height: 1; 
+      line-height: 0.85; 
   }
 }
 .prerequis-post-list {
@@ -371,32 +371,30 @@
 }
 .download-concours {
   background-color: var(--card-bg);
-  padding: 0.3rem 0;
-  margin: .5rem 0;
+  padding: 0.4rem 0 .8rem 0;
+  margin: .5rem -.75rem;
   border : 1px solid var(--main-border-color);
   border-radius: 0.5rem;
-  
-  
 }
 .download-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem 0.4rem;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   position: relative;
-  padding-left: 2.5rem; 
+  padding-left: 3rem; 
   align-items: center; 
 
   &::before {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    content: "\f019";
-    font-size: 1.75em;
+    content: "\f019"; // fa-download
+    font-size: 1.75em; 
     color: var(--main-border-color);
     position: absolute;
-    left: .5rem;
+    left: 0.5rem;
     top: 0.75em;
-    transform: translateY(-50%); 
+    transform: translateY(-75%); 
     line-height: 1; 
     
   }
