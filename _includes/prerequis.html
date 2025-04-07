@@ -1,24 +1,22 @@
-{% assign prerequis_items = "" | split: "" %}
-{% for tag in page.tags %}
-  {% if site.data.variables.keywords[tag] %}
-    {% assign prerequis_items = prerequis_items | push: site.data.variables.keywords[tag] %}
-  {% elsif page[tag] %}
-    {% assign prerequis_items = prerequis_items | push: page[tag] %}
-  {% endif %}
-{% endfor %}
-{% if prerequis_items.size > 0 %}
+
+{% if page.tags or page.prerequis %}
   <section class="prerequis">
     <h2>Prérequis</h2>
-      {% if page.prerequis.size > 0 %}
-        {{ page.prerequis }}
-      {% endif %}
-      <ul class="two-column-list">
-        {% for code in prerequis_items %}
-          <li>
-              {{ code }}{% if forloop.last %}.{% else %} ;{% endif %}
-          </li>
+    {% if page.prerequis.size > 0 %}
+      {{ page.prerequis }}
+    {% endif %}
+    {% if page.tags %}
+      <div class="prerequis-post-list">
+        {% for tag in page.tags %}
+          {% if site.data.variables.keywords[tag] %}
+            {% assign prerequis_item = site.data.variables.keywords[tag] %}
+          <a href="{{ '/tags/' | relative_url }}{{ tag | slugify }}" class="prerequis-item"> 
+            {{ prerequis_item }}
+          </a>
+        {% endif %}
         {% endfor %}
-      </ul>
+      </div>
+    {% endif %}
   </section>
 {% endif %}
 
