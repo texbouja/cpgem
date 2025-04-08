@@ -1,31 +1,31 @@
-@use '../themes/chirpynord' as *;
+@use '../themes/nord' as *;
 
 @mixin styles {
   color-scheme: light;
 
   /* Framework color */
-  --main-bg: #{$nord6};
-  --mask-bg: #{$nord5};
-  --main-border-color: #{$nord10}80;
+  --main-bg: #{$light0};
+  --mask-bg: #{$light1};
+  --main-border-color: #{$cold3}80;
 
   /* Common color */
-  --text-color: #{$nord0};
-  --text-muted-color: #{$nord1};
+  --text-color: #{$dark0};
+  --text-muted-color: #{$dark1};
   --text-muted-highlight-color: inherit;
-  --heading-color: #{$nord12bis};
-  --label-color: #{$nord1};
-  --blockquote-border-color: #{$nord4};
-  --blockquote-text-color: #{$nord2};
-  --link-color: #{$nord10bis};
+  --heading-color: #{$emph2bis};
+  --label-color: #{$dark1};
+  --blockquote-border-color: #{$light2};
+  --blockquote-text-color: #{$dark2};
+  --link-color: #{$cold3bis};
   --link-underline-color: var(--main-bg);
-  --button-bg: #{$nord6};
-  --btn-border-color: #{$nord5};
-  --btn-backtotop-color: #{$nord3};
-  --btn-backtotop-border-color: #{$nord5};
-  --card-header-bg: #{$nord9}80;
-  --checkbox-color: #{$nord4};
-  --checkbox-checked-color: #{$nord8};
-  --img-bg: radial-gradient(circle, #{$nord6} 0%, #{$nord5} 100%);
+  --button-bg: #{$light0};
+  --btn-border-color: #{$light1};
+  --btn-backtotop-color: #{$dark3};
+  --btn-backtotop-border-color: #{$light1};
+  --card-header-bg: #{$cold2}80;
+  --checkbox-color: #{$light2};
+  --checkbox-checked-color: #{$cold1};
+  --img-bg: radial-gradient(circle, #{$light0} 0%, #{$light1} 100%);
   --shimmer-bg: linear-gradient(
     90deg,
     rgba(250, 250, 250, 0) 0%,
@@ -36,88 +36,88 @@
   /* Sidebar */
   --site-title-color: #25817D;
   --site-subtitle-color: #25817Daa;
-  --sidebar-bg: #{$nord5};
-  --sidebar-border-color: #{$nord9}96;
-  --sidebar-muted-color: #{$nord3}80;
-  --sidebar-active-color: #{$nord2};
-  --sidebar-hover-bg: #{$nord9}80;
-  --sidebar-btn-bg: #{$nord9}96;
-  --sidebar-btn-color: #{$nord3}96;
-  --avatar-border-color: #{$nord9}96;
+  --sidebar-bg: #{$light1};
+  --sidebar-border-color: #{$cold2}96;
+  --sidebar-muted-color: #{$dark3}80;
+  --sidebar-active-color: #{$dark2};
+  --sidebar-hover-bg: #{$cold2}80;
+  --sidebar-btn-bg: #{$cold2}96;
+  --sidebar-btn-color: #{$dark3}96;
+  --avatar-border-color: #{$cold2}96;
 
   /* Topbar */
-  --topbar-bg: #{$nord6}d0;
-  --topbar-text-color: #{$nord1};
-  --search-border-color: #{$nord4};
-  --search-icon-color: #{$nord4};
-  --input-focus-border-color: #{$nord8};
+  --topbar-bg: #{$light0}d0;
+  --topbar-text-color: #{$dark1};
+  --search-border-color: #{$light2};
+  --search-icon-color: #{$light2};
+  --input-focus-border-color: #{$cold1};
 
   /* Home page */
-  --post-list-text-color: #{$nord1};
-  --btn-patinator-text-color: #{$nord2};
+  --post-list-text-color: #{$dark1};
+  --btn-patinator-text-color: #{$dark2};
   --btn-paginator-hover-color: var(--sidebar-bg);
 
   /* Posts */
-  --toc-highlight: #{$nord10};
-  --toc-popup-border-color: #{$nord4};
-  --btn-share-color: #{$nord3};
-  --btn-share-hover-color: #{$nord10};
-  --card-bg: #{$nord6};
-  --card-hovor-bg: #{$nord5};
+  --toc-highlight: #{$cold3};
+  --toc-popup-border-color: #{$light2};
+  --btn-share-color: #{$dark3};
+  --btn-share-hover-color: #{$cold3};
+  --card-bg: #{$light0};
+  --card-hovor-bg: #{$light1};
   --card-shadow: rgb(104, 104, 104, 0.3) 0 2px 6px 0,
     rgba(211, 209, 209, 0.4) 0 0 0 1px;
-  --footnote-target-bg: #{$nord8};
-  --tb-odd-bg: #{$nord6};
-  --tb-border-color: #{$nord4};
-  --dash-color: #{$nord4};
-  --kbd-wrap-color: #{$nord4};
+  --footnote-target-bg: #{$cold1};
+  --tb-odd-bg: #{$light0};
+  --tb-border-color: #{$light2};
+  --dash-color: #{$light2};
+  --kbd-wrap-color: #{$light2};
   --kbd-text-color: var(--text-color);
-  --kbd-bg-color: #{$nord6};
-  --prompt-text-color: #{$nord0}d0;
-  --prompt-tip-bg: #{$nord14}33;
-  --prompt-tip-icon-color: #{$nord14};
-  --prompt-info-bg: #{$nord9}33;
-  --prompt-info-icon-color: #{$nord9};
-  --prompt-warning-bg: #{$nord13}33;
-  --prompt-warning-icon-color: #{$nord13};
-  --prompt-danger-bg: #{$nord11}33;
-  --prompt-danger-icon-color: #{$nord11};
+  --kbd-bg-color: #{$light0};
+  --prompt-text-color: #{$dark0}d0;
+  --prompt-tip-bg: #{$emph4}33;
+  --prompt-tip-icon-color: #{$emph4};
+  --prompt-info-bg: #{$cold2}33;
+  --prompt-info-icon-color: #{$cold2};
+  --prompt-warning-bg: #{$emph3}33;
+  --prompt-warning-icon-color: #{$emph3};
+  --prompt-danger-bg: #{$emph1}33;
+  --prompt-danger-icon-color: #{$emph1};
 
   /* Tags */
-  --tag-border: #{$nord4};
+  --tag-border: #{$light2};
   --tag-shadow: var(--btn-border-color);
-  --tag-hover: #{$nord5};
-  --search-tag-bg: #{$nord6};
+  --tag-hover: #{$light1};
+  --search-tag-bg: #{$light0};
 
   /* Categories */
-  --categories-border: #{$nord3}96;
-  --categories-hover-bg: #{$nord9};
-  --categories-icon-hover-color: #{$nord0};
+  --categories-border: #{$dark3}96;
+  --categories-hover-bg: #{$cold2};
+  --categories-icon-hover-color: #{$dark0};
 
   /* Concours */
-  --concours-border: #{$nord2}10;
-  --concours-hover-bg: #{$nord5};
-  --concours-icon-hover-color: #{$nord0};
+  --concours-border: #{$dark2}10;
+  --concours-hover-bg: #{$light1};
+  --concours-icon-hover-color: #{$dark0};
 
   /* Archive */
-  --timeline-color: #{$nord3}33;
-  --timeline-node-bg: #{$nord4};
-  --timeline-year-dot-color: #{$nord6};
+  --timeline-color: #{$dark3}33;
+  --timeline-node-bg: #{$light2};
+  --timeline-year-dot-color: #{$light0};
 
   /* --- Custom code light mode colors --- */
-  --language-border-color: #{$nord4};
-  --highlight-bg-color: #{$nord6};
-  --highlighter-rouge-color: #{$nord10};
-  --highlight-lineno-color: #{$nord3};
-  --inline-code-bg: #{$nord0}10;
-  --code-color: #{$nord1};
-  --code-header-text-color: #{$nord3};
-  --code-header-muted-color: #{$nord5};
-  --code-header-icon-color: #{$nord4};
-  --clipboard-checked-color: #{$nord14};
+  --language-border-color: #{$light2};
+  --highlight-bg-color: #{$light0};
+  --highlighter-rouge-color: #{$cold3};
+  --highlight-lineno-color: #{$dark3};
+  --inline-code-bg: #{$dark0}10;
+  --code-color: #{$dark1};
+  --code-header-text-color: #{$dark3};
+  --code-header-muted-color: #{$light1};
+  --code-header-icon-color: #{$light2};
+  --clipboard-checked-color: #{$emph4};
 
   [class^='prompt-'] {
-    --link-underline-color: #{$nord4};
+    --link-underline-color: #{$light2};
   }
 
   .dark {
@@ -151,11 +151,11 @@
    #archives li:nth-child(odd) {
      background-image: linear-gradient(
        to left,
-       #{$nord6},
-       #{$nord5},
-       #{$nord6},
-       #{$nord6},
-       #{$nord5}
+       #{$light0},
+       #{$light1},
+       #{$light0},
+       #{$light0},
+       #{$light1}
      );
    }
  
@@ -173,12 +173,12 @@
 
   .highlight,
   .highlight .w {
-    color: #{$nord1};
-    background-color: #{$nord6};
+    color: #{$dark1};
+    background-color: #{$light0};
   }
 
   .highlight .err {
-    color: #{$nord11};
+    color: #{$emph1};
   }
 
   .highlight .c,
@@ -188,39 +188,39 @@
   .highlight .cpf,
   .highlight .c1,
   .highlight .cs {
-    color: #{$nord3};
+    color: #{$dark3};
   }
 
   .highlight .cp {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .nt {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .o,
   .highlight .ow {
-    color: #{$nord6};
+    color: #{$light0};
   }
 
   .highlight .p,
   .highlight .pi {
-    color: #{$nord5};
+    color: #{$light1};
   }
 
   .highlight .gi {
-    color: #{$nord14};
+    color: #{$emph4};
   }
 
   .highlight .gd {
-    color: #{$nord11};
-    background-color: #{$nord11}33;
+    color: #{$emph1};
+    background-color: #{$emph1}33;
   }
 
   .highlight .gh {
-    color: #{$nord8};
-    background-color: #{$nord0};
+    color: #{$cold1};
+    background-color: #{$dark0};
     font-weight: bold;
   }
 
@@ -231,53 +231,53 @@
   .highlight .kr,
   .highlight .kt,
   .highlight .kv {
-    color: #{$nord10};
+    color: #{$cold3};
   }
 
   .highlight .gr {    
-    color: #{$nord6};
+    color: #{$light0};
   }
 
   .highlight .gd {
-    color: #{$nord11};
-    background-color: #{$nord11}33;
+    color: #{$emph1};
+    background-color: #{$emph1}33;
   }
 
   .highlight .nb {
-    color: #{$nord7};
+    color: #{$cold0};
   }
 
   .highlight .nc {
-    color: #{$nord7};
+    color: #{$cold0};
   }
 
   .highlight .no {
-    color: #{$nord7};
+    color: #{$cold0};
   }
 
   .highlight .nn {
-    color: #{$nord7};
+    color: #{$cold0};
   }
 
   .highlight .sr {
-    color: #{$nord14};
+    color: #{$emph4};
   }
 
   .highlight .na {
-    color: #{$nord8};
+    color: #{$cold1};
   }
 
   .highlight .nt {
-    color: #{$nord8};
+    color: #{$cold1};
   }
 
   .highlight .gi {
-    color: #{$nord14};
-    background-color: #{$nord14}33;
+    color: #{$emph4};
+    background-color: #{$emph4}33;
   }
 
   .highlight .kc {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .l,
@@ -290,27 +290,27 @@
   .highlight .il,
   .highlight .mo,
   .highlight .mx {
-    color: #{$nord15};
+    color: #{$emph5};
   }
 
   .highlight .sb {
-    color: #{$nord14};
+    color: #{$emph4};
   }
 
   .highlight .bp {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .ne {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .nl {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .py {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .nv,
@@ -318,21 +318,21 @@
   .highlight .vg,
   .highlight .vi,
   .highlight .vm {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .o,
   .highlight .ow {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .gh {
-    color: #{$nord9};
+    color: #{$cold2};
     font-weight: bold;
   }
 
   .highlight .gu {
-    color: #{$nord9};
+    color: #{$cold2};
     font-weight: bold;
   }
 
@@ -347,21 +347,21 @@
   .highlight .sx,
   .highlight .s1,
   .highlight .ss {
-    color: #{$nord14};
+    color: #{$emph4};
   }
 
   .highlight .nd {
-    color: #{$nord10};
+    color: #{$cold3};
   }
 
   .highlight .nf,
   .highlight .fm {
-    color: #{$nord10};
+    color: #{$cold3};
   }
 
   .highlight .err {
-    color: #{$nord6};
-    background-color: #{$nord11};
+    color: #{$light0};
+    background-color: #{$emph1};
   }
 
   .highlight .c,
@@ -372,32 +372,32 @@
   .highlight .cpf,
   .highlight .c1,
   .highlight .cs {
-    color: #{$nord3};
+    color: #{$dark3};
   }
 
   .highlight .gl {
-    color: #{$nord3};
+    color: #{$dark3};
   }
 
   .highlight .gt {
-    color: #{$nord3};
+    color: #{$dark3};
   }
 
   .highlight .ni {
-    color: #{$nord1};
+    color: #{$dark1};
   }
 
   .highlight .si {
-    color: #{$nord1};
+    color: #{$dark1};
   }
 
   .highlight .ge {
-    color: #{$nord1};
+    color: #{$dark1};
     font-style: italic;
   }
 
   .highlight .gs {
-    color: #{$nord1};
+    color: #{$dark1};
     font-weight: bold;
   }
 }

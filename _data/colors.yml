@@ -1,0 +1,21 @@
+---
+:theme: nord
+:colors:
+  dark0: "#252a33"
+  dark1: "#323745"
+  dark2: "#353c4a"
+  dark3: "#404859"
+  light2: "#d8dee9"
+  light1: "#e5e9f0"
+  light0: "#eceff4"
+  cold0: "#8fbcbb"
+  cold1: "#88c0d0"
+  cold2: "#81a1c1"
+  cold3: "#6184af"
+  cold3bis: "#335783"
+  emph1: "#bf616a"
+  emph2: "#d08770"
+  emph2bis: "#a1614e"
+  emph3: "#ebcb8b"
+  emph4: "#a3be8c"
+  emph5: "#b48ead"

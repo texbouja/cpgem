@@ -18,3 +18,6 @@ gem 'jekyll-compose', group: [:jekyll_plugins]
 gem 'jekyll-pdf-embed', group: [:jekyll_plugins] 
 
 gem 'reveal-jekyll', group: [:jekyll_plugins] 
+
+gem 'mini_magick' 
+gem 'ferrum'

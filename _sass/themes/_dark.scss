@@ -1,32 +1,32 @@
-@use '../themes/chirpynord' as *;
+@use '../themes/nord' as *;
 
 
 @mixin styles {
   color-scheme: dark;
 
   /* Framework color */
-  --main-bg: #{$nord1};
-  --mask-bg: #{$nord1};
-  --main-border-color: #{$nord9}80;
+  --main-bg: #{$dark1};
+  --mask-bg: #{$dark1};
+  --main-border-color: #{$cold2}80;
 
   /* Common color */
-  --text-color: #{$nord4};
-  --text-muted-color: #{$nord6}a0;
+  --text-color: #{$light2};
+  --text-muted-color: #{$light0}a0;
   --text-muted-highlight-color: inherit; 
-  --heading-color: #{$nord12};
-  --label-color: #{$nord5};
-  --blockquote-border-color: #{$nord2};
-  --blockquote-text-color: #{$nord4};
-  --link-color: #{$nord9};
+  --heading-color: #{$emph2};
+  --label-color: #{$light1};
+  --blockquote-border-color: #{$dark2};
+  --blockquote-text-color: #{$light2};
+  --link-color: #{$cold2};
   --link-underline-color: var(--main-bg);
-  --button-bg: #{$nord1};
-  --btn-border-color: #{$nord2};
+  --button-bg: #{$dark1};
+  --btn-border-color: #{$dark2};
   --btn-backtotop-color: var(--text-color);
-  --btn-backtotop-border-color: #{$nord2};
-  --card-header-bg: #{$nord3}80;
-  --checkbox-color: #{$nord3};
-  --checkbox-checked-color: #{$nord8};
-  --img-bg: radial-gradient(circle, #{$nord0}00, #{$nord1}ff);
+  --btn-backtotop-border-color: #{$dark2};
+  --card-header-bg: #{$dark3}80;
+  --checkbox-color: #{$dark3};
+  --checkbox-checked-color: #{$cold1};
+  --img-bg: radial-gradient(circle, #{$dark0}00, #{$dark1}ff);
   --shimmer-bg: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
@@ -35,84 +35,84 @@
   );
 
   /* Sidebar */
-  --site-title-color: #{$nord8};
-  --site-subtitle-color: #{$nord8}a0;
-  --sidebar-bg: #{$nord0};
-  --sidebar-border-color: #{$nord2};
-  --sidebar-muted-color: #{$nord6}80;
-  --sidebar-active-color: #{$nord6};
-  --sidebar-hover-bg: #{$nord8}9f;
-  --sidebar-btn-bg: #{$nord1};
-  --sidebar-btn-color: #{$nord4};
-  --avatar-border-color: #{$nord8};
+  --site-title-color: #{$cold1};
+  --site-subtitle-color: #{$cold1}a0;
+  --sidebar-bg: #{$dark0};
+  --sidebar-border-color: #{$dark2};
+  --sidebar-muted-color: #{$light0}80;
+  --sidebar-active-color: #{$light0};
+  --sidebar-hover-bg: #{$cold1}9f;
+  --sidebar-btn-bg: #{$dark1};
+  --sidebar-btn-color: #{$light2};
+  --avatar-border-color: #{$cold1};
 
   /* Topbar */
-  --topbar-bg: #{$nord0}cc;
+  --topbar-bg: #{$dark0}cc;
   --topbar-text-color: var(--text-color);
-  --search-border-color: #{$nord2};
-  --search-icon-color: #{$nord3};
-  --input-focus-border-color: #{$nord7};
+  --search-border-color: #{$dark2};
+  --search-icon-color: #{$dark3};
+  --input-focus-border-color: #{$cold0};
 
   /* Home page */
-  --post-list-text-color: #{$nord4};
+  --post-list-text-color: #{$light2};
   --btn-patinator-text-color: var(--text-color);
-  --btn-paginator-hover-color: #{$nord1};
+  --btn-paginator-hover-color: #{$dark1};
 
   /* Posts */
-  --toc-highlight: #{$nord8};
-  --toc-popup-border-color: #{$nord2};
-  --tag-hover: #{$nord2};
-  --tb-odd-bg: #{$nord2}; /* odd rows of the posts' table */
-  --tb-even-bg: #{$nord0}; /* even rows of the posts' table */
+  --toc-highlight: #{$cold1};
+  --toc-popup-border-color: #{$dark2};
+  --tag-hover: #{$dark2};
+  --tb-odd-bg: #{$dark2}; /* odd rows of the posts' table */
+  --tb-even-bg: #{$dark0}; /* even rows of the posts' table */
   --tb-border-color: var(--tb-odd-bg);
-  --footnote-target-bg: #{$nord10};
-  --btn-share-color: #{$nord3};
-  --btn-share-hover-color: #{$nord6};
-  --card-bg: #{$nord0};
-  --card-hovor-bg: #{$nord1};
+  --footnote-target-bg: #{$cold3};
+  --btn-share-color: #{$dark3};
+  --btn-share-hover-color: #{$light0};
+  --card-bg: #{$dark0};
+  --card-hovor-bg: #{$dark1};
   --card-shadow: rgb(21, 21, 21, 0.20) 0 6px 18px 0,
     rgb(137, 135, 135, 0.24) 0 0 0 1px;
-  --kbd-wrap-color: #{$nord3};
-  --kbd-text-color: #{$nord6};
-  --kbd-bg-color: #{$nord1};
-  --prompt-text-color: #{$nord6}c0;
-  --prompt-tip-bg: #{$nord14}33;
-  --prompt-tip-icon-color: #{$nord14};
-  --prompt-info-bg: #{$nord8}33;
-  --prompt-info-icon-color: #{$nord8};
-  --prompt-warning-bg: #{$nord13}33;
-  --prompt-warning-icon-color: #{$nord13};
-  --prompt-danger-bg: #{$nord11}33;
-  --prompt-danger-icon-color: #{$nord11};
+  --kbd-wrap-color: #{$dark3};
+  --kbd-text-color: #{$light0};
+  --kbd-bg-color: #{$dark1};
+  --prompt-text-color: #{$light0}c0;
+  --prompt-tip-bg: #{$emph4}33;
+  --prompt-tip-icon-color: #{$emph4};
+  --prompt-info-bg: #{$cold1}33;
+  --prompt-info-icon-color: #{$cold1};
+  --prompt-warning-bg: #{$emph3}33;
+  --prompt-warning-icon-color: #{$emph3};
+  --prompt-danger-bg: #{$emph1}33;
+  --prompt-danger-icon-color: #{$emph1};
 
   /* Tags */
-  --tag-border: #{$nord2};
-  --tag-shadow: #{$nord1};
-  --dash-color: #{$nord3};
-  --search-tag-bg: #{$nord1};
+  --tag-border: #{$dark2};
+  --tag-shadow: #{$dark1};
+  --dash-color: #{$dark3};
+  --search-tag-bg: #{$dark1};
 
   /* Categories */
-  --categories-border: #{$nord9}80;
-  --categories-hover-bg: #{$nord9};
-  --categories-icon-hover-color: #{$nord6};
+  --categories-border: #{$cold2}80;
+  --categories-hover-bg: #{$cold2};
+  --categories-icon-hover-color: #{$light0};
 
   /* Archive */
-  --timeline-node-bg: #{$nord4};
-  --timeline-color: #{$nord3};
+  --timeline-node-bg: #{$light2};
+  --timeline-color: #{$dark3};
   --timeline-year-dot-color: var(--timeline-color);
 
   /* Code highlight colors */
-  --language-border-color: #{$nord12}64;
-  --highlight-bg-color: #{$nord1};
-  --highlighter-rouge-color: #{$nord8};
-  --highlight-lineno-color: #{$nord3};
-  --inline-code-bg: #{$nord6}1a;
-  --code-color: #{$nord4};
-  --code-header-text-color: #{$nord6}80;
-  --code-header-muted-color: #{$nord6}20;
-  --code-header-icon-color: #{$nord6}20;
-  --clipboard-checked-color: #{$nord14};
-  --filepath-text-color: #{$nord5};
+  --language-border-color: #{$emph2}64;
+  --highlight-bg-color: #{$dark1};
+  --highlighter-rouge-color: #{$cold1};
+  --highlight-lineno-color: #{$dark3};
+  --inline-code-bg: #{$light0}1a;
+  --code-color: #{$light2};
+  --code-header-text-color: #{$light0}80;
+  --code-header-muted-color: #{$light0}20;
+  --code-header-icon-color: #{$light0}20;
+  --clipboard-checked-color: #{$emph4};
+  --filepath-text-color: #{$light1};
 
   .light {
     display: none;
@@ -144,11 +144,11 @@
   #archives li:nth-child(odd) {
     background-image: linear-gradient(
       to left,
-      #{$nord0},
-      #{$nord1},
-      #{$nord1},
-      #{$nord1},
-      #{$nord0}
+      #{$dark0},
+      #{$dark1},
+      #{$dark1},
+      #{$dark1},
+      #{$dark0}
     );
   }
 
@@ -168,12 +168,12 @@
 
   .highlight,
   .highlight .w {
-    color: #{$nord4};
-    background-color: #{$nord0};
+    color: #{$light2};
+    background-color: #{$dark0};
   }
 
   .highlight .err {
-    color: #{$nord11};
+    color: #{$emph1};
   }
 
   .highlight .c,
@@ -183,39 +183,39 @@
   .highlight .cpf,
   .highlight .c1,
   .highlight .cs {
-    color: #{$nord3};
+    color: #{$dark3};
   }
 
   .highlight .cp {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .nt {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .o,
   .highlight .ow {
-    color: #{$nord6};
+    color: #{$light0};
   }
 
   .highlight .p,
   .highlight .pi {
-    color: #{$nord5};
+    color: #{$light1};
   }
 
   .highlight .gi {
-    color: #{$nord14};
+    color: #{$emph4};
   }
 
   .highlight .gd {
-    color: #{$nord11};
-    background-color: #{$nord11}33;
+    color: #{$emph1};
+    background-color: #{$emph1}33;
   }
 
   .highlight .gh {
-    color: #{$nord8};
-    background-color: #{$nord0};
+    color: #{$cold1};
+    background-color: #{$dark0};
     font-weight: bold;
   }
 
@@ -224,19 +224,19 @@
   .highlight .kp,
   .highlight .kr,
   .highlight .kv {
-    color: #{$nord10};
+    color: #{$cold3};
   }
 
   .highlight .kc {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .kt {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .kd {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .s,
@@ -248,39 +248,39 @@
   .highlight .sh,
   .highlight .sx,
   .highlight .s1 {
-    color: #{$nord14};
+    color: #{$emph4};
   }
 
   .highlight .sa {
-    color: #{$nord10};
+    color: #{$cold3};
   }
 
   .highlight .sr {
-    color: #{$nord7};
+    color: #{$cold0};
   }
 
   .highlight .si {
-    color: #{$nord13};
+    color: #{$emph3};
   }
 
   .highlight .se {
-    color: #{$nord13};
+    color: #{$emph3};
   }
 
   .highlight .nn {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .nc {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .no {
-    color: #{$nord9};
+    color: #{$cold2};
   }
 
   .highlight .na {
-    color: #{$nord8};
+    color: #{$cold1};
   }
 
   .highlight .m,
@@ -291,10 +291,10 @@
   .highlight .il,
   .highlight .mo,
   .highlight .mx {
-    color: #{$nord15};
+    color: #{$emph5};
   }
 
   .highlight .ss {
-    color: #{$nord14};
+    color: #{$emph4};
   }
 }
