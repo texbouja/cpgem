@@ -21,3 +21,5 @@ gem 'reveal-jekyll', group: [:jekyll_plugins]
 
 gem 'mini_magick' 
 gem 'ferrum'
+gem 'sassc', '~> 2.0' 
+gem 'jekyll-sass-converter'

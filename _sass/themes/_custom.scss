@@ -1,13 +1,10 @@
-  
-
-    
-
-  .generic {
+.generic {
   background-color: var(--card-bg);
   --link-underline-color: var(--card-bg);
   margin: 2rem 0;
-  border-left: 3px solid var(--main-border-color);
-  border-radius: 0.5rem;
+  border: 1px solid var(--main-border-color);
+  border-left: 4px solid var(--main-border-color);
+  border-radius: 10px;
   box-shadow: var(--card-shadow);
   
   h1, h2, h3, h4 {
@@ -47,8 +44,64 @@
   @extend .generic;
   padding: 1rem;
 }
+
+.prerequis {
+  @extend .generic-card;
   
-  // Composant carte avec entête personnalisable
+  h2 {
+    padding-left: 2.2rem;
+    &::before {content: "\f5da";}
+  }
+  .prerequis-content {
+    @extend .content;
+  }
+}
+
+
+
+.objectif {
+  @extend .generic-card;
+
+  h2 {
+    padding-left: 2.2rem;
+    &::before {content: "\f140";}
+  }
+  .objectif-content {
+    @extend .content;
+  }
+}
+
+.links {
+  @extend .generic-card;
+
+  h2 {
+    padding-left: 2.2rem;
+    &::before {content: "\f0c1";}
+  }
+  .links-content {
+    @extend .content;
+  }
+}
+
+.two-column-list {
+  // Configuration desktop
+  column-count: 2;          // Deux colonnes
+  column-gap: 2rem;         // Espace entre colonnes
+  padding-left: 1rem;
+
+  // Style des éléments
+  li {
+    break-inside: avoid-column; // Bloque la coupure d'items
+    margin-bottom: 0.75rem;
+  }
+
+  // Media query pour mobile
+  @media (max-width: 767px) {
+    column-count: 1;        // Une seule colonne
+    padding-left: 1.5rem;   // Alignement standard des listes
+  }
+}
+
 .card-with-scrolling {
   @extend .generic;
   overflow: hidden;
@@ -62,19 +115,18 @@
     position: sticky;
     top: 0;
     z-index: 1;
-    margin: 0 !important; // Surcharge les styles par défaut
+    margin: 0 !important; 
   }
 
   // Contenu scrollable (tout sauf l'entête)
   & > :not(:first-child) {
-    max-height: 300px;
     overflow-y: auto;
     padding: 0.5rem 1.5rem;
-    scrollbar-width: thin;
+    scrollbar-width: 2px;
     scrollbar-color: var(--border-color) var(--card-bg);
     
     &::-webkit-scrollbar {
-      width: 6px;
+      width: thin;
     }
     
     &::-webkit-scrollbar-thumb {
@@ -84,145 +136,68 @@
   }
 }
 
-.card-concours {
-  @extend .card-with-scrolling;
-
-  .concours-list {
-    list-style: none;
-    padding: 0.5rem ;
-    margin: 0;
-  }
-
-  .concours-item {
-    padding: 0.25rem 0;
-    border-bottom: 1px dashed var(--border-color);
-  }
-
-  .concours-item:last-child {
-    border-bottom: none;
-  }
-
-  .badge {
-    margin-left: auto;
-    background: rgba(0,0,0,0.2);
-    padding: 0.25rem 0.5rem;    font-size: 0.8em;
-    border-radius: 1rem;
-  }
-
-  .nowrap {
-    white-space: nowrap;
-    padding-left: 0.5rem;
-    display: inline-block;
-  }
+.concours-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0;
+  margin-top: 3rem; 
 }
 
+.concours-card {
+  padding: 0.25rem 0;
+  background-color: var(--card-bg);
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.5rem;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
 
-  .prerequis {
-    @extend .generic-card;
+  & > :first-child {
+    margin: 0 0.75rem;
+    position: sticky;
+    z-index: 1000;
+  }
+
+  // Contenu scrollable (tout sauf l'entête)
+  & > :not(:first-child) {
+    overflow-y: auto;
     
-    h2 {
-      padding-left: 2.2rem;
-      &::before {content: "\f5da";}
+    &::-webkit-scrollbar {
+      width: 0;
+      // color: var(--border-color) var(--card-bg);
     }
-    .prerequis-content {
-      @extend .content;
-    }
-  }
-
-
-  
-  .objectif {
-    @extend .generic-card;
-
-    h2 {
-      padding-left: 2.2rem;
-      &::before {content: "\f140";}
-    }
-    .objectif-content {
-      @extend .content;
-    }
-  }
-
-  .links {
-    @extend .generic-card;
-
-    h2 {
-      padding-left: 2.2rem;
-      &::before {content: "\f0c1";}
-    }
-    .links-content {
-      @extend .content;
-    }
-  }
-  
-  .two-column-list {
-    // Configuration desktop
-    column-count: 2;          // Deux colonnes
-    column-gap: 2rem;         // Espace entre colonnes
-    padding-left: 1rem;
-  
-    // Style des éléments
-    li {
-      break-inside: avoid-column; // Bloque la coupure d'items
-      margin-bottom: 0.75rem;
-    }
-  
-    // Media query pour mobile
-    @media (max-width: 767px) {
-      column-count: 1;        // Une seule colonne
-      padding-left: 1.5rem;   // Alignement standard des listes
-    }
-  }
-
-
-  .concours-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin: 0;
-    margin-top: 4rem; 
-  }
-
-  .concours-card {
-    background-color: var(--card-bg);
-    border: 2px solid var(--main-border-color);
-    border-radius: 0.5rem;
-    box-shadow: var(--card-shadow);
-    overflow: hidden;
+    
+    // &::-webkit-scrollbar-thumb {
+    //   background-color: var(--border-color);
+    //   border-radius: 1px;
+    // }
   }
 
   .concours-header {
     padding: 0 1rem;
     font-size: 1.25rem;
+    font-weight: 700;
     color: var(--heading-color);
     background: var(--card-header-bg);
-    position: sticky;
+    border-radius: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-
+  
   .concours-content {
-    max-height: 400px;
-    overflow-y: auto;
     padding: 0.5rem 1.5rem;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border-color) var(--card-bg);
   }
 
-  .concours-content::-webkit-scrollbar {
-    width: 3px;
+  @media (max-width: 768px) {
+    .concours-content {
+      max-height: 584px;
+    }
   }
-
-  .concours-content::-webkit-scrollbar-thumb {
-    background-color: var(--main-border-color);
-    border-radius: 3px;
-  }
-
-  .sujet-item {
-    margin-bottom: .5rem;
-  }
-
+}
+.sujet-item {
+  margin-bottom: .5rem;
+  
   .sujet-item:last-child {
     border-bottom: none;
     margin-bottom: 0;
@@ -230,82 +205,71 @@
 
   .sujet-title {
     position: relative;
-    margin-top: 0;
+    margin: 1.5rem 0 0.5rem 0;
     padding-left: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.25em;
-    line-height: 1.3; 
-  }
-
-  .sujet-title::before {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    content: "\f5a2"; 
-    color: var(--heading-color);
-    position: absolute;
-    left: -1.15rem;
-    top: 1.05em;
-    transform: translateY(-50%); 
-    line-height: 1;
-  }
-  
-  .sujet-objectif {
-    margin: 0 0 0.75rem 0.75rem;
-    color: var(--text-color);
+    font-weight: 500;
     line-height: 1.3;
-  }
-
-  .sujet-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .75rem;
-    margin: 0.5rem 0 0.75rem 1rem;
-    font-size: 0.7rem;
-  }
-
-  .meta-item {
-    position: relative;
-    padding-left: 1.25rem;
-    color: var(--text-muted);
-  }
-
-  .meta-item::before {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    color: var(--heading-color);
-  }
-
-  .meta-filiere::before { content: "\f501"; }
-  .meta-session::before { content: "\f073"; }
-  .meta-epreuve::before { content: "\f573"; }
-  .meta-duree::before { content: "\f017"; }
-  .meta-difficulte::before { content: "\f06a"; }
-
-  .sujet-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .sujet-tag {
-    padding: 0 0.75rem;
-    border-radius: 1rem;
-    font-size: 0.75rem;
-  }
-
-  @media (max-width: 768px) {
-    .concours-content {
-      max-height: 420px;
+   
+    &::before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: "\f5a2"; 
+      color: var(--heading-color);
+      position: absolute;
+      left: -1.15rem;
+      top: 1em;
+      transform: translateY(-50%); 
+      line-height: 1;
     }
+  
+    .sujet-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 0.5rem 0 0.75rem 0;
+      font-size: 0.75rem;
+    }
+
+    .meta-item {
+      position: relative;
+      padding-left: 1.25rem;
+      color: var(--text-muted);
+    }
+
+    .meta-item::before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--heading-color);
+    }
+
+    .meta-filiere::before { content: "\f501"; }
+    .meta-session::before { content: "\f073"; }
+    .meta-epreuve::before { content: "\f573"; }
+    .meta-duree::before { content: "\f017"; }
+    .meta-difficulte::before { content: "\f06a"; }
   }
-  .prerequis-list {
+
+  .sujet-objectif {
+    margin: 0.5rem  0.75rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+}
+
+
+
+
+
+.prerequis-list {
   background-color: var(--card-bg);
   padding: 0.3rem 0;
-  margin: .5rem -.75rem;
+  margin: .5rem 0;
   border : 1px solid var(--main-border-color);
   border-radius: 0.5rem;
   display: flex;
@@ -353,26 +317,25 @@
   padding-left: 2.5rem; 
   align-items: center; 
 
-  
   .prerequis-item {
-      display: inline-block;
-      position: relative;
-      margin-right: 1rem; 
+    display: inline-block;
+    position: relative;
+    margin-right: 1rem; 
   }
 
   .prerequis-item:not(:last-child)::after {
-      content: "•";
-      font-size: 2em;
-      position: absolute;
-      right: -1.15rem; 
-      color: var(--heading-color); 
-      transform: translateY(-28%); 
+    content: "•";
+    font-size: 2em;
+    position: absolute;
+    right: -1.15rem; 
+    color: var(--heading-color); 
+    transform: translateY(-28%); 
   }
 }
 .download-concours {
   background-color: var(--card-bg);
   padding: 0.4rem 0 .8rem 0;
-  margin: .5rem -.75rem;
+  margin: .5rem 0;
   border : 1px solid var(--main-border-color);
   border-radius: 0.5rem;
 }
