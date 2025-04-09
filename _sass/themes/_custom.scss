@@ -96,7 +96,7 @@
   }
 
   // Media query pour mobile
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     column-count: 1;        // Une seule colonne
     padding-left: 1.5rem;   // Alignement standard des listes
   }
@@ -192,6 +192,11 @@
   @media (max-width: 768px) {
     .concours-content {
       max-height: 584px;
+    }
+  }
+  @media (max-width: 1650px) {
+    .concours-content {
+      max-height: 640px;
     }
   }
 }
