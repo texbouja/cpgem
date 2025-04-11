@@ -30,7 +30,6 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
   border-right: 1px solid var(--sidebar-border-color);
   z-index: 1001; // S'assurer que la sidebar est au-dessus de la topbar
 
-
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -136,6 +135,7 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
 
   ul {
     margin-bottom: 2rem;
+    font-family: Oswald, 'Roboto Condensed', 'Fira Sans', sans-serif;
 
     li.nav-item {
       opacity: 0.9;
@@ -157,7 +157,7 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
 
         &:hover {
           background-color: var(--card-bg);
-          border: 1px solid  var(--sidebar-hover-bg);
+          border: 1px solid var(--sidebar-hover-bg);
         }
 
         i {
@@ -176,7 +176,7 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
         .nav-link {
           color: var(--sidebar-active-color);
           background-color: var(--card-bg);
-          border: 1px solid  var(--sidebar-hover-bg);
+          border: 1px solid var(--sidebar-hover-bg);
 
           span {
             opacity: 1;
@@ -220,7 +220,7 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
 
       &:hover {
         background-color: var(--card-bg);
-        border: 1px solid  var(--sidebar-hover-bg);
+        border: 1px solid var(--sidebar-hover-bg);
       }
     }
 
@@ -272,5 +272,4 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
       transform: translateX(v.$sidebar-width);
     }
   }
- }
-
+}

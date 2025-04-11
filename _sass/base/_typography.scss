@@ -7,12 +7,20 @@
   h#{$i} {
     @extend %heading;
 
+    @if $i == 1 {
+      font-weight: 600;
+    }
+
     @if $i > 1 {
       @extend %anchor;
     }
 
     @if $i < 5 {
       $size-factor: 0.25rem;
+
+      @if $i == 1 {
+        $size-factor: 0.36rem;
+      }
 
       @if $i > 1 {
         $size-factor: 0.18rem;
@@ -181,6 +189,28 @@ main {
 
         border-radius: 0;
         max-width: none;
+      }
+    }
+  }
+  @include bp.lte(bp.get(sm)) {
+    .content {
+      > [class^='carte-'] {
+        @include mx.ml-mr(-1rem);
+
+        border-radius: 0;
+        border-right: none;
+        border-top: none;
+        border-bottom: none;
+        max-width: none;
+
+        > h1,
+        > h2,
+        > h3,
+        > h4,
+        > h5 {
+          margin-left: -1rem;
+          border-radius: 0;
+        }
       }
     }
   }

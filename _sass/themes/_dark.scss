@@ -1,6 +1,5 @@
 @use '../themes/nord' as *;
 
-
 @mixin styles {
   color-scheme: dark;
 
@@ -12,7 +11,7 @@
   /* Common color */
   --text-color: #{$light0};
   --text-muted-color: #{$light1};
-  --text-muted-highlight-color: inherit; 
+  --text-muted-highlight-color: inherit;
   --heading-color: #{$heading-dark};
   --label-color: #{$light2};
   --blockquote-border-color: #{$dark2};
@@ -46,6 +45,11 @@
   --sidebar-btn-color: #{$light2};
   --avatar-border-color: #{$light2};
 
+  --card-bg: #{$dark1}32;
+  --card-border-color: #{$emph-dark};
+  --card-text-color: #{$light1};
+  --card-heading-color: #{$heading-dark};
+
   /* Topbar */
   --topbar-bg: #{$dark0}cc;
   --topbar-text-color: var(--text-color);
@@ -70,20 +74,23 @@
   --btn-share-hover-color: #{$light0};
   --card-bg: #{$dark0};
   --card-hovor-bg: #{$dark1};
-  --card-shadow: rgb(21, 21, 21, 0.20) 0 6px 18px 0,
-    rgb(137, 135, 135, 0.24) 0 0 0 1px;
+  --card-shadow: var(--card-bg) 0 4px 8px 0, rgb(137, 135, 135, 0.24) 0 0 0 1px;
   --kbd-wrap-color: #{$dark2};
   --kbd-text-color: #{$light0};
   --kbd-bg-color: #{$dark1};
   --prompt-text-color: #{$light0};
-  --prompt-tip-bg: #{$prompt-tip}33;
-  --prompt-tip-icon-color: #{$prompt-tip};
-  --prompt-info-bg: #{$light2}33;
-  --prompt-info-icon-color: #{$light2};
-  --prompt-warning-bg: #{$prompt-warn}33;
-  --prompt-warning-icon-color: #{$prompt-warn};
-  --prompt-danger-bg: #{$prompt-dang}33;
-  --prompt-danger-icon-color: #{$prompt-dang};
+  --prompt-tip-bg: #{$tip-dark}33;
+  --prompt-tip-icon-color: #{$tip-dark};
+  --prompt-info-bg: #{$info-dark}33;
+  --prompt-info-icon-color: #{$info-dark};
+  --prompt-warning-bg: #{$warn-dark}33;
+  --prompt-warning-icon-color: #{$warn-dark};
+  --prompt-danger-bg: #{$danger-dark}33;
+  --prompt-danger-icon-color: #{$danger-dark};
+  --prompt-concours-bg: #{$info-dark}32;
+  --prompt-concours-icon-color: #{$info-dark};
+  --prompt-generic-bg: #{$emph-dark}16;
+  --prompt-generic-icon-color: #{$emph-dark};
 
   /* Tags */
   --tag-border: #{$dark2};
@@ -111,7 +118,7 @@
   --code-header-text-color: #{$light0};
   --code-header-muted-color: #{$light1};
   --code-header-icon-color: #{$light1};
-  --clipboard-checked-color: #{$prompt-tip};
+  --clipboard-checked-color: #{$tip-dark};
   --filepath-text-color: #{$light1};
 
   .light {
@@ -173,7 +180,7 @@
   }
 
   .highlight .err {
-    color: #{$prompt-dang};
+    color: #{$danger-dark};
   }
 
   .highlight .c,
@@ -205,12 +212,12 @@
   }
 
   .highlight .gi {
-    color: #{$prompt-tip};
+    color: #{$tip-dark};
   }
 
   .highlight .gd {
-    color: #{$prompt-dang};
-    background-color: #{$prompt-dang}33;
+    color: #{$danger-dark};
+    background-color: #{$danger-dark}33;
   }
 
   .highlight .gh {
@@ -248,7 +255,7 @@
   .highlight .sh,
   .highlight .sx,
   .highlight .s1 {
-    color: #{$prompt-tip};
+    color: #{$tip-dark};
   }
 
   .highlight .sa {
@@ -260,11 +267,11 @@
   }
 
   .highlight .si {
-    color: #{$prompt-warn};
+    color: #{$warn-dark};
   }
 
   .highlight .se {
-    color: #{$prompt-warn};
+    color: #{$warn-dark};
   }
 
   .highlight .nn {
@@ -291,10 +298,10 @@
   .highlight .il,
   .highlight .mo,
   .highlight .mx {
-    color: #{$prompt-info};
+    color: #{$info-dark};
   }
 
   .highlight .ss {
-    color: #{$prompt-tip};
+    color: #{$tip-dark};
   }
 }

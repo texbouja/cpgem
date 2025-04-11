@@ -1,8 +1,7 @@
 @use '../themes/nord' as *;
 
-
 @mixin styles {
-  color-scheme: dark;
+  color-scheme: light;
 
   /* Framework color */
   --main-bg: #{$light0};
@@ -12,7 +11,7 @@
   /* Common color */
   --text-color: #{$dark0};
   --text-muted-color: #{$dark1};
-  --text-muted-highlight-color: inherit; 
+  --text-muted-highlight-color: inherit;
   --heading-color: #{$heading-light};
   --label-color: #{$dark2};
   --blockquote-border-color: #{$light2};
@@ -35,14 +34,14 @@
   );
 
   /* Sidebar */
-  --site-title-color: #{$dark2};
+  --site-title-color: #{$emph-light};
   --site-subtitle-color: #{$dark2};
-  --sidebar-bg: #{$light0};
+  --sidebar-bg: #{$light1};
   --sidebar-border-color: #{$light2};
-  --sidebar-muted-color: #{$dark0};
+  --sidebar-muted-color: #{$dark2};
   --sidebar-active-color: #{$dark0};
   --sidebar-hover-bg: #{$emph-light};
-  --sidebar-btn-bg: #{$light1};
+  --sidebar-btn-bg: #{$light2};
   --sidebar-btn-color: #{$dark2};
   --avatar-border-color: #{$dark2};
 
@@ -70,20 +69,28 @@
   --btn-share-hover-color: #{$dark0};
   --card-bg: #{$light1};
   --card-hovor-bg: #{$light2};
-  --card-shadow: rgb(21, 21, 21, 0.20) 0 6px 18px 0,
+  --card-shadow: rgb(21, 21, 21, 0.2) 0 6px 18px 0,
     rgb(137, 135, 135, 0.24) 0 0 0 1px;
   --kbd-wrap-color: #{$light2};
   --kbd-text-color: #{$dark0};
   --kbd-bg-color: #{$light1};
   --prompt-text-color: #{$dark0};
-  --prompt-tip-bg: #{$prompt-tip}33;
-  --prompt-tip-icon-color: #{$prompt-tip};
-  --prompt-info-bg: #{$dark2}33;
-  --prompt-info-icon-color: #{$dark2};
-  --prompt-warning-bg: #{$prompt-warn}33;
-  --prompt-warning-icon-color: #{$prompt-warn};
-  --prompt-danger-bg: #{$prompt-dang}33;
-  --prompt-danger-icon-color: #{$prompt-dang};
+  --prompt-tip-bg: #{$tip-light}33;
+  --prompt-tip-icon-color: #{$tip-light};
+  --prompt-info-bg: #{$info-light}33;
+  --prompt-info-icon-color: #{$info-light};
+  --prompt-warning-bg: #{$warn-light}33;
+  --prompt-warning-icon-color: #{$warn-light};
+  --prompt-danger-bg: #{$danger-light}33;
+  --prompt-danger-icon-color: #{$danger-light};
+  --prompt-concours-bg: #{$danger-light}16;
+  --prompt-concours-icon-color: #{$danger-light};
+  --prompt-generic-bg: #{$light0};
+  --prompt-generic-icon-color: #{$emph-light};
+  --card-bg: #{$light1}48;
+  --card-border-color: #{$emph-light};
+  --card-text-color: #{$dark1};
+  --card-heading-color: #{$heading-light};
 
   /* Tags */
   --tag-border: #{$light2};
@@ -111,7 +118,7 @@
   --code-header-text-color: #{$dark0};
   --code-header-muted-color: #{$dark0};
   --code-header-icon-color: #{$dark0};
-  --clipboard-checked-color: #{$prompt-tip};
+  --clipboard-checked-color: #{$tip-light};
   --filepath-text-color: #{$dark1};
 
   .light {
@@ -173,7 +180,7 @@
   }
 
   .highlight .err {
-    color: #{$prompt-dang};
+    color: #{$danger-light};
   }
 
   .highlight .c,
@@ -205,12 +212,12 @@
   }
 
   .highlight .gi {
-    color: #{$prompt-tip};
+    color: #{$tip-light};
   }
 
   .highlight .gd {
-    color: #{$prompt-dang};
-    background-color: #{$prompt-dang}33;
+    color: #{$danger-light};
+    background-color: #{$danger-light}33;
   }
 
   .highlight .gh {
@@ -248,7 +255,7 @@
   .highlight .sh,
   .highlight .sx,
   .highlight .s1 {
-    color: #{$prompt-tip};
+    color: #{$tip-light};
   }
 
   .highlight .sa {
@@ -260,11 +267,11 @@
   }
 
   .highlight .si {
-    color: #{$prompt-warn};
+    color: #{$warn-light};
   }
 
   .highlight .se {
-    color: #{$prompt-warn};
+    color: #{$warn-light};
   }
 
   .highlight .nn {
@@ -291,10 +298,10 @@
   .highlight .il,
   .highlight .mo,
   .highlight .mx {
-    color: #{$prompt-info};
+    color: #{$info-light};
   }
 
   .highlight .ss {
-    color: #{$prompt-tip};
+    color: #{$tip-light};
   }
 }

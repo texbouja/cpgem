@@ -20,7 +20,7 @@
   }
 
   .card {
-    border: 0;
+    border: 1px solid var(--main-border-color);
     background: none;
 
     %img-radius {

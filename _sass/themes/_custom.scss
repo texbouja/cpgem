@@ -1,3 +1,154 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/breakpoints' as bp;
+@use '../abstracts/mixins' as mx;
+@use '../abstracts/placeholders';
+
+@mixin carte($name, $type, $icon: null) {
+  &.carte-#{$name} {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    line-height: 1.5;
+    position: relative;
+
+    @extend %rounded;
+    background-color: var(--prompt-#{$type}-bg);
+    border: none;
+    border-left: 4px solid var(--prompt-#{$type}-icon-color);
+    border-right: 1px solid var(--prompt-#{$type}-icon-color);
+    border-radius: 0;
+
+    // Style de base pour tous les enfants
+    // > * {
+    //   margin: 0.5rem 0;
+    //   &:first-child {
+    //     margin-top: 0;
+    //   }
+    //   &:last-child {
+    //     margin-bottom: 0;
+    //   }
+    // }
+
+    // Style spécifique pour les titres
+    > h2,
+    > h3,
+    > h4,
+    > h5 {
+      font-weight: 600;
+      padding: 0.25rem 1rem;
+      margin: -0.5rem -1rem 1.5rem -1rem;
+      color: var(--prompt-#{$type}-icon-color);
+      background-color: var(--main-bg);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+      // @if $type == 'generic' {
+      //   border-bottom: 0 0 2px 4px var(--prompt-generic-icon-color);
+      // }
+
+      @if $icon {
+        padding-left: 3rem;
+        position: relative;
+        color: var(--heading-color);
+
+        &::before {
+          content: $icon;
+          font-family: 'Font Awesome 6 Free';
+          font-weight: 900;
+          position: absolute;
+          left: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          color: var(--prompt-#{$type}-icon-color);
+        }
+      }
+    }
+
+    // Version scrollable
+    &[scroll] {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+
+      > :first-child {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        margin-bottom: 0.5rem;
+      }
+
+      > :not(:first-child) {
+        overflow-y: auto;
+        flex-grow: 1;
+        padding-bottom: 0.5rem;
+        &::-webkit-scrollbar {
+          width: 0;
+          // color: var(--border-color) var(--card-bg);
+        }
+      }
+    }
+
+    &[scroll='1'] {
+      max-height: 300px;
+    }
+    &[scroll='2'] {
+      max-height: 420px;
+    }
+    &[scroll='3'] {
+      max-height: 560px;
+    }
+    &[scroll='4'] {
+      max-height: 640px;
+    }
+
+    // Version collapse
+    &.collapse {
+      > :first-child {
+        cursor: pointer;
+        padding-right: 2rem;
+        position: relative;
+
+        &::after {
+          content: '+';
+          position: absolute;
+          right: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.25rem;
+          color: var(--prompt-#{$type}-icon-color);
+        }
+      }
+
+      > :not(:first-child) {
+        display: none;
+      }
+
+      &.expanded {
+        > :first-child::after {
+          content: '-';
+        }
+
+        > :not(:first-child) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// Application des styles carte-*
+[class^='carte-'] {
+  @include carte('definition', 'info');
+  @include carte('note', 'tip');
+  @include carte('theorem', 'warning');
+  @include carte('exercise', 'danger');
+  @include carte('generic', 'generic');
+  @include carte('concours', 'concours');
+  @include carte('objectif', 'generic', '\f140');
+  @include carte('prerequis', 'generic', '\f5da');
+  @include carte('links', 'generic', '\f0c1');
+}
+
 .generic {
   background-color: var(--card-bg);
   --link-underline-color: var(--card-bg);
@@ -6,13 +157,46 @@
   border-left: 4px solid var(--main-border-color);
   border-radius: 10px;
   box-shadow: var(--card-shadow);
-  
-  h1, h2, h3, h4 {
+
+  h2,
+  h3,
+  h4 {
     position: relative;
     margin-top: 0;
     color: var(--heading-color);
-    
-    
+
+    &::before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--main-border-color);
+      font-size: 1em;
+    }
+  }
+  ul {
+    padding-left: 1.5rem;
+    margin-bottom: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .content {
+    margin-top: 1rem;
+    color: var(--text-color);
+  }
+}
+
+.generic-card {
+  @extend .generic;
+
+  h2,
+  h3,
+  h4 {
     &::before {
       font-family: 'Font Awesome 5 Free';
       font-weight: 900;
@@ -28,45 +212,22 @@
   ul {
     padding-left: 1.5rem;
     margin-bottom: 0;
-    
+
     li {
       margin-bottom: 0.5rem;
     }
   }
-  
-  .content {
-    margin-top: 1rem;
-    color: var(--text-color);
-  }
-}
-
-.generic-card {
-  @extend .generic;
-  padding: 1rem;
 }
 
 .prerequis {
   @extend .generic-card;
-  
+
   h2 {
-    padding-left: 2.2rem;
-    &::before {content: "\f5da";}
+    &::before {
+      content: '\f5da';
+    }
   }
   .prerequis-content {
-    @extend .content;
-  }
-}
-
-
-
-.objectif {
-  @extend .generic-card;
-
-  h2 {
-    padding-left: 2.2rem;
-    &::before {content: "\f140";}
-  }
-  .objectif-content {
     @extend .content;
   }
 }
@@ -76,7 +237,9 @@
 
   h2 {
     padding-left: 2.2rem;
-    &::before {content: "\f0c1";}
+    &::before {
+      content: '\f0c1';
+    }
   }
   .links-content {
     @extend .content;
@@ -85,8 +248,8 @@
 
 .two-column-list {
   // Configuration desktop
-  column-count: 2;          // Deux colonnes
-  column-gap: 2rem;         // Espace entre colonnes
+  column-count: 2; // Deux colonnes
+  column-gap: 2rem; // Espace entre colonnes
   padding-left: 1rem;
 
   // Style des éléments
@@ -97,42 +260,8 @@
 
   // Media query pour mobile
   @media (max-width: 768px) {
-    column-count: 1;        // Une seule colonne
-    padding-left: 1.5rem;   // Alignement standard des listes
-  }
-}
-
-.card-with-scrolling {
-  @extend .generic;
-  overflow: hidden;
-
-  // Entête automatique (premier élément)
-  & > :first-child {
-    padding: 0.25rem 1rem;
-    font-size: 1.25rem;
-    color: var(--heading-color);
-    background: var(--card-header-bg);
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    margin: 0 !important; 
-  }
-
-  // Contenu scrollable (tout sauf l'entête)
-  & > :not(:first-child) {
-    overflow-y: auto;
-    padding: 0.5rem 1.5rem;
-    scrollbar-width: 2px;
-    scrollbar-color: var(--border-color) var(--card-bg);
-    
-    &::-webkit-scrollbar {
-      width: thin;
-    }
-    
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--border-color);
-      border-radius: 3px;
-    }
+    column-count: 1; // Une seule colonne
+    padding-left: 1.5rem; // Alignement standard des listes
   }
 }
 
@@ -141,7 +270,7 @@
   flex-direction: column;
   gap: 1.5rem;
   margin: 0;
-  margin-top: 3rem; 
+  margin-top: 3rem;
 }
 
 .concours-card {
@@ -161,12 +290,12 @@
   // Contenu scrollable (tout sauf l'entête)
   & > :not(:first-child) {
     overflow-y: auto;
-    
+
     &::-webkit-scrollbar {
       width: 0;
       // color: var(--border-color) var(--card-bg);
     }
-    
+
     // &::-webkit-scrollbar-thumb {
     //   background-color: var(--border-color);
     //   border-radius: 1px;
@@ -183,26 +312,34 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .concours-content {
-    padding: 0.5rem 1.5rem;
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0;
+    }
   }
 
-  @media (max-width: 768px) {
-    .concours-content {
-      max-height: 584px;
-    }
+  .concours-content {
+    padding: 0.5rem 1.5rem;
+    max-height: 600px;
+    overflow-y: auto;
   }
-  @media (max-width: 1650px) {
-    .concours-content {
-      max-height: 640px;
-    }
-  }
+
+  // @media (max-width: 768px) {
+  //   .concours-content {
+  //     max-height: 584px;
+  //   }
+  // }
+  // @media (max-width: 1650px) {
+  //   .concours-content {
+  //     max-height: 640px;
+  //   }
+  // }
 }
 .sujet-item {
-  margin-bottom: .5rem;
-  
+  margin-bottom: 0.5rem;
+
   .sujet-item:last-child {
     border-bottom: none;
     margin-bottom: 0;
@@ -215,26 +352,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.25em;
-    font-weight: 500;
     line-height: 1.3;
-   
+
     &::before {
       font-family: 'Font Awesome 5 Free';
       font-weight: 900;
-      content: "\f5a2"; 
+      content: '\f5a2';
       color: var(--heading-color);
       position: absolute;
       left: -1.15rem;
       top: 1em;
-      transform: translateY(-50%); 
+      transform: translateY(-35%);
       line-height: 1;
     }
-  
+
+    h3 {
+      margin: 0;
+    }
+
     .sujet-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: .75rem;
+      gap: 0.75rem;
       margin: 0.5rem 0 0.75rem 0;
       font-size: 0.75rem;
     }
@@ -253,64 +392,70 @@
       color: var(--heading-color);
     }
 
-    .meta-filiere::before { content: "\f501"; }
-    .meta-session::before { content: "\f073"; }
-    .meta-epreuve::before { content: "\f573"; }
-    .meta-duree::before { content: "\f017"; }
-    .meta-difficulte::before { content: "\f06a"; }
+    .meta-filiere::before {
+      content: '\f501';
+    }
+    .meta-session::before {
+      content: '\f073';
+    }
+    .meta-epreuve::before {
+      content: '\f573';
+    }
+    .meta-duree::before {
+      content: '\f017';
+    }
+    .meta-difficulte::before {
+      content: '\f06a';
+    }
   }
 
   .sujet-objectif {
-    margin: 0.5rem  0.75rem;
+    margin: 0.5rem 0.75rem;
     font-size: 1.1rem;
     line-height: 1.4;
   }
 }
 
-
-
-
-
 .prerequis-list {
-  background-color: var(--card-bg);
+  background-color: #00000010;
   padding: 0.3rem 0;
-  margin: .5rem 0;
-  border : 1px solid var(--main-border-color);
+  margin: 0.5rem 0;
+  border: 1px solid var(--main-border-color);
   border-radius: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0 0.4rem;
   font-size: 0.85rem;
   position: relative;
-  padding-left: 3rem; 
-  align-items: center; 
+  padding-left: 3rem;
+  align-items: center;
 
   &::before {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    content: "\f02c"; // fa-tag
+    content: '\f02c'; // fa-tag
     font-size: 1.75em;
     color: var(--main-border-color);
     position: absolute;
     left: 0.75rem;
     top: 1.25em;
-    transform: translateY(-100%); 
-    line-height: 1; 
-    
+    transform: translateY(-100%);
+    line-height: 1;
   }
   .prerequis-item {
-      display: inline-block;
-      position: relative;
-      margin-right: 0.55rem; 
+    font-family: 'Roboto Condensed', sans-serif;
+    display: inline-block;
+    position: relative;
+    margin-right: 0.55rem;
   }
 
   .prerequis-item:not(:last-child)::after {
-      content: "•";
-      font-size: 2em;
-      position: absolute;
-      right: -.75rem; 
-      color: var(--heading-color); 
-      line-height: 0.85; 
+    content: '•';
+    font-size: 2em;
+    position: absolute;
+    right: -0.75rem;
+    color: var(--heading-color);
+    line-height: 0.85;
   }
 }
 .prerequis-post-list {
@@ -319,29 +464,28 @@
   flex-wrap: wrap;
   gap: 0 1rem;
   position: relative;
-  padding-left: 2.5rem; 
-  align-items: center; 
+  padding-left: 1rem;
+  align-items: center;
 
   .prerequis-item {
+    font-family: 'Roboto Condensed', sans-serif;
     display: inline-block;
     position: relative;
-    margin-right: 1rem; 
-  }
-
-  .prerequis-item:not(:last-child)::after {
-    content: "•";
-    font-size: 2em;
-    position: absolute;
-    right: -1.15rem; 
-    color: var(--heading-color); 
-    transform: translateY(-28%); 
+    &::before {
+      content: '•';
+      font-size: 2rem;
+      position: absolute;
+      color: var(--heading-color);
+      transform: translateX(-125%);
+      line-height: 1;
+    }
   }
 }
 .download-concours {
-  background-color: var(--card-bg);
-  padding: 0.4rem 0 .8rem 0;
-  margin: .5rem 0;
-  border : 1px solid var(--main-border-color);
+  background-color: #00000010;
+  padding: 0.4rem 0 0.8rem 0;
+  margin: 0.5rem 0;
+  border: 1px solid var(--main-border-color);
   border-radius: 0.5rem;
 }
 .download-list {
@@ -350,43 +494,93 @@
   gap: 0.4rem 0.4rem;
   font-size: 0.85rem;
   position: relative;
-  padding-left: 3rem; 
-  align-items: center; 
+  padding-left: 3rem;
+  align-items: center;
 
   &::before {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    content: "\f019"; // fa-download
-    font-size: 1.75em; 
+    content: '\f019'; // fa-download
+    font-size: 1.75em;
     color: var(--main-border-color);
     position: absolute;
     left: 0.5rem;
     top: 0.75em;
-    transform: translateY(-75%); 
-    line-height: 1; 
-    
+    transform: translateY(-75%);
+    line-height: 1;
   }
 
-.download-item {
+  .download-item {
+    font-family: 'Roboto Condensed', sans-serif;
+    position: relative;
+    padding-left: 1.5rem;
+    padding-right: 2rem;
+    color: var(--text-muted);
+  }
+
+  .download-item::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    font-size: 1.25rem;
+    color: var(--heading-color);
+    left: 0;
+  }
+
+  .download-original::before {
+    content: '\f1c1';
+  }
+  .download-report::before {
+    content: '\e0e3';
+  }
+  .download-print::before {
+    content: '\f02f';
+  }
+  .download-tablet::before {
+    content: '\f3fa';
+  }
+  .download-phone::before {
+    content: '\f3cd';
+  }
+  .download-web::before {
+    content: '\f0ac';
+  }
+}
+
+.concours-heading {
+  display: flex;
   position: relative;
-  padding-left: 1.5rem;
-  padding-right:2rem;
-  color: var(--text-muted);
-}
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
 
-.download-item::before {
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  position: absolute;
-  font-size: 1.25rem;
-  color: var(--heading-color);
-  left: 0;
-}
-
-.download-original::before { content: "\f1c1"; }
-.download-report::before { content: "\e0e3"; }
-.download-print::before { content: "\f02f"; }
-.download-tablet::before { content: "\f3fa"; }
-.download-phone::before { content: "\f3cd"; }
-.download-web::before { content: "\f0ac"; }
+  h1.special-title {
+    font-size: 2em;
+    font-weight: 500;
+    line-height: 1;
+    transform: translateY(-50%);
+    line-height: 1.3;
+  }
+  .concours-meta {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem 0 0.75rem 0;
+    font-size: 0.75rem;
+  }
+  .concours-item {
+    font-size: 1rem;
+    margin: 0 0.25rem;
+    position: relative;
+    border-radius: 0.6rem;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(46, 52, 64, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  a {
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+  }
 }

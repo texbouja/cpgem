@@ -1,19 +1,26 @@
 ---
-layout: page
+layout: post
+title: Sujets de concours
+description: Selection de sujets de concours avec corrigés.
+order: 2
 math: true
+icon: fas fa-medal
+tabpage: true
+toc: true
+toctitle: Listes des sujets 
 ---
 
-<div class="concours-container">
-  {% assign concours_groups = site.posts | where_exp: "post", "post.concours != nil" | group_by: "concours" | sort: "name" %}
 
-  {% for concours in concours_groups %}
-    <div class="concours-card">
-      <div class="concours-header">
-        <div>
-          {{ concours.name }}
-        </div>
-        <span>{{ concours.items | size }} </span>
-      </div>
+> ## Note 
+Chaque titre avec l'icone <span class="fas fa-medal"></span> est un lien qui renvoit vers la fiche individuelle du sujet. Celle-ci contient en général plus d'informations que l'encadré du sujet sur cette page. L'encadré en question contient une brêve description du sujet, les liens de téléchargement et les chapitres abordés sous forme de tags cliquables.
+{: .carte-note}
+
+
+{% assign concours_groups = site.posts | where_exp: "post", "post.concours != nil" | group_by: "concours" | sort: "name" %}
+
+{% for concours in concours_groups %}
+<div class="carte-concours" scroll="4">
+<h2> {{ concours.name }} </h2>
       
       <div class="concours-content">
         {% assign sessions = concours.items | group_by: "session" | sort: "name" | reverse %}
@@ -22,7 +29,10 @@ math: true
           {% for post in session.items %}
             <div class="sujet-item">
               <div class="sujet-title">
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              {% capture sujet_title %}
+### [{{ post.title }}]({{ post.url | relative_url }})
+              {% endcapture %}
+              {{ sujet_title | markdownify }}
               <div class="sujet-meta">
                 {% if post.filiere %}
                   <span class="meta-item meta-filiere">{{ post.filiere }}</span>
@@ -67,5 +77,6 @@ math: true
         {% endfor %}
       </div>
     </div>
+    
   {% endfor %}
-</div>
+

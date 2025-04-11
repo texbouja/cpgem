@@ -105,9 +105,13 @@ script_includes:
       </div>
     </div>
   </header>
-
-  {% unless page.concours %}
-  {% if enable_toc %}
+  
+  {% if page.toctitle %}
+    {% assign toc_title = page.toctitle %}
+  {% else %}
+    {% assign toc_title = site.data.locales[lang].panel.toc %}
+  {% endif %}
+    {% if enable_toc %}
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
       <span class="label text-truncate">{{ page.title }}</span>
       <button type="button" class="toc-trigger btn me-1">
@@ -116,7 +120,7 @@ script_includes:
     </div>
 
     <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
-      <span class="label ps-2 pe-1">{{- site.data.locales[lang].panel.toc -}}</span>
+      <span class="label ps-2 pe-1">{{- toc_title -}}</span>
       <i class="fa-solid fa-angle-right fa-fw"></i>
     </button>
 
@@ -130,12 +134,12 @@ script_includes:
       <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
     </dialog>
   {% endif %}
-   {% endunless %}
 
+<div class="content">
 
     <!-- SECTION OBJECTIFS -->
     {% if page.objectif %}
-      <div class="objectif">
+      <div class="carte-objectif">
         <h2>Objectif</h2>
         {{ page.objectif }}
       </div>
@@ -143,15 +147,32 @@ script_includes:
 
     <!-- SECTION PREREQUIS -->
     {% if page.concours %}
-      {% include prerequis.html %}
-    {% endif %}
+      {% if page.tags or page.prerequis %}
+        <section class="carte-prerequis">
+          <h2>Prérequis</h2>
+          {% if page.prerequis.size > 0 %}
+            {{ page.prerequis }}
+          {% endif %}
+          {% if page.tags %}
+            <div class="prerequis-post-list">
+              {% for tag in page.tags %}
+                {% if site.data.variables.keywords[tag] %}
+                  {% assign prerequis_item = site.data.variables.keywords[tag] %}
+                <a href="{{ '/tags/' | relative_url }}{{ tag | slugify }}" class="prerequis-item"> 
+                  {{ prerequis_item }}
+                </a>
+              {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </section>
+      {% endif %}
 
     <!-- SECTION LIENS -->
-    {% if page.concours %}
       {% include links.html %}
     {% endif %}
 
-  <div class="content">
+  
     {{ content }}
   </div>
  

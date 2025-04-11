@@ -23,14 +23,14 @@ description: >- # used by seo meta and the atom feed
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: 'https://texbouja.github.io/cpgem'
+url: "https://texbouja.github.io/cpgem"
 baseurl: "/cpgem"
 
 github:
   username: texbouja # change to your GitHub username
 
 # twitter:
-  # username: twitter_username # change to your Twitter username
+# username: twitter_username # change to your Twitter username
 
 social:
   # Change to your full name.
@@ -192,8 +192,6 @@ defaults:
     values:
       layout: page
       permalink: /:title/
-  
-
 
 sass:
   style: compressed
@@ -229,7 +227,6 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
-
 # Ajouts personnels
 
 pdf_path: "/cpgem/assets/pdf"
@@ -245,4 +242,3 @@ plugins:
 
 concours: []
 all_concours: []
-

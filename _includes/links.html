@@ -35,8 +35,8 @@
 {% if file_e_count > 0 or file_r_count > 0 or file_print_count > 0 or file_tablet_count > 0 or file_phone_count > 0   %}
     
     
-    {% unless page.layout == "concours" %}
-        <div class="links">
+    {% unless page.tabpage %}
+        <div class="carte-links">
             <h2> Liens </h2>
     {% else %}
         <div class="download-concours">

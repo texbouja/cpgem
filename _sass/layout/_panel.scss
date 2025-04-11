@@ -30,7 +30,7 @@
 #panel-wrapper {
   /* the headings */
   .panel-heading {
-    font-family: inherit;
+    font-family: Oswald, 'Roboto Condensed', 'Fira Sans', sans-serif;
     line-height: inherit;
 
     @include mx.label(inherit);

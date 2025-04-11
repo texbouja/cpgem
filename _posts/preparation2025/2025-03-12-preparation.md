@@ -1,11 +1,13 @@
 ---
-layout: page
+layout: post
 title: Préparation 2025
 description: Programme de préparation 2025
 categories: [PRÉPARATION 2025]
 tags: [xens,ccmp,centrale,cnm,ccinp]
 date: 2025-03-12 09:31 +0000
 pin: true
+math: true
+mrkdown: "1"
 ---
 
 # Phase 1 : analyse et probabilités
@@ -29,3 +31,5 @@ pin: true
 ## Semaine 1
 - [Centrale 2022, MP, Maths I]({% link _posts/concours/2025-03-27-centrale2022mp1.md %})
 - [Mines 2020, MP, Maths I]({% link _posts/concours/2025-03-27-ccmp2020mp1.md %})
+
+
