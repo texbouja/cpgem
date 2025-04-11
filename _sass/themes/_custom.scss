@@ -43,7 +43,7 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
       // @if $type == 'generic' {
-      //   border-bottom: 0 0 2px 4px var(--prompt-generic-icon-color);
+      //   border-bottom: 0 0 2px 4px var(--prompt-concours-icon-color);
       // }
 
       @if $icon {
@@ -358,7 +358,7 @@
       font-family: 'Font Awesome 5 Free';
       font-weight: 900;
       content: '\f5a2';
-      color: var(--heading-color);
+      color: var(--prompt-concours-icon-color);
       position: absolute;
       left: -1.15rem;
       top: 1em;
@@ -389,7 +389,7 @@
       font-weight: 900;
       position: absolute;
       left: 0;
-      color: var(--heading-color);
+      color: var(--prompt-concours-icon-color);
     }
 
     .meta-filiere::before {
@@ -420,7 +420,7 @@
   background-color: #00000010;
   padding: 0.3rem 0;
   margin: 0.5rem 0;
-  border: 1px solid var(--main-border-color);
+  border: 1px solid var(--prompt-concours-icon-color);
   border-radius: 0.5rem;
   display: flex;
   flex-wrap: wrap;
@@ -435,7 +435,7 @@
     font-weight: 900;
     content: '\f02c'; // fa-tag
     font-size: 1.75em;
-    color: var(--main-border-color);
+    color: var(--label-color);
     position: absolute;
     left: 0.75rem;
     top: 1.25em;
@@ -454,7 +454,7 @@
     font-size: 2em;
     position: absolute;
     right: -0.75rem;
-    color: var(--heading-color);
+    color: var(--prompt-concours-icon-color);
     line-height: 0.85;
   }
 }
@@ -485,7 +485,7 @@
   background-color: #00000010;
   padding: 0.4rem 0 0.8rem 0;
   margin: 0.5rem 0;
-  border: 1px solid var(--main-border-color);
+  border: 1px solid var(--prompt-concours-icon-color);
   border-radius: 0.5rem;
 }
 .download-list {
@@ -502,7 +502,7 @@
     font-weight: 900;
     content: '\f019'; // fa-download
     font-size: 1.75em;
-    color: var(--main-border-color);
+    color: var(--label-color);
     position: absolute;
     left: 0.5rem;
     top: 0.75em;
@@ -523,7 +523,7 @@
     font-weight: 900;
     position: absolute;
     font-size: 1.25rem;
-    color: var(--heading-color);
+    color: var(--prompt-concours-icon-color);
     left: 0;
   }
 
