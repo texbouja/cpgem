@@ -5,13 +5,15 @@
 
   /* Framework color */
   --main-bg: #{$light0};
-  --mask-bg: #{$light1};
+  --mask-bg: #{$light2};
   --main-border-color: #{$emph-light};
 
   /* Common color */
   --text-color: #{$dark0};
+  --text-dark: #{$light1};
+  --text-light: #{$dark1};
   --text-muted-color: #{$dark1};
-  --text-muted-highlight-color: inherit;
+  --text-muted-highdark-color: inherit;
   --heading-color: #{$heading-light};
   --label-color: #{$dark2};
   --blockquote-border-color: #{$light2};
@@ -41,9 +43,14 @@
   --sidebar-muted-color: #{$dark2};
   --sidebar-active-color: #{$dark0};
   --sidebar-hover-bg: #{$emph-light};
-  --sidebar-btn-bg: #{$light2};
+  --sidebar-btn-bg: #{$light1};
   --sidebar-btn-color: #{$dark2};
   --avatar-border-color: #{$dark2};
+
+  --card-bg: #{$light1}32;
+  --card-border-color: #{$emph-light};
+  --card-text-color: #{$dark1};
+  --card-heading-color: #{$heading-light};
 
   /* Topbar */
   --topbar-bg: #{$light0}cc;
@@ -58,7 +65,7 @@
   --btn-paginator-hover-color: #{$light1};
 
   /* Posts */
-  --toc-highlight: #{$dark2};
+  --toc-highdark: #{$dark2};
   --toc-popup-border-color: #{$light2};
   --tag-hover: #{$light2};
   --tb-odd-bg: #{$light2}; /* odd rows of the posts' table */
@@ -67,10 +74,9 @@
   --footnote-target-bg: #{$link-light};
   --btn-share-color: #{$light2};
   --btn-share-hover-color: #{$dark0};
-  --card-bg: #{$light1};
-  --card-hovor-bg: #{$light2};
-  --card-shadow: rgb(21, 21, 21, 0.2) 0 6px 18px 0,
-    rgb(137, 135, 135, 0.24) 0 0 0 1px;
+  --card-bg: #{$light0};
+  --card-hovor-bg: #{$light1};
+  --card-shadow: var(--card-bg) 0 4px 8px 0, rgb(137, 135, 135, 0.24) 0 0 0 1px;
   --kbd-wrap-color: #{$light2};
   --kbd-text-color: #{$dark0};
   --kbd-bg-color: #{$light1};
@@ -81,16 +87,20 @@
   --prompt-info-icon-color: #{$info-light};
   --prompt-warning-bg: #{$warn-light}33;
   --prompt-warning-icon-color: #{$warn-light};
-  --prompt-danger-bg: #{$danger-light}33;
-  --prompt-danger-icon-color: #{$danger-light};
-  --prompt-concours-bg: #{$danger-light}16;
-  --prompt-concours-icon-color: #{$danger-light};
-  --prompt-generic-bg: #{$light0};
-  --prompt-generic-icon-color: #{$emph-light};
-  --card-bg: #{$light1}48;
-  --card-border-color: #{$emph-light};
-  --card-text-color: #{$dark1};
-  --card-heading-color: #{$heading-light};
+  --carte-note-bg: #{$tip-light}33;
+  --carte-note-deco: #{$tip-light};
+  --carte-definition-bg: #{$info-light}33;
+  --carte-definition-deco: #{$info-light};
+  --carte-theorem-bg: #{$warn-light}33;
+  --carte-theorem-deco: #{$warn-light};
+  --carte-exercise-bg: #{$danger-light}33;
+  --carte-exercise-deco: #{$danger-light};
+  --carte-generic-bg: #{$emph-light}16;
+  --carte-generic-deco: #{$emph-light};
+
+  --carte-concours-bg: #{$dark2};
+  --carte-concours-deco: #{$heading-light};
+  --carte-concours-shadow: rgba(0, 0, 0, 0.05);
 
   /* Tags */
   --tag-border: #{$light2};
@@ -108,20 +118,20 @@
   --timeline-color: #{$light2};
   --timeline-year-dot-color: var(--timeline-color);
 
-  /* Code highlight colors */
-  --language-border-color: #{$heading-light};
-  --highlight-bg-color: #{$light1};
-  --highlighter-rouge-color: #{$dark2};
-  --highlight-lineno-color: #{$light2};
-  --inline-code-bg: #{$dark0};
-  --code-color: #{$dark2};
+  /* Code highdark colors */
+  --language-border-color: #{$emph-light};
+  --highdark-bg-color: #{$light2};
+  --highdarker-rouge-color: #{$dark1};
+  --highdark-lineno-color: #{$dark2};
+  --inline-code-bg: #{$light0};
+  --code-color: #{$dark1};
   --code-header-text-color: #{$dark0};
-  --code-header-muted-color: #{$dark0};
-  --code-header-icon-color: #{$dark0};
+  --code-header-muted-color: #{$dark1};
+  --code-header-icon-color: #{$dark1};
   --clipboard-checked-color: #{$tip-light};
   --filepath-text-color: #{$dark1};
 
-  .light {
+  .dark {
     display: none;
   }
 
@@ -164,144 +174,144 @@
     color-scheme: none;
   }
 
-  /* Nord-themed syntax highlighting */
-  .highlight table td {
+  /* Nord-themed syntax highdarking */
+  .highdark table td {
     padding: 5px;
   }
 
-  .highlight table pre {
+  .highdark table pre {
     margin: 0;
   }
 
-  .highlight,
-  .highlight .w {
+  .highdark,
+  .highdark .w {
     color: #{$dark2};
     background-color: #{$light0};
   }
 
-  .highlight .err {
+  .highdark .err {
     color: #{$danger-light};
   }
 
-  .highlight .c,
-  .highlight .ch,
-  .highlight .cd,
-  .highlight .cm,
-  .highlight .cpf,
-  .highlight .c1,
-  .highlight .cs {
+  .highdark .c,
+  .highdark .ch,
+  .highdark .cd,
+  .highdark .cm,
+  .highdark .cpf,
+  .highdark .c1,
+  .highdark .cs {
     color: #{$light2};
   }
 
-  .highlight .cp {
+  .highdark .cp {
     color: #{$emph-light};
   }
 
-  .highlight .nt {
+  .highdark .nt {
     color: #{$emph-light};
   }
 
-  .highlight .o,
-  .highlight .ow {
+  .highdark .o,
+  .highdark .ow {
     color: #{$dark0};
   }
 
-  .highlight .p,
-  .highlight .pi {
+  .highdark .p,
+  .highdark .pi {
     color: #{$dark1};
   }
 
-  .highlight .gi {
+  .highdark .gi {
     color: #{$tip-light};
   }
 
-  .highlight .gd {
+  .highdark .gd {
     color: #{$danger-light};
     background-color: #{$danger-light}33;
   }
 
-  .highlight .gh {
+  .highdark .gh {
     color: #{$dark2};
     background-color: #{$light0};
     font-weight: bold;
   }
 
-  .highlight .k,
-  .highlight .kn,
-  .highlight .kp,
-  .highlight .kr,
-  .highlight .kv {
+  .highdark .k,
+  .highdark .kn,
+  .highdark .kp,
+  .highdark .kr,
+  .highdark .kv {
     color: #{$link-light};
   }
 
-  .highlight .kc {
+  .highdark .kc {
     color: #{$emph-light};
   }
 
-  .highlight .kt {
+  .highdark .kt {
     color: #{$emph-light};
   }
 
-  .highlight .kd {
+  .highdark .kd {
     color: #{$emph-light};
   }
 
-  .highlight .s,
-  .highlight .sb,
-  .highlight .sc,
-  .highlight .dl,
-  .highlight .sd,
-  .highlight .s2,
-  .highlight .sh,
-  .highlight .sx,
-  .highlight .s1 {
+  .highdark .s,
+  .highdark .sb,
+  .highdark .sc,
+  .highdark .dl,
+  .highdark .sd,
+  .highdark .s2,
+  .highdark .sh,
+  .highdark .sx,
+  .highdark .s1 {
     color: #{$tip-light};
   }
 
-  .highlight .sa {
+  .highdark .sa {
     color: #{$link-light};
   }
 
-  .highlight .sr {
+  .highdark .sr {
     color: #{$dark0};
   }
 
-  .highlight .si {
+  .highdark .si {
     color: #{$warn-light};
   }
 
-  .highlight .se {
+  .highdark .se {
     color: #{$warn-light};
   }
 
-  .highlight .nn {
+  .highdark .nn {
     color: #{$emph-light};
   }
 
-  .highlight .nc {
+  .highdark .nc {
     color: #{$emph-light};
   }
 
-  .highlight .no {
+  .highdark .no {
     color: #{$emph-light};
   }
 
-  .highlight .na {
+  .highdark .na {
     color: #{$dark2};
   }
 
-  .highlight .m,
-  .highlight .mb,
-  .highlight .mf,
-  .highlight .mh,
-  .highlight .mi,
-  .highlight .il,
-  .highlight .mo,
-  .highlight .mx {
+  .highdark .m,
+  .highdark .mb,
+  .highdark .mf,
+  .highdark .mh,
+  .highdark .mi,
+  .highdark .il,
+  .highdark .mo,
+  .highdark .mx {
     color: #{$info-light};
   }
 
-  .highlight .ss {
+  .highdark .ss {
     color: #{$tip-light};
   }
 }

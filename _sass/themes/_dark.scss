@@ -10,6 +10,8 @@
 
   /* Common color */
   --text-color: #{$light0};
+  --text-dark: #{$light1};
+  --text-light: #{$dark1};
   --text-muted-color: #{$light1};
   --text-muted-highlight-color: inherit;
   --heading-color: #{$heading-dark};
@@ -85,12 +87,20 @@
   --prompt-info-icon-color: #{$info-dark};
   --prompt-warning-bg: #{$warn-dark}33;
   --prompt-warning-icon-color: #{$warn-dark};
-  --prompt-danger-bg: #{$danger-dark}33;
-  --prompt-danger-icon-color: #{$danger-dark};
-  --prompt-concours-bg: #{$info-dark}32;
-  --prompt-concours-icon-color: #{$info-dark};
-  --prompt-generic-bg: #{$emph-dark}16;
-  --prompt-generic-icon-color: #{$emph-dark};
+  --carte-note-bg: #{$tip-dark}33;
+  --carte-note-deco: #{$tip-dark};
+  --carte-definition-bg: #{$info-dark}33;
+  --carte-definition-deco: #{$info-dark};
+  --carte-theorem-bg: #{$warn-dark}33;
+  --carte-theorem-deco: #{$warn-dark};
+  --carte-exercise-bg: #{$danger-dark}33;
+  --carte-exercise-deco: #{$danger-dark};
+  --carte-generic-bg: #{$emph-dark}16;
+  --carte-generic-deco: #{$emph-dark};
+
+  --carte-concours-bg: #{$dark2};
+  --carte-concours-deco: #{$heading-light};
+  --carte-concours-shadow: rgba(255, 255, 255, 0.08);
 
   /* Tags */
   --tag-border: #{$dark2};

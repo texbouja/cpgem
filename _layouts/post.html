@@ -108,12 +108,14 @@ script_includes:
   
   {% if page.toctitle %}
     {% assign toc_title = page.toctitle %}
+    {% assign sticky_toc_title = page.toctitle %}
   {% else %}
     {% assign toc_title = site.data.locales[lang].panel.toc %}
+    {% assign sticky_toc_title = page.title %}
   {% endif %}
     {% if enable_toc %}
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">{{ page.title }}</span>
+      <span class="label text-truncate">{{ sticky_toc_title }}</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
