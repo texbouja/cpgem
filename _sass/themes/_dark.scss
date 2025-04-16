@@ -1,10 +1,11 @@
+@use 'sass:color';
 @use '../themes/nord' as *;
 
 @mixin styles {
   color-scheme: dark;
 
   /* Framework color */
-  --main-bg: #{$dark0};
+  --main-bg: #{$dark1};
   --mask-bg: #{$dark2};
   --main-border-color: #{$emph-dark};
 
@@ -12,7 +13,7 @@
   --text-color: #{$light0};
   --text-dark: #{$light1};
   --text-light: #{$dark1};
-  --text-muted-color: #{$light1};
+  --text-muted-color: #{$light2};
   --text-muted-highlight-color: inherit;
   --heading-color: #{$heading-dark};
   --label-color: #{$light2};
@@ -20,6 +21,7 @@
   --blockquote-text-color: #{$light1};
   --link-color: #{$link-dark};
   --link-underline-color: var(--main-bg);
+  --link-hover-color: #{$link-hover-color};
   --button-bg: #{$dark2};
   --btn-border-color: #{$dark2};
   --btn-backtotop-color: var(--text-color);
@@ -38,19 +40,22 @@
   /* Sidebar */
   --site-title-color: #{$emph-dark};
   --site-subtitle-color: #{$light2};
-  --sidebar-bg: #{$dark1};
+  --sidebar-bg: #{$dark0};
   --sidebar-border-color: #{$dark2};
   --sidebar-muted-color: #{$light2};
   --sidebar-active-color: #{$light0};
   --sidebar-hover-bg: #{$emph-dark};
   --sidebar-btn-bg: #{$dark1};
   --sidebar-btn-color: #{$light2};
-  --avatar-border-color: #{$light2};
+  --avatar-border-color: #{$emph-dark};
 
-  --card-bg: #{$dark1}32;
+  --card-bg: #{$dark0};
+  --card-deco: #{$darkreally};
   --card-border-color: #{$emph-dark};
   --card-text-color: #{$light1};
   --card-heading-color: #{$heading-dark};
+  --card-hovor-bg: #{$dark1};
+  --card-shadow: var(--card-bg) 0 4px 8px 0, rgb(137, 135, 135, 0.24) 0 0 0 1px;
 
   /* Topbar */
   --topbar-bg: #{$dark0}cc;
@@ -74,9 +79,6 @@
   --footnote-target-bg: #{$link-dark};
   --btn-share-color: #{$dark2};
   --btn-share-hover-color: #{$light0};
-  --card-bg: #{$dark0};
-  --card-hovor-bg: #{$dark1};
-  --card-shadow: var(--card-bg) 0 4px 8px 0, rgb(137, 135, 135, 0.24) 0 0 0 1px;
   --kbd-wrap-color: #{$dark2};
   --kbd-text-color: #{$light0};
   --kbd-bg-color: #{$dark1};
@@ -95,12 +97,13 @@
   --carte-theorem-deco: #{$warn-dark};
   --carte-exercise-bg: #{$danger-dark}33;
   --carte-exercise-deco: #{$danger-dark};
-  --carte-generic-bg: #{$emph-dark}16;
-  --carte-generic-deco: #{$emph-dark};
+  --carte-generic-bg: var(--card-bg);
+  --carte-generic-deco: var(--main-bg);
+  --carte-border-shadow: rgba(255, 255, 255, 0.24);
 
-  --carte-concours-bg: #{$dark2};
-  --carte-concours-deco: #{$heading-light};
-  --carte-concours-shadow: rgba(255, 255, 255, 0.08);
+  --concours-window-deco: #{$concours-dark};
+  --concours-window-bg: #{$dark0};
+  --concours-window-shadow: #6e1313;
 
   /* Tags */
   --tag-border: #{$dark2};

@@ -242,3 +242,7 @@ plugins:
 
 concours: []
 all_concours: []
+
+keep_files:
+  - pretext
+include: ["_static", "generated", "external", "knowl"]

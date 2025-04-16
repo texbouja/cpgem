@@ -343,10 +343,11 @@ header {
   position: sticky;
   top: 0;
   z-index: 1024;
-  margin: 0 -1rem;
+  margin: 0 2rem;
   height: v.$topbar-height;
+  border-left: 1px solid var(--text-color);
+  border-right: 1px solid var(--text-color);
   background: var(--main-bg);
-  border-bottom: 1px solid var(--main-border-color);
   transition: all 0.2s ease-in-out;
 
   @extend %btn-color;
@@ -357,7 +358,6 @@ header {
 
   .label {
     @extend %heading;
-
     margin-left: 0.375rem;
     padding: 0 0.75rem;
     color: inherit;

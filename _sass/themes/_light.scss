@@ -20,6 +20,7 @@
   --blockquote-text-color: #{$dark1};
   --link-color: #{$link-light};
   --link-underline-color: var(--main-bg);
+  --link-hover-color: #{$link-hover-color};
   --button-bg: #{$light2};
   --btn-border-color: #{$light2};
   --btn-backtotop-color: var(--text-color);
@@ -38,7 +39,7 @@
   /* Sidebar */
   --site-title-color: #{$emph-light};
   --site-subtitle-color: #{$dark2};
-  --sidebar-bg: #{$light1};
+  --sidebar-bg: #{$light2};
   --sidebar-border-color: #{$light2};
   --sidebar-muted-color: #{$dark2};
   --sidebar-active-color: #{$dark0};
@@ -47,10 +48,13 @@
   --sidebar-btn-color: #{$dark2};
   --avatar-border-color: #{$dark2};
 
-  --card-bg: #{$light1}32;
+  --card-bg: #{$light2};
+  --card-deco: #{$dark2};
   --card-border-color: #{$emph-light};
   --card-text-color: #{$dark1};
   --card-heading-color: #{$heading-light};
+  --card-hovor-bg: #{$light1};
+  --card-shadow: var(--card-bg) 0 4px 8px 0, rgb(137, 135, 135, 0.24) 0 0 0 1px;
 
   /* Topbar */
   --topbar-bg: #{$light0}cc;
@@ -74,9 +78,6 @@
   --footnote-target-bg: #{$link-light};
   --btn-share-color: #{$light2};
   --btn-share-hover-color: #{$dark0};
-  --card-bg: #{$light0};
-  --card-hovor-bg: #{$light1};
-  --card-shadow: var(--card-bg) 0 4px 8px 0, rgb(137, 135, 135, 0.24) 0 0 0 1px;
   --kbd-wrap-color: #{$light2};
   --kbd-text-color: #{$dark0};
   --kbd-bg-color: #{$light1};
@@ -87,20 +88,20 @@
   --prompt-info-icon-color: #{$info-light};
   --prompt-warning-bg: #{$warn-light}33;
   --prompt-warning-icon-color: #{$warn-light};
-  --carte-note-bg: #{$tip-light}33;
+  --carte-note-bg: #{$tip-light}45;
   --carte-note-deco: #{$tip-light};
-  --carte-definition-bg: #{$info-light}33;
+  --carte-definition-bg: #{$info-light}45;
   --carte-definition-deco: #{$info-light};
-  --carte-theorem-bg: #{$warn-light}33;
+  --carte-theorem-bg: #{$warn-light}45;
   --carte-theorem-deco: #{$warn-light};
-  --carte-exercise-bg: #{$danger-light}33;
+  --carte-exercise-bg: #{$danger-light}45;
   --carte-exercise-deco: #{$danger-light};
-  --carte-generic-bg: #{$emph-light}16;
-  --carte-generic-deco: #{$emph-light};
+  --carte-generic-bg: rgba(0, 0, 0, 0.1);
+  --carte-generic-deco: rgba(0, 0, 0, 0.7);
 
-  --carte-concours-bg: #{$dark2};
-  --carte-concours-deco: #{$heading-light};
-  --carte-concours-shadow: rgba(0, 0, 0, 0.05);
+  --carte-shadow: rgba(0, 0, 0, 0.2);
+  --concours-window-deco: #{$concours-dark};
+  --concours-window-bg: #{$light2};
 
   /* Tags */
   --tag-border: #{$light2};

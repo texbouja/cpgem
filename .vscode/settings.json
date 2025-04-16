@@ -29,5 +29,34 @@
   },
   "[liquid]": {
     "editor.defaultFormatter": "sissel.shopify-liquid"
-  }
+  },
+  "cSpell.words": [
+    "alexa",
+    "backlink",
+    "bing",
+    "blanklines",
+    "Boujaida",
+    "cloudflare",
+    "cpgem",
+    "CPGEM",
+    "disqus",
+    "Eadm",
+    "Eadmw",
+    "facebook",
+    "favicons",
+    "giscus",
+    "github",
+    "goatcounter",
+    "jekyll",
+    "kramdown",
+    "mathjax",
+    "matomo",
+    "Matomo",
+    "pageviews",
+    "purgecss",
+    "rollup",
+    "Sadik",
+    "texbouja",
+    "yandex"
+  ]
 }

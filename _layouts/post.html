@@ -141,10 +141,13 @@ script_includes:
 
     <!-- SECTION OBJECTIFS -->
     {% if page.objectif %}
+      {% capture objectif_content %}
       <div class="carte-objectif">
         <h2>Objectif</h2>
         {{ page.objectif }}
       </div>
+      {%endcapture%}
+      {{ objectif_content }}
     {% endif %}
 
     <!-- SECTION PREREQUIS -->
