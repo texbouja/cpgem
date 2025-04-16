@@ -283,30 +283,6 @@
         text-align: right;
       }
     }
-
-    > [class^='concours-window'] {
-      @include mx.ml-mr(-1rem);
-      padding: 1.75rem;
-      padding-top: 1.5rem;
-      margin-top: 3rem;
-      border-left: none;
-      border-right: none;
-      border-color: var(--concours-window-deco);
-      border-radius: 0;
-      max-width: none;
-
-      > h2,
-      > h3,
-      > h4,
-      > h5 {
-        position: absolute;
-        top: -0.8em;
-        width: 80%;
-        text-align: right;
-        padding: 0.25rem;
-        padding-right: 1rem;
-      }
-    }
   }
 }
 @include bp.lte(bp.get(sm)) {
