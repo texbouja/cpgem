@@ -85,4 +85,6 @@
   {% endif %}
 {% endif %}
 
-<script src="{{ '/assets/js/carte-collapsible.js' | relative_url }}"></script>
+{% if page.concourspage %}
+<script src="{{ '/assets/js/concours-menus.js' | relative_url }}"></script>
+{% endif  %}
