@@ -417,7 +417,7 @@ mjx-container {
   // }
   position: relative;
   @include mx.pl-pr(0);
-  // Ajouter cette marge pour compenser la hauteur de la topbar fixe
+  // pour compenser la hauteur de la topbar fixe
   margin-top: v.$topbar-height;
 
   @include bp.lt(bp.get(lg)) {

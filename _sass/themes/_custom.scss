@@ -1,3 +1,4 @@
+@use '../abstracts/variables' as v;
 @use '../abstracts/breakpoints' as bp;
 @use '../abstracts/mixins' as mx;
 @use '../abstracts/placeholders';
@@ -25,8 +26,9 @@
     margin: 1.5rem 0;
     line-height: 1.5;
     background-color: var(--carte-#{$type}-bg);
-    border-radius: 5px;
-    @include border-shadow();
+    @include border-radius(8px 8px 16px 16px);
+    @include border-shadow(1px);
+    border-bottom: 2px solid var(--carte-#{$type});
 
     h2,
     h3,
@@ -37,19 +39,21 @@
     > :first-child {
       display: inline-block;
       position: absolute;
-      padding: 2px 0 0 1.5rem;
-      margin: -1.6em 0 0 -25px;
-      min-width: 25%;
+      top: 0;
+      padding: 2px 0 4px 1.5rem;
+      margin: 0;
+      min-width: 33%;
       font-weight: 400;
       color: var(--text-dark);
-      background: var(--carte-#{$type}-deco);
-      @include border-radius(3px);
+      background: var(--carte-#{$type});
+      @include border-radius(0 0px 16px 16px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
       background-image: -webkit-gradient(
         linear,
         left top,
         left bottom,
-        from(#0003),
-        to(#0009)
+        from(#0000),
+        to(#0005)
       );
 
       @if $icon {
@@ -81,60 +85,366 @@
   @include carte('links', 'generic', '\f0c1');
 }
 
-[class^='concours-window'] {
+// [scroll] {
+//   display: flex;
+//   flex-direction: column;
+//   position: sticky !important;
+//   top: calc(v.$topbar-height + 3rem);
+//   z-index: 2048;
+//   overflow: visible;
+
+//   > :first-child {
+//     z-index: 1048;
+//     margin: 0;
+//   }
+
+//   > :not(:first-child) {
+//     overflow-y: auto;
+//     flex-grow: 1;
+//     padding-bottom: 0.5rem;
+//     &::-webkit-scrollbar {
+//       width: 0;
+//     }
+//   }
+// }
+
+// [scroll='1'] {
+//   max-height: 300px;
+// }
+// [scroll='2'] {
+//   max-height: 420px;
+// }
+// [scroll='3'] {
+//   max-height: 560px;
+// }
+// [scroll='4'] {
+//   max-height: 640px;
+// }
+
+@include bp.lte(bp.get(sm)) {
+  .content {
+    > [class^='carte-'] {
+      @include mx.ml-mr(-1rem);
+      padding: 0.75rem;
+      padding-top: 2rem;
+      border: none;
+      max-width: none;
+      border-radius: 0;
+      border-bottom: 2px solid var(--carte-border-shadow);
+
+      > :first-child {
+        position: absolute;
+        top: -0.75em;
+        min-width: 50%;
+        padding-right: 1rem;
+        text-align: right;
+        margin: 0 -0.75rem;
+        @include border-radius(0 12px 12px 0);
+      }
+    }
+  }
+}
+
+.two-column-list {
+  // Configuration desktop
+  column-count: 2; // Deux colonnes
+  column-gap: 2rem; // Espace entre colonnes
+  padding-left: 1rem;
+
+  // Style des éléments
+  li {
+    break-inside: avoid-column; // Bloque la coupure d'items
+    margin-bottom: 0.75rem;
+  }
+
+  // Media query pour mobile
+  @media (max-width: 768px) {
+    column-count: 1; // Une seule colonne
+    padding-left: 1.5rem; // Alignement standard des listes
+  }
+}
+
+.concours-view {
+  margin: 0;
+}
+
+[concours-window] {
   display: flex;
   flex-direction: column;
-  padding: 0;
-  min-height: 640px;
+  position: sticky !important;
+  top: calc(v.$topbar-height + 2rem);
+  padding-bottom: 0.75rem;
+  max-height: calc(100vh - v.$topbar-height - 2rem);
   margin: 1.5rem 0;
   line-height: 1.5;
   position: relative;
   border-radius: 8px;
-  background-color: var(--concours-window-bg);
-  border: 2px solid var(--concours-window-deco);
+  background-color: var(--concours-bg);
+  border: 2px solid var(--concours-color);
   box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.2);
+
+  > :first-child {
+    z-index: 998;
+    margin: 0;
+  }
+
+  > :not(:first-child) {
+    overflow-y: auto;
+    flex-grow: 1;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
 
-.concours-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Pour espacer les éléments */
-  margin: 0;
-  padding: 0;
+@include bp.lte(bp.get(sm)) {
+  .content {
+    .concours-view > [concours-window],
+    > [concours-window] {
+      margin: 0 -1.5rem;
+      border-radius: 0;
+    }
+    .sujet-view {
+      margin: 0.5rem 10px;
+      border-radius: 5px;
+    }
+  }
 }
+
+.sujet-view {
+  padding: 0 5px;
+  margin: 1rem 5px 0 5px;
+  background: var(--carte-background-shadow);
+  border-radius: 8px;
+  border: 1px solid var(--carte-border-shadow);
+
+  .sujet-view:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .sujet-title {
+    position: relative;
+    margin: 1rem 0 0.5rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.35;
+
+    &::before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      font-size: 1.5rem;
+      content: '\f5a2';
+      color: var(--concours-color);
+      position: absolute;
+      left: -2rem;
+      top: 1em;
+      transform: translateY(-50%);
+      line-height: 1;
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    .sujet-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0.5rem 0 0.75rem 0;
+      font-size: 0.75rem;
+    }
+
+    .meta-item {
+      position: relative;
+      padding-left: 1.25rem;
+      color: var(--text-muted-color);
+    }
+
+    .meta-item::before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--concours-color);
+    }
+
+    .meta-concours::before {
+      content: '\f5a2';
+    }
+    .meta-filiere::before {
+      content: '\f501';
+    }
+    .meta-session::before {
+      content: '\f073';
+    }
+    .meta-epreuve::before {
+      content: '\f573';
+    }
+    .meta-duree::before {
+      content: '\f017';
+    }
+    .meta-difficulte::before {
+      content: '\f06a';
+    }
+  }
+
+  .sujet-objectif {
+    margin: 0.5rem 0.75rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+}
+
+.prerequis-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.3rem 0;
+  margin: 0.5rem 0;
+  gap: 0 0.4rem;
+  font-size: 0.95rem;
+  position: relative;
+  padding-left: 3rem;
+  align-items: center;
+
+  &::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f02c'; // fa-tag
+    font-size: 1.75em;
+    color: var(--concours-color);
+    position: absolute;
+    left: 0.75rem;
+    top: 1.25em;
+    transform: translateY(-100%);
+    line-height: 1;
+  }
+  .prerequis-item {
+    font-family: 'Roboto Condensed', sans-serif;
+    display: inline-block;
+    position: relative;
+    margin-right: 0.55rem;
+  }
+
+  .prerequis-item:not(:last-child)::after {
+    content: '•';
+    font-size: 2em;
+    position: absolute;
+    right: -0.75rem;
+    color: var(--text-muted-color);
+    line-height: 0.85;
+  }
+}
+.prerequis-post-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  gap: 0 1rem;
+  position: relative;
+  padding-left: 1rem;
+  align-items: center;
+  font-size: 0.95rem;
+
+  .prerequis-item {
+    font-family: 'Roboto Condensed', sans-serif;
+    display: inline-block;
+    position: relative;
+    margin-top: 0.75rem;
+    &::before {
+      content: '';
+      display: inline-block;
+      position: relative;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      left: -0.5rem;
+      border: 2px solid;
+      background-color: var(--timeline-year-dot-color);
+      border-color: var(--timeline-node-bg);
+      box-shadow: 0 0 2px 0 #c2c6cc;
+      z-index: 1;
+    }
+  }
+}
+.download-concours {
+  padding: 0.4rem 0 0.8rem 0;
+  margin: 0.5rem 0;
+}
+.download-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.4rem;
+  font-size: 0.95rem;
+  position: relative;
+  padding-left: 3rem;
+  align-items: center;
+  &::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f019'; // fa-download
+    font-size: 1.75em;
+    color: var(--concours-color);
+    position: absolute;
+    left: 0.5rem;
+    top: 0.75em;
+    transform: translateY(-75%);
+    line-height: 1;
+  }
+
+  .download-item {
+    font-family: 'Roboto Condensed', sans-serif;
+    position: relative;
+    padding-left: 1.5rem;
+    padding-right: 2rem;
+  }
+
+  .download-item::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    font-size: 1rem;
+    color: var(--text-muted-color);
+    left: 0;
+  }
+
+  .download-original::before {
+    content: '\f1c1';
+  }
+  .download-report::before {
+    content: '\e0e3';
+  }
+  .download-print::before {
+    content: '\f02f';
+  }
+  .download-tablet::before {
+    content: '\f3fa';
+  }
+  .download-phone::before {
+    content: '\f3cd';
+  }
+  .download-web::before {
+    content: '\f0ac';
+  }
+}
+
+// Entête de la fenêtre concours
 
 .view-switch {
   position: relative;
   margin: 0 5px 0 5px; /* Marge à droite au lieu de la gauche */
-  min-width: 40px; /* Réserver un espace minimum */
-}
-
-#switchViewBtn,
-#switchViewBtn2 {
-  background-color: transparent;
-  border: none;
-  color: var(--text-color);
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-#switchViewBtn:hover,
-#switchViewBtn2:hover {
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .view-dropdown {
   display: none;
   position: absolute;
-  background-color: var(--concours-window-bg);
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 4px;
   right: 0; /* Aligné à droite au lieu de la gauche */
   top: 100%;
+  z-index: 1;
+  background-color: var(--concours-bg);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 
 .view-switch:hover .view-dropdown {
@@ -151,22 +461,41 @@
   width: 100%;
   text-align: left;
   cursor: pointer;
+
+  &:hover {
+    background-color: var(--mask-bg);
+  }
+
+  &.active {
+    color: var(--text-dark) !important;
+    background: var(--concours-color);
+    font-weight: bold;
+  }
 }
 
-.view-option:hover {
-  background-color: var(--hover-bg);
+.view-button {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: var(--mask-bg);
+  }
 }
 
-.view-option.active {
-  color: var(--link-color);
-  font-weight: bold;
+.concours-titlepage {
+  color: var(--concours-color) !important ;
 }
 
 .concours-tabs-container {
   flex-grow: 1;
   overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
   @include border-radius(0 0px 15px 15px);
-  background-color: var(--concours-window-deco);
+  background-color: var(--concours-color);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   margin-left: 10px;
   background-image: -webkit-gradient(
@@ -217,447 +546,96 @@
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   color: var(--link-color);
-  border-bottom: 1px solid var(--concours-window-deco);
+  border-bottom: 1px solid var(--concours-color);
   padding-bottom: 5px;
 }
 
-// /* Style pour les éléments de sujet inchangés */
-// .sujet-item {
-//   border: 1px solid var(--border-color);
-//   border-radius: 5px;
-//   padding: 15px;
-//   margin-bottom: 15px;
-//   background-color: rgba(0, 0, 0, 0.1);
-// }
-
-[scroll] {
-  overflow: visible;
+.concours-header {
   display: flex;
-  flex-direction: column;
-
-  > :first-child {
-    position: sticky;
-    z-index: 10;
-    margin: 0;
-  }
-
-  > :not(:first-child) {
-    overflow-y: auto;
-    flex-grow: 1;
-    padding-bottom: 0.5rem;
-    &::-webkit-scrollbar {
-      width: 0;
-    }
-  }
-}
-
-[scroll='1'] {
-  max-height: 300px;
-}
-[scroll='2'] {
-  max-height: 420px;
-}
-[scroll='3'] {
-  max-height: 560px;
-}
-[scroll='4'] {
-  max-height: 640px;
-}
-.view-container {
-  margin: 0;
-}
-@include bp.lte(bp.get(sm)) {
-  .content {
-    > [class^='carte-'] {
-      @include mx.ml-mr(-1rem);
-      padding: 0.5rem;
-      padding-top: 1.5rem;
-      border: none;
-      max-width: none;
-      border-radius: 0;
-
-      > :first-child {
-        position: absolute;
-        margin: -1.6em -25px;
-        padding-right: 0.5rem;
-        text-align: right;
-      }
-    }
-  }
-}
-@include bp.lte(bp.get(sm)) {
-  .content {
-    .view-container > [class^='concours-window'],
-    > [class^='concours-window'] {
-      margin-left: -1.5rem;
-      margin-right: -1.5rem;
-      border-radius: 0;
-    }
-  }
-}
-.generic {
-  background-color: var(--card-bg);
-  --link-underline-color: var(--card-bg);
-  margin: 2rem 0;
-  border: 1px solid var(--main-border-color);
-  border-left: 4px solid var(--main-border-color);
-  box-shadow: var(--card-shadow);
-
-  h2,
-  h3,
-  h4 {
-    position: relative;
-    margin-top: 0;
-    color: var(--heading-color);
-
-    &::before {
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--main-border-color);
-      font-size: 1em;
-    }
-  }
-  ul {
-    padding-left: 1.5rem;
-    margin-bottom: 0;
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-  }
-
-  .content {
-    margin-top: 1rem;
-    color: var(--text-color);
-  }
-}
-
-.generic-card {
-  @extend .generic;
-
-  h2,
-  h3,
-  h4 {
-    &::before {
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--main-border-color);
-      font-size: 1em;
-    }
-  }
-
-  ul {
-    padding-left: 1.5rem;
-    margin-bottom: 0;
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-  }
-}
-
-.prerequis {
-  @extend .generic-card;
-
-  h2 {
-    &::before {
-      content: '\f5da';
-    }
-  }
-  .prerequis-content {
-    @extend .content;
-  }
-}
-
-.links {
-  @extend .generic-card;
-
-  h2 {
-    padding-left: 2.2rem;
-    &::before {
-      content: '\f0c1';
-    }
-  }
-  .links-content {
-    @extend .content;
-  }
-}
-
-.two-column-list {
-  // Configuration desktop
-  column-count: 2; // Deux colonnes
-  column-gap: 2rem; // Espace entre colonnes
-  padding-left: 1rem;
-
-  // Style des éléments
-  li {
-    break-inside: avoid-column; // Bloque la coupure d'items
-    margin-bottom: 0.75rem;
-  }
-
-  // Media query pour mobile
-  @media (max-width: 768px) {
-    column-count: 1; // Une seule colonne
-    padding-left: 1.5rem; // Alignement standard des listes
-  }
-}
-
-// .concours-container {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 0;
-//   margin: 0 !important;
-//   padding: 0 !important;
-//   margin-top: 3rem;
-// }
-
-.sujet-item {
-  padding: 0 5px;
-  margin: 0 -5px 0.5rem -5px;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  border: 1px solid var(--carte-border-shadow);
-
-  .sujet-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-  }
-
-  .sujet-title {
-    position: relative;
-    margin: 1rem 0 0.5rem 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    line-height: 1.35;
-
-    &::before {
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      font-size: 1.5rem;
-      content: '\f5a2';
-      color: var(--concours-window-deco);
-      position: absolute;
-      left: -2rem;
-      top: 1em;
-      transform: translateY(-50%);
-      line-height: 1;
-    }
-
-    h3 {
-      margin: 0;
-    }
-
-    .sujet-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin: 0.5rem 0 0.75rem 0;
-      font-size: 0.75rem;
-    }
-
-    .meta-item {
-      position: relative;
-      padding-left: 1.25rem;
-      color: var(--text-muted-color);
-    }
-
-    .meta-item::before {
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      position: absolute;
-      left: 0;
-      color: var(--concours-window-deco);
-    }
-
-    .meta-filiere::before {
-      content: '\f501';
-    }
-    .meta-session::before {
-      content: '\f073';
-    }
-    .meta-epreuve::before {
-      content: '\f573';
-    }
-    .meta-duree::before {
-      content: '\f017';
-    }
-    .meta-difficulte::before {
-      content: '\f06a';
-    }
-  }
-
-  .sujet-objectif {
-    margin: 0.5rem 0.75rem;
-    font-size: 1.1rem;
-    line-height: 1.4;
-  }
-}
-
-.prerequis-list {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0.3rem 0;
-  margin: 0.5rem 0;
-  gap: 0 0.4rem;
-  font-size: 0.85rem;
-  position: relative;
-  padding-left: 3rem;
   align-items: center;
-
-  &::before {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    content: '\f02c'; // fa-tag
-    font-size: 1.75em;
-    color: var(--concours-window-deco);
-    position: absolute;
-    left: 0.75rem;
-    top: 1.25em;
-    transform: translateY(-100%);
-    line-height: 1;
-  }
-  .prerequis-item {
-    font-family: 'Roboto Condensed', sans-serif;
-    display: inline-block;
-    position: relative;
-    margin-right: 0.55rem;
-  }
-
-  .prerequis-item:not(:last-child)::after {
-    content: '•';
-    font-size: 2em;
-    position: absolute;
-    right: -0.75rem;
-    color: var(--text-muted-color);
-    line-height: 0.85;
-  }
-}
-.prerequis-post-list {
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 1rem;
-  position: relative;
-  padding-left: 1rem;
-  align-items: center;
-
-  .prerequis-item {
-    font-family: 'Roboto Condensed', sans-serif;
-    display: inline-block;
-    position: relative;
-    &::before {
-      content: '•';
-      font-size: 2rem;
-      position: absolute;
-      color: var(--heading-color);
-      transform: translateX(-125%);
-      line-height: 1;
-    }
-  }
-}
-.download-concours {
-  padding: 0.4rem 0 0.8rem 0;
-  margin: 0.5rem 0;
-}
-.download-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 0.4rem;
-  font-size: 0.85rem;
-  position: relative;
-  padding-left: 3rem;
-  align-items: center;
-  &::before {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    content: '\f019'; // fa-download
-    font-size: 1.75em;
-    color: var(--concours-window-deco);
-    position: absolute;
-    left: 0.5rem;
-    top: 0.75em;
-    transform: translateY(-75%);
-    line-height: 1;
-  }
-
-  .download-item {
-    font-family: 'Roboto Condensed', sans-serif;
-    position: relative;
-    padding-left: 1.5rem;
-    padding-right: 2rem;
-  }
-
-  .download-item::before {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    position: absolute;
-    font-size: 1rem;
-    color: var(--text-muted-color);
-    left: 0;
-  }
-
-  .download-original::before {
-    content: '\f1c1';
-  }
-  .download-report::before {
-    content: '\e0e3';
-  }
-  .download-print::before {
-    content: '\f02f';
-  }
-  .download-tablet::before {
-    content: '\f3fa';
-  }
-  .download-phone::before {
-    content: '\f3cd';
-  }
-  .download-web::before {
-    content: '\f0ac';
-  }
-}
-
-.concours-heading {
-  display: flex;
-  position: relative;
   justify-content: space-between;
-  align-items: center;
-  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
 
-  h1.special-title {
-    font-size: 2em;
-    font-weight: 500;
-    line-height: 1;
-    transform: translateY(-50%);
-    line-height: 1.3;
+.filter-switch {
+  position: relative;
+  margin: 0 -5px 0 5px;
+}
+
+.filter-dropdown {
+  display: none;
+  position: absolute;
+  min-width: 280px;
+  top: 100%;
+  left: 0;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1;
+  background-color: var(--concours-bg);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  line-height: 1.3;
+}
+
+.filter-switch:hover .filter-dropdown {
+  display: block;
+}
+
+.filter-option {
+  color: var(--text-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--mask-bg);
   }
-  .concours-meta {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0.5rem 0 0.75rem 0;
-    font-size: 0.75rem;
-  }
-  .concours-item {
-    font-size: 1rem;
-    margin: 0 0.25rem;
-    position: relative;
-    background: linear(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(46, 52, 64, 0.4) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  }
-  a {
-    text-decoration: none;
-    padding: 0.5rem 0.75rem;
+
+  &.active {
+    color: var(--text-dark) !important;
+    background: var(--concours-color);
+    font-weight: bold;
   }
 }
+
+.filter-button {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: var(--mask-bg);
+  }
+}
+
+// Styles pour les états de chargement et aucun résultat
+.loading-indicator,
+.no-results {
+  padding: 30px;
+  text-align: center;
+  font-style: italic;
+  color: var(--text-muted-color);
+}
+
+// #switchViewBtn {
+//   background-color: transparent;
+//   border: none;
+//   color: var(--text-color);
+//   font-size: 1.2rem;
+//   cursor: pointer;
+//   padding: 10px;
+//   border-radius: 5px;
+//   &:hover {
+//     background-color: rgba(255, 255, 255, 0.1);
+//   }
+// }

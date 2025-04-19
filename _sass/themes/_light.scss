@@ -1,18 +1,19 @@
+@use 'sass:color';
 @use '../themes/nord' as *;
 
 @mixin styles {
   color-scheme: light;
 
   /* Framework color */
-  --main-bg: #{$light0};
+  --main-bg: #{$light1};
   --mask-bg: #{$light2};
   --main-border-color: #{$emph-light};
 
   /* Common color */
   --text-color: #{$dark0};
-  --text-dark: #{$light1};
   --text-light: #{$dark1};
-  --text-muted-color: #{$dark1};
+  --text-dark: #{$light1};
+  --text-muted-color: #{$dark2};
   --text-muted-highdark-color: inherit;
   --heading-color: #{$heading-light};
   --label-color: #{$dark2};
@@ -39,17 +40,16 @@
   /* Sidebar */
   --site-title-color: #{$emph-light};
   --site-subtitle-color: #{$dark2};
-  --sidebar-bg: #{$light2};
+  --sidebar-bg: #{$light0};
   --sidebar-border-color: #{$light2};
   --sidebar-muted-color: #{$dark2};
   --sidebar-active-color: #{$dark0};
   --sidebar-hover-bg: #{$emph-light};
   --sidebar-btn-bg: #{$light1};
   --sidebar-btn-color: #{$dark2};
-  --avatar-border-color: #{$dark2};
+  --avatar-border-color: #{$emph-light};
 
-  --card-bg: #{$light2};
-  --card-deco: #{$dark2};
+  --card-bg: #{$light0};
   --card-border-color: #{$emph-light};
   --card-text-color: #{$dark1};
   --card-heading-color: #{$heading-light};
@@ -88,20 +88,21 @@
   --prompt-info-icon-color: #{$info-light};
   --prompt-warning-bg: #{$warn-light}33;
   --prompt-warning-icon-color: #{$warn-light};
-  --carte-note-bg: #{$tip-light}45;
-  --carte-note-deco: #{$tip-light};
-  --carte-definition-bg: #{$info-light}45;
-  --carte-definition-deco: #{$info-light};
-  --carte-theorem-bg: #{$warn-light}45;
-  --carte-theorem-deco: #{$warn-light};
-  --carte-exercise-bg: #{$danger-light}45;
-  --carte-exercise-deco: #{$danger-light};
-  --carte-generic-bg: rgba(0, 0, 0, 0.1);
-  --carte-generic-deco: rgba(0, 0, 0, 0.7);
+  --carte-note-bg: #{$tip-light}33;
+  --carte-note: #{$tip-light};
+  --carte-definition-bg: #{$info-light}33;
+  --carte-definition: #{$info-light};
+  --carte-theorem-bg: #{$warn-light}33;
+  --carte-theorem: #{$warn-light};
+  --carte-exercise-bg: #{$danger-light}33;
+  --carte-exercise: #{$danger-light};
+  --carte-generic-bg: #{$light0};
+  --carte-generic: rgba(0, 0, 0, 0.6);
+  --carte-background-shadow: rgba(255, 255, 255, 0.4);
+  --carte-border-shadow: rgba(0, 0, 0, 0.3);
 
-  --carte-shadow: rgba(0, 0, 0, 0.2);
-  --concours-window-deco: #{$concours-dark};
-  --concours-window-bg: #{$light2};
+  --concours-color: #{$concours-light};
+  --concours-bg: #{$light0};
 
   /* Tags */
   --tag-border: #{$light2};

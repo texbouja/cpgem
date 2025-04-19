@@ -41,7 +41,7 @@ copyright:
     Sauf mention contraire, les articles de ce site sont publiés
     sous la licence Creative Commons Attribution 4.0 International (CC BY 4.0) par l'auteur.
 
-meta: "" #Propulsé par :PLATFORM avec le thème :THEME
+meta: "" #Propulsé par :PLATFORM
 
 not_found:
   statement: Désolé, nous avons égaré cette URL ou elle pointe vers quelque chose qui n'existe pas.
@@ -53,7 +53,7 @@ notification:
 # ----- Posts related labels -----
 
 post:
-  written_by: Par
+  written_by: Publié par
   posted: Posté
   updated: Mis à jour
   words: mots

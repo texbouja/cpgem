@@ -50,12 +50,30 @@ keywords:
   serexp: "série exponentielle"
   sergeo: "serie géometrique"
 
+parties:
+  alglin: "Algèbre linéaire"
+  algbil: "Algèbre bilinéaire"
+  topalg: "Topologie et algèbre"
+  topana: "Topologie et analyse"
+  proana: "Probabilités et analyse"
+  proalg: "Probabilités et algèbre"
+  serint: "Séries et intégrales"
+  caldif: "Calcul différeniel"
+  equdif: "Équations différentielles"
+
 concours:
-  xens: "Polytéchnique/École Normale Supérieure"
-  ccmp: "Concours commun Mines et Ponts"
+  xens: "Polytéchnique - École Normale Supérieure"
+  ccmp: "Concours Commun Mines et Ponts"
   ccs: "Concours Centrale Supéléc"
-  ccinp: "Concours commun INP"
-  cnm: "Concours national marocain"
+  ccinp: "Concours Commun INP"
+  cnm: "Concours National Marocain"
+
+concours-shortnames:
+  xens: "XENS"
+  ccmp: "CCMP"
+  ccs: "Centrale"
+  ccinp: "CCINP"
+  cnm: "CNM"
 
 
 

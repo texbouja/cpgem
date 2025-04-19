@@ -50,7 +50,6 @@
   --avatar-border-color: #{$emph-dark};
 
   --card-bg: #{$dark0};
-  --card-deco: #{$darkreally};
   --card-border-color: #{$emph-dark};
   --card-text-color: #{$light1};
   --card-heading-color: #{$heading-dark};
@@ -90,20 +89,20 @@
   --prompt-warning-bg: #{$warn-dark}33;
   --prompt-warning-icon-color: #{$warn-dark};
   --carte-note-bg: #{$tip-dark}33;
-  --carte-note-deco: #{$tip-dark};
+  --carte-note: #{$tip-dark};
   --carte-definition-bg: #{$info-dark}33;
-  --carte-definition-deco: #{$info-dark};
+  --carte-definition: #{$info-dark};
   --carte-theorem-bg: #{$warn-dark}33;
-  --carte-theorem-deco: #{$warn-dark};
+  --carte-theorem: #{$warn-dark};
   --carte-exercise-bg: #{$danger-dark}33;
-  --carte-exercise-deco: #{$danger-dark};
-  --carte-generic-bg: var(--card-bg);
-  --carte-generic-deco: var(--main-bg);
+  --carte-exercise: #{$danger-dark};
+  --carte-generic-bg: #{$dark0};
+  --carte-generic: rgba(255, 255, 255, 0.2);
+  --carte-background-shadow: rgba(0, 0, 0, 0.2);
   --carte-border-shadow: rgba(255, 255, 255, 0.24);
 
-  --concours-window-deco: #{$concours-dark};
-  --concours-window-bg: #{$dark0};
-  --concours-window-shadow: #6e1313;
+  --concours-color: #{$concours-dark};
+  --concours-bg: #{$dark0};
 
   /* Tags */
   --tag-border: #{$dark2};
