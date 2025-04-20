@@ -19,7 +19,7 @@ L'icône <span class="fas fa-filter"></span> permet de filtrer les sujets par pa
 > L'icône <span class="fas fa-medal"></span> indique le titre d'un sujet de concours. Les autres informations du sujet figurent à droite du titre. Le titre est un lien hypertexte qui mène vers la fiche individuelle du sujet. Celle-ci peut contenir plus de détails que l'encadré dans cette page.
 >
 > En bas de l'encadré du sujet, sont disponibles les liens de téléchargement et la liste des chapitres/notions  abordés dans le sujet sous forme de tags qui mènent vers des pages listant toutes les publications qui abordent les mêmes notions.
-{: .carte-generic}
+{: .carte-generic .collapsible}
 
 <div id="concours-view" class="concours-view">
   <div id="concours-container" concours-window>

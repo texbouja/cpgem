@@ -11,10 +11,12 @@
 
   /* Common color */
   --text-color: #{$dark0};
-  --text-light: #{$dark1};
-  --text-dark: #{$light1};
-  --text-muted-color: #{$dark2};
+  --text-muted-color: #{$dark0}95;
   --text-muted-highdark-color: inherit;
+  --text-dark: #{$light0};
+  --text-light: #{$dark1};
+  --text-muted-dark: #{$light0}90;
+  --text-muted-light: #{$dark1}95;
   --heading-color: #{$heading-light};
   --label-color: #{$dark2};
   --blockquote-border-color: #{$light2};
@@ -99,7 +101,7 @@
   --carte-generic-bg: #{$light0};
   --carte-generic: rgba(0, 0, 0, 0.6);
   --carte-background-shadow: rgba(255, 255, 255, 0.4);
-  --carte-border-shadow: rgba(0, 0, 0, 0.3);
+  --carte-border-trasparency: rgba(0, 0, 0, 0.3);
 
   --concours-color: #{$concours-light};
   --concours-bg: #{$light0};
