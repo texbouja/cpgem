@@ -217,6 +217,7 @@ exclude:
   - "package*.json"
   - sass
   - templates
+  - pretext
 
 jekyll-archives:
   enabled: [categories, tags]
