@@ -29,15 +29,151 @@ $carte-counters: (
 $carte-numbered-types: ('theorem', 'definition', 'exercise');
 
 // Mixin pour créer les différents types de cartes
+// @mixin carte($type, $color: $type, $name: null, $icon: null, $numbered: null) {
+//   // Détermine si le type doit être numéroté par défaut
+//   $should-number: if(
+//     $numbered != false,
+//     $numbered,
+//     list.index($carte-numbered-types, $type) != null
+//   );
+//   $display-name: if($name != null, $name, capitalize($type));
+
+//   .carte-#{$type} {
+//     display: flex;
+//     flex-direction: column;
+//     position: relative;
+//     padding: 2.8rem 1rem 1rem 1rem;
+//     margin: 1.5rem 0;
+//     line-height: 1.5;
+//     background-color: var(--carte-#{$color}-bg);
+//     @include border-radius(5px 5px 15px 15px);
+//     @include carte-border(2px);
+//     overflow: hidden;
+
+//     // Style pour le premier élément s'il s'agit d'un titre
+//     > h2:first-child,
+//     > h3:first-child,
+//     > h4:first-child {
+//       display: inline-block;
+//       position: absolute;
+//       top: 0;
+//       padding: 2px 1.5rem 4px 1.5rem;
+//       margin: 1px;
+//       min-width: 33%;
+//       font-weight: 400;
+//       color: var(--text-dark);
+//       background: var(--carte-#{$color});
+//       @include border-radius(0 0px 15px 15px);
+//       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+//       background-image: -webkit-gradient(
+//         linear,
+//         left top,
+//         left bottom,
+//         from(#0000),
+//         to(#0005)
+//       );
+
+//       // Ajouter la numérotation si activée et si la classe 'nonumber' n'est pas présente
+//       // Numérotation normale
+//       @if $should-number {
+//         &::before {
+//           content: counter(carte-#{$type}) ' #{$display-name} ';
+//         }
+//       } @else {
+//         &::before {
+//           content: '#{$display-name}';
+//         }
+//       }
+
+//       // Cas avec icône
+//       @if $icon != null {
+//         &::before {
+//           @if $should-number {
+//             content: counter(carte-#{$type})
+//               ' ' +
+//               $icon +
+//               ' ' +
+//               '#{$display-name}';
+//           } @else {
+//             content: $icon + ' ' + '#{$display-name}';
+//           }
+//         }
+//       }
+//     }
+
+//     &.nonumber {
+//       > h2:first-child,
+//       > h3:first-child,
+//       > h4:first-child {
+//         &::before {
+//           @if $icon != null {
+//             content: $icon + ' ' + '#{$display-name}';
+//           } @else {
+//             content: '#{$display-name}';
+//           }
+//         }
+//       }
+//     }
+
+//     .nonumber .carte-#{$type} {
+//       > h2:first-child,
+//       > h3:first-child,
+//       > h4:first-child {
+//         &::before {
+//           @if $icon != null {
+//             content: $icon + ' ' + '#{$display-name}';
+//           } @else {
+//             content: '#{$display-name}';
+//           }
+//         }
+//       }
+//     }
+
+//     // Style pour les éléments collapsibles
+//     &.collapsible {
+//       > h2:first-child,
+//       > h3:first-child,
+//       > h4:first-child {
+//         cursor: pointer;
+//         position: absolute;
+//         padding-right: 3rem;
+
+//         &::after {
+//           font-family: 'Font Awesome 6 Free';
+//           font-weight: 900;
+//           content: '\f077';
+//           position: absolute;
+//           right: 10px;
+//           top: 50%;
+//           transform: translateY(-50%);
+//           font-size: 0.8em;
+//           transition: transform 0.3s ease;
+//         }
+//       }
+
+//       &.collapsed {
+//         > h2:first-child,
+//         > h3:first-child,
+//         > h4:first-child {
+//           &::after {
+//             transform: translateY(-50%) rotate(180deg);
+//           }
+//         }
+
+//         > *:not(h2):not(h3):not(h4) {
+//           display: none;
+//         }
+//       }
+//     }
+//   }
+// }
+
 @mixin carte($type, $color: $type, $name: null, $icon: null, $numbered: null) {
-  // Détermine si le type doit être numéroté par défaut
   $should-number: if(
     $numbered != false,
     $numbered,
     list.index($carte-numbered-types, $type) != null
   );
-
-  // Utilise le nom personnalisé s'il est fourni, sinon capitalise le type
   $display-name: if($name != null, $name, capitalize($type));
 
   .carte-#{$type} {
@@ -48,16 +184,20 @@ $carte-numbered-types: ('theorem', 'definition', 'exercise');
     margin: 1.5rem 0;
     line-height: 1.5;
     background-color: var(--carte-#{$color}-bg);
-    @include border-radius(5px 5px 15px 15px);
-    @include carte-border(2px);
+    // border-top: 2px solid var(--carte-#{$color});
+    box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    @include border-radius(0 0 15px 15px);
     overflow: hidden;
 
-    // Counter pour la numérotation
+    // Incrémentation conditionnelle du compteur
     @if $should-number {
-      counter-increment: carte-#{$type};
+      $icon: null;
+      &:not(.nonumber) {
+        counter-increment: carte-#{$type};
+      }
     }
 
-    // Style pour le premier élément s'il s'agit d'un titre
+    // Style du titre
     > h2:first-child,
     > h3:first-child,
     > h4:first-child {
@@ -65,13 +205,13 @@ $carte-numbered-types: ('theorem', 'definition', 'exercise');
       position: absolute;
       top: 0;
       padding: 2px 1.5rem 4px 1.5rem;
-      margin: 1px;
+      margin-top: 2px;
       min-width: 33%;
       font-weight: 400;
       color: var(--text-dark);
       background: var(--carte-#{$color});
       @include border-radius(0 0px 15px 15px);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.2);
       background-image: -webkit-gradient(
         linear,
         left top,
@@ -80,9 +220,10 @@ $carte-numbered-types: ('theorem', 'definition', 'exercise');
         to(#0005)
       );
 
-      // Ajouter la numérotation si activée et si la classe 'nonumber' n'est pas présente
+      // Numérotation normale
       @if $should-number {
-        &::before {
+        &:not(.nonumber)::before,
+        :not(.nonumber) &::before {
           content: counter(carte-#{$type}) ' #{$display-name} ';
         }
       } @else {
@@ -91,49 +232,53 @@ $carte-numbered-types: ('theorem', 'definition', 'exercise');
         }
       }
 
-      // Ne pas ajouter la numérotation si la classe 'nonumber' est présente
-      .nonumber > &,
-      &.nonumber {
-        > h2:first-child,
-        > h3:first-child,
-        > h4:first-child {
-          &::before {
-            content: '#{$display-name}';
-          }
-        }
-      }
-
-      // Ajouter une icône si spécifiée
+      // Cas avec icône
       @if $icon != null {
         &::before {
-          font-family: 'Font Awesome 6 Free';
+          font-family: 'Font Awesome 5 Free';
           font-weight: 900;
-          color: var(--site-title-color);
-          left: 1rem;
-          top: 50%;
-          transform: translateY(-50%);
+          margin-right: 0.5em;
+          content: $icon;
 
-          @if $should-number {
-            content: counter(carte-#{$type}) + ' ';
-          } @else {
-            content: $icon + ' ';
-          }
-        }
-
-        .nonumber > &,
-        &.nonumber {
-          > h2:first-child,
-          > h3:first-child,
-          > h4:first-child {
-            &::before {
-              content: $icon + ' ' + '#{$display-name}';
-            }
+          /* Alternative plus simple sans selector.unify */
+          + * {
+            font-family: inherit;
+            font-weight: normal;
           }
         }
       }
     }
 
-    // Style pour les éléments collapsibles
+    // // Gestion de .nonumber
+    // &.nonumber {
+    //   > h2:first-child,
+    //   > h3:first-child,
+    //   > h4:first-child {
+    //     &::before {
+    //       @if $icon != null {
+    //         content: $icon + ' ' + '#{$display-name}';
+    //       } @else {
+    //         content: '#{$display-name}';
+    //       }
+    //     }
+    //   }
+    // }
+
+    // // Cas où .nonumber est sur un parent
+    // .nonumber .carte-#{$type} {
+    //   > h2:first-child,
+    //   > h3:first-child,
+    //   > h4:first-child {
+    //     &::before {
+    //       @if $icon != null {
+    //         content: $icon + ' ' + '#{$display-name}';
+    //       } @else {
+    //         content: '#{$display-name}';
+    //       }
+    //     }
+    //   }
+    // }
+
     &.collapsible {
       > h2:first-child,
       > h3:first-child,
@@ -164,7 +309,7 @@ $carte-numbered-types: ('theorem', 'definition', 'exercise');
           }
         }
 
-        > *:not(h2):not(h3):not(h4) {
+        > *:not(:first-child) {
           display: none;
         }
       }
@@ -216,27 +361,25 @@ body {
 //   Ancien
 
 @include bp.lte(bp.get(sm)) {
-  .content {
-    > [class^='carte-'] {
-      @include mx.ml-mr(-1rem);
-      padding: 0.75rem;
-      padding-top: 3rem;
-      border: none;
-      max-width: none;
-      border-radius: 0;
-      border-bottom: 2px solid var(--carte-border-trasparency);
+  [class^='carte-'] {
+    @include mx.ml-mr(-1.5em);
+    padding: 0.75rem 1.5rem;
+    padding-top: 3rem;
+    border: none;
+    max-width: none;
+    border-radius: 0;
+    border-bottom: 2px solid var(--carte-border-trasparency);
 
-      > h2:first-child,
-      > h3:first-child,
-      > h4:first-child {
-        position: absolute;
-        top: 5px;
-        min-width: 66%;
-        padding-right: 2.5rem;
-        text-align: right;
-        margin: 0 -0.75rem;
-        @include border-radius(0 0.8em 0.8em 0);
-      }
+    > h2:first-child,
+    > h3:first-child,
+    > h4:first-child {
+      position: absolute;
+      top: 5px;
+      min-width: 66%;
+      padding-right: 2.5rem;
+      text-align: right;
+      margin: 0 -1rem;
+      @include border-radius(0 0.8em 0.8em 0);
     }
   }
 }
@@ -260,27 +403,21 @@ body {
   }
 }
 
-.concours-view {
-  margin: 0;
+.header-concours-titlepage {
+  padding: 1rem;
+  padding-top: 3.5rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+  background: var(--card-bg);
+  box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .concours-titlepage {
   font-weight: 700;
-  padding: 3.5rem 1.5rem 6rem 1.5rem;
-  margin: 0;
   color: var(--concours-color);
-  background-image: linear-gradient(
-    to bottom,
-    var(--main-bg),
-    var(--card-bg),
-    var(--card-bg),
-    var(--main-bg)
-  );
 }
 .concours-description {
   color: var(--text-color) !important;
-  padding: 0 1.5rem 4rem 1.5rem;
-  margin-top: -6rem;
 }
 
 @include bp.lte(bp.get(sm)) {
@@ -292,42 +429,45 @@ body {
   }
 }
 
-[concours-window] {
-  display: flex;
-  flex-direction: column;
+#concours-view {
+  position: -webkit-sticky !important;
   position: sticky !important;
-  top: calc(v.$topbar-height + 2rem);
-  padding-bottom: 0.75rem;
-  max-height: calc(100vh - v.$topbar-height - 2rem);
-  margin: 1.5rem 0;
-  line-height: 1.5;
-  position: relative;
-  border-radius: 8px;
-  background-color: var(--concours-bg);
-  border: 2px solid var(--concours-color);
-  box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.2);
+  top: calc(v.$topbar-height) !important;
+  margin: 1rem 0;
+}
 
-  > :first-child {
-    z-index: 998;
-    margin: 0;
+#concours-container {
+  height: calc(100vh - v.$topbar-height - 2rem);
+  overflow-y: auto;
+  padding-bottom: 1rem;
+  line-height: 1.5;
+  border-radius: 8px;
+  border: 3px solid var(--concours-color);
+  background-color: var(--concours-bg);
+  box-shadow: inset 0 0 8px 2px rgba(0, 0, 0, 0.4);
+
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
   }
 
-  > :not(:first-child) {
-    overflow-y: auto;
-    flex-grow: 1;
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  > .concours-header {
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    margin-bottom: 1rem;
+    background-color: var(--card-bg);
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.4);
+  }
+  concours- > :not(:first-child) {
+    padding: 0 0.5rem;
   }
 }
 
 @include bp.lte(bp.get(sm)) {
-  .content {
-    .concours-view > [concours-window],
-    > [concours-window] {
-      margin: 0 -1.5rem;
-      border-radius: 0;
-    }
+  #concours-container {
+    margin: 0 calc(-1rem - 3px);
+    border-radius: 0;
   }
 }
 
@@ -398,6 +538,9 @@ body {
   background-color: var(--concours-bg);
   box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .view-switch:hover .view-dropdown {
@@ -761,4 +904,12 @@ body {
   .download-web::before {
     content: '\f0ac';
   }
+}
+
+.tag-number-style {
+  padding: 0 2px;
+  font-size: 0.75em;
+  border-radius: 4px;
+  margin-left: 0.2em;
+  background: var(--carte-border-trasparency);
 }

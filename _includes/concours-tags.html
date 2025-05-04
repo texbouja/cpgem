@@ -1,0 +1,83 @@
+{% comment %} {% if page.concourspage %}
+<div id="tags" class="d-flex flex-wrap mx-xl-2">
+  {% assign tags = '' | split: '' %}
+  {% for t in site.concourstags %}
+    {% assign tags = tags | push: t[0] %}
+  {% endfor %}
+
+  {% assign sorted_tags = tags | sort_natural %}
+  {% assign tags_title = 'Tags des sujets' %}
+
+  {{ tags_title | inspect }}
+
+<div style="display: flex; flex-direction: column;">
+  <section class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">{{- tags_title -}}</h2>
+<div>
+  {% for t in sorted_tags %}
+    <span>
+      {% if site.data.variables.keywords[t] %}
+      <a class="tag" href="{{ t | slugify | url_encode | prepend: '/tags/' | append: '/' | relative_url }}">
+            {{ site.data.variables.keywords[t] -}}
+          <span class="text-muted">{{ site.concourstags[t].size }}</span>
+      </a>
+    {% endif %}
+    </span>
+  {% endfor %}
+  </div> 
+  </section>
+  </div>
+{% endif %} {% endcomment %}
+
+
+
+{% if page.concourspage %}
+  {% assign size_list = '' | split: '' %}
+  {% assign tag_list = '' | split: '' %}
+  {% assign tags_title = 'Tags des sujets' %}
+
+  {% for tag in site.concourstags %}
+    {% assign size = tag | last | size %}
+    {% assign size_list = size_list | push: size %}
+
+    {% assign tag_str = tag | first | append: '::' | append: size %}
+    {% assign tag_list = tag_list | push: tag_str %}
+  {% endfor %}
+
+  {% assign size_list = size_list | sort | reverse %}
+
+  {% assign tag_list = tag_list | sort_natural %}
+
+  {% assign concours_tags = '' | split: '' %}
+
+  {% for size in size_list %}
+    {% for tag_str in tag_list %}
+      {% assign tag = tag_str | split: '::' %}
+      {% assign tag_name = tag | first %}
+      {% assign tag_size = tag | last | plus: 0 %}
+      {% if tag_size == size %}
+        {% unless concours_tags contains tag_name %}
+          {% assign concours_tags = concours_tags | push: tag_name %}
+          {% break %}
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+
+  {% if concours_tags.size > 0 %}
+    <div class="toc-border-cover z-3"></div>
+    <section class="position-sticky">
+      <h2 class="panel-heading">{{- tags_title -}}</h2>
+      <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+        {% for tag_name in concours_tags %}
+        {% if site.data.variables.keywords[tag_name] %}
+        <a class="post-tag btn btn-outline-primary" href="{{ tag_name | slugify | url_encode | prepend: '/tags/' | append: '/' | relative_url }}">
+              {{ site.data.variables.keywords[tag_name] -}}
+            <span class="tag-number-style">{{ site.concourstags[tag_name].size }}</span>
+        </a>
+      {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %} 
+{% endif %}

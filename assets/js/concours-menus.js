@@ -23,31 +23,35 @@ document.addEventListener('DOMContentLoaded', function () {
       initializeFilters();
       initializeView();
       renderContent();
+    })
+    .catch((error) => {
+      console.error('Erreur lors du chargement des données:', error);
+      contentContainer.innerHTML =
+        '<div class="error-message">Erreur lors du chargement des données</div>';
     });
-  // .catch((error) => {
-  //   console.error('Erreur lors du chargement des données:', error);
-  //   contentContainer.innerHTML =
-  //     '<div class="error-message">Erreur lors du chargement des données</div>';
-  // });
 
   // Initialiser les filtres à partir des données
   function initializeFilters() {
     // Ajouter "Tous les sujets" comme premier filtre (déjà dans le HTML)
 
-    // Ajouter les parties comme options de filtrage
-    Object.keys(concoursData.parties).forEach((partie) => {
-      const option = document.createElement('button');
-      option.className = 'filter-option';
-      option.setAttribute('data-filter', partie);
-      option.textContent = formatPartieLabel(partie);
-      filterDropdown.appendChild(option);
+    // Ajouter les tags comme options de filtrage
+    if (concoursData.by_tag) {
+      Object.keys(concoursData.by_tag)
+        .sort()
+        .forEach((tag) => {
+          const option = document.createElement('button');
+          option.className = 'filter-option';
+          option.setAttribute('data-filter', tag);
+          option.textContent = formatTagLabel(tag);
+          filterDropdown.appendChild(option);
 
-      // Ajouter un gestionnaire d'événements
-      option.addEventListener('click', function (e) {
-        e.stopPropagation();
-        setActiveFilter(partie);
-      });
-    });
+          // Ajouter un gestionnaire d'événements
+          option.addEventListener('click', function (e) {
+            e.stopPropagation();
+            setActiveFilter(tag);
+          });
+        });
+    }
 
     // Ajouter des gestionnaires d'événements pour l'option "Tous les sujets"
     document
@@ -58,21 +62,21 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 
-  // Formater le nom de la partie pour l'affichage
-  function formatPartieLabel(partie) {
-    // Mapping des codes de partie vers des noms lisibles
-    const partieLabels = {
-      proana: 'Probabilités et analyse',
-      serint: 'Séries et intégrales',
-      caldif: 'Calcul différentiel',
-      equdif: 'Équations différentielles',
-      topana: 'Topologie et analyse',
-      alglin: 'Algèbre linéaire',
-      algbil: 'Algèbre bilinéaire'
-      // Ajoutez d'autres mappings au besoin
-    };
-
-    return partieLabels[partie] || partie;
+  // Formater le nom du tag pour l'affichage
+  function formatTagLabel(tag) {
+    // Récupérer le nom traduit du tag s'il existe
+    // Rechercher le premier item qui contient ce tag pour obtenir son nom
+    for (const itemId of concoursData.by_tag[tag]) {
+      const item = concoursData.concours_items[itemId];
+      if (item && item.tags) {
+        for (const tagObj of item.tags) {
+          if (tagObj.slug === tag) {
+            return tagObj.name;
+          }
+        }
+      }
+    }
+    return tag; // Fallback sur le slug si pas de nom trouvé
   }
 
   // Définir le filtre actif
@@ -139,20 +143,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Obtenir les sujets filtrés
+  // Obtenir les sujets filtrés (IDs)
   function getFilteredSujets() {
     if (currentFilter === 'all') {
       return concoursData.principale;
     } else {
-      return concoursData.parties[currentFilter] || [];
+      return concoursData.by_tag[currentFilter] || [];
     }
   }
 
   // Rendre la vue "par concours"
   function renderConcours() {
-    const sujets = getFilteredSujets();
+    const sujetIds = getFilteredSujets();
 
-    if (sujets.length === 0) {
+    if (sujetIds.length === 0) {
       contentContainer.innerHTML =
         '<div class="no-results">Aucun sujet trouvé pour ce filtre</div>';
       return;
@@ -160,11 +164,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Regrouper par concours
     const concoursByName = {};
-    sujets.forEach((sujet) => {
+
+    sujetIds.forEach((sujetId) => {
+      const sujet = concoursData.concours_items[sujetId];
+      if (!sujet) return;
+
       if (!concoursByName[sujet.concours]) {
         concoursByName[sujet.concours] = [];
       }
-      concoursByName[sujet.concours].push(sujet);
+      concoursByName[sujet.concours].push(sujetId);
     });
 
     // Créer les onglets de concours
@@ -207,11 +215,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Afficher le contenu d'un concours spécifique
   function showConcoursContent(concours) {
-    const sujets = getFilteredSujets().filter(
-      (sujet) => sujet.concours === concours
-    );
+    // Récupérer tous les IDs de sujets pour ce concours qui sont également dans la liste filtrée
+    const filteredIds = getFilteredSujets();
+    const concoursIds = concoursData.by_concours[concours] || [];
+    const sujetIds = concoursIds.filter((id) => filteredIds.includes(id));
 
-    if (sujets.length === 0) {
+    if (sujetIds.length === 0) {
       contentContainer.innerHTML =
         '<div class="no-results">Aucun sujet trouvé pour ce concours et ce filtre</div>';
       return;
@@ -219,11 +228,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Regrouper par session
     const sessionsByName = {};
-    sujets.forEach((sujet) => {
+    sujetIds.forEach((sujetId) => {
+      const sujet = concoursData.concours_items[sujetId];
+      if (!sujet) return;
+
       if (!sessionsByName[sujet.session]) {
         sessionsByName[sujet.session] = [];
       }
-      sessionsByName[sujet.session].push(sujet);
+      sessionsByName[sujet.session].push(sujetId);
     });
 
     // Créer le contenu HTML
@@ -233,19 +245,27 @@ document.addEventListener('DOMContentLoaded', function () {
     Object.keys(sessionsByName)
       .sort((a, b) => b - a)
       .forEach((session) => {
-        sessionsByName[session].forEach((sujet) => {
+        sessionsByName[session].forEach((sujetId) => {
+          const sujet = concoursData.concours_items[sujetId];
           html += renderSujetCardConcours(sujet);
         });
       });
 
     contentContainer.innerHTML = html;
+
+    // Retraiter les expressions mathématiques
+    if (typeof MathJax !== 'undefined') {
+      MathJax.typesetPromise().catch((err) => {
+        console.error('MathJax error:', err);
+      });
+    }
   }
 
   // Rendre la vue "par session"
   function renderSessions() {
-    const sujets = getFilteredSujets();
+    const sujetIds = getFilteredSujets();
 
-    if (sujets.length === 0) {
+    if (sujetIds.length === 0) {
       contentContainer.innerHTML =
         '<div class="no-results">Aucun sujet trouvé pour ce filtre</div>';
       return;
@@ -253,11 +273,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Regrouper par session
     const sessionsByName = {};
-    sujets.forEach((sujet) => {
+
+    sujetIds.forEach((sujetId) => {
+      const sujet = concoursData.concours_items[sujetId];
+      if (!sujet) return;
+
       if (!sessionsByName[sujet.session]) {
         sessionsByName[sujet.session] = [];
       }
-      sessionsByName[sujet.session].push(sujet);
+      sessionsByName[sujet.session].push(sujetId);
     });
 
     // Créer les onglets de session
@@ -295,11 +319,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Afficher le contenu d'une session spécifique
   function showSessionContent(session) {
-    const sujets = getFilteredSujets().filter(
-      (sujet) => sujet.session == session
-    );
+    // Récupérer tous les IDs de sujets pour cette session qui sont également dans la liste filtrée
+    const filteredIds = getFilteredSujets();
+    const sessionIds = concoursData.by_session[session] || [];
+    const sujetIds = sessionIds.filter((id) => filteredIds.includes(id));
 
-    if (sujets.length === 0) {
+    if (sujetIds.length === 0) {
       contentContainer.innerHTML =
         '<div class="no-results">Aucun sujet trouvé pour cette session et ce filtre</div>';
       return;
@@ -307,11 +332,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Regrouper par concours
     const concoursByName = {};
-    sujets.forEach((sujet) => {
+
+    sujetIds.forEach((sujetId) => {
+      const sujet = concoursData.concours_items[sujetId];
+      if (!sujet) return;
+
       if (!concoursByName[sujet.concours]) {
         concoursByName[sujet.concours] = [];
       }
-      concoursByName[sujet.concours].push(sujet);
+      concoursByName[sujet.concours].push(sujetId);
     });
 
     // Créer le contenu HTML
@@ -321,18 +350,26 @@ document.addEventListener('DOMContentLoaded', function () {
     Object.keys(concoursByName)
       .sort()
       .forEach((concours) => {
-        // html += `<h3 class="session-concours-title">${concours.toUpperCase()}</h3>`;
-
-        concoursByName[concours].forEach((sujet) => {
+        concoursByName[concours].forEach((sujetId) => {
+          const sujet = concoursData.concours_items[sujetId];
           html += renderSujetCardSessions(sujet);
         });
       });
 
     contentContainer.innerHTML = html;
+
+    // Retraiter les expressions mathématiques
+    if (typeof MathJax !== 'undefined') {
+      MathJax.typesetPromise().catch((err) => {
+        console.error('MathJax error:', err);
+      });
+    }
   }
 
   // Rendre une carte de sujet
   function renderSujetCardConcours(sujet) {
+    if (!sujet) return '';
+
     // Générer les liens de téléchargement
     let downloadLinks = '';
     if (sujet.download_original) {
@@ -352,59 +389,64 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     return `
-      <div class="sujet-view">
-        <div class="sujet-title">
-          <h3><a href="${sujet.url}">${sujet.title}</a></h3>
-          <div class="sujet-meta">
-            ${
-              sujet.filiere
-                ? `<span class="meta-item meta-filiere">${sujet.filiere}</span>`
-                : ''
-            }
-            <span class="meta-item meta-session">${sujet.session}</span>
-            ${
-              sujet.epreuve
-                ? `<span class="meta-item meta-epreuve">${sujet.epreuve}</span>`
-                : ''
-            }
+        <div class="sujet-view">
+          <div class="sujet-title">
+            <h3><a href="${sujet.url}">${sujet.title}</a></h3>
+            <div class="sujet-meta">
+              ${
+                sujet.filiere
+                  ? `<span class="meta-item meta-filiere">${sujet.filiere}</span>`
+                  : ''
+              }
+              <span class="meta-item meta-session">${sujet.session}</span>
+              ${
+                sujet.epreuve
+                  ? `<span class="meta-item meta-epreuve">${sujet.epreuve}</span>`
+                  : ''
+              }
+            </div>
           </div>
+          
+          ${
+            sujet.objectif
+              ? `<div class="sujet-objectif math-content">${sujet.objectif}</div>`
+              : ''
+          }
+          
+          ${
+            downloadLinks
+              ? `<div class="download-list">${downloadLinks}</div>`
+              : ''
+          }
+          
+          ${
+            sujet.tags && sujet.tags.length > 0
+              ? `
+            <div class="prerequis-list">
+              ${sujet.tags
+                .map(
+                  (tag) => `
+                  <a href="${concoursData.baseurl}/tags/${encodeURIComponent(
+                    tag.slug
+                  )}" 
+                     class="prerequis-item">
+                    ${tag.name}
+                  </a>
+                `
+                )
+                .join('')}
+            </div>
+          `
+              : ''
+          }
         </div>
-        
-        ${
-          sujet.objectif
-            ? `<div class="sujet-objectif math-content">${sujet.objectif}</div>`
-            : ''
-        }
-        
-        ${
-          downloadLinks
-            ? `<div class="download-list">${downloadLinks}</div>`
-            : ''
-        }
-        
-        ${
-          sujet.tags && sujet.tags.length > 0
-            ? `
-          <div class="prerequis-list">
-            ${sujet.tags
-              ?.map(
-                (tag) => `
-  <a href="${concoursData.baseurl}/tags/${encodeURIComponent(tag.slug)}" 
-     class="prerequis-item">
-    ${tag.name}
-  </a>
-`
-              )
-              .join('')}
-          </div>
-        `
-            : ''
-        }
-      </div>
-    `;
+      `;
   }
+
   function renderSujetCardSessions(sujet) {
-    // Générer les liens de téléchargement (identique à renderSujetCardSession)
+    if (!sujet) return '';
+
+    // Générer les liens de téléchargement
     let downloadLinks = '';
     if (sujet.download_original) {
       downloadLinks += `<a href="${sujet.download_original}" class="download-item download-original">Original</a>`;
@@ -423,66 +465,60 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     return `
-      <div class="sujet-view">
-        <div class="sujet-title">
-          <h3><a href="${sujet.url}">${sujet.title}</a></h3>
-          <div class="sujet-meta">
-            <span class="meta-item meta-concours">${sujet.concours}</span>
-            ${
-              sujet.filiere
-                ? `<span class="meta-item meta-filiere">${sujet.filiere}</span>`
-                : ''
-            }
-            ${
-              sujet.epreuve
-                ? `<span class="meta-item meta-epreuve">${sujet.epreuve}</span>`
-                : ''
-            }
+        <div class="sujet-view">
+          <div class="sujet-title">
+            <h3><a href="${sujet.url}">${sujet.title}</a></h3>
+            <div class="sujet-meta">
+              <span class="meta-item meta-concours">${sujet.concours}</span>
+              ${
+                sujet.filiere
+                  ? `<span class="meta-item meta-filiere">${sujet.filiere}</span>`
+                  : ''
+              }
+              ${
+                sujet.epreuve
+                  ? `<span class="meta-item meta-epreuve">${sujet.epreuve}</span>`
+                  : ''
+              }
+            </div>
           </div>
+          
+          ${
+            sujet.objectif
+              ? `<div class="sujet-objectif math-content">${sujet.objectif}</div>`
+              : ''
+          }
+          
+          ${
+            downloadLinks
+              ? `<div class="download-list">${downloadLinks}</div>`
+              : ''
+          }
+          
+          ${
+            sujet.tags && sujet.tags.length > 0
+              ? `
+            <div class="prerequis-list">
+              ${sujet.tags
+                .map(
+                  (tag) => `
+                  <a href="${concoursData.baseurl}/tags/${encodeURIComponent(
+                    tag.slug
+                  )}" 
+                     class="prerequis-item">
+                    ${tag.name}
+                  </a>
+                `
+                )
+                .join('')}
+            </div>
+          `
+              : ''
+          }
         </div>
-        
-        ${
-          sujet.objectif
-            ? `<div class="sujet-objectif math-content">${sujet.objectif}</div>`
-            : ''
-        }
-        
-        ${
-          downloadLinks
-            ? `<div class="download-list">${downloadLinks}</div>`
-            : ''
-        }
-        
-        ${
-          sujet.tags && sujet.tags.length > 0
-            ? `
-          <div class="prerequis-list">
-            ${sujet.tags
-              ?.map(
-                (tag) => `
-                      <a href="${
-                        concoursData.baseurl
-                      }/tags/${encodeURIComponent(tag.slug)}" 
-                        class="prerequis-item">
-                        ${tag.name}
-                      </a>
-                    `
-              )
-              .join('')}
-          </div>
-        `
-            : ''
-        }
-      </div>
-    `;
+      `;
   }
-  // Petit bonus pour les performances (préchargement des PDF)
-  function preloadPDFs() {
-    document.querySelectorAll('[href$=".pdf"]').forEach((link) => {
-      const pdf = new Image();
-      pdf.src = link.href;
-    });
-  }
+
   // Fermer les menus déroulants lorsqu'on clique ailleurs
   document.addEventListener('click', function () {
     document
