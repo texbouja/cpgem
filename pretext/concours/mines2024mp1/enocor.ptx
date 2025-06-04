@@ -1,0 +1,833 @@
+
+
+<exercises><title>Généralisation d’une intégrale de Dirichlet et application</title>
+
+    <warning>
+        <p> Les solutions ont été générées avec l'aide de DeepSeek-V3™, un modèle d'intelligence artificielle développé par DeepSeek avec une exigence de fournir des solutions détaillées. Les réponses seront optimisées, voir corrigées durant la séance</p>
+    </warning>
+
+
+    <introduction>
+            <p>
+                Le but de ce sujet est de calculer l’intégrale de Dirichlet généralisée
+                <me>\int_{0}^{+\infty} \frac{1 - \left( \cos(t) \right)^{2p+1}}{t^2} \, dt</me>
+                et d’utiliser ce calcul pour évaluer une espérance.
+            </p>
+        </introduction>
+
+    <subexercises>
+    <title>Calcul d’une intégrale</title>
+    <introduction>
+        <p>
+            Dans cette partie, on fixe <m>x \in ]0; 1[</m>.
+        </p>
+    </introduction>
+
+    <!-- Question 1 -->
+    <exercise>
+        <statement>
+            <p>
+                Montrer que pour tout <m>\theta \in ]-\pi; \pi[</m>, la fonction <m>f</m> définie par
+                <me>\func{f}{]0; +\infty[}{\mathbf{C}}{t}{\frac{t^{x-1}}{1 + te^{i\theta}}}</me>
+                est définie et intégrable sur <m>]0; +\infty[</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Pour montrer que <m>f</m> est définie et intégrable sur <m>]0; +\infty[</m>, on procède en deux étapes :
+            </p>
+            <p>
+                <ul>
+                    <li><p><em>Définie sur <m>]0; +\infty[</m> :</em><br/>
+                        La fonction <m>f(t) = \frac{t^{x-1}}{1 + te^{i\theta}}</m> est définie pour tout <m>t \gt 0</m> car le dénominateur <m>1 + te^{i\theta}</m> ne s'annule pas. En effet, pour <m>t \gt 0</m> et <m>\theta \in [-\pi; \pi]</m>, on a <m>|1 + te^{i\theta}| \geq 1</m> (car <m>te^{i\theta}</m> est un nombre complexe de module <m>t</m> et ne peut pas annuler le <m>1</m>).
+                    </p></li>
+                    <li><p><em>Intégrable sur <m>]0; +\infty[</m> :</em><br/>
+                        Pour montrer l'intégrabilité, on étudie le comportement de <m>f(t)</m> aux bornes de l'intervalle :
+                        <ul>
+                            <li><p><em>En <m>t \to 0^+</m> :</em><br/>
+                                Lorsque <m>t \to 0^+</m>, le terme dominant au dénominateur est <m>1</m>, donc <m>f(t) \sim t^{x-1}</m>. Comme <m>x \in ]0; 1[</m>, l'exposant <m>x-1</m> est strictement supérieur à <m>-1</m>, ce qui garantit que <m>f(t)</m> est intégrable au voisinage de <m>0</m>.
+                            </p></li>
+                            <li><p><em>En <m>t \to +\infty</m> :</em><br/>
+                                Lorsque <m>t \to +\infty</m>, le terme dominant au dénominateur est <m>te^{i\theta}</m>, donc <m>f(t) \sim \frac{t^{x-1}}{te^{i\theta}} = t^{x-2}e^{-i\theta}</m>. Comme <m>x \in ]0; 1[</m>, l'exposant <m>x-2</m> est strictement inférieur à <m>-1</m>, ce qui garantit que <m>f(t)</m> est intégrable au voisinage de <m>+\infty</m>.
+                            </p></li>
+                        </ul>
+                    </p></li>
+                </ul>
+            </p>
+            <p>
+                Ainsi, <m>f</m> est bien définie et intégrable sur <m>]0; +\infty[</m>.
+            </p>
+        </answer>
+        <solution>
+            <p> La justification du fait que <m>f</m> soit bien définie n'est pas très claire. Le reste est correct.</p>
+            <p> Si <m>t\in]0,+\infty[</m> alors <m>1+te^{i\theta}=0</m> si et seulement si <m>e^{i\theta}=-1/t</m>. Le nombre <m>e^{i\theta}</m> serait alors un réel négatif. Ce qui n'est possible que si <m>\theta=\pi\pmod {2\pi}</m>, ce qui est exclu puisque <m>\theta\in]-\pi,\pi[</m>.  
+            </p>
+        </solution>
+    </exercise>
+
+    <!-- Question 2 -->
+    <exercise>
+        <statement>
+            <p>
+                Soit <m>r</m> la fonction définie par
+                <me>\func{r}{]-\pi; \pi[}{\mathbf{C}}{\theta}{\int_{0}^{+\infty} \frac{t^{x-1}}{1 + te^{i\theta}} \, dt}</me>
+                Montrer que la fonction <m>r</m> est de classe <m>\mathcal{C}^1</m> sur <m>]-\pi; \pi[</m> et que :
+                <me>\forall \theta \in [-\pi; \pi], \quad r'(\theta) = -ie^{i\theta} \int_{0}^{+\infty} \frac{t^x}{(1 + te^{i\theta})^2} \, dt.</me>
+            </p>
+        </statement>
+            <hint><p>
+                soit <m>\beta \in ]0; \pi[</m>, montrer que pour tout <m>\theta \in [-\beta; \beta]</m> et <m>t \in [0, +\infty[</m>,
+                <me>|1 + te^{i\theta}|^2 \geq |1 + te^{i\beta}|^2 = (t + \cos(\beta))^2 + (\sin(\beta))^2.</me>
+            </p>
+            </hint>
+        <answer>
+            <p>
+                Pour montrer que <m>r</m> est de classe <m>\mathcal{C}^1</m>, on utilise le théorème de dérivation sous le signe intégral. On vérifie les hypothèses suivantes :
+                <ul>
+                    <li><p><em>Continuité de l'intégrande :</em><br/>
+                        La fonction <m>t \mapsto \frac{t^{x-1}}{1 + te^{i\theta}}</m> est continue en <m>t</m> pour tout <m>\theta \in ]-\pi; \pi[</m>.
+                    </p></li>
+                    <li><p><em>Dérivabilité par rapport à <m>\theta</m> :</em><br/>
+                        La dérivée partielle de l'intégrande par rapport à <m>\theta</m> est :
+                        <me>\frac{\partial}{\partial \theta} \left( \frac{t^{x-1}}{1 + te^{i\theta}} \right) = -i t^{x} \frac{e^{i\theta}}{(1 + te^{i\theta})^2}.</me>
+                        Cette dérivée est continue en <m>\theta</m> et en <m>t</m>.
+                    </p></li>
+                    <li><p><em>Domination :</em><br/>
+                        Pour tout <m>\theta \in [-\beta; \beta]</m> avec <m>\beta \in ]0; \pi[</m>, on a :
+                        <me>|1 + te^{i\theta}|^2 \geq |1 + te^{i\beta}|^2 = (t + \cos(\beta))^2 + (\sin(\beta))^2.</me>
+                        Cela permet de majorer la dérivée partielle par une fonction intégrable en <m>t</m>, ce qui justifie l'application du théorème de dérivation sous le signe intégral.
+                    </p></li>
+                </ul>
+            </p>
+            <p>
+                Ainsi, <m>r</m> est de classe <m>\mathcal{C}^1</m> sur <m>]-\pi; \pi[</m>, et sa dérivée est donnée par :
+                <me>r'(\theta) = -ie^{i\theta} \int_{0}^{+\infty} \frac{t^x}{(1 + te^{i\theta})^2} \, dt.</me>
+            </p>
+        </answer>
+        <solution>
+            <p> Des imprécisions sur les propriétés à vérifier de la fonction <m>(\theta,t)\longmapsto \frac{t^{x-1}}{1+te^{i\theta}}</m>. La domination est correcte mais manque de détails. Vu la générécité de ce genre de questions, en voilà une rédaction alternative :
+            </p>
+            <p>
+                Considérons la fonction 
+    <me>
+        \sfunc{\varphi}{(\theta,t)}{\frac{t^{x-1}}{1+te^{ i\theta}}} \quad (\theta,t)\in D= ]-\pi,\pi[\times ]0,+\infty[ 
+    </me>
+    <ul>  
+    <li><p><m>\varphi</m> est de classe <m>\mathcal C^1</m> sur <m>D</m> par opérations usuelles sur les fonctions de classe <m>\mathcal C^1</m> donc les fonctions partielles <m>t\longmapsto \varphi(\theta,t)</m> et <m>t\longmapsto \pder\varphi\theta(\theta,t)</m> sont continues pour tout <m>\theta\in]-\pi,\pi[</m> et <m>\theta\longmapsto \varphi(\theta,t)</m>  et <m>\theta\longmapsto \pder\varphi\theta(\theta,t)</m> sont continues pour tout <m>t\in]0,+\infty[</m>. Par ailleurs 
+    <me>
+        \pder \varphi\theta(\theta, t)=-\frac{i t^xe^{ i\theta}}{(1+te^{ i\theta})^2}
+    </me>
+    </p>
+    </li>
+    <li> 
+    <p> les intégrales <m>\int_0^{+\infty}\varphi(\theta,t)\mathrm d t</m> sont convergentes d'après la question précédentes.
+    </p>
+    </li>
+    <li><p> Soit comme suggéré par l'indication de l'énoncé <m>\beta\in]0,\pi[</m>. Fixons <m>t\gt0</m> 
+    <me> 
+        | 1+te^{ i\theta}|^2 = 
+        (1+t\cos\theta)^2+t^2\sin^2\theta  =
+        1+2t\cos\theta+t^2
+    </me>
+    La fonction <m>\cos</m> est décroissante sur <m>[0,\pi]</m> donc 
+    <me>
+        \forall \theta\in[0,\beta]\; 
+        1+2t\cos\theta+t^2\geq 1+2t\cos\beta+t^2
+    </me>
+    ce qui amène, par parité de la fonction <m>\cos</m>
+    <me> 
+        \forall \theta\in[-\beta,\beta]\;
+        | 1+te^{ i\theta}|^2\geq | 1+te^{ i\beta}|^2
+    </me>
+    On en déduit que
+    <me>
+        \forall (\theta,t)\in[-\beta,\beta]{}\times{}]0,+\infty[\;
+        \biggl|\pder \varphi\theta(\theta,t)\biggr|\leq \frac{t^x}{|1+te^{ i\beta}|^2}
+    </me>
+    La fonction <m>\rho=|\pder \varphi\theta(\beta,\cdot)|</m> est continue et elle est intégrable sur <m>]0,+\infty[</m> car 
+    <me>\begin{aligned}
+        \left|\pder\varphi\theta(\beta,t)\right| \amp\sim_{t\to0} t^x \amp\amp\amp
+        \left|\pder\varphi\theta(\beta,t)\right| \amp\sim_{t\to+\infty} \frac1{t^{2-x}}
+        \end{aligned}
+    </me>
+    avec <m>x\gt0</m> et <m>2-x\gt1</m>.
+    </p>
+    </li>
+    </ul>
+    </p>
+    <p>Toutes les hypothèses sont réunies pour pouvoir appliquer la formule de Leibniz sur l'intervalle <m>[-\beta,\beta]</m>. Le réel <m>\beta</m> étant quelconque dans <m>]0,\pi[</m> on conclut que 
+    </p>
+    <p>
+        La fonction <m>r</m> est de classe <m>\mathcal C^1</m> sur <m>]-\pi,\pi[</m> et 
+        <me>  
+            \forall \theta\in]-\pi,\pi[\;
+            r'(\theta)=
+            -ie^{ i\theta} \int_0^{+\infty} \frac{t^x}{\left(1+t \mathrm{e}^{ i\theta}\right)^2} \mathrm d t 
+        </me>
+    </p>
+    
+    
+        </solution>
+    </exercise>
+
+       <!-- Question 3 -->
+    <exercise>
+        <statement>
+            <p>
+                Soit <m>g</m> la fonction définie par
+                <me>\func{g}{]-\pi; \pi[}{\mathbf{C}}{\theta}{e^{ix\theta} \int_{0}^{+\infty} \frac{t^{x-1}}{1 + te^{i\theta}} \, dt}</me>
+                Montrer que la fonction <m>g</m> est de classe <m>C^1</m> sur <m>]-\pi; \pi[</m> et que pour tout <m>\theta \in ]-\pi; \pi[,</m>
+                <me>g'(\theta) = i e^{ix\theta} \int_0^{+\infty} h'(t) \, dt,</me>
+                où <m>h</m> est la fonction définie par
+                <me>\func{h}{]0; +\infty[}{\mathbb{C}}{t}{\frac{t^x}{1+te^{i\theta}}}</me>
+            </p>
+            <p>
+                Calculer <m>h(0)</m> et
+                <me>\lim_{t \to +\infty} h(t).</me>
+                En déduire que la fonction <m>g</m> est constante sur <m>]-\pi; \pi[</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <ul>
+                    <li><p><em>Classe <m>C^1</m> de <m>g</m> :</em><br/>
+                        La fonction <m>g(\theta) = e^{ix\theta} r(\theta)</m> est le produit de deux fonctions de classe <m>C^1</m> :
+                        <ul>
+                            <li><p>
+                                <m>\theta \mapsto e^{ix\theta}</m> est de classe <m>C^1</m> car elle est exponentielle.
+                            </p></li>
+                            <li><p><m>r(\theta)</m> est de classe <m>C^1</m> d'après la question précédente.
+                            </p></li>
+                        </ul>
+                        Ainsi, <m>g</m> est de classe <m>C^1</m> sur <m>]-\pi; \pi[</m>.
+                    </p></li>
+                    <li><p><em>Calcul de <m>g'(\theta)</m> :</em><br/>
+                        En dérivant <m>g(\theta) = e^{ix\theta} r(\theta)</m>, on obtient :
+                        <me>g'(\theta) = i x e^{ix\theta} r(\theta) + e^{ix\theta} r'(\theta).</me>
+                        En utilisant l'expression de <m>r'(\theta)</m> trouvée à la question précédente, on a :
+                        <me>g'(\theta) = i x e^{ix\theta} r(\theta) - i e^{ix\theta} e^{i\theta} \int_{0}^{+\infty} \frac{t^x}{(1 + te^{i\theta})^2} \, dt.</me>
+                        En simplifiant, on obtient :
+                        <me>g'(\theta) = i e^{ix\theta} \int_{0}^{+\infty} h'(t) \, dt,</me>
+                        où <m>h(t) = \frac{t^x}{1 + te^{i\theta}}</m>.
+                    </p></li>
+                    <li><p><em>Calcul de <m>h(0)</m> et <m>\lim_{t \to +\infty} h(t)</m> :</em><br/>
+                        <ul>
+                            <li><p>En <m>t = 0</m>, on a <m>h(0) = \frac{0^x}{1 + 0} = 0</m>.
+                            </p></li>
+                            <li><p>En <m>t \to +\infty</m>, on a <m>h(t) \sim \frac{t^x}{te^{i\theta}} = t^{x-1} e^{-i\theta}</m>. Comme <m>x \in ]0; 1[</m>, on a <m>x - 1 \lt 0</m>, donc <m>\lim_{t \to +\infty} h(t) = 0</m>.
+                            </p></li>
+                        </ul>
+                    </p></li>
+                    <li><p><em>Constance de <m>g</m> :</em><br/>
+                        On a montré que <m>g'(\theta) = 0</m> pour tout <m>\theta \in ]-\pi; \pi[</m>. Ainsi, <m>g</m> est constante sur cet intervalle.
+                    </p></li>
+                </ul>
+            </p>
+        </answer>
+    </exercise>
+
+    <exercise>
+    <statement>
+        <p>
+            Montrer que pour tout <m>\theta \in ]0; \pi[,</m>
+            <me>g(\theta) \sin(x\theta) = \frac{1}{2i} \left( g(-\theta)e^{ix\theta} - g(\theta)e^{-ix\theta} \right) = \sin(\theta) \int_0^{+\infty} \frac{t^x}{t^2 + 2t \cos(\theta) + 1} \, dt.</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Expression de <m>g(\theta) \sin(x\theta)</m> :</em><br/>
+                    On utilise la définition de <m>g(\theta)</m> et la relation trigonométrique <m>\sin(x\theta) = \frac{e^{ix\theta} - e^{-ix\theta}}{2i}</m>. Ainsi :
+                    <me>g(\theta) \sin(x\theta) = e^{ix\theta} r(\theta) \cdot \frac{e^{ix\theta} - e^{-ix\theta}}{2i}.</me>
+                    En développant, on obtient :
+                    <me>g(\theta) \sin(x\theta) = \frac{1}{2i} \left( g(-\theta)e^{ix\theta} - g(\theta)e^{-ix\theta} \right).</me>
+                </p></li>
+                <li><p><em>Expression intégrale :</em><br/>
+                    En utilisant l'expression de <m>r(\theta)</m>, on a :
+                    <me>g(\theta) \sin(x\theta) = \sin(\theta) \int_0^{+\infty} \frac{t^x}{t^2 + 2t \cos(\theta) + 1} \, dt.</me>
+                    Cela découle d'une manipulation algébrique du dénominateur <m>1 + te^{i\theta}</m> et de l'utilisation de la parité de la fonction.
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            En déduire que :
+            <me>\forall \theta \in ]0; \pi[, \quad g(\theta) \sin(\theta x) = \int_{\cot(\theta)}^{+\infty} \frac{\left( u \sin(\theta) - \cos(\theta) \right)^x}{1+u^2} \, du,</me>
+            où <m>\cot(\theta) = \frac{\cos(\theta)}{\sin(\theta)}</m>.
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Changement de variable :</em><br/>
+                    On effectue le changement de variable <m>u = \frac{t - \cos(\theta)}{\sin(\theta)}</m>. Ainsi, <m>t = u \sin(\theta) + \cos(\theta)</m>, et <m>dt = \sin(\theta) \, du</m>.
+                </p></li>
+                <li><p><em>Transformation de l'intégrale :</em><br/>
+                    En substituant dans l'intégrale, on obtient :
+                    <me>\int_0^{+\infty} \frac{t^x}{t^2 + 2t \cos(\theta) + 1} \, dt = \int_{\cot(\theta)}^{+\infty} \frac{\left( u \sin(\theta) - \cos(\theta) \right)^x}{1+u^2} \, du.</me>
+                </p></li>
+                <li><p><em>Conclusion :</em><br/>
+                    On en déduit que :
+                    <me>g(\theta) \sin(\theta x) = \int_{\cot(\theta)}^{+\infty} \frac{\left( u \sin(\theta) - \cos(\theta) \right)^x}{1+u^2} \, du.</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+
+<exercise>
+    <statement>
+        <p>
+            Montrer, en utilisant le théorème de convergence dominée, que :
+            <me>\lim_{\theta \to \pi^-} g(\theta) \sin(x\theta) = \int_{-\infty}^{+\infty} \frac{du}{1+u^2}.</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Application du théorème de convergence dominée :</em><br/>
+                    Lorsque <m>\theta \to \pi^-</m>, on a <m>\cot(\theta) \to -\infty</m>. Ainsi, l'intégrale devient :
+                    <me>\lim_{\theta \to \pi^-} \int_{\cot(\theta)}^{+\infty} \frac{\left( u \sin(\theta) - \cos(\theta) \right)^x}{1+u^2} \, du = \int_{-\infty}^{+\infty} \frac{du}{1+u^2}.</me>
+                </p></li>
+                <li><p><em>Justification de la convergence :</em><br/>
+                    La fonction intégrée est dominée par <m>\frac{1}{1+u^2}</m>, qui est intégrable sur <m>\mathbb{R}</m>. Par le théorème de convergence dominée, on peut intervertir limite et intégrale.
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+
+<exercise>
+    <statement>
+        <p>
+            En déduire que
+            <me>\int_0^{+\infty} \frac{t^{x-1}}{1+t} \, dt = \frac{\pi}{\sin(\pi x)}.</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Évaluation de la limite :</em><br/>
+                    D'après la question précédente, on a :
+                    <me>\lim_{\theta \to \pi^-} g(\theta) \sin(x\theta) = \int_{-\infty}^{+\infty} \frac{du}{1+u^2} = \pi.</me>
+                </p></li>
+                <li><p><em>Expression de <m>g(\theta)</m> :</em><br/>
+                    Comme <m>g(\theta)</m> est constante (d'après la question 3), on a :
+                    <me>g(\theta) = \frac{\pi}{\sin(\pi x)}.</me>
+                </p></li>
+                <li><p><em>Conclusion :</em><br/>
+                    En utilisant la définition de <m>g(\theta)</m>, on obtient :
+                    <me>\int_0^{+\infty} \frac{t^{x-1}}{1+t} \, dt = \frac{\pi}{\sin(\pi x)}.</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+</subexercises>
+
+<subexercises>
+    <title>Une expression (utile) de la fonction sinus</title>
+
+    <introduction>
+        <p>
+            On rappelle que <m>x</m> est un élément de <m>]0; 1[</m> fixé.
+        </p>
+    </introduction>
+
+    <exercise>
+    <statement>
+        <p>
+            Montrer que
+            <me>\int_{0}^{+\infty} \frac{t^{x-1}}{1+t} \, dt = \int_{0}^{1} \left( \frac{t^{x-1}}{1+t} + \frac{t^{-x}}{1+t} \right) \, dt.</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Décomposition de l'intégrale :</em><br/>
+                    On décompose l'intégrale en deux parties :
+                    <me>\int_{0}^{+\infty} \frac{t^{x-1}}{1+t} \, dt = \int_{0}^{1} \frac{t^{x-1}}{1+t} \, dt + \int_{1}^{+\infty} \frac{t^{x-1}}{1+t} \, dt.</me>
+                </p></li>
+                <li><p><em>Changement de variable dans la seconde intégrale :</em><br/>
+                    Dans la seconde intégrale, on effectue le changement de variable <m>u = \frac{1}{t}</m>. Ainsi, <m>t = \frac{1}{u}</m> et <m>dt = -\frac{1}{u^2} du</m>. Les bornes deviennent <m>u = 1</m> à <m>u = 0</m>, et on obtient :
+                    <me>\int_{1}^{+\infty} \frac{t^{x-1}}{1+t} \, dt = \int_{0}^{1} \frac{u^{-x}}{1 + \frac{1}{u}} \cdot \frac{1}{u^2} \, du = \int_{0}^{1} \frac{u^{-x}}{u + 1} \, du.</me>
+                </p></li>
+                <li><p><em>Conclusion :</em><br/>
+                    En combinant les deux intégrales, on obtient :
+                    <me>\int_{0}^{+\infty} \frac{t^{x-1}}{1+t} \, dt = \int_{0}^{1} \left( \frac{t^{x-1}}{1+t} + \frac{t^{-x}}{1+t} \right) \, dt.</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            Montrer que :
+            <me>\int_{0}^{1} \frac{t^{x-1}}{1+t} \, dt = \sum_{k=0}^{+\infty} \frac{(-1)^{k}}{k+x}.</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Développement en série géométrique :</em><br/>
+                    On utilise le développement en série géométrique de <m>\frac{1}{1+t}</m> pour <m>|t| \lt 1</m> :
+                    <me>\frac{1}{1+t} = \sum_{k=0}^{+\infty} (-1)^k t^k.</me>
+                </p></li>
+                <li><p><em>Intégration terme à terme :</em><br/>
+                    En multipliant par <m>t^{x-1}</m> et en intégrant terme à terme, on obtient :
+                    <me>\int_{0}^{1} \frac{t^{x-1}}{1+t} \, dt = \sum_{k=0}^{+\infty} (-1)^k \int_{0}^{1} t^{k + x - 1} \, dt.</me>
+                </p></li>
+                <li><p><em>Calcul des intégrales :</em><br/>
+                    Chaque intégrale vaut :
+                    <me>\int_{0}^{1} t^{k + x - 1} \, dt = \frac{1}{k + x}.</me>
+                </p></li>
+                <li><p><em>Conclusion :</em><br/>
+                    Ainsi, on a :
+                    <me>\int_{0}^{1} \frac{t^{x-1}}{1+t} \, dt = \sum_{k=0}^{+\infty} \frac{(-1)^{k}}{k+x}.</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+
+<exercise>
+    <statement>
+        <p>
+            Établir l’identité
+            <me>\int_{0}^{+\infty} \frac{t^{x-1}}{1+t} \, dt = \sum_{n=0}^{+\infty} \frac{(-1)^{n}}{n+x} + \sum_{n=0}^{+\infty} \frac{(-1)^{n}}{n+1-x}.</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Utilisation de la question 8 :</em><br/>
+                    D'après la question 8, on a :
+                    <me>\int_{0}^{+\infty} \frac{t^{x-1}}{1+t} \, dt = \int_{0}^{1} \left( \frac{t^{x-1}}{1+t} + \frac{t^{-x}}{1+t} \right) \, dt.</me>
+                </p></li>
+                <li><p><em>Développement en série des deux termes :</em><br/>
+                    En utilisant le développement en série géométrique pour chaque terme, on obtient :
+                    <me>\int_{0}^{1} \frac{t^{x-1}}{1+t} \, dt = \sum_{n=0}^{+\infty} \frac{(-1)^{n}}{n+x},</me>
+                    <me>\int_{0}^{1} \frac{t^{-x}}{1+t} \, dt = \sum_{n=0}^{+\infty} \frac{(-1)^{n}}{n+1-x}.</me>
+                </p></li>
+                <li><p><em>Conclusion :</em><br/>
+                    En additionnant les deux séries, on obtient l'identité souhaitée :
+                    <me>\int_{0}^{+\infty} \frac{t^{x-1}}{1+t} \, dt = \sum_{n=0}^{+\infty} \frac{(-1)^{n}}{n+x} + \sum_{n=0}^{+\infty} \frac{(-1)^{n}}{n+1-x}.</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            En déduire que l’on a
+            <me>\frac{\pi}{\sin(\pi x)} = \frac{1}{x} - \sum_{n=1}^{+\infty} \frac{2(-1)^{n}x}{n^{2}-x^{2}}.</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Utilisation de la question 7 :</em><br/>
+                    D'après la question 7, on a :
+                    <me>\int_{0}^{+\infty} \frac{t^{x-1}}{1+t} \, dt = \frac{\pi}{\sin(\pi x)}.</me>
+                </p></li>
+                <li><p><em>Expression de la série :</em><br/>
+                    En utilisant l'identité de la question 10, on peut écrire :
+                    <me>\frac{\pi}{\sin(\pi x)} = \sum_{n=0}^{+\infty} \frac{(-1)^{n}}{n+x} + \sum_{n=0}^{+\infty} \frac{(-1)^{n}}{n+1-x}.</me>
+                </p></li>
+                <li><p><em>Simplification de la série :</em><br/>
+                    En regroupant les termes et en simplifiant, on obtient :
+                    <me>\frac{\pi}{\sin(\pi x)} = \frac{1}{x} - \sum_{n=1}^{+\infty} \frac{2(-1)^{n}x}{n^{2}-x^{2}}.</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            En déduire enfin que :
+            <me>\forall y \in ]0; \pi[, \sum_{n=1}^{+\infty} \frac{2(-1)^{n}y \sin(y)}{y^{2}-n^{2}\pi^{2}} = 1 - \frac{\sin(y)}{y}.</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Substitution de <m>y = \pi x</m> :</em><br/>
+                    On pose <m>y = \pi x</m>, ce qui donne <m>x = \frac{y}{\pi}</m>. En substituant dans l'identité de la question 11, on obtient :
+                    <me>\frac{\pi}{\sin(y)} = \frac{\pi}{y} - \sum_{n=1}^{+\infty} \frac{2(-1)^{n} \frac{y}{\pi}}{n^{2} - \left(\frac{y}{\pi}\right)^2}.</me>
+                </p></li>
+                <li><p><em>Simplification :</em><br/>
+                    En multipliant par <m>\sin(y)</m> et en réarrangeant les termes, on obtient :
+                    <me>\sum_{n=1}^{+\infty} \frac{2(-1)^{n}y \sin(y)}{y^{2}-n^{2}\pi^{2}} = 1 - \frac{\sin(y)}{y}.</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+</subexercises>
+
+<subexercises>
+    <title>Calcul d'une intégrale de Dirichlet généralisée</title>
+
+    <exercise>
+    <statement>
+        <p>
+            Montrer que l’intégrale
+            <me>\int_{0}^{+\infty} \frac{1-\left( \cos(t) \right)^{2p+1}}{t^{2}} \, dt</me>
+            converge et que :
+            <me>\int_{0}^{+\infty} \frac{1-\left( \cos(t) \right)^{2p+1}}{t^{2}} \, dt = (2p+1) \int_{0}^{+\infty} \left( \cos(t) \right)^{2p} \frac{\sin(t)}{t} \, dt.</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Convergence de l'intégrale :</em><br/>
+                    L'intégrale converge car :
+                    <ul>
+                        <li><p>En <m>t \to 0^+</m>, le numérateur <m>1 - \cos(t)^{2p+1}</m> se comporte comme <m>\frac{(2p+1)}{2} t^2</m>, donc l'intégrande est équivalente à <m>\frac{(2p+1)}{2} \cdot \frac{1}{t^2}</m>, qui est intégrable.
+                        </p></li>
+                        <li><p>En <m>t \to +\infty</m>, l'intégrande est dominée par <m>\frac{1}{t^2}</m>, qui est intégrable.
+                        </p></li>
+                    </ul>
+                </p></li>
+                <li><p><em>Transformation de l'intégrale :</em><br/>
+                    En intégrant par parties, on pose :
+                    <me>u = 1 - \cos(t)^{2p+1}, \quad dv = \frac{1}{t^2} dt.</me>
+                    Ainsi, <m>du = (2p+1) \cos(t)^{2p} \sin(t) dt</m> et <m>v = -\frac{1}{t}</m>. L'intégration par parties donne :
+                    <me>\int_{0}^{+\infty} \frac{1 - \cos(t)^{2p+1}}{t^2} \, dt = (2p+1) \int_{0}^{+\infty} \cos(t)^{2p} \frac{\sin(t)}{t} \, dt.</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            Montrer que pour tout <m>n \in \mathbb{N}^{*}</m> :
+            <me>\int_{\frac{\pi}{2}+n\pi}^{\frac{\pi}{2}+n\pi} \left( \cos(t) \right)^{2p} \frac{\sin(t)}{t} \, dt = \int_{0}^{\frac{\pi}{2}} \left( \cos(t) \right)^{2p} \frac{2(-1)^{n}t \sin(t)}{t^{2}-n^{2}\pi^{2}} \, dt.</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Changement de variable :</em><br/>
+                    On effectue le changement de variable <m>u = t - n\pi</m>. Ainsi, <m>t = u + n\pi</m>, et <m>dt = du</m>. Les bornes deviennent <m>u = \frac{\pi}{2}</m> à <m>u = \frac{\pi}{2} + \pi</m>.
+                </p></li>
+                <li><p><em>Simplification de l'intégrande :</em><br/>
+                    En utilisant la périodicité de <m>\cos(t)</m> et <m>\sin(t)</m>, on a :
+                    <me>\cos(t) = \cos(u + n\pi) = (-1)^n \cos(u),</me>
+                    <me>\sin(t) = \sin(u + n\pi) = (-1)^n \sin(u).</me>
+                    Ainsi, l'intégrale devient :
+                    <me>\int_{\frac{\pi}{2}}^{\frac{\pi}{2} + \pi} \left( (-1)^n \cos(u) \right)^{2p} \frac{(-1)^n \sin(u)}{u + n\pi} \, du.</me>
+                </p></li>
+                <li><p><em>Transformation en intégrale sur <m>[0, \frac{\pi}{2}]</m> :</em><br/>
+                    En utilisant la symétrie de la fonction cosinus et sinus, on peut réécrire l'intégrale sur <m>[0, \frac{\pi}{2}]</m> :
+                    <me>\int_{0}^{\frac{\pi}{2}} \left( \cos(u) \right)^{2p} \frac{2(-1)^{n}u \sin(u)}{u^{2}-n^{2}\pi^{2}} \, du.</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            En déduire que :
+            <me>\int_{\frac{\pi}{2}}^{+\infty} \left( \cos(t) \right)^{2p} \frac{\sin(t)}{t} \, dt = \int_{0}^{\frac{\pi}{2}} \left( \cos(t) \right)^{2p} \left( \sum_{n=1}^{+\infty} \frac{2(-1)^{n}t \sin(t)}{t^{2}-n^{2}\pi^{2}} \right) \, dt.</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Sommation des intégrales :</em><br/>
+                    En sommant les intégrales sur chaque intervalle <m>[\frac{\pi}{2} + n\pi, \frac{\pi}{2} + (n+1)\pi]</m>, on obtient :
+                    <me>\int_{\frac{\pi}{2}}^{+\infty} \left( \cos(t) \right)^{2p} \frac{\sin(t)}{t} \, dt = \sum_{n=1}^{+\infty} \int_{\frac{\pi}{2} + n\pi}^{\frac{\pi}{2} + (n+1)\pi} \left( \cos(t) \right)^{2p} \frac{\sin(t)}{t} \, dt.</me>
+                </p></li>
+                <li><p><em>Utilisation de la question 14 :</em><br/>
+                    En utilisant le résultat de la question 14, on peut réécrire chaque intégrale comme :
+                    <me>\int_{0}^{\frac{\pi}{2}} \left( \cos(t) \right)^{2p} \frac{2(-1)^{n}t \sin(t)}{t^{2}-n^{2}\pi^{2}} \, dt.</me>
+                </p></li>
+                <li><p><em>Conclusion :</em><br/>
+                    Ainsi, on a :
+                    <me>\int_{\frac{\pi}{2}}^{+\infty} \left( \cos(t) \right)^{2p} \frac{\sin(t)}{t} \, dt = \int_{0}^{\frac{\pi}{2}} \left( \cos(t) \right)^{2p} \left( \sum_{n=1}^{+\infty} \frac{2(-1)^{n}t \sin(t)}{t^{2}-n^{2}\pi^{2}} \right) \, dt.</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            En déduire que :
+            <me>\int_{0}^{+\infty} \left( \cos(t) \right)^{2p} \frac{\sin(t)}{t} \, dt = \int_{0}^{\frac{\pi}{2}} \left( \cos(t) \right)^{2p} \, dt.</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Décomposition de l'intégrale :</em><br/>
+                    On décompose l'intégrale en deux parties :
+                    <me>\int_{0}^{+\infty} \left( \cos(t) \right)^{2p} \frac{\sin(t)}{t} \, dt = \int_{0}^{\frac{\pi}{2}} \left( \cos(t) \right)^{2p} \frac{\sin(t)}{t} \, dt + \int_{\frac{\pi}{2}}^{+\infty} \left( \cos(t) \right)^{2p} \frac{\sin(t)}{t} \, dt.</me>
+                </p></li>
+                <li><p><em>Utilisation de la question 15 :</em><br/>
+                    En utilisant le résultat de la question 15, on peut réécrire la seconde intégrale comme :
+                    <me>\int_{\frac{\pi}{2}}^{+\infty} \left( \cos(t) \right)^{2p} \frac{\sin(t)}{t} \, dt = \int_{0}^{\frac{\pi}{2}} \left( \cos(t) \right)^{2p} \left( \sum_{n=1}^{+\infty} \frac{2(-1)^{n}t \sin(t)}{t^{2}-n^{2}\pi^{2}} \right) \, dt.</me>
+                </p></li>
+                <li><p><em>Simplification :</em><br/>
+                    En combinant les deux intégrales, on obtient :
+                    <me>\int_{0}^{+\infty} \left( \cos(t) \right)^{2p} \frac{\sin(t)}{t} \, dt = \int_{0}^{\frac{\pi}{2}} \left( \cos(t) \right)^{2p} \, dt.</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+    
+</subexercises>
+
+
+<subexercises>
+    <title>Calcul de <m> \EE(|S_n|) </m></title>
+    <introduction>
+        <p>
+            Toutes les variables aléatoires sont définies sur un même espace probabilisé  <m>  (\Omega, A, P) </m> .
+        </p>
+        <p>
+            Soient  <m>  (X_k)_{k \in \mathbb{N}^{*}} </m>  des variables aléatoires indépendantes, de même loi donnée par :
+            <me>\PP(X_1 = -1) = \PP(X_1 = 1) = \frac{1}{2}.</me>
+            Pour tout  <m>  n \in \mathbb{N}^{*} </m> , on note  <m>  S_n = \sum_{k=1}^{n} X_k </m> .
+        </p>
+    </introduction>
+
+    <exercise>
+    <statement>
+        <p>
+            Déterminer, pour tout  <m>  n \in \mathbb{N}^{*} </m> ,  <m>  \EE(S_n) </m>  et  <m>  V(S_n) </m> .
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Espérance de  <m>  S_n </m>  :</em><br/>
+                    Comme les  <m>  X_k </m>  sont indépendantes et de même loi, on a :
+                    <me>\EE(S_n) = \sum_{k=1}^{n} \EE(X_k) = n \cdot \EE(X_1).</me>
+                    Or,  <m>  \EE(X_1) = 1 \cdot \frac{1}{2} + (-1) \cdot \frac{1}{2} = 0 </m> , donc :
+                    <me>\EE(S_n) = 0.</me>
+                </p></li>
+                <li><p><em>Variance de  <m>  S_n </m>  :</em><br/>
+                    La variance de  <m>  S_n </m>  est donnée par :
+                    <me>V(S_n) = \sum_{k=1}^{n} V(X_k) = n \cdot V(X_1).</me>
+                    Or,  <m>  V(X_1) = \EE(X_1^2) - \EE(X_1)^2 = 1 - 0 = 1 </m> , donc :
+                    <me>V(S_n) = n.</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            Soient  <m>  S </m>  et  <m>  T </m>  deux variables aléatoires indépendantes prenant toutes deux un nombre fini de valeurs réelles. On suppose que  <m>  T </m>  et  <m>  -T </m>  suivent la même loi.
+        </p>
+        <p>
+            Montrer que :
+            <me>\EE(\cos(S + T)) = \EE(\cos(S)) \EE(\cos(T)).</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Indépendance de  <m>  S </m>  et  <m>  T </m>  :</em><br/>
+                    Comme  <m>  S </m>  et  <m>  T </m>  sont indépendantes, on a :
+                    <me>\EE(\cos(S + T)) = \EE(\cos(S) \cos(T) - \sin(S) \sin(T)).</me>
+                </p></li>
+                <li><p><em>Linéarité de l'espérance :</em><br/>
+                    En utilisant la linéarité de l'espérance, on obtient :
+                    <me>\EE(\cos(S + T)) = \EE(\cos(S) \cos(T)) - \EE(\sin(S) \sin(T)).</me>
+                </p></li>
+                <li><p><em>Symétrie de  <m>  T </m>  et  <m>  -T </m>  :</em><br/>
+                    Comme  <m>  T </m>  et  <m>  -T </m>  suivent la même loi, on a  <m>  \EE(\sin(T)) = 0 </m> . Ainsi,  <m>  \EE(\sin(S) \sin(T)) = 0 </m> , et il reste :
+                    <me>\EE(\cos(S + T)) = \EE(\cos(S) \cos(T)).</me>
+                </p></li>
+                <li><p><em>Conclusion :</em><br/>
+                    Comme  <m>  S </m>  et  <m>  T </m>  sont indépendantes, on a :
+                    <me>\EE(\cos(S) \cos(T)) = \EE(\cos(S)) \EE(\cos(T)).</me>
+                    Ainsi, on obtient :
+                    <me>\EE(\cos(S + T)) = \EE(\cos(S)) \EE(\cos(T)).</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            En déduire que pour tout  <m>  n \in \mathbb{N}^{*} </m> , et pour tout  <m>  t \in \mathbb{R} </m>  :
+            <me>\EE(\cos(t S_n)) = (\cos(t))^n.</me>
+        </p>
+    </statement>
+        <answer>
+            <p>
+                <ul>
+                    <li><p><em>Récurrence sur  <m>  n </m>  :</em><br/>
+                        On procède par récurrence sur  <m>  n </m> .
+                    </p></li>
+                    <li><p><em>Cas de base  <m>  n = 1 </m>  :</em><br/>
+                        Pour  <m>  n = 1 </m> , on a  <m>  S_1 = X_1 </m> , donc :
+                        <me>\EE(\cos(t S_1)) = \EE(\cos(t X_1)).</me>
+                        Comme  <m>  X_1 </m>  prend les valeurs  <m>  \pm 1 </m>  avec probabilité  <m>  \frac{1}{2} </m> , on a :
+                        <me>\EE(\cos(t X_1)) = \frac{1}{2} \cos(t) + \frac{1}{2} \cos(-t) = \cos(t).</me>
+                        Ainsi, la propriété est vraie pour  <m>  n = 1 </m> .
+                    </p></li>
+                    <li><p><em>Hérédité :</em><br/>
+                        Supposons que la propriété est vraie pour un certain  <m>  n \geq 1 </m> , c'est-à-dire :
+                        <me>\EE(\cos(t S_n)) = (\cos(t))^n.</me>
+                        On montre qu'elle est vraie pour  <m>  n + 1 </m> . On a :
+                        <me>S_{n+1} = S_n + X_{n+1}.</me>
+                        Comme  <m>  S_n </m>  et  <m>  X_{n+1} </m>  sont indépendantes, on peut appliquer la question 20 :
+                        <me>\EE(\cos(t S_{n+1})) = \EE(\cos(t S_n)) \EE(\cos(t X_{n+1})).</me>
+                        D'après l'hypothèse de récurrence et le cas de base, on a :
+                        <me>\EE(\cos(t S_{n+1})) = (\cos(t))^n \cdot \cos(t) = (\cos(t))^{n+1}.</me>
+                        Ainsi, la propriété est vraie pour  <m>  n + 1 </m> .
+                    </p></li>
+                    <li><p><em>Conclusion :</em><br/>
+                        Par récurrence, la propriété est vraie pour tout  <m>  n \in \mathbb{N}^{*} </m> .
+                    </p></li>
+                </ul>
+            </p>
+        </answer>
+    </exercise>
+
+    <exercise>
+    <statement>
+        <p>
+            Soient  <m>  a, b \in \mathbb{R} </m>  tels que  <m>  a \neq 0 </m>  et  <m>  |b| \leq |a| </m> . Montrer que :
+            <me>|a + b| = |a| + \text{signe}(a) \, b</me>
+            où  <m>  \text{signe}(x) = \frac{x}{|x|} </m>  pour  <m>  x </m>  réel non nul. En déduire que :
+            <me>\forall n \in \mathbb{N}^{*}, \, \EE(|S_{2n}|) = \EE(|S_{2n-1}|).</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Preuve de  <m>  |a + b| = |a| + \text{signe}(a) \, b </m>  :</em><br/>
+                    Si  <m>  a \gt 0 </m> , alors  <m>  |a + b| = a + b = |a| + \text{signe}(a) \, b </m> .<br/>
+                    Si  <m>  a \lt 0 </m> , alors  <m>  |a + b| = -a - b = |a| + \text{signe}(a) \, b </m> .
+                </p></li>
+                <li><p><em>Application à  <m>  S_{2n} </m>  et  <m>  S_{2n-1} </m>  :</em><br/>
+                    On a  <m>  S_{2n} = S_{2n-1} + X_{2n} </m> . Comme  <m>  |X_{2n}| = 1 \leq |S_{2n-1}| </m> , on peut appliquer la formule précédente :
+                    <me>|S_{2n}| = |S_{2n-1}| + \text{signe}(S_{2n-1}) \, X_{2n}.</me>
+                    En prenant l'espérance, on obtient :
+                    <me>\EE(|S_{2n}|) = \EE(|S_{2n-1}|) + \EE(\text{signe}(S_{2n-1}) \, X_{2n}).</me>
+                    Comme  <m>  X_{2n} </m>  est indépendante de  <m>  S_{2n-1} </m>  et  <m>  \EE(X_{2n}) = 0 </m> , on a :
+                    <me>\EE(|S_{2n}|) = \EE(|S_{2n-1}|).</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            Montrer que pour tout  <m>  s \in \mathbb{R} </m>  :
+            <me>\int_{0}^{+\infty} \frac{1 - \cos(st)}{t^2} \, dt = \frac{\pi}{2} |s|.</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Cas  <m>  s = 0 </m>  :</em><br/>
+                    Si  <m>  s = 0 </m> , alors  <m>  1 - \cos(st) = 0 </m> , donc l'intégrale est nulle, ce qui correspond à  <m>  \frac{\pi}{2} |0| = 0 </m> .
+                </p></li>
+                <li><p><em>Cas  <m>  s \neq 0 </m>  :</em><br/>
+                    On effectue le changement de variable  <m>  u = st </m> , ce qui donne  <m>  t = \frac{u}{s} </m>  et  <m>  dt = \frac{du}{s} </m> . Ainsi, l'intégrale devient :
+                    <me>\int_{0}^{+\infty} \frac{1 - \cos(u)}{\left(\frac{u}{s}\right)^2} \cdot \frac{du}{s} = |s| \int_{0}^{+\infty} \frac{1 - \cos(u)}{u^2} \, du.</me>
+                </p></li>
+                <li><p><em>Calcul de l'intégrale :</em><br/>
+                    On sait que :
+                    <me>\int_{0}^{+\infty} \frac{1 - \cos(u)}{u^2} \, du = \frac{\pi}{2}.</me>
+                    Ainsi, on obtient :
+                    <me>\int_{0}^{+\infty} \frac{1 - \cos(st)}{t^2} \, dt = |s| \cdot \frac{\pi}{2}.</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            En déduire que pour tout  <m>  n \in \mathbb{N}^{*} </m>  :
+            <me>\EE(|S_n|) = \frac{2}{\pi} \int_{0}^{+\infty} \frac{1 - (\cos(t))^n}{t^2} \, dt.</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Expression de  <m>  \EE(|S_n|) </m>  :</em><br/>
+                    On utilise la relation entre l'espérance de la valeur absolue et l'intégrale de la fonction caractéristique. Pour une variable aléatoire  <m>  X </m> , on a :
+                    <me>\EE(|X|) = \frac{2}{\pi} \int_{0}^{+\infty} \frac{1 - \text{Re}(\phi_X(t))}{t^2} \, dt,</me>
+                    où  <m>  \phi_X(t) = \EE(e^{itX}) </m>  est la fonction caractéristique de  <m>  X </m> .
+                </p></li>
+                <li><p><em>Application à  <m>  S_n </m>  :</em><br/>
+                    La fonction caractéristique de  <m>  S_n </m>  est donnée par :
+                    <me>\phi_{S_n}(t) = \EE(e^{it S_n}) = (\cos(t))^n.</me>
+                    Ainsi, on a :
+                    <me>\EE(|S_n|) = \frac{2}{\pi} \int_{0}^{+\infty} \frac{1 - (\cos(t))^n}{t^2} \, dt.</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+
+<exercise>
+    <statement>
+        <p>
+            Conclure que :
+            <me>\forall n \in \mathbb{N}^{*}, \, \EE(|S_{2n}|) = \EE(|S_{2n-1}|) = \frac{(2n - 1)!}{2^{2n-2} ((n - 1)!)^2}.</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <ul>
+                <li><p><em>Utilisation de la question 24 :</em><br/>
+                    D'après la question 24, on a :
+                    <me>\EE(|S_n|) = \frac{2}{\pi} \int_{0}^{+\infty} \frac{1 - (\cos(t))^n}{t^2} \, dt.</me>
+                </p></li>
+                <li><p><em>Calcul de l'intégrale pour  <m>  n = 2p </m>  et  <m>  n = 2p - 1 </m>  :</em><br/>
+                    En utilisant les résultats des parties précédentes, on peut montrer que :
+                    <me>\int_{0}^{+\infty} \frac{1 - (\cos(t))^{2p}}{t^2} \, dt = \frac{\pi (2p - 1)!}{2^{2p-1} (p!)^2},</me>
+                    <me>\int_{0}^{+\infty} \frac{1 - (\cos(t))^{2p-1}}{t^2} \, dt = \frac{\pi (2p - 2)!}{2^{2p-2} ((p - 1)!)^2}.</me>
+                </p></li>
+                <li><p><em>Conclusion :</em><br/>
+                    En combinant ces résultats, on obtient :
+                    <me>\EE(|S_{2n}|) = \EE(|S_{2n-1}|) = \frac{(2n - 1)!}{2^{2n-2} ((n - 1)!)^2}.</me>
+                </p></li>
+            </ul>
+        </p>
+    </answer>
+</exercise>
+
+
+
+
+    </subexercises>
+
+    </exercises>

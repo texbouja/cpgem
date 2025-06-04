@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- settings. -->
+<docinfo xmlns:xi="http://www.w3.org/2001/XInclude">
+  <document-id>concours</document-id>
+
+  <macros>
+    \newcommand{\N}{\mathbb N}
+    \newcommand{\Z}{\mathbb Z}
+    \newcommand{\Q}{\mathbb Q}
+    \newcommand{\R}{\mathbb R}
+    \newcommand{\C}{\mathbb C}
+    \newcommand{\K}{\mathbb K}
+    \newcommand{\bbone}{\mathbb 1}
+    \newcommand{\PP}{\mathbb P}
+    \newcommand{\EE}{\mathbb E}
+    \newcommand{\VV}{\mathbb V}
+    \newcommand\giv[1][\middle]{\nonscript\:#1\vert\nonscript\:\mathopen{}}
+    \renewcommand{\Pr}[2][]{\mathbb{P}\left(#2\right)}
+    \newcommand{\Es}[2][]{\mathbb{E}\left(#2\right)}
+    \newcommand{\Va}[2][]{\mathbb{V}\left(#2\right)}
+    \newcommand{\Cov}{\operatorname{Cov}}
+    \newcommand{\card}{\operatorname{Card}}
+    \newcommand{\qtext}[1]{\quad\text{#1}\quad}
+    \newcommand\der[2]{\frac{\mathrm d #1}{\mathrm d #2}}
+    \newcommand\pder[2]{\frac{\partial #1}{\partial #2}}
+    \newcommand\func[5]{#1\mathbin:{}\begin{array}[t]{rcl} #2 &amp; \longrightarrow &amp; #3 \\ #4 &amp; \longmapsto &amp; #5 \end{array}}
+    \newcommand\sfunc[3]{#1\mathbin :#2 \longmapsto #3}
+    \renewcommand\llbracket{[\![}
+    \renewcommand\rrbracket{]\!]}
+    \newcommand\iic[1]{\llbracket #1 \rrbracket}
+    \let\geq\geqslant
+    \let\leq\leqslant
+    \let\ds\displaystyle
+  </macros>
+  <!-- If you put any latex-image elements you can include preambles --> 
+  <!-- for those in the next element. -->
+  <latex-image-preamble>
+    \usepackage{adjustbox}
+    \usepackage{tikz, pgfplots}
+    \pgfplotsset{compat=1.18}
+    \usetikzlibrary{positioning,matrix,arrows}
+    \usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
+    \usetikzlibrary{decorations.markings}
+  </latex-image-preamble> 
+  <math-package latex-name="mathrsfs" mathjax-name=""/> 
+  <math-package latex-name="mathtools" mathjax-name="mathtools"/> 
+  <math-package latex-name="empheq" mathjax-name="empheq"/> 
+  <rename element="task" xml:lang="fr-FR">Question</rename> 
+  <rename element="inlineexercise" xml:lang="fr-FR">Exercice</rename> 
+  <rename element="insight" xml:lang="fr-FR">Vocabulaire</rename> 
+  <rename element="note" xml:lang="fr-FR">Notation</rename> 
+  <rename element="chapter" xml:lang="fr-FR">Sujet</rename>
+  <rename element="answer" xml:lang="fr-FR">Réponse IA</rename>
+  <rename element="solution" xml:lang="fr-FR">Solution</rename> 
+  <!-- It is possible to rename elements: --> 
+  <!-- <rename element="assemblage" xml:lang="en-US">Summary</rename> --> 
+  <!-- Specify the default type of cross reference: --> 
+  <!-- <cross-references text="type-global" /> -->
+</docinfo>

@@ -1,7 +1,7 @@
 # The Site Configuration
 
 # Import the theme
-theme: jekyll-theme-chirpy
+theme: jekyll-theme-cpgem
 
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
@@ -16,21 +16,20 @@ timezone: Africa/Casablanca
 
 title: CPGEM # the main title
 
-tagline: Maths en Prépas # it will display as the subtitle
+tagline: Site sur les Maths en CPGE # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Site web pour les maths en classes préparatoires. Simple mais moderne et efficace. Accessible et libre, pour toujours.
+  Site web dédié aux mathématiques enseignées dans les classes préparatoires scientifiques.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "https://texbouja.github.io/cpgem"
-baseurl: "/cpgem"
+url: "https://cpgem.github.io"
 
 github:
   username: texbouja # change to your GitHub username
 
-# twitter:
-# username: twitter_username # change to your Twitter username
+twitter:
+  username: twitter_username # change to your Twitter username
 
 social:
   # Change to your full name.
@@ -39,10 +38,10 @@ social:
   email: ibouja@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    #- https://twitter.com/username # change to your Twitter homepage
-    - https://github.com/texbouja/cpgem # change to your GitHub homepage
+    - https://twitter.com/username # change to your Twitter homepage
+    - https://github.com/username # change to your GitHub homepage
     # Uncomment below to add more social links
-    - https://www.facebook.com/jsadikster
+    # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
 # Site Verification Settings
@@ -96,10 +95,10 @@ theme_mode: # [light | dark]
 # will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-cdn:
+# cdn: "https://chirpy-img.netlify.app"
 
 # the avatar on sidebar, support local or CORS resources
-avatar: /assets/img/favicons/favicon.png
+avatar: "/commons/avatar.jpg"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
@@ -110,7 +109,7 @@ toc: true
 
 comments:
   # Global switch for the post-comment system. Keeping it empty means disabled.
-  provider: giscus # [disqus | utterances | giscus]
+  provider: # [disqus | utterances | giscus]
   # The provider options are as follows:
   disqus:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
@@ -120,23 +119,23 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: texbouja/cpgem
-    repo_id: R_kgDOOEadmw
-    category: General
-    category_id: DIC_kwDOOEadm84CobDI
-    mapping: pathname # optional, default to 'pathname'
-    strict: 0 # optional, default to '0'
-    input_position: bottom # optional, default to 'bottom'
-    lang: fr-FR # optional, default to the value of `site.lang`
-    reactions_enabled: 0 # optional, default to the value of `1`
+    repo: # <gh-username>/<repo>
+    repo_id:
+    category:
+    category_id:
+    mapping: # optional, default to 'pathname'
+    strict: # optional, default to '0'
+    input_position: # optional, default to 'bottom'
+    lang: # optional, default to the value of `site.lang`
+    reactions_enabled: # optional, default to the value of `1`
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:
   self_host:
-    enabled: # boolean, keep empty means false
+    enabled: true # boolean, keep empty means false
     # specify the Jekyll environment, empty means both
     # only works if `assets.self_host.enabled` is 'true'
-    env: # [development | production]
+    env: development # [development | production]
 
 pwa:
   enabled: true # The option for PWA feature (installable)
@@ -151,6 +150,7 @@ pwa:
 paginate: 10
 
 # The base URL of your site
+baseurl: ""
 
 # ------------ The following options are not recommended to be modified ------------------
 
@@ -170,6 +170,10 @@ collections:
   tabs:
     output: true
     sort_by: order
+  cours:
+    output: true
+  concours:
+    output: true
 
 defaults:
   - scope:
@@ -192,6 +196,36 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+  - scope:
+      path: _cours
+      type: pretext
+    values:
+      layout: pretext
+      comments: true
+      permalink: "/:collection/:path"
+  - scope:
+      path: _concours
+      type: pretext
+    values:
+      layout: pretext
+      comments: true
+      permalink: "/:collection/:path"
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
+  - pretext
+  - tmp
+
+include:
+  - "_static"
 
 sass:
   style: compressed
@@ -205,6 +239,7 @@ compress_html:
   ignore:
     envs: [development]
 
+<<<<<<< HEAD
 exclude:
   - "*.gem"
   - "*.gemspec"
@@ -219,6 +254,8 @@ exclude:
   - templates
   - pretext
 
+=======
+>>>>>>> 14c9c3a (	deleted:    .devcontainer/devcontainer.json)
 jekyll-archives:
   enabled: [categories, tags]
   layouts:
@@ -228,21 +265,13 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
-# Ajouts personnels
-
-pdf_path: "/cpgem/assets/pdf"
-
-math: mathjax
-
-extra_js:
-  - /cpgem/assets/js/extra.js
-  - /assets/js/scrolling.js
-
-plugins:
-  - jekyll-pdf-embed
-
-concours: []
-all_concours: []
-
-keep_files:
-  - pretext
+# JavaScript configuration
+js:
+  palettes:
+    - default
+    - nord
+    - tokyo-night
+    - catppuccin
+    - gruvbox
+    - material
+    - chocco

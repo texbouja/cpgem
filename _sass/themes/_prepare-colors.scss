@@ -1,0 +1,848 @@
+$palette: default !default;
+$color-main: null !default;
+$color-do: null !default;
+$color-fact: null !default;
+$color-def: null !default;
+$color-meta: null !default;
+
+@use 'sass:map';
+@use 'sass:color';
+@use 'sass:meta';
+@use 'sass:list';
+@use 'palettes' as *;
+
+@mixin scss-to-css($colors) {
+  @each $name, $value in $colors {
+    --#{$name}: #{$value};
+  }
+}
+
+@function mixes($color, $other, $mix-amounts) {
+  $result: ();
+
+  @each $i in $mix-amounts {
+    $result: map.set(
+      $result,
+      '#{$color}-#{$other}-#{$i}',
+      'color-mix(in oklab, var(--#{$color}), #{$other} #{$i}%)'
+    );
+  }
+
+  @return $result;
+}
+
+$std-mixes: (
+  1,
+  2,
+  3,
+  4,
+  5,
+  10,
+  15,
+  20,
+  25,
+  30,
+  35,
+  40,
+  50,
+  60,
+  65,
+  70,
+  75,
+  80,
+  85,
+  90,
+  95,
+  96,
+  97,
+  98,
+  99
+);
+
+@function get-blends(
+  $color,
+  $shades: $std-mixes,
+  $tints: $std-mixes,
+  $tones: $std-mixes
+) {
+  $shades: mixes($color, black, $std-mixes);
+  $tints: mixes($color, white, $std-mixes);
+  $tones: mixes($color, gray, $std-mixes);
+
+  $blends: map.merge($tints, $shades);
+
+  $blends: map.merge($blends, $tones);
+  @return $blends;
+}
+
+@if not map.has-key($schemes, $palette) {
+  @warn "Unknown color scheme #{$palette} in theme. Valid schemes are: #{map.keys($schemes)}. Default will be used.",;
+}
+
+$colors-temp: map.get($schemes, $palette);
+
+//  from _color-vars.scss
+
+$palette-colors-light: (
+  //
+  // chirpy's main colors
+  'main-background': map.get($colors-temp, 'c-light-0'),
+  'mask-bg': map.get($colors-temp, 'c-light-1'),
+  'main-border': map.get($colors-temp, 'c-main-light'),
+  //  Common color
+  'text-color': map.get($colors-temp, 'c-dark-1'),
+  'text-muted-color': map.get($colors-temp, 'c-dark-3'),
+  'text-muted-highlight-color': inherit,
+  'text-dark': map.get($colors-temp, 'c-light-0'),
+  'text-light': map.get($colors-temp, 'c-dark-0'),
+  'text-muted-dark': map.get($colors-temp, 'c-light-2'),
+  'text-muted-light': map.get($colors-temp, 'c-dark-2'),
+  'heading-color': map.get($colors-temp, 'c-heading-light'),
+  'alt-heading-color': map.get($colors-temp, 'c-alt-heading-light'),
+  'label-color': map.get($colors-temp, 'c-dark-1'),
+  'blockquote-border-color': map.get($colors-temp, 'c-dark-3'),
+  'blockquote-text-color': map.get($colors-temp, 'c-dark-1'),
+  'link-color': map.get($colors-temp, 'c-link-light'),
+  'link-underline-color': var(--main-background),
+  'button-bg': map.get($colors-temp, 'c-light-3'),
+  'btn-border-color': map.get($colors-temp, 'c-main-light'),
+  'btn-backtotop-color': var(--text-color),
+  'btn-backtotop-border-color': map.get($colors-temp, 'c-light-2'),
+  'checkbox-color': map.get($colors-temp, 'c-light-2'),
+  'checkbox-checked-color': map.get($colors-temp, 'c-dark-2'),
+  'img-bg':
+    radial-gradient(
+      circle,
+      map.get($colors-temp, 'c-light-0'),
+      map.get($colors-temp, 'c-light-3')
+    ),
+  'shimmer-bg':
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) %,
+      rgba(46, 52, 64, 0.2) %,
+      rgba(255, 255, 255, 0) %
+    ),
+  //  Sidebar
+  'site-title-color': map.get($colors-temp, 'c-main-light'),
+  'site-subtitle-color': map.get($colors-temp, 'c-dark-1'),
+  'sidebar-background-color': map.get($colors-temp, 'c-light-2'),
+  'sidebar-border-color': map.get($colors-temp, 'c-main-light'),
+  'sidebar-muted-color': map.get($colors-temp, 'c-dark-1'),
+  'sidebar-active-color': var(--text-dark),
+  'sidebar-hover-background-color': map.get($colors-temp, 'c-main-light'),
+  'sidebar-btn-bg': map.get($colors-temp, 'c-light-2'),
+  'sidebar-btn-color': map.get($colors-temp, 'c-dark-2'),
+  'avatar-border-color': map.get($colors-temp, 'c-main-light'),
+  'card-background-color': map.get($colors-temp, 'c-light-2'),
+  'card-hover-background-color': map.get($colors-temp, 'c-light-1'),
+  'card-header-background-color': map.get($colors-temp, 'c-light-3'),
+  'card-border-color': map.get($colors-temp, 'c-main-light'),
+  'card-text-color': map.get($colors-temp, 'c-dark-0'),
+  'card-heading-color': map.get($colors-temp, 'c-main-light'),
+  //  Topbar
+  'topbar-background-color': map.get($colors-temp, 'c-light-2'),
+  'topbar-text-color': map.get($colors-temp, 'c-dark-1'),
+  'search-border-color': map.get($colors-temp, 'c-main-light'),
+  'search-icon-color': map.get($colors-temp, 'c-main-light'),
+  'input-focus-border-color': map.get($colors-temp, 'c-light-0'),
+  //  Home page
+  'post-list-text-color': map.get($colors-temp, 'c-dark-1'),
+  'btn-paginator-text-color': var(--text-color),
+  'btn-paginator-hover-color': map.get($colors-temp, 'c-main-light'),
+  //  Posts
+  'toc-highlight': map.get($colors-temp, 'c-main-light'),
+  'toc-popup-border-color': map.get($colors-temp, 'c-main-light'),
+  'tag-hover': map.get($colors-temp, 'c-main-light'),
+  'tb-odd-bg': map.get($colors-temp, 'c-light-1'),
+  // pretext's main colors
+  'page-background': var(--main-background),
+  'content-background': var(--card-background-color),
+  'page-border': var(--main-border),
+  'body-text': var(--text-color),
+  'body-title': var(--heading-color),
+  'doc-title': var(--alt-heading-color),
+  'byline-color': map.get($colors-temp, 'c-dark-3'),
+  'button-background': var(--button-bg),
+  'button-text': var(--text-color),
+  'button-border': var(--btn-border-color),
+  'button-hover-background': map.get($colors-temp, 'c-main-light'),
+  'button-hover-text': var(--text-dark),
+  'banner-background': var(--page-background),
+  'navbar-background': var(--sidebar-background-color),
+  'footer-background': red,
+
+  'toc-text-color': map.get($colors-temp, 'c-dark-3'),
+  'toc-border-color': map.get($colors-temp, 'c-light-3'),
+  'toc-background-color': transparent,
+
+  'tocitem-background': transparent,
+
+  'tocitem-highlight-text-color': map.get($colors-temp, 'c-dark-1'),
+  'tocitem-highlight-background': map.get($colors-temp, 'c-light-3'),
+  'tocitem-highlight-border-color': none,
+
+  // active styles are used for the current toc item
+  'tocitem-active-text-color': map.get($colors-temp, 'c-main-light'),
+  'tocitem-active-background': transparent,
+  'tocitem-active-border-color': transparent,
+
+  'toclevel1-text-color': var(--toc-text-color),
+  'toclevel2-text-color': var(--toc-text-color),
+  'toclevel3-text-color': var(--toc-text-color),
+  'toclevel1-background-color': none,
+  'toclevel2-background-color': none,
+  'toclevel3-background-color': none,
+
+  'ptx-image-bg': transparent,
+  'activated-content-bg': rgba(241, 185, 255, 10%),
+  'summary-link-background': var(--card-background-color),
+  'summary-link-text-color': var(--card-text-color),
+  'summary-link-hover-background': var(--card-hover-background-color),
+  'summary-link-hover-text-color': var(--text-dark),
+  'link-text-color': var(--link-color),
+  'link-background': none,
+  'link-active-text-color': var(--link-color),
+  'link-active-background': none,
+
+  'link-alt-text-color': map.get($colors-temp, 'c-do'),
+  'link-alt-background': transparent,
+  'link-alt-active-text-color': var(--link-alt-text-color),
+  'link-alt-active-background': #e3d1ce,
+
+  'knowl-link-color': var(--link-text-color),
+  'knowl-background': rgba(0, 0, 0, 0.1),
+  'knowl-border-color': map.get($colors-temp, 'c-light-2'),
+  'knowl-nested-1-background': rgba(0, 0, 0, 0.1),
+  'knowl-nested-2-background': rgba(0, 0, 0, 0.1),
+  'knowl-nested-3-background': rgba(0, 0, 0, 0.1),
+  'knowl-nested-4-background': rgba(0, 0, 0, 0.1),
+  'code-inline': #0002,
+  'dropdown-background-color': var(--content-background),
+  'dropdown-border-color': var(--toc-border-color),
+  'dropdown-text-color': var(--toc-text-color),
+  'dropdown-hover-background-color': var(--tocitem-active-background),
+  'dropdown-hover-text-color': var(--tocitem-active-text-color),
+  //  odd rows of the posts' table
+  'tb-even-bg': map.get($colors-temp, 'c-light-0'),
+  //  even rows of the posts' table
+  'tb-border-color': var(--tb-odd-bg),
+  'footnote-target-bg': map.get($colors-temp, 'c-link-light'),
+  'btn-share-color': map.get($colors-temp, 'c-light-2'),
+  'btn-share-hover-color': map.get($colors-temp, 'c-dark-0'),
+  'kbd-wrap-color': map.get($colors-temp, 'c-light-2'),
+  'kbd-text-color': map.get($colors-temp, 'c-dark-0'),
+  'kbd-bg-color': map.get($colors-temp, 'c-light-1'),
+  'prompt-text-color': map.get($colors-temp, 'c-dark-0'),
+  'prompt-tip-background-color': var(--definition-like-background-color),
+  'prompt-tip-border-color': var(--definition-like-border-color),
+  'prompt-info-background-color': var(--theorem-like-background-color),
+  'prompt-info-border-color': var(--theorem-like-border-color),
+  'prompt-warning-background-color': var(--example-like-background-color),
+  'prompt-warning-border-color': var(--example-like-border-color),
+  'prompt-danger-background-color': var(--exercise-like-background-color),
+  'prompt-danger-border-color': var(--exercise-like-border-color),
+  'carte-note-background-color': var(--definition-like-background-color),
+  'carte-note-border-color': var(--definition-like-border-color),
+  'carte-definition-background-color': var(--theorem-like-background-color),
+  'carte-definition-border-color': var(--theorem-like-border-color),
+  'carte-theorem-background-color': var(--example-like-background-color),
+  'carte-theorem-border-color': var(--example-like-border-color),
+  'carte-exercise-background-color': var(--exercise-like-background-color),
+  'carte-exercise-border-color': var(--exercise-like-border-color),
+  'carte-generic-background-color': map.get($colors-temp, 'c-light-0'),
+  'carte-generic-border-color': rgba(255, 255, 255, 0.2),
+  'carte-background-shadow': rgba(0, 0, 0, 0.2),
+  'carte-border-trasparency': rgba(255, 255, 255, 0.24),
+  'concours-border-color': var(--theorem-like-border-color),
+  'concours-background-color': map.get($colors-temp, 'c-light-0'),
+  //  Tags
+  'tag-border-color': map.get($colors-temp, 'c-light-2'),
+  'tag-shadow': map.get($colors-temp, 'c-light-1'),
+  'dash-color': map.get($colors-temp, 'c-light-2'),
+  'search-tag-bg': map.get($colors-temp, 'c-light-1'),
+  //  Categories
+  'categories-border-color': map.get($colors-temp, 'c-main-light'),
+  'categories-hover-background-color': map.get($colors-temp, 'c-main-light'),
+  'categories-icon-hover-color': map.get($colors-temp, 'c-dark-0'),
+  //  Archive
+  'timeline-node-bg': map.get($colors-temp, 'c-dark-2'),
+  'timeline-color': map.get($colors-temp, 'c-light-2'),
+  'timeline-year-dot-color': var(--timeline-color),
+  //  Code highlight colors
+  'language-border-color': map.get($colors-temp, 'c-main-light'),
+  'highlight-bg-color': map.get($colors-temp, 'c-light-2'),
+  'highlighter-rouge-color': map.get($colors-temp, 'c-dark-1'),
+  'highlight-lineno-color': map.get($colors-temp, 'c-dark-2'),
+  'inline-code-bg': map.get($colors-temp, 'c-light-2'),
+  'code-color': map.get($colors-temp, 'c-dark-1'),
+  'code-header-text-color': map.get($colors-temp, 'c-dark-0'),
+  'code-header-muted-color': map.get($colors-temp, 'c-dark-1'),
+  'code-header-icon-color': map.get($colors-temp, 'c-dark-1'),
+  'clipboard-checked-color': var(--definition-like-border-color),
+  'filepath-text-color': map.get($colors-temp, 'c-dark-1')
+);
+
+$palette-colors-dark: (
+  //
+  // chirpy's main colors
+  'main-background': map.get($colors-temp, 'c-dark-0'),
+  'mask-bg': map.get($colors-temp, 'c-dark-1'),
+  'main-border': map.get($colors-temp, 'c-main-dark'),
+  //  Common color
+  'text-color': map.get($colors-temp, 'c-light-1'),
+  'text-muted-color': map.get($colors-temp, 'c-light-3'),
+  'text-muted-highlight-color': inherit,
+  'text-dark': map.get($colors-temp, 'c-light-0'),
+  'text-light': map.get($colors-temp, 'c-dark-0'),
+  'text-muted-dark': map.get($colors-temp, 'c-light-2'),
+  'text-muted-light': map.get($colors-temp, 'c-dark-2'),
+  'heading-color': map.get($colors-temp, 'c-heading-dark'),
+  'alt-heading-color': map.get($colors-temp, 'c-alt-heading-dark'),
+  'label-color': map.get($colors-temp, 'c-light-1'),
+  'blockquote-border-color': map.get($colors-temp, 'c-light-3'),
+  'blockquote-text-color': map.get($colors-temp, 'c-light-1'),
+  'link-color': map.get($colors-temp, 'c-link-dark'),
+  'link-underline-color': var(--main-background),
+  'button-bg': map.get($colors-temp, 'c-dark-3'),
+  'btn-border-color': map.get($colors-temp, 'c-main-dark'),
+  'btn-backtotop-color': var(--text-color),
+  'btn-backtotop-border-color': map.get($colors-temp, 'c-dark-2'),
+  'checkbox-color': map.get($colors-temp, 'c-dark-2'),
+  'checkbox-checked-color': map.get($colors-temp, 'c-light-2'),
+  'img-bg':
+    radial-gradient(
+      circle,
+      map.get($colors-temp, 'c-dark-0'),
+      map.get($colors-temp, 'c-dark-3')
+    ),
+  'shimmer-bg':
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) %,
+      rgba(46, 52, 64, 0.2) %,
+      rgba(255, 255, 255, 0) %
+    ),
+  //  Sidebar
+  'site-title-color': map.get($colors-temp, 'c-main-dark'),
+  'site-subtitle-color': map.get($colors-temp, 'c-light-1'),
+  'sidebar-background-color': map.get($colors-temp, 'c-dark-2'),
+  'sidebar-border-color': map.get($colors-temp, 'c-main-dark'),
+  'sidebar-muted-color': map.get($colors-temp, 'c-light-1'),
+  'sidebar-active-color': var(--text-dark),
+  'sidebar-hover-background-color': map.get($colors-temp, 'c-main-dark'),
+  'sidebar-btn-bg': map.get($colors-temp, 'c-dark-2'),
+  'sidebar-btn-color': map.get($colors-temp, 'c-light-2'),
+  'avatar-border-color': map.get($colors-temp, 'c-main-dark'),
+  'card-background-color': map.get($colors-temp, 'c-dark-1'),
+  'card-hover-background-color': map.get($colors-temp, 'c-dark-2'),
+  'card-header-background-color': map.get($colors-temp, 'c-dark-0'),
+  'card-border-color': map.get($colors-temp, 'c-main-dark'),
+  'card-text-color': map.get($colors-temp, 'c-light-0'),
+  'card-heading-color': map.get($colors-temp, 'c-main-dark'),
+  //  Topbar
+  'topbar-background-color': map.get($colors-temp, 'c-dark-2'),
+  'topbar-text-color': map.get($colors-temp, 'c-light-1'),
+  'search-border-color': map.get($colors-temp, 'c-main-dark'),
+  'search-icon-color': map.get($colors-temp, 'c-main-dark'),
+  'input-focus-border-color': map.get($colors-temp, 'c-dark-0'),
+  //  Home page
+  'post-list-text-color': map.get($colors-temp, 'c-light-1'),
+  'btn-paginator-text-color': var(--text-color),
+  'btn-paginator-hover-color': map.get($colors-temp, 'c-main-dark'),
+  //  Posts
+  'toc-highlight': map.get($colors-temp, 'c-main-dark'),
+  'toc-popup-border-color': map.get($colors-temp, 'c-main-dark'),
+  'tag-hover': map.get($colors-temp, 'c-main-dark'),
+  'tb-odd-bg': map.get($colors-temp, 'c-dark-1'),
+  // pretext's main colors
+  'page-background': var(--main-background),
+  'content-background': var(--card-background-color),
+  'page-border': var(--main-border),
+  'body-text': var(--text-color),
+  'body-title': var(--heading-color),
+  'doc-title': var(--alt-heading-color),
+  'byline-color': map.get($colors-temp, 'c-light-3'),
+  'button-background': var(--button-bg),
+  'button-text': var(--text-color),
+  'button-border': var(--btn-border-color),
+  'button-hover-background': map.get($colors-temp, 'c-main-dark'),
+  'button-hover-text': var(--text-dark),
+  'banner-background': var(--page-background),
+  'navbar-background': var(--sidebar-background-color),
+  'footer-background': red,
+
+  'toc-text-color': map.get($colors-temp, 'c-light-3'),
+  'toc-border-color': map.get($colors-temp, 'c-dark-3'),
+  'toc-background-color': transparent,
+
+  'tocitem-background': transparent,
+
+  'tocitem-highlight-text-color': map.get($colors-temp, 'c-light-1'),
+  'tocitem-highlight-background': map.get($colors-temp, 'c-dark-3'),
+  'tocitem-highlight-border-color': none,
+
+  // active styles are used for the current toc item
+  'tocitem-active-text-color': map.get($colors-temp, 'c-main-dark'),
+  'tocitem-active-background': transparent,
+  'tocitem-active-border-color': transparent,
+
+  'toclevel1-text-color': var(--toc-text-color),
+  'toclevel2-text-color': var(--toc-text-color),
+  'toclevel3-text-color': var(--toc-text-color),
+  'toclevel1-background-color': none,
+  'toclevel2-background-color': none,
+  'toclevel3-background-color': none,
+
+  'ptx-image-bg': transparent,
+  'activated-content-bg': rgba(241, 185, 255, 10%),
+  'summary-link-background': var(--card-background-color),
+  'summary-link-text-color': var(--card-text-color),
+  'summary-link-hover-background': var(--card-hover-background-color),
+  'summary-link-hover-text-color': var(--text-dark),
+  'link-text-color': var(--link-color),
+  'link-background': none,
+  'link-active-text-color': var(--link-color),
+  'link-active-background': none,
+  'link-alt-text-color': map.get($colors-temp, 'c-do'),
+  'link-alt-background': transparent,
+  'link-alt-active-text-color': var(--link-alt-text-color),
+  'link-alt-active-background': #e3d1ce,
+
+  'knowl-link-color': var(--link-text-color),
+  'knowl-background': rgba(0, 0, 0, 0.1),
+  'knowl-border-color': map.get($colors-temp, 'c-dark-2'),
+  'knowl-nested-1-background': rgba(0, 0, 0, 0.1),
+  'knowl-nested-2-background': rgba(0, 0, 0, 0.1),
+  'knowl-nested-3-background': rgba(0, 0, 0, 0.1),
+  'knowl-nested-4-background': rgba(0, 0, 0, 0.1),
+  'code-inline': #0002,
+  'dropdown-background-color': var(--content-background),
+  'dropdown-border-color': var(--toc-border-color),
+  'dropdown-text-color': var(--toc-text-color),
+  'dropdown-hover-background-color': var(--tocitem-active-background),
+  'dropdown-hover-text-color': var(--tocitem-active-text-color),
+  //  odd rows of the posts' table
+  'tb-even-bg': map.get($colors-temp, 'c-dark-0'),
+  //  even rows of the posts' table
+  'tb-border-color': var(--tb-odd-bg),
+  'footnote-target-bg': map.get($colors-temp, 'c-link-dark'),
+  'btn-share-color': map.get($colors-temp, 'c-dark-2'),
+  'btn-share-hover-color': map.get($colors-temp, 'c-light-0'),
+  'kbd-wrap-color': map.get($colors-temp, 'c-dark-2'),
+  'kbd-text-color': map.get($colors-temp, 'c-light-0'),
+  'kbd-bg-color': map.get($colors-temp, 'c-dark-1'),
+  'prompt-text-color': map.get($colors-temp, 'c-light-0'),
+  'prompt-tip-background-color': var(--definition-like-background-color),
+  'prompt-tip-border-color': var(--definition-like-border-color),
+  'prompt-info-background-color': var(--theorem-like-background-color),
+  'prompt-info-border-color': var(--theorem-like-border-color),
+  'prompt-warning-background-color': var(--example-like-background-color),
+  'prompt-warning-border-color': var(--example-like-border-color),
+  'prompt-danger-background-color': var(--exercise-like-background-color),
+  'prompt-danger-border-color': var(--exercise-like-border-color),
+  'carte-note-background-color': var(--definition-like-background-color),
+  'carte-note-border-color': var(--definition-like-border-color),
+  'carte-definition-background-color': var(--theorem-like-background-color),
+  'carte-definition-border-color': var(--theorem-like-border-color),
+  'carte-theorem-background-color': var(--example-like-background-color),
+  'carte-theorem-border-color': var(--example-like-border-color),
+  'carte-exercise-background-color': var(--exercise-like-background-color),
+  'carte-exercise-border-color': var(--exercise-like-border-color),
+  'carte-generic-background-color': map.get($colors-temp, 'c-dark-0'),
+  'carte-generic-border-color': rgba(255, 255, 255, 0.2),
+  'carte-background-shadow': rgba(0, 0, 0, 0.2),
+  'carte-border-trasparency': rgba(255, 255, 255, 0.24),
+  'concours-border-color': var(--theorem-like-border-color),
+  'concours-background-color': map.get($colors-temp, 'c-dark-0'),
+  //  Tags
+  'tag-border-color': map.get($colors-temp, 'c-dark-2'),
+  'tag-shadow': map.get($colors-temp, 'c-dark-1'),
+  'dash-color': map.get($colors-temp, 'c-dark-2'),
+  'search-tag-bg': map.get($colors-temp, 'c-dark-1'),
+  //  Categories
+  'categories-border-color': map.get($colors-temp, 'c-main-dark'),
+  'categories-hover-background-color': map.get($colors-temp, 'c-main-dark'),
+  'categories-icon-hover-color': map.get($colors-temp, 'c-light-0'),
+  //  Archive
+  'timeline-node-bg': map.get($colors-temp, 'c-light-2'),
+  'timeline-color': map.get($colors-temp, 'c-dark-2'),
+  'timeline-year-dot-color': var(--timeline-color),
+  //  Code highlight colors
+  'language-border-color': map.get($colors-temp, 'c-main-dark'),
+  'highlight-bg-color': map.get($colors-temp, 'c-dark-2'),
+  'highlighter-rouge-color': map.get($colors-temp, 'c-light-1'),
+  'highlight-lineno-color': map.get($colors-temp, 'c-light-2'),
+  'inline-code-bg': map.get($colors-temp, 'c-dark-2'),
+  'code-color': map.get($colors-temp, 'c-light-1'),
+  'code-header-text-color': map.get($colors-temp, 'c-light-0'),
+  'code-header-muted-color': map.get($colors-temp, 'c-light-1'),
+  'code-header-icon-color': map.get($colors-temp, 'c-light-1'),
+  'clipboard-checked-color': var(--definition-like-border-color),
+  'filepath-text-color': map.get($colors-temp, 'c-light-1')
+);
+
+// block-types based on those in entities.ent
+$block-types: 'assemblage-like', 'definition-like', 'theorem-like', 'axiom-like',
+  'remark-like', 'computation-like', 'openproblem-like', 'aside-like',
+  'proof-like', 'example-like', 'project-like', 'goal-like', 'solution-like';
+
+$colors-light: map.merge($palette-colors-light, ());
+$colors-dark: map.merge($palette-colors-dark, ());
+
+@each $block in $block-types {
+  $colors-light: map.merge(
+    $colors-light,
+    (
+      // define background and border, but default to generic block colors
+      '#{$block}-background-color':
+        var(--block-background-color),
+      '#{$block}-border-color': var(--block-border-color)
+    )
+  );
+  $colors-dark: map.merge(
+    $colors-dark,
+    (
+      // define background and border, but default to generic block colors
+      '#{$block}-background-color':
+        var(--block-background-color),
+      '#{$block}-border-color': var(--block-border-color)
+    )
+  );
+}
+
+// -------------------------
+// from _palette-chunks.scss
+// --------------------------
+
+// light mode
+$heading-text-color: map.get($colors-temp, 'c-light-0') !default;
+
+@if $color-do==null {
+  $scheme-color: map.get($colors-temp, 'c-do');
+  $color-do: $scheme-color;
+}
+
+@if $color-fact==null {
+  $scheme-color: map.get($colors-temp, 'c-fact');
+  $color-fact: $scheme-color;
+}
+
+@if $color-def==null {
+  $scheme-color: map.get($colors-temp, 'c-def');
+  $color-def: $scheme-color;
+}
+
+@if $color-meta==null {
+  $scheme-color: map.get($colors-temp, 'c-meta');
+  $color-meta: $scheme-color;
+}
+
+$body-alpha: 0.25;
+$body-alpha-alt: 0.1;
+$body-desat: -10%;
+$body-sat: 5%;
+$body-darken: -25%;
+
+//lighter version of color-main for knowl borders
+@if $color-main==null {
+  $scheme-color: map.get($colors-temp, 'c-main-light');
+  $color-main: $scheme-color;
+}
+
+$color-main-trans-desat: color.adjust(
+  color.change($color-main, $alpha: $body-alpha),
+  $saturation: $body-desat
+);
+$color-main-alt: color.adjust(
+  color.scale($color-main, $lightness: 25%),
+  $saturation: $body-desat
+);
+$color-main-trans-desat-alt: color.change($color-main, $alpha: $body-alpha-alt);
+
+$color-main-sat: color.adjust(
+  color.change($color-main, $lightness: $body-darken),
+  $saturation: $body-sat
+);
+$color-do-sat: color.adjust(
+  color.change($color-do, $lightness: $body-darken),
+  $saturation: $body-sat
+);
+$color-def-sat: color.adjust(
+  color.change($color-def, $lightness: $body-darken),
+  $saturation: $body-sat
+);
+$color-fact-sat: color.adjust(
+  color.change($color-fact, $lightness: $body-darken),
+  $saturation: $body-sat
+);
+
+$color-meta-sat: color.adjust(
+  color.change($color-meta, $lightness: $body-darken),
+  $saturation: $body-sat
+);
+
+$color-do-trans-desat: color.adjust(
+  color.change($color-do, $alpha: $body-alpha),
+  $saturation: $body-desat
+);
+$color-def-trans-desat: color.adjust(
+  color.change($color-def, $alpha: $body-alpha),
+  $saturation: $body-desat
+);
+$color-fact-trans-desat: color.adjust(
+  color.change($color-fact, $alpha: $body-alpha),
+  $saturation: $body-desat
+);
+
+$color-do-trans-sat: color.adjust(
+  color.change($color-do-sat, $alpha: $body-alpha),
+  $saturation: $body-desat
+);
+$color-def-trans-sat: color.adjust(
+  color.change($color-def-sat, $alpha: $body-alpha),
+  $saturation: $body-desat
+);
+$color-fact-trans-sat: color.adjust(
+  color.change($color-fact-sat, $alpha: $body-alpha),
+  $saturation: $body-desat
+);
+
+$color-meta-trans-desat: color.adjust(
+  color.change($color-meta, $alpha: $body-alpha),
+  $saturation: $body-desat
+);
+//and an alt of color-main for nested knowls
+
+//Make light versions of the 4 colors for backgrounds behind
+
+$colors-light: map.merge(
+  $colors-light,
+  (
+    'color-main': $color-main-sat,
+    'color-meta': $color-meta-sat,
+    'color-def': $color-def-sat,
+    'color-do': $color-do,
+    'color-fact': $color-fact-sat,
+
+    // color-main
+    'main-background-color': $color-main-trans-desat,
+    'main-border-color': $color-main,
+    'block-background-color': $color-main-trans-desat,
+    'block-border-color': $color-main,
+    'block-head-color': var(--text-dark)
+  )
+);
+
+//lighter version of color-main for knowl borders
+@if $color-main==null {
+  $scheme-color: map.get($colors-temp, 'c-main-dark');
+  $color-main: $scheme-color;
+}
+
+$color-main-trans-desat: color.adjust(
+  color.change($color-main, $alpha: $body-alpha),
+  $saturation: $body-desat
+);
+
+$color-main-alt: color.adjust(
+  color.scale($color-main, $lightness: 25%),
+  $saturation: $body-desat
+);
+$color-main-trans-desat-alt: color.change($color-main, $alpha: $body-alpha-alt);
+
+$colors-dark: map.merge(
+  $colors-dark,
+  (
+    'color-main': $color-main,
+    'color-meta': $color-meta,
+    'color-def': $color-def,
+    'color-do': $color-do,
+    'color-fact': $color-fact,
+
+    // color-main
+    'main-background-color': $color-main-trans-desat,
+    'main-border-color': $color-main,
+    'block-background-color': $color-main-trans-desat,
+    'block-border-color': $color-main,
+    'block-head-color': var(--text-dark),
+    // "knowl-background": $color-main-trans-desat,
+    // "knowl-border-color": $color-main-alt,
+    // "knowl-nested-1-background": $color-main-trans-desat-alt,
+    // "knowl-nested-2-background": $color-main-trans-desat,
+    // "knowl-nested-3-background": $color-main-trans-desat-alt,
+    // "knowl-nested-4-background": $color-main-trans-desat,
+  )
+);
+
+// block-types based on those in entities.ent
+
+$act-types: 'project-like', 'example-like';
+
+@each $block in $act-types {
+  $colors-light: map.merge(
+    $colors-light,
+    (
+      // define background and border, but default to generic block colors
+      '#{$block}-background-color':
+        $color-meta-trans-desat,
+      '#{$block}-border-color': $color-meta
+    )
+  );
+  $colors-dark: map.merge(
+    $colors-dark,
+    (
+      // define background and border, but default to generic block colors
+      '#{$block}-background-color':
+        $color-meta-trans-desat,
+      '#{$block}-border-color': $color-meta
+    )
+  );
+}
+
+$do-types: 'exercise-like', 'solution-like';
+
+@each $block in $do-types {
+  $colors-light: map.merge(
+    $colors-light,
+    (
+      // define background and border, but default to generic block colors
+      '#{$block}-background-color':
+        $color-do-trans-sat,
+      '#{$block}-border-color': $color-do-sat
+    )
+  );
+  $colors-dark: map.merge(
+    $colors-dark,
+    (
+      // define background and border, but default to generic block colors
+      '#{$block}-background-color':
+        $color-do-trans-desat,
+      '#{$block}-border-color': $color-do
+    )
+  );
+}
+
+$colors-light: map.merge(
+  $colors-light,
+  (
+    'definition-like-background-color': $color-def-trans-sat,
+    'definition-like-border-color': $color-def-sat
+  )
+);
+
+$colors-dark: map.merge(
+  $colors-dark,
+  (
+    'definition-like-background-color': $color-def-trans-desat,
+    'definition-like-border-color': $color-def
+  )
+);
+
+$fact-types: 'theorem-like', 'proof-like', 'computation-like';
+
+@each $block in $fact-types {
+  $colors-light: map.merge(
+    $colors-light,
+    (
+      '#{$block}-background-color': $color-fact-trans-sat,
+      '#{$block}-border-color': $color-fact-sat
+    )
+  );
+  $colors-dark: map.merge(
+    $colors-dark,
+    (
+      // define background and border, but default to generic block colors
+      '#{$block}-background-color':
+        $color-fact-trans-desat,
+      '#{$block}-border-color': $color-fact
+    )
+  );
+}
+
+$neutral-types: 'goal-like', 'aside-like', 'remark-like';
+
+@each $block in $neutral-types {
+  $colors-light: map.merge(
+    $colors-light,
+    (
+      // define background and border, but default to generic block colors
+      '#{$block}-background-color':
+        $color-main-trans-desat,
+      '#{$block}-border-color': $color-main
+    )
+  );
+  $colors-dark: map.merge(
+    $colors-dark,
+    (
+      // define background and border, but default to generic block colors
+      '#{$block}-background-color':
+        $color-main-trans-desat,
+      '#{$block}-border-color': $color-main
+    )
+  );
+}
+
+// ----------------------------------------------------- //
+//  from _palette-single.scss and _palette-dark.scss
+// ---------------------------------------------------- //
+
+$primary-color: map.get($colors-temp, 'c-main-light') !default;
+
+// Compute color blends and add them as variables
+$blends: get-blends('primary-color');
+$colors-light: map.merge($colors-light, $blends);
+
+// Override some colors
+$colors-light: map.merge(
+  $colors-light,
+  (
+    'primary-color': $primary-color,
+
+    'link-text-color': var(--primary-color),
+    'link-active-text-color': var(--primary-color-white-40),
+    'link-active-background': var(--background-color-gray-30),
+    'link-alt-text-color': var(--link-text-color),
+    'link-alt-active-background': var(--link-active-text-color),
+    'assemb-border-color': var(--primary-color-white-50),
+    'block-head-color': var(--button-background),
+    // "knowl-background": var(--primary-color-white-95),
+    // "knowl-border-color": var(--primary-color),
+  )
+);
+
+// $colors-dark
+
+$primary-color: map.get($colors-temp, 'c-main-dark') !default;
+$background-color: map.get($colors-temp, 'c-dark-3') !default;
+
+// Compute color blends and add them as variables
+$blends: get-blends('primary-color');
+$colors-dark: map.merge($colors-dark, $blends);
+
+// Compute color blends and add them as variables
+$blends: get-blends('background-color');
+$colors-dark: map.merge($colors-dark, $blends);
+
+// Grab all color variables, override some for palette
+$colors-dark: map.merge(
+  $colors-dark,
+  (
+    'primary-color': $primary-color,
+    'background-color': $background-color,
+
+    'link-text-color': var(--primary-color-white-10),
+    'link-active-text-color': var(--primary-color-white-40),
+    'link-active-background': var(--background-color-gray-30),
+    'link-alt-text-color': var(--link-text-color),
+    'link-alt-active-background': var(--link-active-text-color),
+    'block-head-color': var(--button-background),
+    // "knowl-background": var(--background-color-black-10),
+    // "knowl-border-color": var(--background-color-white-20),
+    // "knowl-nested-1-background": var(--background-color-gray-10),
+    // "knowl-nested-2-background": var(--background-color-black-10),
+    // "knowl-nested-3-background": var(--background-color-gray-10),
+    // "knowl-nested-4-background": var(--background-color-black-10),
+    'code-inline': #0002
+  )
+);

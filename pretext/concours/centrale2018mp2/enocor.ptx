@@ -1,0 +1,978 @@
+<chapter xml:id="centrale2018mp2" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title> Centrale, 2018, maths 2</title>
+
+    <exercises xml:id="enocor">
+        <title>Enoncé avec corrigé</title>
+
+    <introduction>
+        <p>
+            Ce problème étudie quelques propriétés des fonctions harmoniques ainsi que quelques
+            exemples de telles fonctions (parties I et II). Dans la partie III, largement
+            indépendante du reste du problème, on montre le principe du maximum faible pour le
+            laplacien. Dans la partie IV, on établit un lien entre les fonctions harmoniques de deux
+            variables et les fonctions développables en série entière, et on propose la résolution
+            du problème de Dirichlet dans le disque unité de ℝ² dans la partie V.
+        </p>
+    </introduction>
+
+    <paragraphs>
+        <title>Notations</title>
+        <ul>
+            <li> Dans ce préambule et dans les parties I et III, <m>n</m> désigne un entier
+                strictement positif. </li>
+            <li> On munit ℝⁿ de sa structure euclidienne canonique et <m>\|\cdot\|</m> désigne la
+                norme euclidienne. </li>
+            <li> Si <m>U</m> est une partie de ℝⁿ, alors <m>\overline{U}</m> désigne son adhérence
+                et <m>\partial U</m> sa frontière. </li>
+            <li> Pour <m>a \in \mathbb{R}^n</m> et <m>R \gt 0</m>, on désigne par <m>D(a, R)</m> la
+                boule ouverte de centre <m>a</m> et de rayon <m>R</m> pour la distance euclidienne.
+                Autrement dit <me>D(a, R) = \{x \in \mathbb{R}^n ; \|x - a\| \lt R\}</me> La boule
+                fermée de centre <m>a</m> et de rayon <m>R</m> est alors <m>\overline{D(a, R)}</m>. </li>
+            <li> L’opérateur différentiel <m>\Delta</m> (appelé laplacien) est défini pour toute
+                fonction à valeurs réelles de classe <m>\mathcal{C}^2</m> sur un ouvert <m>U \subset
+                \mathbb{R}^n</m> par <me>\forall x = (x_1, \dots, x_n) \in U, \quad \Delta f(x) =
+                \sum_{i=1}^n \frac{\partial^2 f}{\partial x_i^2}(x)</me>
+            </li>
+            <li> Une fonction <m>f</m> de classe <m>\mathcal{C}^2</m> à valeurs réelles sur un
+                ouvert <m>U</m> de ℝⁿ est dite harmonique sur <m>U</m> si <me>\forall x \in U, \quad
+                \Delta f(x) = 0</me> L’ensemble des fonctions harmoniques sur <m>U</m> est noté <m>
+                \mathcal{H}(U)</m>. </li>
+        </ul>
+    </paragraphs>
+        
+        
+        
+    <subexercises>
+        <title>Fonctions harmoniques : quelques propriétés</title>
+        <introduction>
+            <p> Soit <m>U</m> un ouvert non vide de <m>\mathbb{R}^n</m>. On note <m>\mathcal{C}^2(U,
+                \mathbb{R})</m> l'espace vectoriel des fonctions de classe <m>\mathcal{C}^2</m> de <m>
+                U</m> dans <m>\mathbb{R}</m>. </p>
+        </introduction>
+
+        <exercise>
+            <statement>
+                <p> Montrer que <m>\mathcal{H}(U)</m> est un sous-espace vectoriel de <m>\mathcal{C}^2(U,
+                    \mathbb{R})</m>. </p>
+            </statement>
+            <solution>
+                <p> On a <m>\mathcal{H}(U) \subset \mathcal{C}^2(U, \mathbb{R})</m>. La fonction
+                    nulle est harmonique. Soient <m>f, g \in \mathcal{H}(U)</m> et <m>\lambda \in
+                    \mathbb{R}</m>, alors <m>f + \lambda g</m> est de classe <m>\mathcal{C}^2(U,
+                    \mathbb{R})</m> et <m>\forall i \in [\![1, n]\!]</m>, <m>\frac{\partial^2}{\partial
+                    x_i^2}</m> est linéaire, donc <m>\Delta(f + \lambda g) = \Delta(f) + \lambda
+                    \Delta(g) = 0</m>, alors <m>f + \lambda g \in \mathcal{H}(U)</m>. Ainsi, <m>
+                    \mathcal{H}(U)</m> est un sous-espace vectoriel de <m>\mathcal{C}^2(U,
+                    \mathbb{R})</m>. </p>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p> Soit <m>f \in \mathcal{H}(U)</m>. Montrer que si <m>f</m> est <m>
+                    \mathcal{C}^\infty</m> sur <m>U</m>, alors toute dérivée partielle à tout ordre
+                    de <m>f</m> appartient à <m>\mathcal{H}(U)</m>. </p>
+            </statement>
+            <solution>
+                <p> On suppose que <m>f \in \mathcal{C}^2(U, \mathbb{R}) \cap \mathcal{H}(U)</m>.
+                    Soit <m>p \in \mathbb{N}</m>, posons <m>\frac{\partial^p f}{\partial x_{i_1}
+                    \partial x_{i_2} \dots \partial x_{i_p}} = g</m>. Par application du théorème de
+                    Schwartz et de la linéarité de l'opérateur dérivée partielle, on a : <me>\Delta(g)
+                    = \sum_{j=1}^n \frac{\partial^2 g}{\partial x_j^2} = \frac{\partial^p}{\partial
+                    x_{i_1} \partial x_{i_2} \dots \partial x_{i_p}} \left( \sum_{j=1}^n
+                    \frac{\partial^2 f}{\partial x_j^2} \right) = 0</me> Donc <m>g \in
+                    \mathcal{H}(U)</m>. </p>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p> On suppose dans cette question que <m>U</m> est connexe par arcs. Déterminer
+                    l'ensemble des fonctions <m>f</m> de <m>\mathcal{H}(U)</m> telles que <m>f^2</m>
+                    appartienne aussi à <m>\mathcal{H}(U)</m>. </p>
+            </statement>
+            <solution>
+                <p> Soit <m>f \in \mathcal{H}(U)</m>, alors pour tout <m>i \in [\![1, n]\!]</m>, <m>\frac{\partial
+                    f^2}{\partial x_i} = 2f \frac{\partial f}{\partial x_i}</m>. En dérivant une
+                    seconde fois, on obtient : <me>\frac{\partial^2 f^2}{\partial x_i^2} = 2 \left(
+                    \frac{\partial f}{\partial x_i} \right)^2 + 2f \frac{\partial^2 f}{\partial
+                    x_i^2}</me> Donc : <me>\Delta(f^2) = 0 \iff \sum_{i=1}^n \left( \frac{\partial
+                    f}{\partial x_i} \right)^2 + f \Delta(f) = 0 \iff \sum_{i=1}^n \left(
+                    \frac{\partial f}{\partial x_i} \right)^2 = 0</me> car <m>f \in \mathcal{H}(U)</m>.
+                    Ainsi, <m>\forall i \in [\![1, n]\!]</m>, <m>\frac{\partial f}{\partial x_i} = 0</m>.
+                    Comme <m>f</m> est de classe <m>\mathcal{C}^1</m> sur <m>U</m>, elle est
+                    différentiable sur <m>U</m>, et <m>U</m> étant connexe par arcs, <m>f</m> est
+                    constante sur <m>U</m>. </p>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p> Donner une fonction non constante appartenant à <m>\mathcal{H}(U)</m>. Le
+                    produit de deux fonctions harmoniques est-il une fonction harmonique ? </p>
+            </statement>
+            <solution>
+                <p> L'application <m>f : x = (x_1, \dots, x_n) \mapsto x_1</m> est harmonique, mais <m>
+                    f^2</m> ne l'est pas. Ainsi, le produit de deux fonctions harmoniques sur <m>U</m>
+                    n'est pas nécessairement harmonique sur <m>U</m>. </p>
+            </solution>
+        </exercise>
+    </subexercises>
+
+    <subexercises>
+        <title>II Exemples de fonctions harmoniques</title>
+
+        <exercisegroup>
+        
+            <title>II.A – Fonctions harmoniques à variables séparables</title>
+            <introduction>              
+                <p> On cherche dans cette question à déterminer les fonctions harmoniques non nulles
+                    sur <m>\mathbb{R}^2</m> à variables séparables, c’est-à-dire les fonctions <m>f</m>
+                    s’écrivant sous la forme <m>f(x, y) = u(x)v(y)</m>. </p>
+                </introduction>
+
+            <exercise>
+                <statement>
+                    <p> Montrer qu’il existe une constante <m>\lambda</m> réelle telle que <m>u</m>
+                        et <m>v</m> soient solutions respectives des équations <me>z'' + \lambda z =
+                        0</me> et <me>z'' - \lambda z = 0</me>
+                    </p>
+                </statement>
+                <solution>
+                    <p> Soit <m>(x, y) \in \mathbb{R}^2</m>, on a : <me>\Delta(f)(x, y) = u''(x)v(y)
+                        + u(x)v''(y)</me> Comme <m>f</m> est harmonique, <m>\Delta(f)(x, y) = 0</m>,
+                        donc : <me>u''(x)v(y) + u(x)v''(y) = 0</me> En divisant par <m>u(x)v(y)</m>
+                        (qui est non nul car <m>f</m> n'est pas identiquement nulle), on obtient : <me>\frac{u''(x)}{u(x)}
+                        + \frac{v''(y)}{v(y)} = 0</me> Cela implique qu'il existe une constante <m>
+                        \lambda</m> telle que : <me>\frac{u''(x)}{u(x)} = -\lambda \quad \text{et}
+                        \quad \frac{v''(y)}{v(y)} = \lambda</me> Ainsi, <m>u</m> et <m>v</m> sont
+                        solutions des équations différentielles données. </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p> Donner en fonction du signe de <m>\lambda</m> la forme des fonctions
+                        harmoniques à variables séparables. </p>
+                </statement>
+                <solution>
+                    <p> Selon le signe de <m>\lambda</m>, les solutions sont : <ul>
+                            <li> Si <m>\lambda = 0</m>, alors <m>f</m> est de la forme <m>f(x, y) =
+                        (a x + b)(c y + d)</m>. </li>
+                            <li> Si <m>\lambda \gt 0</m>, alors <m>f</m> est de la forme : <me>f(x,
+                        y) = \left( a \cos(\sqrt{\lambda} x) + b \sin(\sqrt{\lambda} x) \right)
+                        \left( c e^{\sqrt{\lambda} y} + d e^{-\sqrt{\lambda} y} \right)</me>
+                            </li>
+                            <li> Si <m>\lambda \lt 0</m>, alors <m>f</m> est de la forme : <me>f(x,
+                        y) = \left( a e^{\sqrt{-\lambda} x} + b e^{-\sqrt{-\lambda} x} \right)
+                        \left( c \cos(\sqrt{-\lambda} y) + d \sin(\sqrt{-\lambda} y) \right)</me>
+                            </li>
+                        </ul>
+                        où <m>a, b, c, d</m> sont des constantes arbitraires. </p>
+                </solution>
+            </exercise>
+            </exercisegroup>
+
+        <exercisegroup>
+            <title>II.B – Fonctions harmoniques radiales</title>
+            <introduction>
+                <p> Soit <m>f</m> une fonction réelle de classe <m>\mathcal{C}^2</m> sur <m>\mathbb{R}^2
+                    \setminus \{(0, 0)\}</m>. On pose, pour tout <m>(r, \theta) \in \mathbb{R}^+
+                    \times \mathbb{R}</m>, <me>g(r, \theta) = f(r \cos(\theta), r \sin(\theta))</me>
+                </p>
+            </introduction>
+
+            <exercise>
+                <statement>
+                    <p> Justifier que <m>g</m> est de classe <m>\mathcal{C}^2</m> sur <m>\mathbb{R}^+
+                        \times \mathbb{R}</m>. </p>
+                </statement>
+                <solution>
+                    <p> L'application <m>h : (r, \theta) \mapsto (r \cos(\theta), r \sin(\theta))</m>
+                        est de classe <m>\mathcal{C}^2</m> sur <m>\mathbb{R}^+ \times \mathbb{R}</m>
+                        car ses composantes le sont. Comme <m>g = f \circ h</m>, et que <m>f</m> est
+                        de classe <m>\mathcal{C}^2</m>, alors <m>g</m> est également de classe <m>
+                        \mathcal{C}^2</m>. </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p> Pour tout <m>(r, \theta) \in \mathbb{R}^+ \times \mathbb{R}</m>, exprimer <m>\frac{\partial
+                        g}{\partial r}(r, \theta)</m> et <m>\frac{\partial g}{\partial \theta}(r,
+                        \theta)</m> en fonction des dérivées partielles de <m>f</m>. </p>
+                </statement>
+                <solution>
+                    <p> Pour <m>(r, \theta) \in \mathbb{R}^+ \times \mathbb{R}</m>, on pose <m>(x,
+                        y) = (r \cos(\theta), r \sin(\theta))</m>. Alors : <me>\frac{\partial
+                        g}{\partial r}(r, \theta) = \cos(\theta) \frac{\partial f}{\partial x}(x, y)
+                        + \sin(\theta) \frac{\partial f}{\partial y}(x, y)</me> et <me>\frac{\partial
+                        g}{\partial \theta}(r, \theta) = -r \sin(\theta) \frac{\partial f}{\partial
+                        x}(x, y) + r \cos(\theta) \frac{\partial f}{\partial y}(x, y)</me>
+                    </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p> Exprimer également <m>\frac{\partial^2 g}{\partial r^2}(r, \theta)</m> et <m>\frac{\partial^2
+                        g}{\partial \theta^2}(r, \theta)</m> en fonction des dérivées partielles
+                        premières et secondes de <m>f</m> en <m>(r \cos(\theta), r \sin(\theta))</m>
+                        .
+            </p>
+                </statement>
+                <solution>
+                    <p> Pour <m>(r, \theta) \in \mathbb{R}^+ \times \mathbb{R}</m>, on a : <me>\frac{\partial^2
+                        g}{\partial r^2}(r, \theta) = \cos^2(\theta) \frac{\partial^2 f}{\partial
+                        x^2}(x, y) + \sin^2(\theta) \frac{\partial^2 f}{\partial y^2}(x, y) + 2
+                        \sin(\theta) \cos(\theta) \frac{\partial^2 f}{\partial x \partial y}(x, y)</me>
+                        et <me>\frac{\partial^2 g}{\partial \theta^2}(r, \theta) = r^2
+                        \sin^2(\theta) \frac{\partial^2 f}{\partial x^2}(x, y) + r^2 \cos^2(\theta)
+                        \frac{\partial^2 f}{\partial y^2}(x, y) - 2 r^2 \sin(\theta) \cos(\theta)
+                        \frac{\partial^2 f}{\partial x \partial y}(x, y) - r \cos(\theta)
+                        \frac{\partial f}{\partial x}(x, y) - r \sin(\theta) \frac{\partial
+                        f}{\partial y}(x, y)</me>
+                    </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p> Montrer que <m>f</m> appartient à <m>\mathcal{H}(\mathbb{R}^2 \setminus
+                        \{(0, 0)\})</m> si et seulement si, pour tout <m>(r, \theta) \in
+                        \mathbb{R}^+ \times \mathbb{R}</m>, <me>r^2 \frac{\partial^2 g}{\partial
+                        r^2}(r, \theta) + \frac{\partial^2 g}{\partial \theta^2}(r, \theta) + r
+                        \frac{\partial g}{\partial r}(r, \theta) = 0</me>
+                    </p>
+                </statement>
+                <solution>
+                    <p> En utilisant les expressions des dérivées partielles de <m>g</m> obtenues
+                        précédemment, on a : <me>r^2 \frac{\partial^2 g}{\partial r^2}(r, \theta) +
+                        \frac{\partial^2 g}{\partial \theta^2}(r, \theta) + r \frac{\partial
+                        g}{\partial r}(r, \theta) = r^2 \Delta(f)(x, y)</me> où <m>(x, y) = (r
+                        \cos(\theta), r \sin(\theta))</m>. Ainsi, <m>f</m> est harmonique si et
+                        seulement si : <me>r^2 \frac{\partial^2 g}{\partial r^2}(r, \theta) +
+                        \frac{\partial^2 g}{\partial \theta^2}(r, \theta) + r \frac{\partial
+                        g}{\partial r}(r, \theta) = 0</me>
+                    </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p> Déterminer les fonctions harmoniques radiales de <m>\mathbb{R}^2 \setminus
+                        \{(0, 0)\}</m>, c’est-à-dire les fonctions <m>f</m> appartenant à <m>\mathcal{H}(\mathbb{R}^2
+                        \setminus \{(0, 0)\})</m> telles que <m>(r, \theta) \mapsto f(r
+                        \cos(\theta), r \sin(\theta))</m> soit indépendante de <m>\theta</m>. </p>
+                </statement>
+                <solution>
+                    <p> Si <m>f</m> est radiale, alors <m>g(r, \theta) = g(r)</m> est indépendante
+                        de <m>\theta</m>. Ainsi, l’équation harmonique se réduit à : <me>r^2 g''(r)
+                        + r g'(r) = 0</me> En posant <m>h(r) = g'(r)</m>, on obtient : <me>r^2 h'(r)
+                        + r h(r) = 0 \quad \Rightarrow \quad h'(r) + \frac{1}{r} h(r) = 0</me> Cette
+                        équation différentielle a pour solution : <me>h(r) = \frac{C}{r}</me> où <m>
+                        C</m> est une constante. En intégrant, on trouve : <me>g(r) = C \ln(r) + D</me>
+                        où <m>D</m> est une autre constante. Ainsi, les fonctions harmoniques
+                        radiales sont de la forme : <me>f(x, y) = C \ln(\sqrt{x^2 + y^2}) + D</me>
+                        où <m>C</m> et <m>D</m> sont des constantes. </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p> Soient <m>a, b, r_1</m> et <m>r_2</m> quatre réels tels que <m>0 \lt r_1 \lt
+                        r_2</m>. Déterminer une fonction <m>f</m> de classe <m>\mathcal{C}^2</m> sur <m>\mathbb{R}^2
+                        \setminus \{(0, 0)\}</m> telle que <me>\begin{cases}
+                            \Delta f = 0 \\
+                            f(x, y) = a \quad \text{si } \|(x, y)\| = r_1 \\
+                            f(x, y) = b \quad \text{si } \|(x, y)\| = r_2
+                            \end{cases}</me>
+                    </p>
+                </statement>
+                <solution>
+                    <p> D’après la question précédente, les fonctions harmoniques radiales sont de
+                        la forme : <me>f(x, y) = C \ln(\sqrt{x^2 + y^2}) + D</me> où <m>C</m> et <m>
+                        D</m> sont des constantes. En utilisant les conditions aux limites, on
+                        obtient : <me>\begin{cases}
+                            C \ln(r_1) + D = a \\
+                            C \ln(r_2) + D = b
+                            \end{cases}</me> En résolvant ce système, on trouve : <me>C = \frac{a -
+                        b}{\ln(r_1) - \ln(r_2)} \quad \text{et} \quad D = a - C \ln(r_1)</me> Ainsi,
+                        la fonction <m>f</m> est donnée par : <me>f(x, y) = \frac{a - b}{\ln(r_1) -
+                        \ln(r_2)} \ln(\sqrt{x^2 + y^2}) + a - \frac{a - b}{\ln(r_1) - \ln(r_2)}
+                        \ln(r_1)</me>
+                    </p>
+                </solution>
+            </exercise>
+            </exercisegroup>
+
+        <exercisegroup>
+            <title>II.C – Fonctions harmoniques à variables polaires séparables</title>
+            <introduction>
+                <p> Dans cette sous-partie, on considère deux fonctions de classe <m>\mathcal{C}^2</m>
+                    , <m>u : \mathbb{R}^+ \rightarrow \mathbb{R}</m> et <m>v : \mathbb{R}
+                    \rightarrow \mathbb{R}</m>, et on pose <me>f(r \cos(\theta), r \sin(\theta)) =
+                    u(r) v(\theta)</me>
+                </p>
+            </introduction>
+
+            <exercise>
+                <statement>
+                    <p> Montrer que, si <m>f</m> n’est pas identiquement nulle, alors <m>v</m> est <m>
+                        2\pi</m>-périodique. </p>
+                </statement>
+                <solution>
+                    <p> Pour tout <m>(r, \theta) \in \mathbb{R}^+ \times \mathbb{R}</m>, on a : <me>f(r
+                        \cos(\theta + 2\pi), r \sin(\theta + 2\pi)) = f(r \cos(\theta), r
+                        \sin(\theta))</me> Donc <m>u(r) v(\theta + 2\pi) = u(r) v(\theta)</m>. Comme <m>
+                        f</m> n'est pas identiquement nulle, il existe <m>(r_0, \theta_0)</m> tel
+                        que <m>u(r_0) v(\theta_0) \neq 0</m>, ce qui implique que <m>v(\theta +
+                        2\pi) = v(\theta)</m> pour tout <m>\theta</m>. Ainsi, <m>v</m> est <m>2\pi</m>
+                        -périodique.
+            </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p> Montrer que, si <m>f</m> est harmonique et non identiquement nulle sur <m>\mathbb{R}^2
+                        \setminus \{(0, 0)\}</m>, alors il existe un réel <m>\lambda</m> tel que <m>
+                        u</m> soit solution de l’équation différentielle <me>r^2 z''(r) + r z'(r) -
+                        \lambda z(r) = 0</me> et <m>v</m> soit solution de l’équation différentielle <me>z''(\theta)
+                        + \lambda z(\theta) = 0</me>
+                    </p>
+                </statement>
+                <solution>
+                    <p> Par la question précédente, on a : <me>r^2 u''(r) v(\theta) + u(r)
+                        v''(\theta) + r u'(r) v(\theta) = 0</me> En divisant par <m>u(r) v(\theta)</m>
+                        (qui est non nul car <m>f</m> n'est pas identiquement nulle), on obtient : <me>r^2
+                        \frac{u''(r)}{u(r)} + r \frac{u'(r)}{u(r)} + \frac{v''(\theta)}{v(\theta)} =
+                        0</me> Cela implique qu'il existe une constante <m>\lambda</m> telle que : <me>r^2
+                        \frac{u''(r)}{u(r)} + r \frac{u'(r)}{u(r)} = \lambda \quad \text{et} \quad
+                        \frac{v''(\theta)}{v(\theta)} = -\lambda</me> Ainsi, <m>u</m> et <m>v</m>
+                        sont solutions des équations différentielles données. </p>
+                </solution>
+            </exercise>
+            </exercisegroup>
+            <exercisegroup>
+                <title>II.C.1 – Cas où <m>\lambda = 0</m></title>
+
+                <exercise>
+                    <statement>
+                        <p> Quelles sont les solutions <m>2\pi</m>-périodiques de l’équation <m>z''(\theta)
+                            + \lambda z(\theta) = 0</m> lorsque <m>\lambda = 0</m> ? </p>
+                    </statement>
+                    <solution>
+                        <p> Si <m>\lambda = 0</m>, l’équation devient <m>z''(\theta) = 0</m>, dont
+                            les solutions sont de la forme <m>z(\theta) = A \theta + B</m>. Pour que <m>
+                            z</m> soit <m>2\pi</m>-périodique, il faut que <m>A = 0</m>. Ainsi, les
+                            solutions <m>2\pi</m>-périodiques sont les fonctions constantes <m>z(\theta)
+                            = B</m>. </p>
+                    </solution>
+                </exercise>
+
+                <exercise>
+                    <statement>
+                        <p> Résoudre l’équation différentielle <m>r^2 z''(r) + r z'(r) = 0</m> sur <m>
+                            \mathbb{R}^+</m>. </p>
+                    </statement>
+                    <solution>
+                        <p> L’équation différentielle <m>r^2 z''(r) + r z'(r) = 0</m> peut être
+                            réécrite sous la forme : <me>r z''(r) + z'(r) = 0</me> En posant <m>y(r)
+                            = z'(r)</m>, on obtient : <me>r y'(r) + y(r) = 0</me> Cette équation est
+                            une équation différentielle linéaire du premier ordre, dont la solution
+                            est : <me>y(r) = \frac{C}{r}</me> où <m>C</m> est une constante. En
+                            intégrant, on trouve : <me>z(r) = C \ln(r) + D</me> où <m>D</m> est une
+                            autre constante. Ainsi, les solutions sont de la forme <m>z(r) = C
+                            \ln(r) + D</m>. </p>
+                    </solution>
+                </exercise>
+
+                <exercise>
+                    <statement>
+                        <p> En déduire, dans le cas <m>\lambda = 0</m>, les fonctions harmoniques à
+                            variables polaires séparables. </p>
+                    </statement>
+                    <solution>
+                        <p> Dans le cas <m>\lambda = 0</m>, les fonctions harmoniques à variables
+                            polaires séparables sont de la forme : <me>f(r \cos(\theta), r
+                            \sin(\theta)) = u(r) v(\theta) = (C \ln(r) + D) \cdot B</me> où <m>C</m>
+                            , <m>D</m> et <m>B</m> sont des constantes. Ainsi, les fonctions
+                            harmoniques sont de la forme : <me>f(x, y) = C \ln(\sqrt{x^2 + y^2}) + D</me>
+                            où <m>C</m> et <m>D</m> sont des constantes. </p>
+                    </solution>
+                </exercise>
+                </exercisegroup>
+            <exercisegroup>
+                <title>II.C.2 – Cas où <m>\lambda \neq 0</m></title>
+
+                <exercise>
+                    <statement>
+                        <p> Donner une condition nécessaire et suffisante pour que l’équation <m>z''(\theta)
+                            + \lambda z(\theta) = 0</m> admette des solutions <m>2\pi</m>-périodiques
+                            non nulles. Donner ces solutions. </p>
+                    </statement>
+                    <solution>
+                        <p> Pour que l’équation <m>z''(\theta) + \lambda z(\theta) = 0</m> admette
+                            des solutions <m>2\pi</m>-périodiques non nulles, il faut que <m>\lambda
+                            \gt 0</m>. Dans ce cas, les solutions sont de la forme : <me>z(\theta) =
+                            A \cos(\sqrt{\lambda} \theta) + B \sin(\sqrt{\lambda} \theta)</me> où <m>
+                            A</m> et <m>B</m> sont des constantes. </p>
+                    </solution>
+                </exercise>
+
+                <exercise>
+                    <statement>
+                        <p> Résoudre l’équation différentielle <m>r^2 z''(r) + r z'(r) - \lambda
+                            z(r) = 0</m> sur <m>\mathbb{R}^+</m>. </p>
+                    </statement>
+                    <solution>
+                        <p> L’équation différentielle <m>r^2 z''(r) + r z'(r) - \lambda z(r) = 0</m>
+                            est une équation d’Euler. En posant <m>z(r) = r^k</m>, on obtient
+                            l’équation caractéristique : <me>k(k - 1) + k - \lambda = 0 \quad
+                            \Rightarrow \quad k^2 - \lambda = 0</me> Les solutions sont donc : <me>z(r)
+                            = C r^{\sqrt{\lambda}} + D r^{-\sqrt{\lambda}} \quad \text{si} \quad
+                            \lambda \gt 0</me> et <me>z(r) = C \cos(\sqrt{-\lambda} \ln(r)) + D
+                            \sin(\sqrt{-\lambda} \ln(r)) \quad \text{si} \quad \lambda \lt 0</me> où <m>
+                            C</m> et <m>D</m> sont des constantes. </p>
+                    </solution>
+                </exercise>
+
+                <exercise>
+                    <statement>
+                        <p> Quelles sont les solutions se prolongeant par continuité en <m>0</m> ? </p>
+                    </statement>
+                    <solution>
+                        <p> Pour que <m>z(r)</m> se prolonge par continuité en <m>0</m>, il faut que <m>
+                            z(r)</m> reste bornée lorsque <m>r \to 0</m>. Dans le cas <m>\lambda \gt
+                            0</m>, la solution <m>z(r) = C r^{\sqrt{\lambda}} + D
+                            r^{-\sqrt{\lambda}}</m> ne reste bornée que si <m>D = 0</m>. Ainsi, les
+                            solutions prolongeables en <m>0</m> sont de la forme : <me>z(r) = C
+                            r^{\sqrt{\lambda}} \quad \text{si} \quad \lambda \gt 0</me> Dans le cas <m>\lambda
+                            \lt 0</m>, aucune solution ne reste bornée en <m>0</m>. </p>
+                    </solution>
+                </exercise>
+                </exercisegroup>
+    </subexercises>
+
+    <subexercises>
+        <title>III Principe du maximum faible</title>
+        <introduction>
+            <p> Soit <m>U</m> un ouvert borné non vide de <m>\mathbb{R}^n</m> (<m>n \geq 2</m>) et <m>f
+                : U \rightarrow \mathbb{R}</m> de classe <m>\mathcal{C}^2</m>. Le but de cette
+                partie est de montrer le théorème suivant, connu sous le nom de principe du maximum
+                faible : <me>\text{Si } f \text{ est une fonction continue sur } \overline{U},
+                \text{ de classe } \mathcal{C}^2 \text{ et harmonique sur } U, \text{ alors }
+                \forall x \in U, \quad f(x) \leq \sup_{y \in \partial U} f(y)</me> où <m>\partial U</m>
+                désigne la frontière de <m>U</m>. </p>
+        </introduction>
+
+        <exercisegroup>
+            <title>III.A – Cas où <m>\Delta f \gt 0</m></title>
+            <exercise>
+                <statement>
+                    <p> Montrer que <m>f</m> admet un maximum en un point <m>x_0 \in \overline{U}</m>
+                        .
+                </p>
+                </statement>
+                <solution>
+                    <p> Comme <m>U</m> est un ouvert borné, <m>\overline{U}</m> est un fermé borné
+                        de <m>\mathbb{R}^n</m>, donc un compact. La fonction <m>f</m> est continue
+                        sur <m>\overline{U}</m>, donc elle est bornée et atteint ses bornes. Ainsi, <m>
+                        f</m> admet un maximum en un point <m>x_0 \in \overline{U}</m>. </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p> On suppose de plus que <m>f</m> est de classe <m>\mathcal{C}^2</m> sur <m>U</m>
+                        et que, pour tout <m>x \in U</m>, <m>\Delta f(x) \gt 0</m>. Montrer que <m>x_0
+                        \in \partial U</m> et en déduire que <m>\forall x \in U</m>, <m>f(x) \lt
+                        \sup_{y \in \partial U} f(y)</m>. </p>
+                </statement>
+                <solution>
+                    <p> Supposons par l'absurde que <m>x_0 \in U</m>. Comme <m>f</m> admet un
+                        maximum en <m>x_0</m>, toutes les dérivées partielles secondes de <m>f</m>
+                        en <m>x_0</m> doivent être négatives ou nulles. En particulier, <m>\Delta
+                        f(x_0) \leq 0</m>, ce qui contredit l'hypothèse <m>\Delta f(x_0) \gt 0</m>.
+                        Ainsi, <m>x_0 \in \partial U</m>. </p>
+                    <p> Par conséquent, <m>\forall x \in U</m>, <m>f(x) \lt f(x_0) = \sup_{y \in
+                        \partial U} f(y)</m>, car <m>f</m> atteint son maximum sur <m>\overline{U}</m>
+                        uniquement en des points de <m>\partial U</m>. </p>
+                </solution>
+            </exercise>
+            </exercisegroup>
+        <exercisegroup>
+            <title>III.B – Cas général</title>
+
+            <exercise>
+                <statement>
+                    <p> Soit <m>f</m> une fonction continue sur <m>\overline{U}</m>, de classe <m>
+                        \mathcal{C}^2</m> et harmonique sur <m>U</m>. Pour tout <m>\varepsilon \gt 0</m>,
+                        on pose <m>g_\varepsilon(x) = f(x) + \varepsilon \|x\|^2</m>. Montrer que <m>
+                        g_\varepsilon</m> est une fonction continue sur <m>\overline{U}</m>, de
+                        classe <m>\mathcal{C}^2</m> sur <m>U</m>, et telle que <m>\forall x \in U</m>
+                        , <m>\Delta g_\varepsilon(x) \gt 0</m>. </p>
+                </statement>
+                <solution>
+                    <p> La fonction <m>g_\varepsilon(x) = f(x) + \varepsilon \|x\|^2</m> est
+                        continue sur <m>\overline{U}</m> car <m>f</m> est continue et <m>\|x\|^2</m>
+                        est continue. Elle est de classe <m>\mathcal{C}^2</m> sur <m>U</m> car <m>f</m>
+                        est de classe <m>\mathcal{C}^2</m> et <m>\|x\|^2</m> est de classe <m>
+                        \mathcal{C}^\infty</m>. </p>
+                    <p> De plus, pour tout <m>x \in U</m>, on a : <me>\Delta g_\varepsilon(x) =
+                        \Delta f(x) + \varepsilon \Delta (\|x\|^2) = 0 + \varepsilon \cdot 2n = 2n
+                        \varepsilon \gt 0</me> car <m>f</m> est harmonique et <m>\Delta (\|x\|^2) =
+                        2n</m>. </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p> En déduire que <m>\forall x \in U</m>, <m>f(x) \leq \sup_{y \in \partial U}
+                        f(y)</m>. </p>
+                </statement>
+                <solution>
+                    <p> Par la question précédente, <m>g_\varepsilon</m> vérifie <m>\Delta
+                        g_\varepsilon(x) \gt 0</m> pour tout <m>x \in U</m>. D’après la partie
+                        III.A, on a : <me>\forall x \in U, \quad g_\varepsilon(x) \lt \sup_{y \in
+                        \partial U} g_\varepsilon(y)</me> En faisant tendre <m>\varepsilon \to 0</m>,
+                        on obtient : <me>\forall x \in U, \quad f(x) \leq \sup_{y \in \partial U}
+                        f(y)</me>
+                    </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p> Soient <m>f_1</m> et <m>f_2</m> deux fonctions continues sur <m>\overline{U}</m>,
+                        de classe <m>\mathcal{C}^2</m> et harmoniques sur <m>U</m>. Montrer que si
+                        les fonctions <m>f_1</m> et <m>f_2</m> sont égales sur <m>\partial U</m>,
+                        alors <m>f_1</m> et <m>f_2</m> sont égales sur <m>U</m>. </p>
+                </statement>
+                <solution>
+                    <p> Considérons la fonction <m>h = f_1 - f_2</m>. Alors <m>h</m> est continue
+                        sur <m>\overline{U}</m>, de classe <m>\mathcal{C}^2</m> sur <m>U</m>, et
+                        harmonique sur <m>U</m>. De plus, <m>h = 0</m> sur <m>\partial U</m>. </p>
+                    <p> Par le principe du maximum faible, on a : <me>\forall x \in U, \quad h(x)
+                        \leq \sup_{y \in \partial U} h(y) = 0</me> et <me>\forall x \in U, \quad
+                        -h(x) \leq \sup_{y \in \partial U} (-h(y)) = 0</me> Ainsi, <m>h(x) = 0</m>
+                        pour tout <m>x \in U</m>, c’est-à-dire <m>f_1 = f_2</m> sur <m>U</m>. </p>
+                </solution>
+            </exercise>
+            </exercisegroup>
+    </subexercises>
+
+
+    <subexercises>
+        <title>IV Fonctions harmoniques et fonctions développables en série entière</title>
+        <introduction>
+            <p> On dit qu’une fonction <m>f</m>, définie sur <m>D(0, R) \subset \mathbb{R}^2</m> et
+                à valeurs complexes, se développe en série entière sur <m>D(0, R)</m> s’il existe
+                une suite complexe <m>(a_n)</m> telle que <me>\forall (x, y) \in D(0, R), \quad f(x,
+                y) = \sum_{n=0}^{+\infty} a_n (x + i y)^n</me> Dans toute cette partie, <m>f</m>
+                désigne une fonction se développant en série entière sur <m>D(0, R)</m>. </p>
+        </introduction>
+
+        <exercisegroup>
+            <title>IV.A – Fonctions développables en série entière</title>
+
+            <exercise>
+                <statement>
+                    <p> Montrer que <m>f</m> est de classe <m>\mathcal{C}^1</m> sur <m>D(0, R)</m>
+                        et que ses dérivées partielles se développent en série entière sur <m>D(0,
+                        R)</m>. Que peut-on en déduire pour la fonction <m>f</m> ? </p>
+                </statement>
+                <solution>
+                    <p> La fonction <m>f</m> se développe en série entière sur <m>D(0, R)</m>, donc
+                        elle est analytique sur <m>D(0, R)</m>. Par conséquent, <m>f</m> est de
+                        classe <m>\mathcal{C}^\infty</m> sur <m>D(0, R)</m>, et en particulier de
+                        classe <m>\mathcal{C}^1</m>. </p>
+                    <p> Les dérivées partielles de <m>f</m> sont données par : <me>\frac{\partial
+                        f}{\partial x}(x, y) = \sum_{n=1}^{+\infty} n a_n (x + i y)^{n-1}</me> et <me>\frac{\partial
+                        f}{\partial y}(x, y) = \sum_{n=1}^{+\infty} i n a_n (x + i y)^{n-1}</me> Ces
+                        séries convergent également sur <m>D(0, R)</m>, donc les dérivées partielles
+                        se développent en série entière. </p>
+                    <p> On en déduit que <m>f</m> est de classe <m>\mathcal{C}^\infty</m> sur <m>D(0,
+                        R)</m>. </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p> On note <m>u</m> et <m>v</m> les parties réelle et imaginaire de <m>f</m>,
+                        de sorte que, quel que soit <m>(x, y) \in D(0, R)</m>, <me>u(x, y) \in
+                        \mathbb{R}, \quad v(x, y) \in \mathbb{R}, \quad f(x, y) = u(x, y) + i v(x,
+                        y)</me> Montrer que <m>u</m> et <m>v</m> sont des fonctions harmoniques sur <m>D(0,
+                        R)</m>. </p>
+                </statement>
+                <solution>
+                    <p> La fonction <m>f</m> est analytique, donc elle vérifie les équations de
+                        Cauchy-Riemann : <me>\frac{\partial u}{\partial x} = \frac{\partial
+                        v}{\partial y} \quad \text{et} \quad \frac{\partial u}{\partial y} =
+                        -\frac{\partial v}{\partial x}</me> En dérivant ces équations, on obtient : <me>\frac{\partial^2
+                        u}{\partial x^2} = \frac{\partial^2 v}{\partial x \partial y} \quad
+                        \text{et} \quad \frac{\partial^2 u}{\partial y^2} = -\frac{\partial^2
+                        v}{\partial y \partial x}</me> En additionnant ces deux équations, on trouve
+                        : <me>\Delta u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2
+                        u}{\partial y^2} = 0</me> De même, on montre que <m>\Delta v = 0</m>. Ainsi, <m>
+                        u</m> et <m>v</m> sont harmoniques sur <m>D(0, R)</m>. </p>
+                </solution>
+            </exercise>
+            </exercisegroup>
+        <exercisegroup>
+            <title>IV.B – Propriétés des fonctions développables en série entière</title>
+            <introduction>
+               <p> On admet le résultat suivant : une fonction <m>h</m> de <m>D(0, R)</m> dans <m>
+                    \mathbb{C}</m> se développe en série entière sur <m>D(0, R)</m> si et seulement
+                    si <m>h</m> est de classe <m>\mathcal{C}^1</m> sur <m>D(0, R)</m> et pour tout <m>(x,
+                    y) \in D(0, R)</m>, <me>\frac{\partial h}{\partial y}(x, y) = i \frac{\partial
+                    h}{\partial x}(x, y)</me>
+                </p>
+           </introduction>
+
+            <exercise>
+                <statement>
+                    <p> Montrer que si <m>f</m> ne s’annule pas sur <m>D(0, R)</m>, alors <m>1/f</m>
+                        se développe en série entière sur <m>D(0, R)</m>. </p>
+                </statement>
+                <solution>
+                    <p> Si <m>f</m> ne s’annule pas sur <m>D(0, R)</m>, alors <m>1/f</m> est bien
+                        définie et de classe <m>\mathcal{C}^1</m> sur <m>D(0, R)</m>. De plus, comme <m>
+                        f</m> est analytique, elle vérifie les équations de Cauchy-Riemann : <me>\frac{\partial
+                        f}{\partial y} = i \frac{\partial f}{\partial x}</me> En dérivant <m>1/f</m>,
+                        on obtient : <me>\frac{\partial (1/f)}{\partial y} = -\frac{1}{f^2}
+                        \frac{\partial f}{\partial y} = -\frac{1}{f^2} \left( i \frac{\partial
+                        f}{\partial x} \right) = i \left( -\frac{1}{f^2} \frac{\partial f}{\partial
+                        x} \right) = i \frac{\partial (1/f)}{\partial x}</me> Ainsi, <m>1/f</m>
+                        vérifie également les équations de Cauchy-Riemann et est donc développable
+                        en série entière sur <m>D(0, R)</m>. </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p> Montrer que la fonction <m>u v</m> est harmonique sur <m>D(0, R)</m>. </p>
+                </statement>
+                <solution>
+                    <p> On a : <me>\Delta(u v) = \Delta(u) v + u \Delta(v) + 2 \left( \frac{\partial
+                        u}{\partial x} \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y}
+                        \frac{\partial v}{\partial y} \right)</me> Comme <m>u</m> et <m>v</m> sont
+                        harmoniques, <m>\Delta(u) = \Delta(v) = 0</m>. De plus, les équations de
+                        Cauchy-Riemann donnent : <me>\frac{\partial u}{\partial x} = \frac{\partial
+                        v}{\partial y} \quad \text{et} \quad \frac{\partial u}{\partial y} =
+                        -\frac{\partial v}{\partial x}</me> Ainsi : <me>\frac{\partial u}{\partial
+                        x} \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y}
+                        \frac{\partial v}{\partial y} = \frac{\partial v}{\partial y} \frac{\partial
+                        v}{\partial x} - \frac{\partial v}{\partial x} \frac{\partial v}{\partial y}
+                        = 0</me> Donc <m>\Delta(u v) = 0</m>, et <m>u v</m> est harmonique sur <m>D(0,
+                        R)</m>. </p>
+                </solution>
+            </exercise>
+            </exercisegroup>
+        <exercisegroup>
+            <title>IV.C – Fonctions harmoniques et leurs primitives</title>
+            <exercise>
+                <statement>
+                    <p> Soit <m>g</m> une fonction de <m>D(0, R) \subset \mathbb{R}^2</m> dans <m>
+                        \mathbb{R}</m>. On suppose que <m>g</m> est harmonique. Montrer que la
+                        fonction <m>h</m> définie sur <m>D(0, R)</m> par <me>h : (x, y) \mapsto
+                        \frac{\partial g}{\partial x}(x, y) - i \frac{\partial g}{\partial y}(x, y)</me>
+                        se développe en série entière sur <m>D(0, R)</m>. </p>
+                </statement>
+                <solution>
+                    <p> La fonction <m>g</m> est harmonique, donc elle est de classe <m>
+                        \mathcal{C}^2</m> sur <m>D(0, R)</m>. Ainsi, <m>h</m> est de classe <m>
+                        \mathcal{C}^1</m> sur <m>D(0, R)</m>. De plus, comme <m>g</m> est
+                        harmonique, on a : <me>\frac{\partial^2 g}{\partial x^2} + \frac{\partial^2
+                        g}{\partial y^2} = 0</me> En dérivant <m>h</m>, on obtient : <me>\frac{\partial
+                        h}{\partial y} = \frac{\partial^2 g}{\partial y \partial x} - i
+                        \frac{\partial^2 g}{\partial y^2}</me> et <me>\frac{\partial h}{\partial x}
+                        = \frac{\partial^2 g}{\partial x^2} - i \frac{\partial^2 g}{\partial x
+                        \partial y}</me> En utilisant le théorème de Schwarz et l’équation
+                        harmonique, on a : <me>\frac{\partial h}{\partial y} = i \frac{\partial
+                        h}{\partial x}</me> Ainsi, <m>h</m> vérifie les équations de Cauchy-Riemann
+                        et est donc développable en série entière sur <m>D(0, R)</m>. </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p> Montrer que si <m>g</m> appartient à <m>\mathcal{H}(D(0, R))</m>, alors il
+                        existe une fonction <m>H</m> se développant en série entière sur <m>D(0, R)</m>
+                        telle que <m>g</m> est la partie réelle de <m>H</m>. </p>
+                </statement>
+                <solution>
+                    <p> D’après la question précédente, la fonction <m>h</m> définie par <me>h(x, y)
+                        = \frac{\partial g}{\partial x}(x, y) - i \frac{\partial g}{\partial y}(x,
+                        y)</me> se développe en série entière sur <m>D(0, R)</m>. On peut donc
+                        écrire : <me>h(x, y) = \sum_{n=0}^{+\infty} a_n (x + i y)^n</me> En
+                        intégrant terme à terme, on obtient une fonction <m>H</m> telle que : <me>H(x,
+                        y) = \alpha + \sum_{n=0}^{+\infty} \frac{a_n}{n+1} (x + i y)^{n+1}</me> où <m>
+                        \alpha</m> est une constante. La partie réelle de <m>H</m> est alors <m>g</m>,
+                        car : <me>\frac{\partial H}{\partial x} = h(x, y) = \frac{\partial
+                        g}{\partial x} - i \frac{\partial g}{\partial y}</me> et <me>\frac{\partial
+                        H}{\partial y} = i h(x, y) = i \frac{\partial g}{\partial x} +
+                        \frac{\partial g}{\partial y}</me> Ainsi, <m>g</m> est la partie réelle de <m>
+                        H</m>. </p>
+                </solution>
+            </exercise>
+            </exercisegroup>
+        <exercisegroup>
+            <title>IV.D – Propriétés intégrales des fonctions harmoniques</title>
+
+            <exercise>
+                <statement>
+                    <p> Montrer que pour tout <m>r \in [0, R[</m>, on a <me>f(0) = \frac{1}{2\pi}
+                        \int_0^{2\pi} f(r \cos(t), r \sin(t)) \, dt</me>
+                    </p>
+                </statement>
+                <solution>
+                    <p> La fonction <m>f</m> se développe en série entière sur <m>D(0, R)</m>, donc
+                        on peut écrire : <me>f(x, y) = \sum_{n=0}^{+\infty} a_n (x + i y)^n</me> En
+                        coordonnées polaires, on a : <me>f(r \cos(t), r \sin(t)) =
+                        \sum_{n=0}^{+\infty} a_n r^n e^{i n t}</me> En intégrant sur <m>[0, 2\pi]</m>,
+                        on obtient : <me>\int_0^{2\pi} f(r \cos(t), r \sin(t)) \, dt =
+                        \sum_{n=0}^{+\infty} a_n r^n \int_0^{2\pi} e^{i n t} \, dt</me> Or, pour <m>n
+                        \neq 0</m>, <m>\int_0^{2\pi} e^{i n t} \, dt = 0</m>, et pour <m>n = 0</m>, <m>\int_0^{2\pi}
+                        e^{i 0 t} \, dt = 2\pi</m>. Ainsi : <me>\int_0^{2\pi} f(r \cos(t), r
+                        \sin(t)) \, dt = 2\pi a_0 = 2\pi f(0)</me> Donc : <me>f(0) = \frac{1}{2\pi}
+                        \int_0^{2\pi} f(r \cos(t), r \sin(t)) \, dt</me>
+                    </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer un résultat analogue pour les fonctions harmoniques.
+                    </p>
+                </statement>
+                <solution>
+                    <p> Soit <m>g</m> une fonction harmonique sur <m>D(0, R)</m>. D’après la
+                        question précédente, il existe une fonction <m>H</m> se développant en série
+                        entière sur <m>D(0, R)</m> telle que <m>g</m> est la partie réelle de <m>H</m>.
+                        Ainsi, on a : <me>g(0) = \frac{1}{2\pi} \int_0^{2\pi} g(r \cos(t), r
+                        \sin(t)) \, dt</me> car la partie réelle de l’intégrale est égale à
+                        l’intégrale de la partie réelle. </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p> Montrer que <m>\forall r \in [0, R[</m>, <m>|f(0)| \leq \sup_{t \in
+                        \mathbb{R}} |f(r \cos(t), r \sin(t))|</m>. </p>
+                </statement>
+                <solution>
+                    <p> D’après la question précédente, on a : <me>|f(0)| = \left| \frac{1}{2\pi}
+                        \int_0^{2\pi} f(r \cos(t), r \sin(t)) \, dt \right| \leq \frac{1}{2\pi}
+                        \int_0^{2\pi} |f(r \cos(t), r \sin(t))| \, dt</me> Comme <m>|f(r \cos(t), r
+                        \sin(t))| \leq \sup_{t \in \mathbb{R}} |f(r \cos(t), r \sin(t))|</m>, on a : <me>|f(0)|
+                        \leq \sup_{t \in \mathbb{R}} |f(r \cos(t), r \sin(t))|</me>
+                    </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer un résultat analogue pour les fonctions harmoniques.
+                    </p>
+                </statement>
+                <solution>
+                    <p> Soit <m>g</m> une fonction harmonique sur <m>D(0, R)</m>. D’après la
+                        question précédente, on a : <me>|g(0)| \leq \sup_{t \in \mathbb{R}} |g(r
+                        \cos(t), r \sin(t))|</me> car <m>g</m> est la partie réelle d’une fonction
+                        développable en série entière. </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p> Montrer que si <m>|f|</m> admet un maximum en <m>0</m>, alors <m>f</m> est
+                        constante sur <m>D(0, R)</m>. </p>
+                </statement>
+                <solution>
+                    <p> Si <m>|f|</m> admet un maximum en <m>0</m>, alors pour tout <m>r \in [0, R[</m>,
+                        on a : <me>|f(0)| = \sup_{t \in \mathbb{R}} |f(r \cos(t), r \sin(t))|</me>
+                        Ainsi, <m>|f|</m> est constante sur <m>D(0, R)</m>. Comme <m>f</m> est
+                        analytique, cela implique que <m>f</m> est constante sur <m>D(0, R)</m>. </p>
+                </solution>
+            </exercise>
+
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer le théorème de d’Alembert-Gauss : tout polynôme complexe non
+                        constant admet au moins une racine.
+                    </p>
+                </statement>
+                <solution>
+                    <p> Supposons par l’absurde qu’il existe un polynôme complexe non constant <m>P</m>
+                        qui ne s’annule pas sur <m>\mathbb{C}</m>. Alors <m>1/P</m> est une fonction
+                        entière (analytique sur tout <m>\mathbb{C}</m>). Comme <m>P</m> est non
+                        constant, <m>|P(z)| \to +\infty</m> lorsque <m>|z| \to +\infty</m>, donc <m>
+                        1/P</m> est bornée sur <m>\mathbb{C}</m>. Par le théorème de Liouville, <m>
+                        1/P</m> est constante, ce qui implique que <m>P</m> est constant, ce qui est
+                        une contradiction. Ainsi, <m>P</m> admet au moins une racine. </p>
+                </solution>
+            </exercise>
+            </exercisegroup>
+    </subexercises>
+
+    <subexercises>
+        <title>V Résolution du problème de Dirichlet dans le disque unité de \(\mathbb{R}^2\)</title>
+        <introduction>
+            <p> Soit <m>h</m> une fonction de <m>\mathbb{R}</m> dans <m>\mathbb{R}</m>, continue et <m>
+                2\pi</m>-périodique sur <m>\mathbb{R}</m>. On cherche à résoudre le problème de
+                Dirichlet sur le disque unité ; autrement dit, il s’agit de déterminer, s’il y en a,
+                la ou les fonctions <m>f</m> définies et continues sur <m>D(0, 1)</m> (disque
+                fermé), de classe <m>\mathcal{C}^2</m> sur <m>D(0, 1)</m>, et telles que <me>\begin{cases}
+                \Delta f = 0 \text{ sur } D(0, 1) \\
+                    \forall t \in \mathbb{R}, \, f(\cos(t), \sin(t)) = h(t)
+                    \end{cases}</me>
+            </p>
+        </introduction>
+
+        <exercise>
+            <statement>
+                <p> Pour tout nombre complexe <m>z</m> tel que <m>|z| \lt 1</m>, on pose <me>g(z) =
+                    \frac{1}{2\pi} \int_0^{2\pi} h(t) \mathcal{P}(t, z) \, dt</me> où <me>\mathcal{P}(t,
+                    z) = \operatorname{Re} \left( \frac{e^{it} + z}{e^{it} - z} \right)</me> Montrer
+                    que la fonction <m>z \mapsto \frac{e^{it} + z}{e^{it} - z}</m> est développable
+                    en série entière pour <m>|z| \lt 1</m> et calculer son développement en série
+                    entière. En déduire que la fonction <m>(x, y) \mapsto g(x + i y)</m> est une
+                    fonction harmonique sur <m>D(0, 1)</m>. </p>
+            </statement>
+            <solution>
+                <p> Pour <m>|z| \lt 1</m>, on a : <me>\frac{e^{it} + z}{e^{it} - z} = \frac{1 + z
+                    e^{-it}}{1 - z e^{-it}} = (1 + z e^{-it}) \sum_{n=0}^{+\infty} z^n e^{-i n t} =
+                    \sum_{n=0}^{+\infty} z^n e^{-i n t} + \sum_{n=0}^{+\infty} z^{n+1} e^{-i (n+1)
+                    t}</me> En regroupant les termes, on obtient : <me>\frac{e^{it} + z}{e^{it} - z}
+                    = 1 + 2 \sum_{n=1}^{+\infty} z^n e^{-i n t}</me> Ainsi, la fonction <m>z \mapsto
+                    \frac{e^{it} + z}{e^{it} - z}</m> est développable en série entière pour <m>|z|
+                    \lt 1</m>. </p>
+                <p> En prenant la partie réelle, on a : <me>\mathcal{P}(t, z) = \operatorname{Re}
+                    \left( \frac{e^{it} + z}{e^{it} - z} \right) = 1 + 2 \sum_{n=1}^{+\infty}
+                    \operatorname{Re}(z^n e^{-i n t})</me> La fonction <m>g(z)</m> est donc une
+                    combinaison linéaire de fonctions harmoniques (les parties réelles des monômes <m>
+                    z^n</m>), donc <m>g</m> est harmonique sur <m>D(0, 1)</m>. </p>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p> Montrer que, pour tout nombre complexe <m>z</m> tel que <m>|z| \lt 1</m>, <me>\frac{1}{2\pi}
+                    \int_0^{2\pi} \mathcal{P}(t, z) \, dt = 1</me>
+                </p>
+            </statement>
+            <solution>
+                <p> D’après le développement en série entière de <m>\mathcal{P}(t, z)</m>, on a : <me>\mathcal{P}(t,
+                    z) = 1 + 2 \sum_{n=1}^{+\infty} \operatorname{Re}(z^n e^{-i n t})</me> En
+                    intégrant sur <m>[0, 2\pi]</m>, les termes <m>\operatorname{Re}(z^n e^{-i n t})</m>
+                    s’annulent pour <m>n \geq 1</m>, car : <me>\int_0^{2\pi} e^{-i n t} \, dt = 0
+                    \quad \text{pour } n \geq 1</me> Ainsi, il reste : <me>\frac{1}{2\pi}
+                    \int_0^{2\pi} \mathcal{P}(t, z) \, dt = 1</me>
+                </p>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p> Soit <m>\varphi \in \mathbb{R}</m>. Montrer que, pour tout nombre complexe <m>z</m>
+                    tel que <m>|z| \lt 1</m>, <me>g(z) = \frac{1}{2\pi} \int_{\varphi}^{\varphi +
+                    2\pi} h(t) \mathcal{P}(t, z) \, dt</me>
+                </p>
+            </statement>
+            <solution>
+                <p> La fonction <m>h</m> est <m>2\pi</m>-périodique, donc l’intégrale de <m>h(t)
+                    \mathcal{P}(t, z)</m> sur un intervalle de longueur <m>2\pi</m> est indépendante
+                    de l’origine de l’intervalle. Ainsi : <me>\int_{\varphi}^{\varphi + 2\pi} h(t)
+                    \mathcal{P}(t, z) \, dt = \int_0^{2\pi} h(t) \mathcal{P}(t, z) \, dt</me> Donc : <me>g(z)
+                    = \frac{1}{2\pi} \int_{\varphi}^{\varphi + 2\pi} h(t) \mathcal{P}(t, z) \, dt</me>
+                </p>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p> Montrer que, pour tout <m>r \in [0, 1[</m> et tous réels <m>t</m> et <m>\theta</m>
+                    ,
+                <me>\mathcal{P}(t, r e^{i \theta}) = \frac{1 - r^2}{1 - 2 r
+                    \cos(t - \theta) + r^2}</me>
+                </p>
+            </statement>
+            <solution>
+                <p> En utilisant l’expression de <m>\mathcal{P}(t, z)</m>, on a : <me>\mathcal{P}(t,
+                    r e^{i \theta}) = \operatorname{Re} \left( \frac{e^{it} + r e^{i \theta}}{e^{it}
+                    - r e^{i \theta}} \right)</me> En multipliant le numérateur et le dénominateur
+                    par <m>e^{-it}</m>, on obtient : <me>\mathcal{P}(t, r e^{i \theta}) =
+                    \operatorname{Re} \left( \frac{1 + r e^{i (\theta - t)}}{1 - r e^{i (\theta -
+                    t)}} \right)</me> En utilisant l’identité <m>\operatorname{Re} \left( \frac{1 +
+                    z}{1 - z} \right) = \frac{1 - |z|^2}{|1 - z|^2}</m>, on trouve : <me>\mathcal{P}(t,
+                    r e^{i \theta}) = \frac{1 - r^2}{1 - 2 r \cos(t - \theta) + r^2}</me>
+                </p>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p> Montrer que, pour tout <m>\delta \in [0, \pi[</m> et tout réel <m>\varphi</m>, <me>\int_{\varphi
+                    + \delta}^{\varphi + 2\pi - \delta} \mathcal{P}(t, z) \, dt \to 0 \quad
+                    \text{lorsque } |z| \to 1</me>
+                </p>
+            </statement>
+            <solution>
+                <p> Pour <m>|z| \to 1</m>, le noyau de Poisson <m>\mathcal{P}(t, z)</m> se concentre
+                    autour de <m>t = \theta</m>, où <m>z = r e^{i \theta}</m>. Ainsi, pour <m>t</m>
+                    loin de <m>\theta</m>, <m>\mathcal{P}(t, z)</m> devient très petit. En
+                    particulier, pour <m>t \in [\varphi + \delta, \varphi + 2\pi - \delta]</m>, on a
+                    : <me>\mathcal{P}(t, z) \to 0 \quad \text{lorsque } |z| \to 1</me> Donc
+                    l’intégrale sur cet intervalle tend vers 0. </p>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p> En utilisant le théorème de Heine, montrer que, pour tout <m>\varepsilon \gt 0</m>,
+                    il existe <m>\delta \gt 0</m> tel que, pour tout nombre réel <m>\varphi</m> et
+                    tout nombre complexe <m>z</m> vérifiant <m>|z| \lt 1</m>, <me>|g(z) -
+                    h(\varphi)| \leq \frac{\sup_{t \in \mathbb{R}} |h(t)|}{\pi} \int_{\varphi +
+                    \delta}^{\varphi + 2\pi - \delta} \mathcal{P}(t, z) \, dt + \varepsilon</me>
+                </p>
+            </statement>
+            <solution>
+                <p> Par le théorème de Heine, <m>h</m> est uniformément continue sur <m>\mathbb{R}</m>.
+                    Ainsi, pour tout <m>\varepsilon \gt 0</m>, il existe <m>\delta \gt 0</m> tel que
+                    : <me>|t - \varphi| \leq \delta \implies |h(t) - h(\varphi)| \leq \varepsilon</me>
+                    En utilisant cette propriété, on peut écrire : <me>|g(z) - h(\varphi)| \leq
+                    \frac{1}{2\pi} \int_{\varphi - \delta}^{\varphi + \delta} |h(t) - h(\varphi)|
+                    \mathcal{P}(t, z) \, dt + \frac{1}{2\pi} \int_{\varphi + \delta}^{\varphi + 2\pi
+                    - \delta} |h(t) - h(\varphi)| \mathcal{P}(t, z) \, dt</me> Le premier terme est
+                    majoré par <m>\varepsilon</m>, et le second terme est majoré par : <me>\frac{\sup_{t
+                    \in \mathbb{R}} |h(t)|}{\pi} \int_{\varphi + \delta}^{\varphi + 2\pi - \delta}
+                    \mathcal{P}(t, z) \, dt</me> Ainsi, on obtient l’inégalité demandée. </p>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Montrer l’existence et l’unicité de la solution au problème de Dirichlet étudié
+                    dans cette partie.
+                </p>
+            </statement>
+            <solution>
+                <p> L’existence de la solution est garantie par la construction de la fonction <m>g</m>,
+                    qui est harmonique sur <m>D(0, 1)</m> et vérifie <m>g(\cos(t), \sin(t)) = h(t)</m>
+                    pour tout <m>t \in \mathbb{R}</m>. </p>
+                <p> Pour l’unicité, supposons que <m>f_1</m> et <m>f_2</m> sont deux solutions du
+                    problème de Dirichlet. Alors <m>f_1 - f_2</m> est harmonique sur <m>D(0, 1)</m>
+                    et nulle sur le bord <m>\partial D(0, 1)</m>. Par le principe du maximum, <m>f_1
+                    - f_2 = 0</m> sur <m>D(0, 1)</m>, donc <m>f_1 = f_2</m>. </p>
+            </solution>
+        </exercise>
+    </subexercises>
+
+</exercises>
+</chapter>

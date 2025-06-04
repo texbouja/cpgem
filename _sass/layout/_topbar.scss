@@ -1,71 +1,33 @@
-@use '../abstracts/variables' as v;
-@use '../abstracts/mixins' as mx;
-@use '../abstracts/breakpoints' as bp;
+@use '../abstracts/variables'as v;
+@use '../abstracts/mixins'as mx;
+@use '../abstracts/breakpoints'as bp;
 @use '../abstracts/placeholders';
-
-// #topbar-wrapper {
-//   height: v.$topbar-height;
-//   background-color: var(--topbar-bg);
-
-//   @include bp.lt(bp.get(lg)) {
-//     @include mx.slide(top 0.2s ease);
-
-//     left: 0;
-//   }
-// }
-// #topbar-wrapper {
-//   height: v.$topbar-height;
-//   background-color: var(--topbar-bg);
-  
-//   position: fixed;
-//   top: 0;
-//   width: calc(100% - v.$sidebar-width); // Soustraire la largeur de la sidebar
-//   z-index: 1000;
-//   right: 0; // Aligner à droite pour qu'il s'ajuste à côté de la sidebar
-//   left: auto; // Annuler left:0 pour permettre l'alignement à droite
-
-//   // @include bp.lt(bp.get(lg)) {
-//   //   width: 100%; // Sur petits écrans, largeur complète
-//   //   left: 0;
-//   //   right: auto;
-//   //   @include mx.slide(top 0.2s ease);
-//   // }
-  
-//   @include bp.lt(bp.get(lg)) {
-//     width: 100%;
-//     left: 0;
-//     right: auto;
-//     transition: transform 0.2s ease; // Ajouter une transition pour le déplacement
-//   }
-
-//   @include bp.xxxl {
-//     width: calc(100% - v.$sidebar-width-large); // Ajuster pour les très grands écrans
-//   }
-// }
 
 #topbar-wrapper {
   height: v.$topbar-height;
-  background-color: var(--topbar-bg);
-  
-  position: fixed;
-  margin-top: - v.$topbar-height;
-  width: calc(100% - v.$sidebar-width);
-  z-index: 1000;
-  right: 0;
-  left: auto;
+  background-color: var(--topbar-background-color);
+  position: relative;
+
+  @include mx.pl-pr(0);
 
   @include bp.lt(bp.get(lg)) {
-    width: 100%;
-    left: 0;
-    right: auto;
-    transition: transform 0.2s ease;
-    // Enlever la transition sur top qui peut causer le décalage vertical
-    // @include mx.slide(top 0.2s ease);
+    @include mx.slide(top 0.2s ease);
   }
-  
+
+  @include bp.lg {
+    margin-left: v.$sidebar-width;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1024;
+    box-shadow: 0 2px 16px 2px #0001;
+  }
+
   @include bp.xxxl {
-    width: calc(100% - v.$sidebar-width-large);
+    margin-left: v.$sidebar-width-large;
   }
+
+
 }
 
 #topbar {
@@ -100,6 +62,7 @@
       word-break: keep-all;
       white-space: nowrap;
     }
+
   }
 
   @include bp.lte(bp.get(md)) {
@@ -111,15 +74,22 @@
   }
 }
 
+
 #topbar-title {
   display: none;
-  font-size: 1.1rem;
-  font-weight: 600;
-  font-family: sans-serif;
+  flex-grow: 1;
+  justify-content: center;
   color: var(--topbar-text-color);
   text-align: center;
-  width: 70%;
   word-break: keep-all;
+
+  .label {
+    @extend %heading;
+
+    margin-left: 0.375rem;
+    padding: 0 0.75rem;
+    color: inherit;
+  }
 
   @include bp.lt(bp.get(lg)) {
     display: block;
@@ -130,11 +100,29 @@
   }
 }
 
-#sidebar-trigger,
-#search-trigger {
+.topbar-stretcher {
+  display: none;
+
+  @include bp.sm {
+    display: flex;
+    flex-grow: 1;
+  }
+}
+
+
+
+#sidebar-trigger {
   display: none;
 
   @include bp.lt(bp.get(lg)) {
+    display: block;
+  }
+}
+
+#search-trigger {
+  display: none;
+
+  @include bp.lt(bp.get(sm)) {
     display: block;
   }
 }

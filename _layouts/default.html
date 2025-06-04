@@ -8,20 +8,19 @@ layout: compress
 
 {% include lang.html %}
 
-{% if site.theme_mode %}
-  {% capture prefer_mode %}data-mode="{{ site.theme_mode }}"{% endcapture %}
+{% if site.theme_mode %}{% capture prefer_mode %}data-mode="{{ site.theme_mode }}"{% endcapture %}
 {% endif %}
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="{{ page.lang | default: site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
   {% include head.html %}
 
-  <body>
+    <body>
     {% include sidebar.html lang=lang %}
-
+    {% include topbar.html lang=lang %}
     <div id="main-wrapper" class="d-flex justify-content-center">
       <div class="container d-flex flex-column px-xxl-5">
-        {% include topbar.html lang=lang %}
+
 
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
@@ -33,15 +32,14 @@ layout: compress
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+          <aside
+            aria-label="Panel"
+            id="panel-wrapper"
+            class="col-xl-3 ps-2 text-muted">
             <div class="access">
-                {% if page.concourspage %}
-                  {% include_cached concours-tags.html %}
-                {% else %}
-                  {% include_cached update-list.html lang=lang %}
-                  {% include_cached trending-tags.html lang=lang %}
-                {% endif %}
-              </div>
+              {% include_cached update-list.html lang=lang %}
+              {% include_cached trending-tags.html lang=lang %}
+            </div>
 
             {% for _include in layout.panel_includes %}
               {% assign _include_path = _include | append: '.html' %}
@@ -66,8 +64,11 @@ layout: compress
       </div>
 
       <aside aria-label="Scroll to Top">
-        <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
-          <i class="fas fa-angle-up"></i>
+        <button
+          id="back-to-top"
+          type="button"
+          class="btn btn-lg btn-box-shadow">
+          <i class="fas fa-up-long"></i>
         </button>
       </aside>
     </div>

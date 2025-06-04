@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<pretext xml:lang="fr-FR" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- we first include a file which contains the docinfo element: -->
+  <xi:include href="./docinfo.ptx" />
+  <book xml:id="concours" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Centrale</title>
+    <subtitle>Épreuve: maths 2 | Filière: MP | Session: 2018</subtitle>
+    <xi:include href="enocor.ptx" />
+  </book>
+</pretext>

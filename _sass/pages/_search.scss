@@ -1,5 +1,5 @@
-@use '../abstracts/breakpoints' as bp;
-@use '../abstracts/variables' as v;
+@use '../abstracts/breakpoints'as bp;
+@use '../abstracts/variables'as v;
 @use '../abstracts/placeholders';
 
 search {
@@ -7,7 +7,7 @@ search {
   width: 100%;
   border-radius: 1rem;
   border: 1px solid var(--search-border-color);
-  background: var(--main-bg);
+  background: var(--main-background);
   padding: 0 0.5rem;
 
   i {
@@ -16,11 +16,21 @@ search {
     color: var(--search-icon-color);
   }
 
-  @include bp.lt(bp.get(lg)) {
+  .label {
+    @extend %heading;
+
+    margin-left: 0.375rem;
+    padding: 0 0.75rem;
+    color: inherit;
+    font-size: 86%;
+  }
+
+  @include bp.lt(bp.get(sm)) {
     display: none;
   }
 
-  @include bp.lg {
+
+  @include bp.sm {
     max-width: v.$search-max-width;
   }
 
@@ -29,9 +39,7 @@ search {
   }
 
   @include bp.xxxl {
-    margin-right: calc(
-      v.$main-content-max-width / 4 - v.$search-max-width - 0.75rem
-    );
+    margin-right: calc(v.$main-content-max-width / 4 - v.$search-max-width - 0.75rem);
   }
 }
 
@@ -63,7 +71,7 @@ search {
   padding-bottom: 3rem;
 
   @include bp.between(bp.get(lg), calc(#{bp.get(xl)} - 1px)) {
-    > div {
+    >div {
       max-width: 700px;
     }
   }
@@ -81,7 +89,7 @@ search {
     @extend %heading;
   }
 
-  > article {
+  >article {
     width: 100%;
 
     &:not(:last-child) {
@@ -116,7 +124,7 @@ search {
       font-size: 80%;
     }
 
-    > p {
+    >p {
       @extend %text-ellipsis;
 
       white-space: break-spaces;
@@ -148,7 +156,7 @@ search {
     box-shadow: none;
   }
 
-  @include bp.xl {
+  @include bp.lg {
     transition: all 0.3s ease-in-out;
   }
 }
@@ -156,7 +164,7 @@ search {
 #search-hints {
   padding: 0 1rem;
 
-  @include bp.lg {
+  @include bp.sm {
     display: none;
   }
 

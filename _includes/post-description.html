@@ -7,37 +7,19 @@
 {%- capture description -%}
 {%- if post.description -%}
   {{- post.description -}}
-{%- elsif post.concours -%}
-  {%- assign description_parts = "" | split: "" -%}
-    
-    {%- if post.concours != empty -%}
-      {%- assign part = "Concours : " | append: post.concours -%}
-      {%- assign description_parts = description_parts | push: part -%}
-    {%- endif -%}
-    
-    {%- if post.session != empty -%}
-      {%- assign part = "Session : " | append: post.session -%}
-      {%- assign description_parts = description_parts | push: part -%}
-    {%- endif -%}
-    
-    {%- if post.filiere != empty -%}
-      {%- assign part = "Filière : " | append: post.filiere -%}
-      {%- assign description_parts = description_parts | push: part -%}
-    {%- endif -%}
-    
-    {%- if post.epreuve != empty -%}
-      {%- assign part = "Épreuve : " | append: post.epreuve -%}
-      {%- assign description_parts = description_parts | push: part -%}
-    {%- endif -%}
-        
-    {%- assign description_parts = description_parts | join: " | " | strip -%}
-    {{- description_parts -}}
 {%- else -%}
-  {%- include no-linenos.html content=post.content -%}
-  {{- content | markdownify | strip_html -}}
+  {% comment %}
+    Remove the line number of the code snippet.
+  {% endcomment %}
+  {% assign content = post.content %}
+
+  {% if content contains '<td class="rouge-gutter gl"><pre class="lineno">' %}
+    {% assign content = content | replace: '<td class="rouge-gutter gl"><pre class="lineno">', '<!-- <td class="rouge-gutter gl"><pre class="lineno">'%}
+    {% assign content = content | replace: '</td><td class="rouge-code">', '</td> --><td class="rouge-code">' %}
+  {% endif %}
+
+  {{- content | markdownify | strip_html | newline_to_br | replace: '<br />', ' ' | strip_newlines -}}
 {%- endif -%}
 {%- endcapture -%}
 
 {{- description | strip | truncate: max_length | escape -}}
-
-

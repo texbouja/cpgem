@@ -1,0 +1,85 @@
+<div id="pretext-toc-bar" class="d-flex align-items-center justify-content-between invisible">
+  <button type="button" class="pretext-toc-trigger btn me-1">
+    <i class="fa-solid fa-list-ul fa-fw"></i>
+  </button>
+  <span class="label text-truncate">
+    {{ page.title }}
+  </span>
+  <button
+    id="pretext-search-trigger"
+    type="button"
+    class="btn me-1">
+    <i class="fa-brands fa-searchengin" style="font-size: 150%"></i>
+  </button>
+</div>
+
+<div id="pretext-butttons" class="d-flex align-items-center justify-content-between">
+  <button
+    id="pretext-toc-solo-trigger"
+    type="button"
+    class="pretext-toc-trigger btn btn-outline-custom btn-sm">
+    <i class="fa-solid fa-list-ul fa-fw"></i>
+    <span class="label ps-2 pe-1">{{- site.data.locales[lang].panel.toc -}}</span>
+  </button>
+
+  <button
+    id="searchbutton"
+    type="button"
+    class="btn btn-outline-custom btn-sm"
+    title="Chercher dans le cours">
+    <span class="label ps-2 pe-1">Chercher dans le cours</span>
+    <i class="fa-brands fa-searchengin" style="font-size: 125%"></i>
+  </button>
+
+</div>
+
+<dialog id="pretext-toc-popup" class="p-0">
+  <div class="header d-flex flex-row align-items-center justify-content-between">
+    <div class="label text-truncate py-2 ms-4">
+      {{- page.title -}}
+    </div>
+    <button
+      id="pretext-toc-popup-close"
+      type="button"
+      class="btn btn-sm btn-outline-custom mx-3">
+      <i class="fas fa-close"></i>
+    </button>
+  </div>
+  <div
+    id="pretext-toc-popup-content"
+    class="ptx-toc depth3 focused"
+    data-preexpanded-levels="1"
+    data-max-levels="3"></div>
+</dialog>
+<!--
+-->
+<div class="searchbox">
+  <div
+    id="searchresultsplaceholder"
+    class="searchresultsplaceholder"
+    style="display: none;">
+    <div class="d-flex flex-row align-items-center justify-content-between search-results-controls">
+      <i class="fa-brands fa-searchengin" style="font-size: 125%; margin: 0;"></i>
+      <input
+        aria-label="Terme à chercher"
+        id="ptxsearch"
+        class="ptxsearch label"
+        type="search"
+        aria-label="search"
+        autocomplete="off"
+        placeholder="Terme à chercher">
+      <button
+        id="closesearchresults"
+        type="button"
+        class="btn btn-sm btn-outline-custom">
+        <i class="fas fa-close"></i>
+      </button>
+    </div>
+    <div class="search-results-heading">Résultats de la recherche:
+    </div>
+    <div id="searchempty" class="searchempty">
+      <span>Aucun résultat.</span>
+    </div>
+    <ol id="searchresults" class="searchresults"></ol>
+  </div>
+</div>

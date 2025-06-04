@@ -12,21 +12,20 @@ tabs:
   # format: <filename_without_extension>: <value>
   home: Accueil
   categories: Catégories
-  concours: Concours
   tags: Tags
   archives: Archives
   about: À propos
 
 # the text displayed in the search bar & search results
 search:
-  hint: recherche
+  hint: dans le site
   cancel: Annuler
   no_results: Oups ! Aucun résultat trouvé.
 
 panel:
   lastmod: Récemment mis à jour
   trending_tags: Tags tendance
-  toc: Contenu
+  toc: Table des matières
 
 copyright:
   # Shown at the bottom of the post
@@ -41,7 +40,7 @@ copyright:
     Sauf mention contraire, les articles de ce site sont publiés
     sous la licence Creative Commons Attribution 4.0 International (CC BY 4.0) par l'auteur.
 
-meta: "" #Propulsé par :PLATFORM
+meta: Propulsé par :PLATFORM avec le thème :THEME
 
 not_found:
   statement: Désolé, nous avons égaré cette URL ou elle pointe vers quelque chose qui n'existe pas.
@@ -53,7 +52,7 @@ notification:
 # ----- Posts related labels -----
 
 post:
-  written_by: Publié par
+  written_by: Par
   posted: Posté
   updated: Mis à jour
   words: mots
@@ -75,7 +74,4 @@ post:
 # categories page
 categories:
   category_measure: catégories
-  post_measure: posts
-concours:
-  category_measure: concours
   post_measure: posts

@@ -1,5 +1,5 @@
-@use '../abstracts/variables' as v;
-@use '../abstracts/breakpoints' as bp;
+@use '../abstracts/variables'as v;
+@use '../abstracts/breakpoints'as bp;
 
 #back-to-top {
   visibility: hidden;
@@ -8,7 +8,7 @@
   cursor: pointer;
   position: fixed;
   right: 1rem;
-  bottom: calc(v.$footer-height-large - v.$back2top-size / 2);
+  bottom: calc(min(v.$footer-height-large - v.$back2top-size / 2, 4vh));
   background: var(--button-bg);
   color: var(--btn-backtotop-color);
   padding: 0;
@@ -28,9 +28,7 @@
   }
 
   @include bp.xxxl {
-    right: calc(
-      (100vw - v.$sidebar-width-large - v.$main-content-max-width) / 2 + 2rem
-    );
+    right: calc((100vw - v.$sidebar-width-large - v.$main-content-max-width) / 2 + 2rem);
   }
 
   &:hover {

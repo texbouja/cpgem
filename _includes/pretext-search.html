@@ -1,0 +1,139 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const originalSearchTrigger = document.getElementById('searchbutton'); 
+  const panelSearchTrigger = document.getElementById('pretext-search-panel'); 
+  const barSearchTrigger = document.getElementById('pretext-search-trigger'); 
+  const searchResultsPlaceholder = document.getElementById('searchresultsplaceholder');
+  const closeButton = document.getElementById('closesearchresults');
+  const searchInput = document.getElementById('ptxsearch');
+  
+  if (!originalSearchTrigger) {
+    console.warn('Bouton de recherche original (#searchbutton) pour pretext-search.js non trouvé. La simulation de clic pourrait échouer.');
+  }
+  if (!searchResultsPlaceholder) {
+    console.warn('Placeholder des résultats de recherche (#searchresultsplaceholder) non trouvé.');
+    return; 
+  }
+  
+  function openSearchPopup() {
+    if (searchResultsPlaceholder) {
+      searchResultsPlaceholder.style.display = 'block';
+      // Chercher l'arrière-plan créé par le script original
+      const searchResultsBackground = document.querySelector('.searchresultsbackground');
+      if (searchResultsBackground) {
+        searchResultsBackground.style.display = 'block';
+      }
+      if (searchInput) {
+        searchInput.focus();
+      }
+    }
+  }
+  
+  function closeSearchPopup() {
+    if (searchResultsPlaceholder) {
+      searchResultsPlaceholder.style.display = 'none';
+    }
+    const searchResultsBackground = document.querySelector('.searchresultsbackground');
+    if (searchResultsBackground) {
+      searchResultsBackground.style.display = 'none';
+    }
+  }
+  
+  function setupSearchTrigger(triggerElement) {
+    if (triggerElement) {
+      triggerElement.addEventListener('click', function (event) {
+        event.preventDefault(); 
+        event.stopPropagation();
+        
+        if (originalSearchTrigger) {
+          originalSearchTrigger.click(); 
+        } else {
+          console.warn("Tentative d'ouverture directe de la popup car #searchbutton n'a pas été trouvé.");
+          openSearchPopup();
+        }
+      });
+    }
+  }
+  
+  setupSearchTrigger(panelSearchTrigger); 
+  setupSearchTrigger(barSearchTrigger);        
+  
+  // Remplacer le comportement du bouton close pour éviter le refresh
+  if (closeButton) {
+    // Supprimer tous les event listeners existants en clonant l'élément
+    const newCloseButton = closeButton.cloneNode(true);
+    closeButton.parentNode.replaceChild(newCloseButton, closeButton);
+    
+    // Ajouter notre propre event listener
+    newCloseButton.addEventListener('click', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      closeSearchPopup();
+      // Remettre le focus sur le bouton de recherche comme le fait le script original
+      if (document.getElementById('searchbutton')) {
+        document.getElementById('searchbutton').focus();
+      }
+    });
+  }
+  
+  // Attendre que le script original ait créé l'arrière-plan avant d'ajouter les event listeners
+  function setupBackgroundClickHandler() {
+    const searchResultsBackground = document.querySelector('.searchresultsbackground');
+    if (searchResultsBackground) {
+      // Fermeture en cliquant sur l'arrière-plan
+      searchResultsBackground.addEventListener('click', function (event) {
+        // Ne fermer que si on clique directement sur l'arrière-plan
+        if (event.target === searchResultsBackground) {
+          closeSearchPopup();
+        }
+      });
+    } else {
+      // Si l'arrière-plan n'existe pas encore, réessayer après un court délai
+      setTimeout(setupBackgroundClickHandler, 100);
+    }
+  }
+  
+  // Démarrer la configuration de l'arrière-plan
+  setupBackgroundClickHandler();
+  
+  // Empêcher la fermeture quand on clique dans le contenu de la recherche
+  if (searchResultsPlaceholder) {
+    searchResultsPlaceholder.addEventListener('click', function (event) {
+      event.stopPropagation();
+    });
+  }
+  
+  // Ajouter un event listener pour tous les liens de résultats (existants et futurs)
+  function setupResultLinksHandler() {
+    const searchResults = document.getElementById('searchresults');
+    if (searchResults) {
+      // Utiliser la délégation d'événements pour capturer les clics sur tous les liens
+      searchResults.addEventListener('click', function(event) {
+        // Vérifier si l'élément cliqué est un lien dans les résultats
+        if (event.target.tagName === 'A' || event.target.closest('a')) {
+          // Fermer la popup après un court délai pour permettre à la navigation de se faire
+          setTimeout(() => {
+            closeSearchPopup();
+          }, 100);
+        }
+      });
+    }
+  }
+  
+  // Configurer la gestion des liens de résultats
+  setupResultLinksHandler();
+  
+  // Fermeture avec la touche Escape
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && searchResultsPlaceholder && 
+        searchResultsPlaceholder.style.display !== 'none') {
+      closeSearchPopup();
+      // Remettre le focus sur le bouton de recherche comme le fait le script original
+      if (document.getElementById('searchbutton')) {
+        document.getElementById('searchbutton').focus();
+      }
+    }
+  });
+  
+  });
+</script>

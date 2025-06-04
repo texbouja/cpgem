@@ -1,0 +1,42 @@
+{% assign full_content = include.content %}
+
+<!-- Extraire le doctype -->
+{% assign doctype_split = full_content | split: '<html' %}
+ {% assign doctype=doctype_split[0] %} 
+ {% assign html_start=full_content | split: '<html' %} 
+  {% assign html_end=html_start[1] | split: '</html>' %} 
+  {% assign
+  html_attrs=html_start[1] | split: '>' | first %} 
+  {% assign html_inner=html_end[0] | remove_first: html_attrs |
+  remove_first: '>' %} 
+  {% assign head_start=html_inner | split: '<head' %} 
+  {% assign head_end=head_start[1] |
+  split: '</head>' %}
+   {% assign head_attrs=head_start[1] | split: '>' | first %} {% assign head_content=head_end[0] |
+  remove_first: head_attrs | remove_first: '>' %} 
+  {% assign body_start=html_inner | split: '<body' %} 
+  {% assign
+  body_end=body_start[1] | split: '</body>' %}
+   {% assign body_attrs=body_start[1] | split: '>' | first %} {% assign
+  body_inner=body_end[0] | remove_first: body_attrs | remove_first: '>' %} {{ doctype }}
+  
+  
+  <html{{ html_attrs }}>
+  <head{{ head_attrs }}>
+    {{ head_content }}
+    </head>
+    <body>
+
+      <!-- Sidebar -->
+      {% include sidebar.html lang=lang %}
+
+      <!-- Wrapper pour le contenu principal -->
+      <div id="main-wrapper" class="d-flex justify-content-center">
+        <div class="container d-flex flex-column px-xxl-5">
+          {{ body_inner }}
+        </div>
+      </div>
+
+      </body>
+
+      </html>

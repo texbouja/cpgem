@@ -1,0 +1,910 @@
+@use 'sass:meta';
+@use '../abstracts/mixins' as mx;
+@use '../abstracts/breakpoints' as bp;
+@use '../fonts/variables' as hm;
+
+$custom-color: null !default;
+$chunk-heading-font-size: 1.15em !default;
+$first-child-color: null;
+$icon-sep: 0.5rem;
+// These values can be set on @use to avoid repeating values in each @import
+// $font-size: 1.25em !default;
+$background-color: var(--content-background) !default;
+$border-color: var(--block-border-color) !default;
+$border-radius: 10px !default;
+$border-width: 1px !default;
+$box-padding: 5px !default;
+$font-style: 'normal' !default;
+$heading-background: var(--block-border-color) !default;
+$heading-color: var(--block-head-color) !default;
+$heading-width: 45% !default;
+$margin-top: 2.5em !default;
+$padding: 20px !default;
+$padding-bottom: $padding !default;
+$padding-left: $padding !default;
+$padding-right: $padding !default;
+$padding-top: $padding !default;
+$padside: 15px !default; //on side with border
+$side-borders: true !default;
+$side: left !default;
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin border-radius($radius...) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin carte-border($whidth: 2px) {
+  border: $whidth solid var(--carte-border-trasparency);
+}
+
+@mixin box-borders(
+  $btlr: 0,
+  $btrr: 0,
+  $bblr: 0,
+  $bbrr: 0,
+  $btr: 0,
+  $bbr: 0,
+  $blr: 0,
+  $brr: 0,
+  $br: 0,
+  $bwt: 0,
+  $bwr: 0,
+  $bwb: 0,
+  $bwl: 0,
+  $bwh: 0,
+  $bwv: 0,
+  $bw: 0
+) {
+  @if $bwh>0 {
+    $bwt: $bwh;
+    $bwb: $bwh;
+  }
+
+  @if $bwv>0 {
+    $bwl: $bwv;
+    $bwr: $bwv;
+  }
+
+  @if $bw>0 {
+    $bwt: $bw;
+    $bwb: $bw;
+    $bwl: $bw;
+    $bwr: $bw;
+  }
+
+  @if $btr>0 {
+    $btlr: $btr;
+    $btrr: $btr;
+  }
+
+  @if $bbr>0 {
+    $bblr: $bbr;
+    $bbrr: $bbr;
+  }
+
+  @if $blr>0 {
+    $btlr: $blr;
+    $bblr: $blr;
+  }
+
+  @if $brr>0 {
+    $btrr: $brr;
+    $bbrr: $brr;
+  }
+
+  @if $br>0 {
+    $btlr: $br;
+    $bblr: $br;
+    $btrr: $br;
+    $bbrr: $br;
+  }
+
+  --btlr: #{if($btlr > 0, $btlr, initial)};
+  --btrr: #{if($btrr > 0, $btrr, initial)};
+  --bblr: #{if($bblr > 0, $bblr, initial)};
+  --bbrr: #{if($bbrr > 0, $bbrr, initial)};
+  --bwl: #{if($bwl > 0, $bwl, initial)};
+  --bwr: #{if($bwr > 0, $bwr, initial)};
+  --bwt: #{if($bwt > 0, $bwt, initial)};
+  --bwb: #{if($bwb > 0, $bwb, initial)};
+  --bsl: #{if($bwl > 0, 'solid', initial)};
+  --bsr: #{if($bwr > 0, 'solid', initial)};
+  --bst: #{if($bwt > 0, 'solid', initial)};
+  --bsb: #{if($bwb > 0, 'solid', initial)};
+  border-top-left-radius: var(--btlr);
+  border-top-right-radius: var(--btrr);
+  border-bottom-left-radius: var(--bblr);
+  border-bottom-right-radius: var(--bbrr);
+  border-top-width: var(--bwt);
+  border-right-width: var(--bwr);
+  border-bottom-width: var(--bwb);
+  border-left-width: var(--bwl);
+  border-top-style: var(--bst);
+  border-right-style: var(--bsr);
+  border-bottom-style: var(--bsb);
+  border-left-style: var(--bsl);
+}
+
+@mixin box-colors($color: 'main') {
+  --body-title: var(--#{$color}-border-color);
+  --body-background: var(--#{$color}-background-color);
+  --heading-background: #0001;
+
+  background-color: var(--#{$color}-background-color);
+  border-color: var(--#{$color}-border-color);
+  border-top-color: var(--#{$color}-border-color);
+  border-bottom-color: var(--#{$color}-border-color);
+  border-left-color: var(--#{$color}-border-color);
+  border-right-color: var(--#{$color}-border-color);
+  color: var(--text-color);
+
+  li::marker {
+    color: var(--body-title);
+    font-weight: 600;
+  }
+}
+
+@mixin top-box-gradient() {
+  background-image: linear-gradient(
+    #fff4,
+    #0002 4px,
+    transparent 48px,
+    transparent
+  ) !important;
+}
+
+@mixin header-gradient() {
+  background-image: linear-gradient(
+    transparent,
+    #fff2 2px,
+    #0004 4px,
+    #0002
+  ) !important;
+}
+@mixin inner-gradient() {
+  background-image: linear-gradient(
+    transparent,
+    #fff2 20%,
+    #0005 45%
+  ) !important;
+}
+
+@mixin box-heading(
+  $type,
+  $hpadding: 1rem,
+  $vpadding: 0.5rem,
+  $hoffset: 0,
+  $voffset: 0,
+  $fontsize: 1.25rem,
+  $h-align: flex-start,
+  $btr: 0,
+  $bbr: 5px,
+  $shadow: null
+) {
+  // border-top: 1px solid transparent;
+
+  @if not($shadow) {
+    border-top: 1px solid transparent;
+    @include top-box-gradient();
+  } @else {
+    > .heading:first-child {
+      background: var(--heading-background);
+      @include header-gradient();
+    }
+  }
+
+  > .heading:first-child {
+    $h-hpadding: $hpadding;
+    $h-vpadding: $vpadding;
+
+    justify-content: $h-align;
+    width: calc(100% + 2 * $padding) !important;
+    margin-left: -$padding !important;
+    margin-top: calc($voffset) !important;
+    padding-left: calc($hoffset);
+    font-family: var(--font-heading);
+    font-size: $fontsize;
+
+    @include box-borders($btr: $btr);
+
+    @if $shadow == small {
+      padding-bottom: 6px !important;
+      @include header-gradient();
+    } @else if $shadow == big {
+      padding-bottom: 8px !important;
+      border-bottom: 1px solid var(--body-title);
+      @include header-gradient();
+    }
+    @if $shadow == big or $shadow == small {
+      margin-top: 0 !important;
+      box-shadow: inset 0 0 3px 1px #0003;
+      .before {
+        @include box-borders($bblr: $bbr, $bw: 0);
+      }
+
+      .after {
+        @include box-borders($bbrr: $bbr, $bw: 0);
+      }
+    } @else {
+      .before {
+        @include box-borders($btlr: $btr, $bblr: $bbr, $bw: 0);
+      }
+
+      .after {
+        @include box-borders($btrr: $btr, $bbrr: $bbr, $bw: 0);
+      }
+    }
+
+    @if $type== 'full' {
+      .codenumber {
+        flex: 0 1 2.8em;
+        font-size: 85%;
+        font-weight: 500;
+        border-top: 1px solid var(--body-title);
+        border-bottom: 1px solid var(--body-title);
+        @include header-gradient();
+      }
+
+      .title {
+        font-size: 72%;
+        font-weight: normal;
+        font-style: italic;
+        text-align: left;
+        border-top: 1px solid var(--body-title);
+        border-bottom: 1px solid var(--body-title);
+        @include header-gradient();
+      }
+      .type,
+      .before,
+      .after {
+        @include header-gradient();
+      }
+    }
+
+    @if $type== 'notype' {
+      .before,
+      .after {
+        flex: 0 1 1.5em;
+        @include inner-gradient();
+      }
+
+      .codenumber {
+        flex: 0 1 3.2em;
+        background: var(--body-title);
+        font-size: 166%;
+        font-weight: 900;
+        @include inner-gradient();
+      }
+
+      .title {
+        font-size: 85%;
+        font-weight: normal;
+        font-style: italic;
+        text-align: left;
+        @include inner-gradient();
+      }
+    }
+
+    @if $type== 'titleonly' {
+      .padding-left: 2rem !important;
+      .after,
+      .slider {
+        display: none;
+      }
+
+      .collapser {
+        margin: 0 1rem !important;
+      }
+
+      .title {
+        flex: 1;
+        font-size: 100%;
+        color: var(--text-dark);
+        background: var(--body-title);
+        text-align: center;
+        padding: 0.75rem 1.5rem !important;
+        @include header-gradient();
+      }
+
+      .space {
+        flex: 0 1 3rem !important;
+        background: var(--card-background);
+        box-shadow: inset 0 2px 4px 1px #0005;
+        @include header-gradient();
+        @include box-borders($btrr: $btr, $bbrr: $bbr, $bw: 0);
+      }
+      .before {
+        flex: 0 1 3rem;
+        margin-left: 2rem !important;
+        border-bottom-left-radius: $bbr !important;
+        background: var(--card-background) !important;
+        box-shadow: inset 0 2px 4px 1px #0005;
+        @include header-gradient();
+      }
+    }
+  }
+}
+
+// article>.heading:first-child {
+
+//   .slider,
+//   .title {
+//     transition: opacity .5s, content-visibility 0.5s allow-discrete;
+//   }
+
+// }
+
+@mixin knowl-color($color: null) {
+  @if $color !=null {
+    --body-title: var(--#{$color}-like-border-color);
+    --knowl-link-color: var(--#{$color}-like-border-color);
+    --aside-like-border-color: var(--#{$color}-like-border-color);
+    --aside-like-background-color: var(--#{$color}-like-background-color);
+  }
+}
+
+@mixin inline-heading($body: null) {
+  & > .heading:first-child {
+    display: inline;
+    line-height: initial;
+    border-bottom: 0;
+    margin-top: 0.75rem;
+    color: var(--body-title);
+
+    &:after {
+      content: '\2009';
+    }
+
+    .codenumber {
+      &::after {
+        content: '.';
+        margin-right: 0.5rem;
+      }
+    }
+
+    & + .para {
+      display: inline;
+    }
+
+    & + .introduction {
+      display: inline;
+    }
+
+    & + .introduction > .para:first-child {
+      display: inline;
+    }
+  }
+}
+
+@mixin chunk-heading($font-size: $chunk-heading-font-size) {
+  & > .heading {
+    font-size: $font-size;
+    font-weight: 400;
+
+    .title::before {
+      content: '(';
+    }
+
+    .title::after {
+      content: ')';
+    }
+  }
+}
+
+@mixin knowl-common-box() {
+  border: none;
+  background-color: transparent;
+  padding: 0 $padding-right $padding-bottom $padding-left;
+
+  & > .heading:first-child {
+    background: transparent;
+    display: inline-block;
+
+    &:after {
+      //disable any extra junk
+      display: none;
+    }
+  }
+}
+
+// Generate styles for a box with inset heading
+@mixin heading-box(
+  $border-width: $border-width,
+  $style: solid,
+  $background-color: $background-color,
+  $border-color: $border-color,
+  $heading-background: $heading-background,
+  $heading-color: $heading-color,
+  $padding: $padding,
+  $border-radius: $border-radius,
+  $side-borders: $side-borders,
+  $margin-top: $margin-top,
+  $font-style: $font-style,
+  $box-padding: $box-padding,
+  $heading-width: $heading-width,
+  // $font-size: $font-size,
+  $hide-number: false
+) {
+  // this *should* always work well for reasonable padding/font sizes
+  //$heading-top: calc(-1 * $box-padding - 1.65ex);
+  $heading-top: calc(-1 * ($box-padding) - 1.65ex + 1px);
+
+  &:not(.knowl__content, .born-hidden-knowl) {
+    border: $border-width $style $border-color;
+
+    @if not $side-borders {
+      border-left: 0;
+      border-right: 0;
+    }
+
+    background-color: $background-color;
+    padding: $padding;
+    //extra top-padding to make room for heading
+    padding-top: 0;
+
+    // need to control margin to overcome negative margin on heading
+    // !important to override default article styling
+    margin-top: $margin-top !important;
+
+    @include border-radius(0 $border-radius $border-radius $border-radius);
+
+    & > .heading:first-child {
+      display: inline-block;
+      min-width: $heading-width;
+      background-color: $heading-background;
+      color: $heading-color;
+      padding: $box-padding ($padding);
+      margin-top: (0.33 * $padding);
+      margin-left: (-0.67 * $padding);
+      border-left: 2px solid var(--content-background);
+      border-bottom: 2px solid var(--content-background);
+      background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#0004),
+        to(#0006)
+      );
+
+      @if $font-style != 'normal' {
+        font-style: $font-style;
+      }
+
+      @include border-radius(0 0.8em 0.8em 0);
+
+      @if $hide-number {
+        .codenumber {
+          display: none;
+        }
+      }
+
+      &:after {
+        //disable any extra junk
+        display: none;
+      }
+    }
+  }
+
+  // if the first child of a knowl, need just enough margin to clear exposed heading
+  @at-root {
+    .knowl__content *:first-child & {
+      margin-top: 1em;
+    }
+  }
+}
+
+@mixin centered-heading-box(
+  $border-width: $border-width,
+  $style: solid,
+  $background-color: $background-color,
+  $border-color: $border-color,
+  $heading-background: $heading-background,
+  $heading-color: $heading-color,
+  $padding: $padding,
+  $border-radius: $border-radius,
+  $side-borders: $side-borders,
+  $margin-top: $margin-top,
+  $font-style: $font-style,
+  $box-padding: $box-padding,
+  $heading-width: $heading-width,
+  // $font-size: $font-size,
+  $hide-number: false
+) {
+  // this *should* always work well for reasonable padding/font sizes
+  //$heading-top: calc(-1 * $box-padding - 1.65ex);
+  $heading-top: calc(-1 * ($box-padding) - 1.65ex + 1px);
+
+  &:not(.knowl__content, .born-hidden-knowl) {
+    border: $border-width $style $border-color;
+
+    @if not $side-borders {
+      border-left: 0;
+      border-right: 0;
+    }
+
+    background-color: $background-color;
+    padding: $padding;
+    //extra top-padding to make room for heading
+    padding-top: 0;
+
+    // need to control margin to overcome negative margin on heading
+    // !important to override default article styling
+    margin-top: $margin-top !important;
+
+    @include border-radius(0 0 $border-radius $border-radius);
+
+    & > .heading:first-child {
+      display: inline-block;
+      width: calc(100%);
+      background-color: $heading-background;
+      color: $heading-color;
+      padding: $box-padding $padding;
+      margin-top: calc(0.25em - $padding);
+      border: 2px solid var(--content-background);
+      background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#0004),
+        to(#0006)
+      );
+
+      @if $font-style != 'normal' {
+        font-style: $font-style;
+      }
+
+      @include border-radius(0 0 15px 15px);
+
+      @if $hide-number {
+        .codenumber {
+          display: none;
+        }
+      }
+
+      &:after {
+        //disable any extra junk
+        display: none;
+      }
+    }
+  }
+
+  // if the first child of a knowl, need just enough margin to clear exposed heading
+  @at-root {
+    .knowl__content *:first-child & {
+      margin-top: 1em;
+    }
+  }
+}
+
+@mixin fact-box(
+  $border-width: $border-width,
+  $background-color: $background-color,
+  $border-color: $border-color,
+  $heading-background: $heading-background,
+  $heading-color: $heading-color,
+  $padding: $padding,
+  $padding-top: $padding-top,
+  $padding-bottom: $padding-bottom,
+  $padding-right: $padding-right,
+  $padding-left: $padding-left,
+  $font-style: $font-style,
+  $border-radius: $border-radius,
+  $box-padding: $box-padding,
+  $hide-number: false,
+  $heading-width: $heading-width
+) {
+  &:not(.knowl__content, .born-hidden-knowl) {
+    border: none;
+    // border-top: $border-width solid $border-color;
+    // border-bottom: (2* $border-width) solid $border-color;
+    background-color: $background-color;
+    //top padding turns into margin below header
+    padding: 0 $padding-right $padding-bottom $padding-left;
+
+    @if $border-radius>0 {
+      @include border-radius($border-radius 0 $border-radius 0);
+    }
+
+    & > .heading:first-child {
+      background-color: $heading-background;
+      display: inline-block;
+      color: $heading-color;
+      padding: $box-padding (2 * $box-padding);
+      margin-left: (-$padding-left);
+      margin-top: 0;
+      min-width: $heading-width;
+      border-right: 2px solid var(--content-background);
+      border-bottom: 2px solid var(--content-background);
+      background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#0004),
+        to(#0006)
+      );
+
+      @if $font-style != 'normal' {
+        font-style: $font-style;
+      }
+
+      @if $hide-number {
+        .codenumber {
+          display: none;
+        }
+      }
+
+      @if $border-radius>0 {
+        @include border-radius($border-radius 0 15px 0px);
+      }
+
+      &:after {
+        //disable any extra junk
+        display: none;
+      }
+
+      // fake padding under the heading
+      & {
+        //turn off sass warning
+        margin-bottom: $padding-bottom;
+      }
+
+      //prevent child from adding space
+      & + * {
+        margin-top: 0;
+      }
+    }
+
+    li::marker {
+      color: $heading-background;
+      font-weight: 700;
+    }
+  }
+}
+
+@mixin meta-box(
+  $border-width: $border-width,
+  $background-color: $background-color,
+  $border-color: $border-color,
+  $heading-background: $heading-background,
+  $heading-color: $heading-color,
+  $padding: $padding,
+  $padding-top: $padding-top,
+  $padding-bottom: $padding-bottom,
+  $padding-right: $padding-right,
+  $padding-left: $padding-left,
+  $font-style: $font-style,
+  $border-radius: $border-radius,
+  $box-padding: $box-padding,
+  $hide-number: false,
+  $heading-width: $heading-width
+) {
+  &:not(.knowl__content, .born-hidden-knowl) {
+    border: none;
+    // border-top: $border-width solid $border-color;
+    // border-bottom: (2* $border-width) solid $border-color;
+    background-color: $background-color;
+    //top padding turns into margin below header
+    padding: 0 $padding-right $padding-bottom $padding-left;
+
+    @if $border-radius>0 {
+      @include border-radius(0 0 $border-radius $border-radius);
+    }
+
+    & > .heading:first-child {
+      background-color: $heading-background;
+      display: inline-block;
+      color: $heading-color;
+      padding: $box-padding (2 * $box-padding);
+      margin-left: (-$padding-left);
+      margin-top: 0;
+      min-width: $heading-width;
+      border-right: 2px solid var(--content-background);
+      border-bottom: 2px solid var(--content-background);
+      background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#0004),
+        to(#0006)
+      );
+
+      @if $font-style != 'normal' {
+        font-style: $font-style;
+      }
+
+      @if $hide-number {
+        .codenumber {
+          display: none;
+        }
+      }
+
+      @if $border-radius>0 {
+        @include border-radius(0 0 15px 0px);
+      }
+
+      &:after {
+        //disable any extra junk
+        display: none;
+      }
+
+      // fake padding under the heading
+      & {
+        //turn off sass warning
+        margin-bottom: $padding-bottom;
+      }
+
+      //prevent child from adding space
+      & + * {
+        margin-top: 0;
+      }
+    }
+
+    li::marker {
+      color: $heading-background;
+      font-weight: 700;
+    }
+  }
+}
+
+@mixin do-box(
+  $border-width: (
+    2.5 * $border-width
+  ),
+  $style: solid,
+  $background-color: $background-color,
+  $border-color: $border-color,
+  $heading-background: $heading-background,
+  $heading-color: $heading-color,
+  $padding: $padding,
+  $margin-top: $margin-top,
+  $font-style: $font-style,
+  $box-padding: $box-padding,
+  $heading-width: $heading-width,
+  $border-side: left,
+  $hide-number: false
+) {
+  // this *should* always work well for reasonable padding/font sizes
+  //$heading-top: calc(-1 * $box-padding - 1.65ex);
+  $heading-top: calc(-1 * ($box-padding) - 1.65ex + 1px);
+  $alt-side: if($border-side==left, right, left);
+  $margin-title: if($border-side==left, $padding, 5px);
+
+  &:not(.knowl__content, .born-hidden-knowl) {
+    border-#{$border-side}: $border-width $style $border-color;
+    background-color: $background-color;
+    padding: $padding;
+
+    @if $border-side==left {
+      padding-#{$alt-side}: 5px;
+    } @else {
+      padding-#{$border-side}: 5px;
+    }
+
+    padding-top: 0;
+    border-radius: 0;
+
+    margin-top: $margin-top !important;
+
+    & > .heading:first-child {
+      display: inline-block;
+      min-width: $heading-width;
+      background-color: $heading-background;
+      color: $heading-color;
+      padding: $box-padding (2 * $padding);
+      margin-top: 0;
+      margin-left: (-1 * $margin-title - $padding);
+      border-right: 2px solid var(--content-background);
+      border-bottom: 2px solid var(--content-background);
+      background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#0004),
+        to(#0006)
+      );
+
+      @if $font-style != 'normal' {
+        font-style: $font-style;
+      }
+
+      @if $border-radius>0 {
+        @include border-radius(1em 0 1em 1em);
+      }
+
+      @if $hide-number {
+        .codenumber {
+          display: none;
+        }
+      }
+
+      &:after {
+        //disable any extra junk
+        display: none;
+      }
+    }
+  }
+
+  // if the first child of a knowl, need just enough margin to clear exposed heading
+  @at-root {
+    .knowl__content *:first-child & {
+      margin-top: 1em;
+    }
+  }
+}
+
+@mixin L-border(
+  $border-width: 2px,
+  $style: solid,
+  $head-color: var(--block-head-color),
+  $border-color: var(--block-border-color),
+  $padding: $padding,
+  $L-side: left
+) {
+  //determine side opposite L
+  $alt-side: if($L-side==left, right, left);
+
+  &:not(.knowl__content, .born-hidden-knowl) {
+    padding-#{$L-side}: $padding;
+    border-#{$L-side}: $border-width $style $border-color;
+
+    & > .heading:first-child {
+      color: $head-color;
+    }
+
+    &::after {
+      content: '';
+      border-bottom: $border-width $style $border-color;
+      display: block;
+      margin-#{$alt-side}: auto;
+      margin-#{$L-side}: -$padding;
+      padding-top: $padding;
+      width: 1.5em;
+    }
+  }
+
+  @at-root .knowl__content & {
+    padding-#{$L-side}: 0;
+    border-#{$L-side}: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@mixin sidebar-box(
+  $border-width: $border-width,
+  $style: solid,
+  $border-color: $border-color,
+  $background-color: $background-color,
+  $padding: $padding,
+  $padside: $padside,
+  $side: $side,
+  $border-radius: $border-radius
+) {
+  &:not(.knowl__content, .born-hidden-knowl) {
+    padding: $padding;
+    padding-#{$side}: $padside;
+    border: 1px $style $border-color;
+    border-#{$side}: $border-width $style $border-color;
+    background-color: $background-color;
+
+    @if $border-radius>0 {
+      @if $side==left {
+        @include border-radius(0 $border-radius $border-radius 0);
+      } @else {
+        @include border-radius($border-radius 0 0 $border-radius);
+      }
+    }
+
+    > .heading:first-child {
+      color: $border-color;
+      margin-top: 0;
+    }
+  }
+}

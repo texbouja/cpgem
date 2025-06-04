@@ -1,0 +1,243 @@
+classes:
+  mpsi: "Classe MPSI"
+  mp: "Classes MP/MP*"
+  pcsi: "Classe PCSI"
+  psi: "Classe PSI"
+  pc: "Classe PC"
+
+parties:
+  stralg: "Structures algébriques"
+  alglin: "Algèbre linéaire"
+  algbil: "Algèbre bilinéaire"
+  topalg: "Topologie et algèbre"
+  topana: "Topologie et analyse"
+  proana: "Probabilités et analyse"
+  proalg: "Probabilités et algèbre"
+  serint: "Séries et intégrales"
+  caldif: "Calcul différeniel"
+  equdif: "Équations différentielles"
+
+chapitres:
+  Mistral:
+    algstr:
+      title: Structures algébriques usuelles
+      abstract: Étudier les structures algébriques fondamentales, y compris les groupes, les anneaux, et les idéaux, en approfondissant les concepts d'arithmétique et d'algèbre linéaire.
+      objective:
+        - Comprendre les bases des structures algébriques.
+        - Manipuler les groupes, les anneaux, et les idéaux.
+        - Approfondir les concepts d'arithmétique et d'algèbre linéaire.
+    redend:
+      title: Réduction des endomorphismes et des matrices carrées
+      abstract: Prolonger les notions d'algèbre linéaire en vous concentrant sur la réduction des endomorphismes et des matrices carrées, avec des applications en topologie et en équations différentielles.
+      objective:
+        - Maîtriser les techniques de réduction des endomorphismes et des matrices carrées.
+        - Comprendre leurs applications dans divers domaines des mathématiques.
+        - Analyser les propriétés des matrices et des endomorphismes.
+    endeuc:
+      title: Endomorphismes d'un espace euclidien
+      abstract: Approfondisser l'étude des endomorphismes dans le cadre euclidien, en vous concentrant sur les endomorphismes autoadjoints et les isométries.
+      objective:
+        - Comprendre les propriétés des endomorphismes autoadjoints et des isométries.
+        - Appliquer ces concepts en géométrie et en analyse.
+        - Étudier les propriétés des espaces euclidiens.
+    topevn:
+      title: Topologie des espaces vectoriels normés
+      abstract: Introduire les concepts de topologie dans les espaces vectoriels normés, en mettant l'accent sur les notions de compacité, de connexité, et de continuité.
+      objective:
+        - Acquérir une compréhension des concepts topologiques fondamentaux.
+        - Appliquer ces notions en analyse et en optimisation.
+        - Étudier les propriétés des espaces vectoriels normés.
+    sernumvec:
+      title: Séries numériques et vectorielles
+      abstract: Consolider les connaissances sur les séries numériques et étendre les aux espaces vectoriels normés de dimension finie.
+      objective:
+        - Maîtriser les techniques de convergence des séries numériques et vectorielles.
+        - Comprendre leurs applications en analyse et en algèbre.
+        - Étudier les propriétés des séries convergentes.
+    serfon:
+      title: Suites et séries de fonctions, séries entières
+      abstract: Définir différents modes de convergence des suites et séries de fonctions, et étudier la stabilité des propriétés des fonctions par passage à la limite.
+      objective:
+        - Comprendre les différents modes de convergence des suites et séries de fonctions.
+        - Appliquer ces concepts en analyse et en théorie des fonctions.
+        - Étudier les propriétés des fonctions continues.
+    fonvec:
+      title: Fonctions vectorielles
+      abstract: Étender le programme d'analyse réelle de première année au cadre des fonctions vectorielles, et fournir des outils pour l'étude des équations différentielles linéaires et du calcul différentiel.
+      objective:
+        - Maîtriser les concepts de dérivabilité et d'intégration des fonctions vectorielles.
+        - Appliquer ces notions en analyse et en équations différentielles.
+        - Étudier les propriétés des fonctions vectorielles.
+
+    intgen:
+      title: Intégration sur un intervalle quelconque
+      abstract: Définir les notions d'intégrale convergente et d'intégrabilité sur un intervalle non compact, et donner des outils efficaces de passage à la limite sous l'intégrale.
+      objective:
+        - Comprendre les concepts d'intégrale convergente et d'intégrabilité sur un intervalle quelconque.
+        - Appliquer ces notions en analyse et en théorie de l'intégration.
+        - Étudier les propriétés des intégrales à paramètres.
+
+  DeepSeek:
+    stralg:
+      title: "Structures algébriques usuelles"
+      abstract: "Approfondissement des groupes cycliques, anneaux quotients et polynômes. Couvre les générateurs, ordres d'éléments et relations de Bézout, avec une introduction aux algèbres et leurs morphismes."
+      objective:
+        - "Maîtriser les propriétés fondamentales des groupes et anneaux"
+        - "Appliquer les relations de Bézout dans Z et K[X]"
+        - "Manipuler les structures quotients et idéaux principaux"
+        - "Résoudre des problèmes de divisibilité algébrique"
+
+    redend:
+      title: "Réduction des endomorphismes et des matrices carrées"
+      abstract: "Combinaison d'approches géométriques et algébriques pour la diagonalisation et trigonalisation. Étude des sous-espaces propres, polynômes annulateurs et application du théorème de Cayley-Hamilton."
+      objective:
+        - "Diagonaliser des endomorphismes en base propre"
+        - "Utiliser les polynômes annulateurs pour la réduction"
+        - "Décomposer un espace en sous-espaces caractéristiques"
+        - "Trigonaliser des matrices dans des cas pratiques"
+
+    endeuc:
+      title: "Endomorphismes d'un espace euclidien"
+      abstract: "Focus sur les isométries vectorielles et endomorphismes autoadjoints. Techniques de réduction spectrale, classification des matrices orthogonales et applications à l'optimisation."
+      objective:
+        - "Déterminer l'adjoint d'un endomorphisme"
+        - "Reconnaître et diagonaliser les endomorphismes autoadjoints"
+        - "Classer les isométries en dimensions 2 et 3"
+        - "Appliquer le théorème spectral à des problèmes concrets"
+
+    topevn:
+      title: "Topologie des espaces vectoriels normés"
+      abstract: "Fondamentaux des ouverts/fermés, compacité et connexité par arcs. Propriétés spécifiques en dimension finie et étude des applications continues entre espaces normés."
+      objective:
+        - "Caractériser les ensembles ouverts et compacts"
+        - "Utiliser la connexité pour les théorèmes de valeurs intermédiaires"
+        - "Comparer des normes en dimension finie"
+        - "Étudier la continuité des applications linéaires"
+
+    sernumvec:
+      title: "Séries numériques et vectorielles"
+      abstract: "Extension des séries aux espaces vectoriels normés. Techniques avancées de comparaison série-intégrale et analyse des convergences absolues."
+      objective:
+        - "Déterminer la nature de séries complexes"
+        - "Utiliser les comparaisons série-intégrale"
+        - "Maîtriser les différents modes de convergence"
+        - "Sommer des séries à termes vectoriels"
+
+    serfon:
+      title: "Suites et séries de fonctions"
+      abstract: "Modes de convergence et régularité des limites de fonctions. Théorèmes d'approximation uniforme et construction de fonctions via séries entières."
+      objective:
+        - "Étudier la convergence uniforme de suites de fonctions"
+        - "Dériver et intégrer des séries de fonctions terme à terme"
+        - "Construire des fonctions C∞ à support compact"
+        - "Appliquer le théorème de Weierstrass"
+
+    fonvec:
+      title: "Fonctions vectorielles"
+      abstract: "Généralisation du calcul différentiel aux fonctions multivariées. Outils pour les équations différentielles, intégration et développement de Taylor en dimension n."
+      objective:
+        - "Calculer des dérivées directionnelles"
+        - "Utiliser les différentielles pour des approximations"
+        - "Étendre les formules de Taylor aux espaces vectoriels"
+        - "Intégrer des fonctions à valeurs vectorielles"
+
+    intgen:
+      title: "Intégration sur intervalle quelconque"
+      abstract: "Méthodes pour les intégrales généralisées et critères d'intégrabilité. Théorèmes de convergence dominée et régularité des intégrales à paramètre."
+      objective:
+        - "Déterminer la convergence d'intégrales impropres"
+        - "Appliquer le théorème de convergence dominée"
+        - "Dériver sous le signe intégral"
+        - "Étudier des intégrales dépendant d'un paramètre"
+
+    prodis:
+      title: "Variables aléatoires discrètes"
+      abstract: "Extension des probabilités finies aux cas dénombrables. Lois géométrique/poissonnienne, fonctions génératrices et inégalités de concentration."
+      objective:
+        - "Manipuler des variables aléatoires à support infini"
+        - "Utiliser les fonctions génératrices pour le calcul"
+        - "Appliquer les inégalités de Markov et Tchebychev"
+        - "Modéliser des phénomènes aléatoires discrets"
+
+    equdif:
+      title: "Équations différentielles linéaires"
+      abstract: "Résolution des systèmes linéaires via l'exponentielle matricielle. Structure des solutions et méthode de variation des constantes pour les équations d'ordre 2."
+      objective:
+        - "Résoudre des systèmes différentiels à coefficients constants"
+        - "Utiliser l'exponentielle de matrice"
+        - "Appliquer la méthode de variation des constantes"
+        - "Étudier la structure des espaces de solutions"
+
+    caldif:
+      title: "Calcul différentiel et optimisation"
+      abstract: "Différentielle en dimension n et conditions d'optimalité. Étude des points critiques avec analyse hessienne pour les extremums locaux."
+      objective:
+        - "Trouver des extrema libres sous contraintes"
+        - "Utiliser la matrice hessienne pour classer les points critiques"
+        - "Appliquer les multiplicateurs de Lagrange"
+        - "Résoudre des problèmes d'optimisation concrets"
+
+keywords:
+  # Mots clés généralistes
+  alg: "algèbre"
+  ana: "analyse"
+  pro: "probabilités"
+  alggen: "algèbre générale"
+  stralg: "structures algébriques"
+  alglin: "algèbre linéaire"
+  algbil: "algèbre bilinéaire"
+  espeuc: "espaces euclidiens"
+  esppre: "espaces préhilbertiens"
+  espvecnor: "espace vectoriels normés"
+  calmat: "calcul matriciel"
+  redmat: "réduction matricielle"
+  redend: "réduction des endomorphismes"
+  matpos: "matrices positives"
+  sernum: "séries numériques"
+  servec: "séries vectorielles"
+  famsom: "familles sommables"
+  serfon: "séries de fonctions"
+  serent: "séries entières"
+  serfou: "séries de Fourier"
+  serint: "séries et intégrales"
+  intseg: "intégrales sur un segment"
+  intgen: "intégrales généralisées"
+  intpar: "integrales à paramètres"
+  prodis: "probabilités discrètes"
+  procon: "probabilités continues"
+  equdif: "équations différentielles"
+  equdiflin: "équations différentielles linéaires"
+  equdiflinsca: "équations différentielles linéaires scalaires"
+  caldif: "calcul différentiel"
+  #  Mots clés spécifiques
+  matsym: "matrices symétriques"
+  matsympos: "matrices symétriques positives"
+  matort: "matrices orthogonales"
+  valpro: "valeur propre"
+  vecpro: "vecteur propre"
+  expmat: "exponentielle matricielle"
+  expend: "exponentielle d'un endomorphisme"
+  matnil: "matrices nilpotentes"
+  fongen: "fonctions génératrices"
+  marale: "marches aléatoires"
+  polort: "polynômes orthogonaux"
+  thegra: "théorie des graphes"
+  fongam: "fonction Gamma"
+  fonzet: "fonction Zeta"
+  serrie: "séries de Riemann"
+  serexp: "série exponentielle"
+  sergeo: "serie géometrique"
+
+concours:
+  xens: "Polytéchnique - École Normale Supérieure"
+  ccmp: "Concours Commun Mines et Ponts"
+  ccs: "Concours Centrale Supéléc"
+  ccinp: "Concours Commun INP"
+  cnm: "Concours National Marocain"
+
+concours-shortnames:
+  xens: "XENS"
+  ccmp: "CCMP"
+  ccs: "Centrale"
+  ccinp: "CCINP"
+  cnm: "CNM"

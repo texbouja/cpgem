@@ -14,11 +14,7 @@ layout: page
   {% for t in sorted_tags %}
     <div>
       <a class="tag" href="{{ t | slugify | url_encode | prepend: '/tags/' | append: '/' | relative_url }}">
-        {% if site.data.variables.keywords[t] %}
-            {{ site.data.variables.keywords[t] -}}
-        {% else %}
-          {{ t -}}
-        {% endif %}
+        {{ t -}}
         <span class="text-muted">{{ site.tags[t].size }}</span>
       </a>
     </div>

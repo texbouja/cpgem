@@ -1,50 +1,41 @@
-@use '../abstracts/variables' as v;
-@use '../abstracts/mixins' as mx;
-@use '../abstracts/breakpoints' as bp;
+@use '../abstracts/variables'as v;
+@use '../abstracts/mixins'as mx;
+@use '../abstracts/breakpoints'as bp;
 @use '../abstracts/placeholders';
 
 $btn-border-width: 3px;
 $btn-mb: 0.5rem;
-$sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
+$sidebar-display: 'sidebar-display';
+/* the attribute for sidebar display */
 
 #sidebar {
-  // @include mx.pl-pr(0);
-
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // height: 100%;
-  // overflow-y: auto;
-  // width: v.$sidebar-width;
-  // background: var(--sidebar-bg);
-  // border-right: 1px solid var(--sidebar-border-color);
   @include mx.pl-pr(0);
 
   position: fixed;
-  top: 0; // Garder le top à 0
+  top: 0;
   left: 0;
   height: 100%;
   overflow-y: auto;
   width: v.$sidebar-width;
-  background: var(--sidebar-bg);
+  background: var(--sidebar-background-color);
   border-right: 1px solid var(--sidebar-border-color);
-  z-index: 1001; // S'assurer que la sidebar est au-dessus de la topbar
 
   /* Hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 
   /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
     display: none;
   }
 
-  padding-top: v.$topbar-height;
-
   @include bp.lt(bp.get(lg)) {
     @include mx.slide;
-    padding-top: 0;
-    transform: translateX(-#{v.$sidebar-width}); /* hide */
+
+    transform: translateX(-#{v.$sidebar-width});
+    /* hide */
     -webkit-transform: translateX(-#{v.$sidebar-width});
 
     [#{$sidebar-display}] & {
@@ -56,11 +47,6 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
     width: v.$sidebar-width-large;
   }
 
-  %sidebar-link-hover {
-    &:hover {
-      color: var(--sidebar-active-color);
-    }
-  }
 
   a {
     @extend %sidebar-links;
@@ -72,7 +58,8 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
     height: 6.5rem;
     overflow: hidden;
     box-shadow: var(--avatar-border-color) 0 0 0 2px;
-    transform: translateZ(0); /* fixed the zoom in Safari */
+    transform: translateZ(0);
+    /* fixed the zoom in Safari */
 
     @include bp.sm {
       width: 7rem;
@@ -135,7 +122,6 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
 
   ul {
     margin-bottom: 2rem;
-    font-family: Oswald, 'Roboto Condensed', 'Fira Sans', sans-serif;
 
     li.nav-item {
       opacity: 0.9;
@@ -156,8 +142,7 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
         font-weight: 600;
 
         &:hover {
-          background-color: var(--card-bg);
-          border: 1px solid var(--sidebar-hover-bg);
+          background-color: var(--sidebar-hover-background-color);
         }
 
         i {
@@ -175,8 +160,7 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
       &.active {
         .nav-link {
           color: var(--sidebar-active-color);
-          background-color: var(--card-bg);
-          border: 1px solid var(--sidebar-hover-bg);
+          background-color: var(--sidebar-hover-background-color);
 
           span {
             opacity: 1;
@@ -219,8 +203,7 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
       }
 
       &:hover {
-        background-color: var(--card-bg);
-        border: 1px solid var(--sidebar-hover-bg);
+        background-color: var(--sidebar-hover-background-color);
       }
     }
 
@@ -263,8 +246,12 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
         @include mx.ml-mr(calc((v.$sb-btn-gap-lg - $btn-border-width) / 2));
       }
     }
-  } /* .sidebar-bottom */
-} /* #sidebar */
+  }
+
+  /* .sidebar-bottom */
+}
+
+/* #sidebar */
 
 [#{$sidebar-display}] {
   #main-wrapper {

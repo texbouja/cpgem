@@ -1,0 +1,128 @@
+<script>
+   /**
+   * ArticleToggle - Gestion des états de repli/dépli pour articles
+   * Version 2.0 (Définitive)
+   */
+  class ArticleToggle {
+  constructor() {
+    this.cacheKey = 'pretext-article-states';
+    this.init();
+  }
+
+  init() {
+    // Sélection précise des articles racines avec class$="-like"
+    document.querySelectorAll('article[class$="-like"]:not(article[class$="-like"] article[class$="-like"], .aside-like, .task, .knowl__content, .born-hidden-knowl)').forEach(article => {
+      this.setupArticle(article);
+    });
+    this.restoreStates();
+  }
+
+  setupArticle(article) {
+    if (!article.id) return;
+    const heading = article.querySelector(':scope > .heading:first-child');
+    if (!heading) return;
+
+    // 1. Setup contenu repliable
+    const children = [...article.children].filter(c => c !== heading);
+    if (children.length) {
+      const container = document.createElement('div');
+      container.className = 'collapsible-content is-expanded';
+      container.append(...children);
+      article.append(container);
+    }
+
+    // 2. Setup interactions
+    this.setupSlider(heading);
+    this.setupCollapser(heading);
+  }
+
+  setupSlider(heading) {
+    const slider = heading.querySelector('.slider');
+    const title = heading.querySelector('.title');
+    if (!slider || !title) return;
+
+    slider.addEventListener('click', (e) => {
+      e.stopPropagation();
+      heading.classList.toggle('show-title');
+      this.saveState(heading.parentElement);
+    });
+  }
+
+  setupCollapser(heading) {
+    const collapser = heading.querySelector('.collapser');
+    if (!collapser) return;
+
+    collapser.classList.add('is-expanded');
+    collapser.addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.toggleContent(heading.parentElement);
+    });
+  }
+
+  toggleContent(article) {
+    const content = article.querySelector('.collapsible-content');
+    const collapser = article.querySelector('.collapser');
+    
+    content?.classList.toggle('is-expanded');
+    collapser?.classList.toggle('is-expanded');
+    this.saveState(article);
+  }
+
+  // Gestion du cache
+  saveState(article) {
+    const states = this.getCachedStates();
+    states[article.id] = {
+      collapsed: !article.querySelector('.collapsible-content')?.classList.contains('is-expanded'),
+      showTitle: article.querySelector('.heading')?.classList.contains('show-title')
+    };
+    localStorage.setItem(this.cacheKey, JSON.stringify(states));
+  }
+
+  restoreStates() {
+    const states = this.getCachedStates();
+    Object.entries(states).forEach(([id, state]) => {
+      const article = document.getElementById(id);
+      if (!article) return;
+
+      // Restaure état repli/dépli
+      const content = article.querySelector('.collapsible-content');
+      const collapser = article.querySelector('.collapser');
+      if (state.collapsed) {
+        content?.classList.remove('is-expanded');
+        collapser?.classList.remove('is-expanded');
+      }
+
+      // Restaure état titre
+      if (state.showTitle) {
+        article.querySelector('.heading')?.classList.add('show-title');
+      }
+    });
+  }
+
+  getCachedStates() {
+    try {
+      return JSON.parse(localStorage.getItem(this.cacheKey)) || {};
+    } catch {
+      return {};
+    }
+  }
+
+  // Méthodes utilitaires
+  expandAll() {
+    document.querySelectorAll('.collapsible-content').forEach(el => {
+      el.classList.add('is-expanded');
+      el.closest('article')?.querySelector('.collapser')?.classList.add('is-expanded');
+    });
+  }
+
+  collapseAll() {
+    document.querySelectorAll('.collapsible-content').forEach(el => {
+      el.classList.remove('is-expanded');
+      el.closest('article')?.querySelector('.collapser')?.classList.remove('is-expanded');
+    });
+  }
+  }
+
+  // Initialisation automatique en mode IIFE
+  (() => new ArticleToggle())();
+</script>

@@ -1,0 +1,21 @@
+// // fonts
+$heading-font: 'Fira Sans Condensed, Fira Sans, sans-serif' !default;
+$body-font: 'Fira Sans, sans-serif' !default;
+$monospace-font: 'Fira Code,  monospace' !default;
+
+@use 'fonts/fonts-google'with ($heading: $heading-font,
+    $body: $body-font,
+    $monospace: $monospace-font);
+// ---------------------------------------------
+
+// components
+@use 'cpgem-chunks';
+@use 'components/pretext';
+// @use 'components/page-parts/navbar';
+@use 'cpgem-parts'with($scrolling-toc: true);
+// ---------------------------------------------
+
+
+// customizations
+@use 'customizations';
+// ---------------------------------------------

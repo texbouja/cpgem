@@ -6,7 +6,7 @@
 
 <!-- layout specified -->
 
-{% if page.layout == 'post' or page.layout == 'page' or page.layout == 'home' %}
+{% if page.layout == 'post' or page.layout == 'pretext' or page.layout == 'page' or page.layout == 'home' %}
   {% assign urls = urls | append: ',' | append: site.data.origin[type]['lazy-polyfill'].js %}
 
   {% unless page.layout == 'home' %}
@@ -16,7 +16,7 @@
   {% endunless %}
 {% endif %}
 
-{% if page.layout == 'home' or page.layout == 'post' or page.layout == 'archives' or page.layout == 'category' or page.layout == 'tag'
+{% if page.layout == 'home' or page.layout == 'post' or page.layout == 'pretext' or page.layout == 'archives' or page.layout == 'category' or page.layout == 'tag'
 %}
   {% assign locale = include.lang | split: '-' | first %}
 
@@ -38,7 +38,8 @@
   {% when 'home'
     , 'categories'
     , 'post'
-    , 'page' %}
+    , 'page' 
+    , 'pretext' %}
     {% assign js = page.layout %}
   {% when 'archives'
     , 'category'
@@ -51,9 +52,9 @@
 {% capture script %}/assets/js/dist/{{ js }}.min.js{% endcapture %}
 <script defer src="{{ script | relative_url }}"></script>
 
-{% if page.math or layout.math %}
+{% if page.math %}
   <!-- MathJax -->
-  <script async src="{{ '/assets/js/data/mathjax.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/data/mathjax.js' | relative_url }}"></script>
   <script async src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script
     id="MathJax-script"
@@ -62,7 +63,7 @@
 {% endif %}
 
 <!-- Pageviews -->
-{% if page.layout == 'post' %}
+{% if page.layout == 'post' or page.layout == 'pretext' %}
   {% assign provider = site.pageviews.provider %}
 
   {% if provider and provider != empty %}
@@ -73,11 +74,4 @@
         {% endif %}
     {% endcase %}
   {% endif %}
-{% endif %}
-
-
-<script src="{{ '/assets/js/carte-collapsible.js' | relative_url }}" defer></script>
-
-{% if page.concourspage %}
-  <script src="{{ '/assets/js/concours-menus.js' | relative_url }}"></script>
 {% endif %}

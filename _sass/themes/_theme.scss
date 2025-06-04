@@ -1,0 +1,236 @@
+$palette: nord !default;
+$color-main: null !default;
+$color-do: null !default;
+$color-fact: null !default;
+$color-def: null !default;
+$color-meta: null !default;
+
+@use 'sass:map';
+@use 'sass:color';
+@use 'sass:list';
+@use 'palettes'as *;
+@use 'prepare-colors'as prepare with($palette: $palette);
+
+// --------------------------------------------
+@if not map.has-key($schemes, $palette) {
+  @warn "Unknown color scheme #{$palette} in theme. Valid schemes are: #{map.keys($schemes)}. Default will be used.";
+}
+
+$colors-temp: map.get($schemes, $palette);
+
+$light-colors: map.merge(prepare.$colors-light, ());
+$dark-colors: map.merge(prepare.$colors-dark, ());
+
+// Common styles mixin
+@mixin common-styles($colors, $is-dark: false) {
+  // Framework color
+  --card-shadow: rgb(21, 21, 21, 0.4) 0 6px 18px 0,
+    rgb(137, 135, 135, 0.2) 0 0 0 1px;
+
+  .light {
+    display: none;
+  }
+
+  /* Categories */
+  .categories.card,
+  .list-group-item {
+    background-color: var(--card-bg);
+  }
+
+  .categories {
+    .card-header {
+      background-color: var(--card-header-background-color);
+    }
+
+    .list-group-item {
+      border-left: none;
+      border-right: none;
+      padding-left: 2rem;
+      border-color: var(--categories-border-color);
+
+      &:last-child {
+        border-bottom-color: var(--card-bg);
+      }
+    }
+  }
+
+  #archives li:nth-child(odd) {
+    $gradient-colors: if($is-dark,
+        (map.get($dark-colors, 'content-background'), map.get($dark-colors, 'page-background')),
+        (map.get($light-colors, 'content-background'), map.get($light-colors, 'page-background')));
+
+    background-image: linear-gradient(to left,
+        list.nth($gradient-colors, 1),
+        list.nth($gradient-colors, 2),
+        list.nth($gradient-colors, 2),
+        list.nth($gradient-colors, 2),
+        list.nth($gradient-colors, 1));
+  }
+
+  /* stylelint-disable-next-line selector-id-pattern */
+  #disqus_thread {
+    color-scheme: none;
+  }
+}
+
+// Syntax highlighting mixin
+@mixin syntax-highlighting($colors, $is-dark: false) {
+  .highlight table td {
+    padding: 5px;
+  }
+
+  .highlight table pre {
+    margin: 0;
+  }
+
+  .highlight,
+  .highlight .w {
+    color: if($is-dark,
+        map.get($dark-colors, 'text-muted-color'),
+        map.get($light-colors, 'text-muted-color'));
+    background-color: if($is-dark,
+        map.get($dark-colors, 'card-bg'),
+        map.get($light-colors, 'card-bg'));
+  }
+
+  .highlight .err {
+    color: var(--exercise-like-border-color);
+  }
+
+  .highlight .c,
+  .highlight .ch,
+  .highlight .cd,
+  .highlight .cm,
+  .highlight .cpf,
+  .highlight .c1,
+  .highlight .cs {
+    color: if($is-dark,
+        map.get($dark-colors, 'mask-bg'),
+        map.get($light-colors, 'mask-bg'));
+  }
+
+  .highlight .cp,
+  .highlight .nt,
+  .highlight .kc,
+  .highlight .kt,
+  .highlight .kd,
+  .highlight .nn,
+  .highlight .nc,
+  .highlight .no {
+    color: if($is-dark,
+        map.get($dark-colors, 'main-border'),
+        map.get($light-colors, 'main-border'));
+  }
+
+  .highlight .o,
+  .highlight .ow {
+    color: if($is-dark,
+        map.get($dark-colors, 'text-color'),
+        map.get($light-colors, 'text-color'));
+  }
+
+  .highlight .p,
+  .highlight .pi {
+    color: if($is-dark,
+        map.get($dark-colors, 'text-muted-color'),
+        map.get($light-colors, 'text-muted-color'));
+  }
+
+  .highlight .gi {
+    color: var(--definition-like-border-color);
+  }
+
+  .highlight .gd {
+    color: var(--exercise-like-border-color);
+    background-color: var(--exercise-like-background-color);
+  }
+
+  .highlight .gh {
+    color: if($is-dark,
+        map.get($dark-colors, 'text-muted-color'),
+        map.get($light-colors, 'text-muted-color'));
+    background-color: if($is-dark,
+        map.get($dark-colors, 'card-bg'),
+        map.get($light-colors, 'card-bg'));
+    font-weight: bold;
+  }
+
+  .highlight .k,
+  .highlight .kn,
+  .highlight .kp,
+  .highlight .kr,
+  .highlight .kv {
+    color: if($is-dark,
+        map.get($dark-colors, 'link-color'),
+        map.get($light-colors, 'link-color'));
+  }
+
+  .highlight .s,
+  .highlight .sb,
+  .highlight .sc,
+  .highlight .dl,
+  .highlight .sd,
+  .highlight .s2,
+  .highlight .sh,
+  .highlight .sx,
+  .highlight .s1,
+  .highlight .ss {
+    color: var(--definition-like-border-color);
+  }
+
+  .highlight .sa {
+    color: if($is-dark,
+        map.get($dark-colors, 'link-color'),
+        map.get($light-colors, 'link-color'));
+  }
+
+  .highlight .sr {
+    color: if($is-dark,
+        map.get($dark-colors, 'text-color'),
+        map.get($light-colors, 'text-color'));
+  }
+
+  .highlight .si,
+  .highlight .se {
+    color: var(--example-like-border-color);
+  }
+
+  .highlight .na {
+    color: if($is-dark,
+        map.get($dark-colors, 'text-muted-color'),
+        map.get($light-colors, 'text-muted-color'));
+  }
+
+  .highlight .m,
+  .highlight .mb,
+  .highlight .mf,
+  .highlight .mh,
+  .highlight .mi,
+  .highlight .il,
+  .highlight .mo,
+  .highlight .mx {
+    color: var(--theorem-like-border-color);
+  }
+}
+
+@mixin styles-light {
+  color-scheme: light;
+  @include prepare.scss-to-css(prepare.$colors-light);
+  @include common-styles(prepare.$colors-light, false);
+  @include syntax-highlighting(prepare.$colors-light, false);
+}
+
+@mixin styles-dark {
+  color-scheme: dark;
+  @include prepare.scss-to-css(prepare.$colors-dark);
+  @include common-styles(prepare.$colors-dark, true);
+  @include syntax-highlighting(prepare.$colors-dark, true);
+}
+
+// Add palette-specific styles
+@each $palette in map.keys($schemes) {
+  html[data-palette='#{$palette}'] {
+    $palette: $palette !global;
+    @include styles-light;
+  }
+}

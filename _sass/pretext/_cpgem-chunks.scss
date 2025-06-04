@@ -1,0 +1,415 @@
+$h-hpadding: 1rem !default;
+$h-vpadding: 0.2rem !default;
+
+@use 'sass:map';
+@use 'sass:meta';
+
+@use '../abstracts/mixins' as mx;
+@use '../abstracts/breakpoints' as bp;
+
+// One stop include for heading-box dominant content blocks
+@use 'components/chunks/asides-floating';
+@use 'components/chunks/codelike';
+@use 'components/chunks/exercises';
+@use 'components/chunks/solutions';
+@use 'components/chunks/sidebyside';
+@use 'components/chunks/knowls' with (
+  $border-radius: 2px
+);
+
+// @use 'components/chunks/helpers/sidebar-mixin'with ($border-width: 4px);
+@use 'components/chunks/helpers/horizontal-bars-mixin';
+// @use 'components/chunks/helpers/inline-heading-mixin';
+
+@use 'cpgem-boxes' as *;
+
+.collapsible-content:not(.is-expnaded) {
+  content-visibility: hidden;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  opacity: 0;
+  transition: all 0.3s allow-discrete;
+}
+
+.collapsible-content.is-expanded {
+  content-visibility: visible;
+  margin-top: 1rem;
+  opacity: 1;
+}
+
+/* Exemple de gestion d'icône purement en CSS */
+// .collapser::after {
+//   content: "+";
+//   display: inline-block;
+// }
+
+// .is-expanded .collapser::after {
+//   content: "−";
+// }
+
+/* Vous pouvez complètement personnaliser l'apparence */
+// .collapser {
+//   cursor: pointer;
+//   margin-left: auto;
+//   /* Ajoutez vos styles ici */
+// }
+
+$block-elements: '.theorem-like, .definition-like, .example-like,.remark-like';
+
+:is(article[class$='-like']):not(
+    article[class$='-like'] article[class$='-like'],
+    .aside-like,
+    .task,
+    .knowl__content,
+    .born-hidden-knowl
+  ),
+.exercise-like:not(
+    .project-like .exercise-like,
+    .exercise-like .exercise-like,
+    .reading-questions .exercise-like,
+    .task,
+    .worksheet .exercise-like
+  ) {
+  display: block;
+  width: 100%;
+  padding: $padding;
+  padding-top: 0;
+
+  > .heading:first-child {
+    display: flex;
+    gap: 0;
+    margin: 0;
+    color: var(--text-color);
+
+    .space {
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+
+    .before,
+    .codenumber,
+    .type,
+    .title,
+    .creator,
+    .slider,
+    .collapser,
+    .after {
+      min-height: max-content;
+      align-content: center;
+    }
+
+    .codenumber,
+    .type,
+    .title {
+      padding: $h-vpadding $h-hpadding;
+    }
+
+    .type {
+      color: var(--text-dark);
+      background: var(--body-title);
+    }
+
+    .before,
+    .after {
+      width: 1em;
+      background: var(--body-title);
+    }
+
+    .button-box-custom {
+      flex: 0 1 0;
+      cursor: pointer;
+      text-align: center;
+      margin: 0 0.5em;
+      background: none;
+      border: none;
+      color: var(--text-muted-color);
+
+      &:hover {
+        color: var(--body-title);
+      }
+
+      &::before {
+        font-family: 'Hosted-Material';
+        font-size: 95%;
+      }
+    }
+
+    .codenumber {
+      flex-wrap: nowrap;
+      color: var(--text-dark);
+      font-variant-numeric: oldstyle-nums !important;
+    }
+
+    .title {
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+      transition: content-visibility 0.3s allow-discrete;
+    }
+
+    .slider {
+      rotate: 90deg;
+
+      &::before {
+        content: '\e948';
+      }
+    }
+
+    &.show-title {
+      .title {
+        content-visibility: hidden;
+        opacity: 0;
+        padding: 0;
+        padding-left: 1px;
+      }
+
+      .slider {
+        &::before {
+          content: '\e947';
+        }
+      }
+    }
+
+    .collapser {
+      transform: translateY(6%);
+
+      &:before {
+        content: '\e948';
+      }
+    }
+
+    .collapser.is-expanded {
+      &::before {
+        content: '\e947';
+      }
+    }
+  }
+
+  @include bp.lt(bp.get(sm)) {
+    width: 100dvw;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border: 0;
+
+    & > .heading:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.theorem-like {
+  @include box-colors('theorem-like');
+  @include box-borders($bwt: 2px, $bwb: 1px, $btr: 1em);
+  @include box-heading(
+    full,
+    $bbr: 1em,
+    $btr: 1em,
+    $hoffset: $padding,
+    $shadow: big
+  );
+}
+
+.definition-like {
+  @include box-colors('definition-like');
+  @include box-borders($bw: 1px);
+  @include box-heading(full, $hoffset: $padding, $shadow: small);
+}
+
+.remark-like {
+  @include box-colors('remark-like');
+  @include box-borders($bwl: 2px, $bwr: 2px);
+  @include box-heading(full, $hoffset: $padding);
+}
+.insight .remark-like {
+  @include box-colors('definition-like');
+  @include box-borders($bwl: 2px, $bwr: 2px);
+  @include box-heading(full, $hoffset: $padding);
+}
+
+.example-like {
+  @include box-colors('example-like');
+  @include box-borders($bwl: 2px, $bwr: 2px);
+  @include box-heading(full, $hoffset: $padding);
+}
+
+.project-like {
+  @include box-colors('example-like');
+  @include box-borders($bwb: 1px, $btr: 1em);
+  @include box-heading(
+    full,
+    $btr: 1em,
+    $bbr: 1em,
+    $hoffset: $padding,
+    $voffset: 0.75rem
+  );
+}
+
+.exercise-like:not(
+    .project-like .exercise-like,
+    .exercise-like .exercise-like,
+    .reading-questions .exercise-like,
+    .task,
+    .worksheet .exercise-like
+  ) {
+  @include box-colors('exercise-like');
+  @include box-borders($bwb: 2px, $btr: 1em);
+  @include box-heading(
+    notype,
+    $btr: 3em,
+    $bbr: 3em,
+    $hoffset: $padding,
+    $voffset: 1rem
+  );
+}
+
+.assemblage-like {
+  @include box-colors('main');
+  @include box-borders($bwt: 2px);
+  @include box-heading(titleonly, $bbr: 1em, $h-align: center);
+}
+
+.task,
+.exercise-like .exercise-like,
+.project-like .exercise-like {
+  @include inline-heading();
+}
+
+.proof {
+  padding-bottom: 1.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+
+  &::after {
+    content: 'QED';
+    font-size: smaller;
+    font-style: oblique;
+    font-variant: small-caps;
+    float: right;
+  }
+
+  .heading {
+    display: inline;
+    font-size: unset;
+    font-weight: bolder;
+  }
+
+  @include inline-heading;
+}
+
+.solution-like {
+  .heading {
+    display: inline;
+    font-style: italic;
+    font-size: unset;
+  }
+}
+
+.goal-like {
+  @include horizontal-bars-mixin.bars(
+    $border-color: var(--goal-like-border-color),
+    $font-style: italic,
+    $padding: 0.7em
+  );
+  @include chunk-heading;
+}
+
+.exercise-like.born-hidden-knowl {
+  @include heading-box(
+    $border-color: var(--exercise-like-border-color),
+    $heading-background: var(--exercise-like-border-color)
+  );
+  @include chunk-heading;
+}
+
+.computation-like {
+  @include do-box(
+    $border-color: var(--computation-like-border-color),
+    $heading-background: var(--computation-like-border-color)
+  );
+  @include chunk-heading;
+}
+
+/* No decorations/borders in knowls, to save space */
+.knowl__content {
+  .theorem-like,
+  .definition-like,
+  .example-like,
+  .project-like,
+  .remark-like,
+  .openproblem-like,
+  .computation-like,
+  .project-like,
+  .commentary {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+
+    &::after {
+      border: none;
+      display: none;
+    }
+
+    & > .heading:first-child {
+      display: block;
+      margin: 0;
+      margin-bottom: 1em;
+      padding: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+
+      &:after {
+        //disable any extra junk
+        display: none;
+      }
+    }
+  }
+}
+
+$block-elements: '.theorem-like, .definition-like, .example-like, .exercise-like, .project-like, .remark-like, .openproblem-like, .openproblems-like, .computation-like, .assemblage-like, .knowl__content';
+
+// @include bp.lt(bp.get(sm)) {
+
+//   #{$block-elements} {
+
+//     &:not(.knowl__content, .born-hidden-knowl) {
+//       border-left: none !important;
+//       border-right: none !important;
+//       margin-left: -1rem;
+//       margin-right: -1rem;
+//       width: 100vw;
+//       border-radius: 0;
+
+//       &>.heading:first-child {
+//         margin-left: -$padding;
+
+//         .codenumber {
+//           border-radius: 0;
+//           border: none;
+//         }
+//       }
+//     }
+//   }
+
+// .example-like,
+// .project-like,
+// .exercise-like {
+//   &:not(.knowl__content, .born-hidden-knowl) {
+//     @include border-radius(1em 0 0 0);
+
+//     &>.heading:first-child {
+//       margin-left: calc(-1 * $padding - 1em);
+//       padding-left: ($padding);
+//     }
+//   }
+// }
+
+// .exercise-like>.exercise-like.task,
+// .project-like>.exercise-like.task {
+//   padding-left: 0;
+//   padding-right: 0;
+//   margin-left: 0;
+// }
+// }

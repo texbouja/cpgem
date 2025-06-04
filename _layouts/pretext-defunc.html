@@ -1,0 +1,184 @@
+---
+layout: compress
+panel_includes:
+    - toc
+---
+
+{% assign full_content = page.content %}
+
+<!-- Extraire les différentes parties du document produit par PreTeXt -->
+{% assign doctype_split = full_content | split: '<html' %}
+{% assign doctype=doctype_split[0] %} 
+{% assign html_start=full_content | split: '<html' %} 
+{% assign html_end=html_start[1] | split: '</html>' %} 
+{% assign html_attrs=html_start[1] | split: '>' | first %} 
+{% assign html_inner=html_end[0] | remove_first: html_attrs | remove_first: '>' %} 
+{% assign head_start=html_inner | split: '<head' %} 
+{% assign head_end=head_start[1] | split: '</head>' %}
+{% assign pretext_head_attrs=head_start[1] | split: '>' | first %} 
+{% assign pretext_head_content=head_end[0] | remove_first: pretext_head_attrs | remove_first: '>' %} 
+{% assign body_start=html_inner | split: '<body' %} 
+{% assign body_end=body_start[1] | split: '</body>' %}
+{% assign body_attrs=body_start[1] | split: '>' | first %} 
+{% assign body_inner=body_end[0] | remove_first: body_attrs | remove_first: '>' %} 
+{% assign premain_temp=body_inner | split: '<div class="ptx-page">' %}
+{% assign premain=premain_temp[0] %}
+{% assign pretext_main=premain_temp[1] %}
+{% assign premain_temp=premain |  split: '</nav>'%}
+{% assign pretext_premain_remaining=premain_temp[1] %}
+{% assign premain_temp=premain_temp[0] | split: '<nav' %}
+{% assign pretext_header=premain_temp[0] %}
+{% assign pretext_navbar_attrs=premain_temp[1] | split: '>' | first%}
+{% assign pretext_navbar=premain_temp[1] | split: '<div class="ptx-navbar-contents">' | last %}
+
+{% if doctype or doctype == null %} 
+    <!DOCTYPE html>
+{% else %}
+    {{ doctype }}
+{% endif %}
+  
+<!-- refactoring jekyll  -->
+  
+{%- include origin-type.html -%}
+
+{%- include lang.html -%}
+
+{%- if site.theme_mode -%}
+  {%- capture prefer_mode %}data-mode="{{ site.theme_mode }}"{% endcapture -%}
+{%- endif -%}
+
+
+
+{% capture sidebar_controls %}
+    <nav id="breadcrumb" aria-label="Breadcrumb">
+        {% assign paths = page.url | split: '/' %}
+
+        {% if paths.size == 0 or page.layout == 'home' %}
+            <!-- index page -->
+            <span>{{ site.data.locales[include.lang].tabs.home | capitalize }}</span>
+
+        {% else %}
+            {% for item in paths %}
+            {% if forloop.first %}
+                <span>
+                <a href="{{ '/' | relative_url }}">
+                    {{- site.data.locales[include.lang].tabs.home | capitalize -}}
+                </a>
+                </span>
+
+            {% elsif forloop.last %}
+                {% if page.collection == 'tabs' %}
+                <span>{{ site.data.locales[include.lang].tabs[item] | default: page.title }}</span>
+                {% else %}
+                <span>{{ page.title }}</span>
+                {% endif %}
+
+            {% elsif page.layout == 'category' or page.layout == 'tag' %}
+                <span>
+                <a href="{{ item | append: '/' | relative_url }}">
+                    {{- site.data.locales[include.lang].tabs[item] | default: page.title -}}
+                </a>
+                </span>
+            {% endif %}
+            {% endfor %}
+        {% endif %}
+    </nav>
+    <!-- endof #breadcrumb -->
+
+    <button type="button" id="sidebar-trigger" class="btn btn-link">
+    <i class="ma ma-view_sidebar"></i>
+    </button>
+{% endcapture %}
+
+
+
+
+
+  <html lang="{{ page.lang | default: site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
+
+    <head{{ pretext_head_attrs }}>
+        {% include head-pretext.html %}
+    </head>
+
+    <body>
+        {{- pretext_premain_remaining -}}
+      <!-- Sidebar -->
+        {% include sidebar.html lang=lang %}
+
+      <!-- Wrapper pour le contenu principal -->
+      <div id="main-wrapper" class="d-flex justify-content-center">
+          <div class="container d-flex flex-column px-xxl-5">
+
+            <header id="topbar-wrapper" aria-label="Top Bar">
+                <div
+                    id="topbar"
+                    class="d-flex align-items-center justify-content-between px-lg-3 h-100"
+                >
+                    {{- sidebar_controls -}}
+                    <div class="ptx-navbar-contents" id="topbar">
+                        {{- pretext_navbar -}}
+                    </div>
+                </div>
+            </header>
+
+            {% comment %} <nav {{ pretext_navbar_attrs }}> 
+                <div class="ptx-navbar-contents" id="topbar">
+                {{- sidebar_controls -}}
+                {{- pretext_navbar -}}
+            </nav> {% endcomment %}
+
+            <div class="row flex-grow-1">
+                <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+
+                    <article class="px-1" data-toc="{{ enable_toc }}">
+                        {{- pretext_header -}}
+                        {% if enable_toc %}
+                            <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+                            <span class="label text-truncate">{{ page.title }}</span>
+                            <button type="button" class="toc-trigger btn me-1">
+                                <i class="fa-solid fa-list-ul fa-fw"></i>
+                            </button>
+                            </div>
+
+                            <button
+                            id="toc-solo-trigger"
+                            type="button"
+                            class="toc-trigger btn btn-outline-secondary btn-sm">
+                            <span class="label ps-2 pe-1">{{- site.data.locales[lang].panel.toc -}}</span>
+                            <i class="fa-solid fa-angle-right fa-fw"></i>
+                            </button>
+
+                            <dialog id="toc-popup" class="p-0">
+                            <div class="header d-flex flex-row align-items-center justify-content-between">
+                                <div class="label text-truncate py-2 ms-4">{{- page.title -}}</div>
+                                <button
+                                id="toc-popup-close"
+                                type="button"
+                                class="btn mx-1 my-1 opacity-75">
+                                <i class="fas fa-close"></i>
+                                </button>
+                            </div>
+                            <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+                            </dialog>
+                        {% endif %}
+                        <div class="content">
+                            <div class="ptx-main">
+                                {{- pretext_main -}}
+                            </div>
+                        </div>
+                    </article>
+                </main>
+
+                <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+
+                    {% for _include in layout.panel_includes %}
+                    {% assign _include_path = _include | append: '.html' %}
+                    {% include {{ _include_path }} lang=lang %}
+                    {% endfor %}
+                </aside>
+            </div>
+        
+        </div>
+
+    </body>
+</html>

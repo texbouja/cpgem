@@ -1,18 +1,18 @@
 {
-  "name": "jekyll-theme-chirpy",
-  "version": "7.2.4",
-  "description": "A minimal, responsive, and feature-rich Jekyll theme for technical writing.",
+  "name": "jekyll-theme-cpgem",
+  "version": "0.0.1",
+  "description": "A jekyll theme based on jekyll-theme-cpgem",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cotes2020/jekyll-theme-chirpy.git"
+    "url": "git+https://github.com/texbouja/jekyll-theme-cpgem.git"
   },
-  "author": "Cotes Chung",
+  "author": "Sadik Boujaida",
   "license": "MIT",
-  "since": 2019,
+  "since": 2025,
   "bugs": {
-    "url": "https://github.com/cotes2020/jekyll-theme-chirpy/issues"
+    "url": "https://github.com/texbouja/jekyll-theme-cpgem/issues"
   },
-  "homepage": "https://github.com/cotes2020/jekyll-theme-chirpy/",
+  "homepage": "https://github.com/texbouja/jekyll-theme-cpgem/",
   "scripts": {
     "build": "concurrently npm:build:*",
     "build:css": "node purgecss.js",

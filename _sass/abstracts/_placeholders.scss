@@ -1,5 +1,5 @@
-@use 'variables' as v;
-@use 'mixins' as mx;
+@use 'variables'as v;
+@use 'mixins'as mx;
 
 %heading {
   color: var(--heading-color);
@@ -31,7 +31,10 @@
 }
 
 %tag-hover {
+  @extend %link-color;
+
   background: var(--tag-hover);
+  border-color: var(--tag-hover);
   transition: background 0.35s ease-in-out;
 }
 
@@ -43,7 +46,7 @@
 
 %link-hover {
   color: #d2603a !important;
-  border-bottom: 1px solid #d2603a90;
+  border-bottom: 1px solid #d2603a;
   text-decoration: none;
 }
 
@@ -52,7 +55,7 @@
 }
 
 %link-underline {
-  border-bottom: 1px solid #00000000;
+  border-bottom: 1px solid var(--link-underline-color);
 }
 
 %clickable-transition {
@@ -83,7 +86,7 @@
 }
 
 %img-caption {
-  + em {
+  +em {
     display: block;
     text-align: center;
     font-style: normal;
@@ -99,6 +102,13 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+
+%sidebar-link-hover {
+  &:hover {
+    color: var(--sidebar-active-color);
+  }
 }
 
 %text-clip {
@@ -156,5 +166,5 @@
 }
 
 %panel-border {
-  border-left: 1px solid var(--main-border-color);
+  border-left: 1px solid var(--main-border);
 }

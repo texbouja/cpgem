@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- <docinfo xmlns:xi="http://www.w3.org/2001/XInclude">
+  <rename element="solution" xml:lang="fr-FR">Précisions et rectifications</rename> 
+</docinfo> -->
+
+<exercises>
+    <title>Solutions périodiques d'équations différentielles linéaire</title>
+    
+    
+    <subsection>
+        <title>Notations</title>
+        <p>On note <m>N</m> l'ensemble des entiers naturels, <m>N^*</m> l'ensemble des entiers naturels non nuls, <m>Z</m> l'ensemble des entiers relatifs, <m>R</m> l'ensemble des nombres réels et <m>C</m> l'ensemble des nombres complexes. On note également <m>C^*</m> l'ensemble des nombres complexes non nuls.</p>
+        <p>Si <m>E</m> désigne un <m>R</m>-espace vectoriel et si <m>v_1, \ldots, v_k</m> sont des éléments de <m>E</m>, on note Vect <m>(v_1, \ldots, v_k)</m> le sous-espace vectoriel de <m>E</m> engendré par les vecteurs <m>v_1, \ldots, v_k</m>.</p>
+        <p>Si <m>k \gt  1</m> est un entier et si <m>E</m> désigne un <m>R</m>-espace vectoriel de dimension finie, on note <m>\mathcal{C}^k (R, E)</m> l'ensemble des fonctions de classe <m>\mathcal{C}^k</m> de <m>R</m> dans <m>E</m>.</p>
+        <p>Soit <m>(E, \Vert  \cdot \Vert )</m> un <m>R</m>-espace vectoriel normé de dimension finie. Si <m>U</m> est un ouvert de <m>E</m> et <m>f : U \to E</m> une fonction différentiable, pour tout <m>x \in U</m> on note <m>df(x)</m> la différentielle de <m>f</m> en <m>x</m>.</p>
+        <p>On rappelle que <m>df(x)</m> est alors un endomorphisme <m>R</m>-linéaire de <m>E</m>. Si <m>g</m> est un endomorphisme <m>R</m>-linéaire de <m>E</m>, on note <m>\Vert g\Vert </m> sa norme d'opérateur, c'est-à-dire</p>
+        <me>\Vert g\Vert  = \sup\{\Vert g(v)\Vert  \mid v \in E, \Vert v\Vert  \leq 1\}.</me>
+        <p>Pour <m>a \in E</m> et <m>r \gt  0</m> un nombre réel positif, on note <m>B(a, r)</m> la boule ouverte de centre <m>a</m> et rayon <m>r</m> et <m>B(a, r)</m> la boule fermée de centre <m>a</m> et rayon <m>r</m>.</p>
+        <p>On note Id<m>_E</m> l'application identité de <m>E</m> dans <m>E</m>.</p>
+        <p>Si <m>p</m> et <m>q</m> désignent deux entiers naturels non nuls, on note <m>\mathcal{M}_{p,q}(C)</m> l'ensemble des matrices à <m>p</m> lignes et <m>q</m> colonnes à coefficients dans <m>C</m>. Si <m>p = q</m>, on note <m>\mathcal{M}_p(C)</m> pour <m>\mathcal{M}_{p,p}(C)</m> et GL<m>_p(C)</m> l'ensemble des matrices inversibles de <m>\mathcal{M}_p(C)</m>. On identifie également le <m>C</m>-espace vectoriel <m>C^p</m> avec le <m>C</m>-espace vectoriel des vecteurs colonnes <m>\mathcal{M}_{p,1}(C)</m>.</p>
+        <p>Si <m>A \in \mathcal{M}_p(C)</m>, on note exp<m>(A)</m> <m>\in \mathcal{M}_p(C)</m> l'exponentielle de la matrice <m>A</m>.</p>
+    </subsection>
+
+
+    <subexercises>
+        <title>PREMIÈRE PARTIE</title>
+        <introduction>
+            <p>Soit <m>q : \mathbb{R} \to \mathbb{R}</m> une application continue, périodique de période <m>T \gt 0</m>. On considère l'équation différentielle</p>
+            <me>y'' + qy = 0. \tag{1}</me>
+        </introduction>
+
+        <!-- Question 1 --> 
+        <exercise>
+
+            <!-- Sous-question 1a -->
+            <task>
+                <statement>
+                    <p> Justifier l'existence de deux solutions <m>y_1</m> et <m>y_2</m> dans <m>\mathcal{C}^2(\mathbb{R}, \mathbb{C})</m> à (1) telles que :</p>
+                    <md>
+                    <mrow>y_1(0) \amp= 1 \amp\amp\amp y_2(0) \amp= 0</mrow>
+                    <mrow>y_1'(0) \amp= 0 \amp\amp\amp y_2'(0) \amp= 1. </mrow>
+                </md>
+                <p>Justifier que vect <m>(y_1, y_2)</m> est l'ensemble des solutions de (1) dans <m>\mathcal{C}^2(\mathbb{R}, \mathbb{C})</m>.</p>
+                </statement>
+                <solution>
+                    <p>L'équation (1) est une équation différentielle linéaire scalaire homogène d'ordre 2. Elle est normalisée et la fonction <m>q</m> est continue sur <m>\mathbb{R}</m>. Le théorème de Cauchy-Lipschitz implique alors l'existence et l'unicité de deux solutions <m>y_1</m> et <m>y_2</m> sur <m>\mathbb{R}</m> telles que :</p>
+                    <md>
+                    <mrow>y_1(0) \amp= 1 \amp\amp\amp y_2(0) \amp= 0</mrow>
+                    <mrow>y_1'(0) \amp= 0 \amp\amp\amp y_2'(0) \amp= 1. </mrow>
+                </md>
+                Par ailleurs le wronksien <m>W</m> de <m>(y_1,y_2</m> vérifie <m>W(0)=1\ne0</m> donc <m>(y_1,y_2)</m> est un système foncamental de solution de l'équation homogène <m>(1)</m>. C'est une base de l'ensemble des solutions de <m>(1)</m>.
+                </solution>
+            </task>
+
+            <!-- Sous-question 1b -->
+            <task>
+                <statement>
+                    <p> Montrer que :</p>
+                    <me>\forall t \in \mathbb{R}, \quad y_1(t)y_2'(t) - y_1'(t)y_2(t) = 1.</me>
+                </statement>
+                <solution>
+                    <p>L'équation du wronskien de (1) s'écrit ici</p>
+                    <me>w' = 0</me>
+                    <p>Le wronskien <m>W</m> de <m>y_1</m> et <m>y_2</m> est donc une fonction constante. Puisque <m>W(0) = 1</m> alors</p>
+                    <me>\forall t \in \mathbb{R}, \quad y_1(t)y_2'(t) - y_1'(t)y_2(t) = 1</me>
+                </solution>
+            </task>
+        </exercise>
+
+        <!-- Question 2 -->
+        <exercise>
+            <statement>
+                <p> Montrer que si <m>y \in \mathcal{C}^2(\mathbb{R}, \mathbb{C})</m> est une solution de (1), alors la fonction <m>t \mapsto y(t + T)</m> l'est aussi. En déduire que pour tout <m>t \in \mathbb{R}</m> :</p>
+                <me>y(t + T) = y(T)y_1(t) + y'(T)y_2(t).</me>
+            </statement>
+            <solution>
+                <p>Soit <m>y</m> une solution sur <m>\mathbb{R}</m> de (1) et posons pour tout <m>t \in \mathbb{R}, z(t) = y(t + T)</m>. On a pour tout <m>t \in \mathbb{R}</m>,</p>
+                <me>y''(t + T) + q(t + T)y(t + T) = 0.</me>
+                <p>Grâce à la <m>T</m>-périodicité de la fonction <m>q</m>, on a donc</p>
+                <me>z''(t) + q(t)z(t) = 0.</me>
+                <p>La fonction <m>z : t \mapsto y(t + T)</m> est donc une solution sur <m>\mathbb{R}</m> de l'équation (1).</p>
+                <p>Ensuite, puisque <m>(y_1, y_2)</m> est une base de <m>S</m>, il existe des scalaires <m>\lambda_1, \lambda_2 \in \mathbb{R}</m> tels que <m>z = \lambda_1 y_1 + \lambda_2 y_2</m>. En dérivant cette expression et appliquant <m>z</m> et <m>z'</m> à 0 on obtient
+                <md>
+                    <mrow>z(0) = \lambda_1 y_1(0) + \lambda_2 y_2(0) = \lambda_1</mrow>
+                    <mrow>z'(0) = \lambda_1 y_1'(0) + \lambda_2 y_2'(0) = \lambda_2</mrow>
+                </md>
+                </p>
+                <p>soit <m>\lambda_1 = y(T)</m> et <m>\lambda_2 = y'(T)</m>. Ainsi</p>
+                <me>\forall t \in \mathbb{R}, \quad y(t + T) = y(T)y_1(t) + y'(T)y_2(t).</me>
+            </solution>
+        </exercise>
+
+        <!-- Question 3 -->
+        <exercise>
+            <statement>
+                <p> Soit <m>\mu \in \mathbb{C}^*</m>, et soit <m>\lambda \in \mathbb{C}</m> tel que <m>\mu = e^{\lambda T}</m>. Montrer que les trois assertions suivantes sont équivalentes.</p>
+                <p>a. L'équation (1) possède une solution <m>y \in \mathcal{C}^2(\mathbb{R}, \mathbb{C})</m> non nulle qui vérifie :</p>
+                <me>\forall t \in \mathbb{R}, \quad y(t + T) = \mu y(t).</me>
+                <p>b. Le nombre complexe <m>\mu</m> est solution de l'équation d'inconnue <m>x</m> :</p>
+                <me>x^2 - (y_1(T) + y_2'(T)) x + 1 = 0.</me>
+                <p>c. L'équation différentielle (1) possède une solution <m>y \in \mathcal{C}^2(\mathbb{R}, \mathbb{C})</m> non nulle telle que :</p>
+                <me>\forall t \in \mathbb{R}, \quad y(t) = e^{\lambda t} u(t),</me>
+                <p>où <m>u \in \mathcal{C}^2(\mathbb{R}, \mathbb{C})</m> est une fonction <m>T</m>-périodique.</p>
+            </statement>
+            <solution>
+                <p>Introduisons l'application linéaire :</p>
+                <me>\func\Phi S  S y{z : t \mapsto y(t + T)}</me>
+                <p>Selon la question précédente, <m>\Phi</m> est bien à valeurs dans <m>S</m> et elle vérifie</p>
+                <me>\forall y \in S \quad \Phi(y) = y(T)y_1 + y'(T)y_2</me>
+                <p>Sa matrice dans la base <m>(y_1, y_2)</m> de <m>S</m> est en outre :</p>
+                <me>R = 
+                \begin{pmatrix}
+                y_1(T) \amp  y_2(T) \\
+                y_1'(T) \amp  y_2'(T)
+                \end{pmatrix}
+                </me>
+                <p>et de ce fait son polynôme caractéristique est</p>
+                <me>X_\Phi = X^2 - \text{tr}(R)X + \det(R) = X^2 - (y_1(T) + y_2'(T))X + 1</me>
+                <p>(a) ⇔ (b) La propriété (a) équivaut à dire que <m>\mu</m> est une valeur propre de <m>\Phi</m>. La propriété (b), que <m>\mu</m> est une racine de <m>X_\Phi</m>. Les deux propriétés sont donc équivalentes.</p>
+                <p>(a) ⇔ (c) Considérons une solution non nulle <m>y</m> quelconque de (1) et posons pour tout <m>t \in \mathbb{R}, u(t) = e^{-\lambda t} y(t)</m>. La fonction <m>u</m> est de classe <m>\mathcal{C}^2</m> comme produit de fonction de classe <m>\mathcal{C}^2</m> et pour tout <m>t \in \mathbb{R}</m> on a les équivalences</p>
+                <md>
+                    <mrow> 
+                u(t + T) = u(t) \amp \Longleftrightarrow e^{-\lambda(t + T)} y(t + T) = e^{-\lambda t} y(t)</mrow>
+                <mrow> \amp\Longleftrightarrow y(t + T) = e^{\lambda T} y(t)</mrow>
+                <mrow>\amp\Longleftrightarrow y(t + T) = \mu y(t)</mrow>
+                </md>
+                <p><m>u</m> est donc <m>T</m>-périodique si seulement si <m>y</m> vérifie la propriété (a). Ainsi :</p>
+                <me>(a) \Longleftrightarrow (b) \Longleftrightarrow (c)</me>
+            </solution>
+        </exercise>
+
+        <!-- Question 4 -->
+        <exercise>
+            <introduction>
+                <p> Soient <m>\mu_1, \mu_2</m> les racines complexes de l'équation d'inconnue <m>x</m> :</p>
+                <me>x^2 - (y_1(T) + y_2'(T)) x + 1 = 0.</me>
+            </introduction>
+
+            <!-- Sous-question 4a -->
+            <task>
+                <statement>
+                    <p> Montrer que si <m>\mu_1 \neq \mu_2</m> et si <m>\lambda</m> est un nombre complexe tel que <m>\mu_1 = e^{\lambda T}</m>, alors pour toute solution <m>y</m> de (1), il existe deux fonctions <m>T</m>-périodiques <m>w_1</m> et <m>w_2</m>, ainsi que deux nombres complexes <m>\alpha</m> et <m>\beta</m> tels que</p>
+                    <me>\forall t \in \mathbb{R}, \quad y(t) = \alpha e^{\lambda t} w_1(t) + \beta e^{-\lambda t} w_2(t).</me>
+                </statement>
+                <solution>
+                    <p>Supposons que <m>\mu_1 \neq \mu_2</m>. Le polynôme caractéristique <m>X_\Phi</m> est donc scindé à racines simples et de ce fait <m>\Phi</m> est diagonalisable. En outre <m>\mu_1 \mu_2 = \det \Phi = 1</m> donc si on pose <m>\mu_1 = e^{\lambda T}</m> alors <m>\mu_2 = e^{-\lambda T}</m>. Considérons ensuite une base <m>(v_1, v_2)</m> de <m>S</m> formée de vecteur propre respectivement associés à <m>\mu_1</m> et à <m>\mu_2</m>. Selon la question précédente, il existe des fonctions <m>T</m>-périodiques et de classe <m>\mathcal{C}^2</m> telles que pour tout <m>t \in \mathbb{R}</m></p>
+                    <me>v_1(t) = e^{\lambda t} w_1(t) \quad v_2(t) = e^{-\lambda t} w_2(t)</me>
+                    <p><m>(v_1, v_2)</m> étant une base de <m>S</m> on a donc</p>
+                    <me>\forall t \in \mathbb{R}, \quad y(t) = \alpha e^{\lambda t} w_1(t) + \beta e^{-\lambda t} w_2(t)</me>
+                </solution>
+            </task>
+
+            <!-- Sous-question 4b -->
+            <task>
+                <statement>
+                    <p> Supposons que <m>\mu_1 = \mu_2</m>. Montrer que <m>\mu_1 = \mu_2 = \pm 1</m> et que l'équation (1) admet une solution périodique dans <m>\mathcal{C}^2(\mathbb{R}, \mathbb{C})</m>.</p>
+                </statement>
+                <solution>
+                    <p>Supposons que <m>\mu_1 = \mu_2</m> alors <m>\mu_1^2 = \det \Phi = 1</m> et donc <m>\mu_1 = \pm 1</m>. Soit <m>y</m> un vecteur propre de <m>\Phi</m> associé à <m>\mu_1</m>. Selon la question précédente il existe une fonction <m>u</m> <m>T</m>-périodique et de classe <m>\mathcal{C}^2</m> telle que</p>
+                    <me>\forall t \in \mathbb{R}, \quad y(t + T) = \mu_1 y(t)</me>
+                    <p>Si <m>\mu_1 = 1</m> : alors <m>y</m> est <m>T</m>-périodique.</p>
+                    <p>Si <m>\mu_1 = -1</m> : alors <m>y(t + 2T) = y(t)</m> et donc <m>y</m> est <m>2T</m>-périodique.</p>
+                    <p>Dans tous les cas on a donc</p>
+                    <me>\text{Si } \mu_1 = \mu_2 \text{ alors (1) admet au moins une solution non nulle périodique.}</me>
+                </solution>
+            </task>
+        </exercise>
+    </subexercises>
+
+
+    <subexercises>
+        <title>DEUXIÈME PARTIE</title>
+        <introduction>
+            <p>Soit <m>a \in E</m> et soit <m>U</m> un ouvert de <m>E</m> contenant <m>a</m>. Soit <m>f : U \to E</m> une application de classe <m>\mathcal{C}^1</m> sur <m>U</m> telle que <m>df(a) = Id_E</m>.</p>
+        </introduction>
+
+        <!-- Question 5 -->
+        <exercise>
+            <introduction>
+                <p> Soient <m>V</m> un ouvert convexe de <m>E</m> et <m>h</m> une fonction de classe <m>\mathcal{C}^1</m> de <m>V</m> dans <m>E</m>. On suppose qu'il existe un réel <m>C \gt 0</m> tel que pour tout <m>x \in V</m>, <m>\Vert dh(x)\Vert  \leq C</m>.</p>
+            </introduction>
+
+            <!-- Sous-question 5a -->
+            <task>
+                <statement>
+                    <p> Montrer que pour tous <m>x_1</m> et <m>x_2</m> dans <m>V</m>, on a <m>\Vert h(x_2) - h(x_1)\Vert  \leq C \Vert x_2 - x_1\Vert </m>.</p>
+                </statement>
+                <solution>
+                    <p>Soient <m>x_1, x_2</m> deux éléments de <m>V</m>. L'ouvert <m>V</m> étant convexe, la fonction</p>
+                    <me>\func\varphi{[0; 1]} Et  {h((1-t)x_1 + tx_2)}</me>
+                    <p>est bien définie et elle est de classe <m>\mathcal{C}^1</m> par composition de fonctions de classe <m>\mathcal{C}^1</m>. En outre, on a par règle de différentiation d'une composée :</p>
+                    <me>\forall t \in [0; 1] \quad \varphi'(t) = dh((1-t)x_1 + tx_2)(x_2 - x_1)</me>
+                    <p>et donc</p>
+                    <me>\forall t \in [0; 1] \quad \|\varphi'(t)\| \leq \|dh((1-t)x_1 + tx_2)\|\|x_2 - x_1\| \leq C\|x_2 - x_1\|</me>
+                    <p>L'inégalité des accroissements finis appliquée à la fonction vectorielle <m>\varphi</m> entre 0 et 1 donne ensuite</p>
+                    <me>\|h(x_2) - h(x_1)\| \leq C\|x_2 - x_1\|</me>
+                </solution>
+            </task>
+
+            <!-- Sous-question 5b -->
+            <task>
+                <statement>
+                    <p> Montrer qu'il existe un nombre réel <m>r \gt 0</m> tel que <m>B(a,r) \subset U</m> et</p>
+                    <me>\forall x_1, x_2 \in \overline{B(a,r)}, \quad \Vert f(x_1) - f(x_2)\Vert  \geq \frac{1}{2} \Vert x_1 - x_2\Vert .</me>
+                </statement>
+                <solution>
+                    <p>Soit un réel <m>\rho \gt 0</m> tel que <m>B(a, \rho) \subset U</m>. Considérons la fonction <m>h</m> définie sur le convexe <m>B(a, \rho)</m> par</p>
+                    <me>h(x) = f(x) - x</me>
+                    <p><m>h</m> est de classe <m>C^1</m> sur <m>B(a, \rho)</m> comme combinaison linéaire de fonctions de classe <m>C^1</m> et on a</p>
+                    <me>dh(a) = 0 \quad (\text{car } df(a) = id_E)</me>
+                    <p>L'application <m>x \longmapsto dh(x)</m> est continue donc il existe un <m>r \in ]0; \rho[</m> tel que</p>
+                    <me>\forall x \in B(a, r) \quad \|dh(x)\| \leq \frac{1}{2}</me>
+                    <p>D'après la question précédente, on a donc</p>
+                    <me>\|h(x_1) - h(x_2)\| \leq \frac{1}{2}\|x_2 - x_2\|</me>
+                    <p>Soit</p>
+                    <me>\|f(x_1) - f(x_2) - (x_1 - x_2)\| \leq \frac{1}{2}\|x_2 - x_2\|</me>
+                    <p>Et comme <m>\|f(x_1) - f(x_2) - (x_1 - x_2)\| \geq \|x_1 - x_2\| - \|f(x_1) - f(x_2)\|</m>, on en déduit que</p>
+                    <me>\|f(x_1) - f(x_2)\| \geq \frac{1}{2}\|x_1 - x_2\|</me>
+                    <p>Quitte à remplacer <m>r</m> par un rayon légèrement plus petit, on a démontré que</p>
+                    <me>\forall x_1, x_2 \in \overline{B(a, r)} \quad \|h(x_1) - h(x_2)\| \geq \frac{1}{2}\|x_2 - x_2\|</me>
+                </solution>
+            </task>
+
+            <!-- Sous-question 5c -->
+            <task>
+                <statement>
+                    <p> Montrer que pour tout <m>x \in B(a,r)</m>, l'application linéaire <m>df(x)</m> est injective.</p>
+                </statement>
+                <solution>
+                    <p>Soit <m>x \in B(a, r)</m>. Par différentiabilité de <m>f</m> en <m>x</m>, il existe <m>\delta \gt 0</m> tel que pour tout vecteur <m>h \in E</m> vérifiant <m>\Vert h\Vert  \leq \delta</m>, on ait <m>x + h \in U</m> et</p>
+                    <me>\Vert f(x + h) - f(x) - df(x)(h)\Vert  \leq \frac{1}{4}\Vert h\Vert </me>
+                    <p>et donc</p>
+                    <me>\Vert df(x)(h)\Vert  \geq \Vert f(x + h) - f(x)\Vert  - \frac{1}{4}\Vert h\Vert </me>
+                    <p>Puisque <m>x</m> est dans la boule ouverte <m>B(a, r)</m>, en posant <m>\rho = \frac{1}{2}(r - \Vert x - a\Vert )</m>, on a <m>B(x, \rho) \subset B(a, r)</m>. Si <m>h</m> est un vecteur de <m>E</m> tel que <m>\Vert h\Vert  \leq \rho</m>, alors <m>x + h \in B(a, r)</m> et donc, d'après la question précédente,</p>
+                    <me>\Vert f(x + h) - f(x)\Vert  \geq \frac{1}{2}\Vert h\Vert </me>
+                    <p>Quitte à remplacer <m>\delta</m> par <m>\min(\delta, \rho)</m>, on peut ainsi écrire</p>
+                    <me>\forall h \in E \quad \Vert h\Vert  \leq \delta \implies \Vert df(x)(h)\Vert  \geq \frac{1}{4}\Vert h\Vert </me>
+                    <p>Si maintenant <m>h</m> est un vecteur non nul quelconque de <m>E</m>, alors ceci implique que</p>
+                    <me>\left\| df(x) \left( \frac{\delta}{\Vert h\Vert } h \right) \right\| \geq \frac{1}{4} \left\| \frac{\delta}{\Vert h\Vert } h \right\|</me>
+                    <p>et par linéarité de l'application <m>df(x)</m>,</p>
+                    <me>\Vert df(x)(h)\Vert  \geq \frac{1}{4}\Vert h\Vert </me>
+                    <p>On en déduit que Ker <m>df(x) = \{0_E\}</m> et ainsi</p>
+                    <me>\text{Pour tout } x \in B(a, r), \quad df(x) \text{ est un endomorphisme injectif de } E.</me>
+                </solution>
+            </task>
+        </exercise>
+
+        <!-- Question 6 -->
+        <exercise>
+            <introduction>
+                <p> Soit <m>y_0 \in E</m> tel que <m>\Vert y_0 - f(a)\Vert  \leq \frac{r}{4}</m>.</p>
+            </introduction>
+
+            <!-- Sous-question 6a -->
+            <task>
+                <statement>
+                    <p> Montrer que l'application</p>
+                    <me>\func g{\overline{B(a,r)}}{\mathbb{R}}x{\Vert y_0 - f(x)\Vert ^2}</me>
+                    <p>admet un minimum atteint en un point <m>x_0</m> de <m>B(a,r)</m>.</p>
+                </statement>
+                <solution>
+                    <p>En tant qu'application de classe <m>\mathcal{C}^1</m>, <m>f</m> est continue. Par composition d'applications continues, <m>g</m> est donc continue sur le compact <m>B(a, r)</m>. Elle y est donc bornée et atteint ses bornes. D'où l'existence de <m>x_0 \in B(a, r)</m> tel que</p>
+                    <me>\Vert y_0 - f(x_0)\Vert ^2 = \min_{x \in B(a, r)} \Vert y_0 - f(x)\Vert ^2</me>
+                    <p>Supposons maintenant que <m>x_0</m> est sur la sphère <m>S(a, r)</m>. On aura alors</p>
+                    <me>\Vert f(x_0) - y_0\Vert  \geq \Vert f(x_0) - f(a)\Vert  - \Vert f(a) - y_0\Vert </me>
+                    <me>\geq \frac{1}{2}\Vert x_0 - a\Vert  - \Vert f(a) - y_0\Vert </me>
+                    <me>\geq \frac{r}{2} - \frac{r}{4} = \frac{r}{4}</me>
+                    <me>\geq \Vert f(a) - y_0\Vert </me>
+                    <p>ou encore <m>g(x_0) \geq g(a)</m> et donc <m>g(x_0) = g(a)</m>. On en déduit que soit <m>x_0</m> est dans <m>B(a, r)</m>, soit il est sur la sphère <m>S(a, r)</m> mais dans ce cas <m>g</m> atteint aussi son minimum en <m>a</m> qui est dans <m>B(a, r)</m>. Dans tous les cas :</p>
+                    <me>g \text{ atteint son minimum sur le compact } B(a, r) \text{ en un point } x_0 \text{ de la boule ouverte } B(a, r).</me>
+                </solution>
+            </task>
+
+            <!-- Sous-question 6b -->
+            <task>
+                <statement>
+                    <p> Montrer que <m>f(x_0) = y_0</m>.</p>
+                </statement>
+                <solution>
+                    <p>Nous allons traiter le cas où la norme <m>\Vert .\Vert </m> dérive d'un produit scalaire <m>\langle .\rangle</m> de <m>E</m>.</p>
+                    <p>Posons alors pour tout <m>x \in E</m></p>
+                    <me>p(x) = \Vert x\Vert ^2</me>
+                    <p><m>p</m> est une application de classe <m>\mathcal{C}^1</m> sur <m>E</m> avec pour tout <m>x \in E</m> :</p>
+                    <me>\forall h \in E \quad dp(x)(h) = 2\langle x; h \rangle</me>
+                    <p><m>g</m> est la composée de <m>p</m> avec l'application de classe <m>\mathcal{C}^1</m>, <m>x \mapsto f(x) - y_0</m>, elle est donc de classe <m>\mathcal{C}^1</m> par composition d'application de classe <m>\mathcal{C}^1</m> et pour tout <m>x \in U</m></p>
+                    <me>dg(x) = dp(f(x) - y_0) \circ df(x)</me>
+                    <p>Soit</p>
+                    <me>\forall h \in E \quad dg(x)(h) = 2\langle f(x) - y_0; df(x)(h) \rangle</me>
+                    <p><m>g</m> admet un minimum local au point <m>x_0</m> de l'ouvert <m>B(a,r)</m> donc sa différentielle est nulle en <m>x_0</m>. Ce qui donne</p>
+                    <me>\forall h \in E \quad \langle f(x_0) - y_0; df(x_0)(h) \rangle = 0</me>
+                    <p>Mais puisque <m>df(x_0)</m> est un automorphisme de <m>E</m>, cela implique que le vecteur <m>f(x_0) - y_0</m> est orthogonal à <m>E</m> et en particulier à lui-même. Il est donc nul.</p>
+                    <me>\forall y_0 \in \overrightarrow{B(f(a), r/4)} \quad \exists x_0 \in B(a,r) ; \quad f(x_0) = y_0</me>
+                </solution>
+            </task>
+        </exercise>
+
+        <!-- Question 7 -->
+        <exercise>
+            <introduction>
+                <p> On note <m>W = \{ y \in E | \Vert y - f(a)\Vert  \lt \frac{r}{4} \}</m> et <m>V = f^{-1}(W) \cap B(a,r)</m>.</p>
+            </introduction>
+
+            <!-- Sous-question 7a -->
+            <task>
+                <statement>
+                    <p> Justifier que <m>V</m> et <m>W</m> sont des ouverts de <m>E</m>.</p>
+                </statement>
+                <solution>
+                    <p><m>W</m> est la boule ouverte de centre <m>f(a)</m> et de rayon <m>r/4</m>, c'est donc un ouvert de <m>E</m>. Ensuite, <m>f^{-1}(W)</m> est un ouvert relatif de <m>U</m> comme image réciproque d'un ouvert de <m>E</m> par une application continue. Comme <m>U</m> est lui-même un ouvert de <m>E</m>, alors <m>f^{-1}(W)</m> est un ouvert de <m>E</m>. Finalement, <m>V = f^{-1}(W) \cap B(a,r)</m> est un ouvert de <m>E</m> puisque c'est l'intersection de deux ouverts de <m>E</m>.</p>
+                    <me>W \text{ et } V \text{ sont des ouverts de } E.</me>
+                </solution>
+            </task>
+
+            <!-- Sous-question 7b -->
+            <task>
+                <statement>
+                    <p> Montrer que</p>
+                    <me>\func{f_V}VWx{f(x)}</me>
+                    <p>est une bijection continue de <m>V</m> sur <m>W</m> dont la réciproque est une fonction continue sur <m>W</m>.</p>
+                </statement>
+                <solution>
+                    <p>Soit <m>x \in V</m>. On a <m>x \in f^{-1}(W)</m> donc <m>f(x) \in W</m>. Ainsi, l'application <m>f_{|V}</m> est bien définie de <m>W</m> dans <m>V</m>. Si maintenant <m>y</m> est un élément de <m>W</m>, alors <m>y \in B(a,r/4)</m> et donc il existe, selon la question 6 (sol. 6), <m>x \in B(a,r)</m> tel que <m>f(x) = y</m>. Puisque <m>f(x) \in W</m>, on a en fait <m>x \in V</m>. Ce qui montre que <m>f_{|V}</m> est une application surjective.</p>
+                    <p>Selon la propriété (??) on a</p>
+                    <me>\forall x_1, x_2 \in B(a,r) \quad \|f(x_1) - f(x_2)\| \geq \frac{1}{2}\|x_1 - x_2\|</me>
+                    <p>Ce qui montre que <m>f</m> induit une injection sur <m>B(a,r)</m>. Comme <m>V \subset B(a,r)</m>, alors <m>f_{|V}</m> est injective. À ce stade, on a justifié que <m>f_{|V}</m> est une bijection de <m>V</m> sur <m>W</m>. Notons <m>g</m> sa bijection réciproque. La propriété (??) s'écrit alors (en posant <m>x_1 = g(y_1)</m> et <m>x_2 = g(y_2)</m>)</p>
+                    <me>\forall y_1, y_2 \in W \quad \|g(y_1) - g(y_2)\| \leq 2\|y_1 - y_2\|</me>
+                    <p>Montrant que <m>g</m> est lipschitzienne et de ce fait qu'elle est continue. Conclusions :</p>
+                    <me>\text{Il existe un ouvert } V \text{ voisinage de } a \text{ et un ouvert } W \text{ voisinage de } f(a) \text{ tels que } f \text{ induise une bijection de } V \text{ sur } W \text{ et telle que sa bijection réciproque soit continue.}</me>
+                </solution>
+            </task>
+        </exercise>
+    </subexercises>
+
+    <subexercises>
+        <title>TROISIÈME PARTIE</title>
+        <introduction>
+            <p>Soit <m>A \in \mathcal{A}_n(\mathbb{C})</m>. On note <m>\mathbb{C}[A]</m> l'ensemble des éléments de <m>\mathcal{A}_n(\mathbb{C})</m> de la forme <m>P(A)</m> où <m>P \in \mathbb{C}[X]</m> est un polynôme. On note</p>
+            <me>(\mathbb{C}[A])^* = \{ B \in \mathbb{C}[A] \cap GL_n(\mathbb{C}) \mid B^{-1} \in \mathbb{C}[A] \}.</me>
+        </introduction>
+
+        <!-- Question 8 -->
+        <exercise>
+            <introduction>
+                <p> Justifier que <m>\mathbb{C}[A]^*</m> est un sous-groupe abélien de <m>GL_n(\mathbb{C})</m>.</p>
+            </introduction>
+
+            <!-- Sous-question 8a -->
+            <task>
+                <statement>
+                    <p> Justifier que <m>\mathbb{C}[A]^*</m> est un sous-groupe abélien de <m>GL_n(\mathbb{C})</m>.</p>
+                </statement>
+                <solution>
+                    <p><m>(\mathbb{C}[A])^*</m> est tout simplement le groupe des inversibles de l'anneau <m>\mathbb{C}[A]</m>. Il est contenu dans <m>GL_n(\mathbb{C})</m> donc il en est un sous-groupe. Son caractère abélien découle en outre du fait que <m>\mathbb{C}[A]</m> est un anneau commutatif.</p>
+                </solution>
+            </task>
+
+            <!-- Sous-question 8b -->
+            <task>
+                <statement>
+                    <p> Montrer que <m>(\mathbb{C}[A])^* = \mathbb{C}[A] \cap GL_n(\mathbb{C})</m>.</p>
+                </statement>
+                <solution>
+                    <p>De par sa définition, on a <m>(\mathbb{C}[A])^* \subset \mathbb{C}[A] \cap GL_n(\mathbb{C})</m>. Réciproquement, considérons un élément <m>M \in \mathbb{C}[A] \cap GL_n(\mathbb{C})</m> et soit <m>P \in \mathbb{C}[X]</m> tel que <m>M = P(A)</m>. Notons <m>D</m> le pgcd de <m>P</m> avec <m>\pi_A</m>, le polynôme minimal de <m>A</m>, et considérons <m>Q \in \mathbb{C}[X]</m> tel que <m>\pi_A = DQ</m>. Le polynôme <m>QP</m> est alors divisible par <m>\pi_A</m> et donc <m>Q(A)M = (QP)(A) = 0</m>. La matrice <m>M</m> étant inversible, cela implique que <m>Q(A) = 0</m> et donc que <m>\pi_A</m> divise <m>Q</m>, signifiant que <m>Q = \pi_A</m> ou encore que <m>D = 1</m>. Ainsi, <m>P</m> est premier avec <m>\pi_A</m>.</p>
+                    <p>Soit alors, selon le théorème de Bezout, <m>U, V \in \mathbb{C}[X]</m> tels que <m>UP + V\pi_A = 1</m>. En appliquant à <m>A</m>, on obtient <m>U(A)M = I_n</m>. Donc <m>M^{-1} = U(A)</m> et par suite <m>M^{-1} \in \mathbb{C}[A]</m>. Alors <m>M \in (\mathbb{C}[A])^*</m>.</p>
+                    <me>(\mathbb{C}[A])^* = \mathbb{C}[A] \cap GL_n(\mathbb{C})</me>
+                </solution>
+            </task>
+        </exercise>
+
+        <!-- Question 9 -->
+        <exercise>
+            <statement>
+                <p> Montrer que <m>\exp(\mathbb{C}[A]) \subset (\mathbb{C}[A])^*</m>.</p>
+            </statement>
+            <solution>
+                <p>En tant que sous-espace vectoriel (de dimension finie) de <m>\mathcal{M}_n(\mathbb{C})</m>, <m>\mathbb{C}[A]</m> est un fermé de <m>\mathcal{M}_n(\mathbb{C})</m>. Soit maintenant <m>B \in \mathbb{C}[A]</m>. La suite des sommes partielles de la série <m>\sum \frac{1}{k!} B^k</m> est une suite d'éléments de <m>\mathbb{C}[A]</m> car celui-ci est une sous-algèbre de <m>\mathcal{M}_n(\mathbb{C})</m>. Cette suite converge vers <m>e^B</m>. Puisque <m>\mathbb{C}[A]</m> est un fermé, alors <m>e^B \in \mathbb{C}[A]</m>. L'inverse <m>e^{-B}</m> de <m>e^B</m> est aussi dans <m>\mathbb{C}[A]</m> pour les mêmes raisons puisque <m>-B \in \mathbb{C}[A]</m>.</p>
+                <me>\exp(\mathbb{C}[A]) \subset (\mathbb{C}[A])^*</me>
+            </solution>
+        </exercise>
+
+        <!-- Question 10 -->
+        <exercise>
+            <introduction>
+                <p> Pour <m>a \in \mathbb{R}</m>, on définit l'application</p>
+                <me>\func{Z_a}{[0,1]}{\mathbb{C}}t{t + iat(1 - t)}.</me>
+            </introduction>
+
+            <!-- Sous-question 10a -->
+            <task>
+                <statement>
+                    <p> Montrer que l'application</p>
+                    <me>\func{Z}{{}]0 ; 1[{} \times \mathbb{R}}{\mathbb{C}}{(t,a)}{Z_a(t)}</me>
+                    <p>est injective.</p>
+                </statement>
+                <solution>
+                    <p>Notons <m>\sigma</m> l'application en question et considérons des éléments <m>(t, a)</m> et <m>(s, b)</m> de <m>]0; 1[ \times \mathbb{R}</m> tels que <m>\sigma(t, a) = \sigma(s, b)</m>. Alors :</p>
+                    <me>t + iat(1 - t) = s + ibs(1 - s)</me>
+                    <p>L'identification des parties réelles dans cette égalité donne <m>t = s</m>, celle des parties imaginaires donne ensuite <m>a = b</m> (car <m>t(1 - t) \neq 0</m>). D'où l'injectivité de <m>\sigma</m>.</p>
+                </solution>
+            </task>
+
+            <!-- Sous-question 10b -->
+            <task>
+                <statement>
+                    <p> Soient <m>M_1</m> et <m>M_2</m> deux éléments de <m>(\mathbb{C}[A])^*</m>. Montrer qu'il existe <m>a \in \mathbb{R}</m> tel que</p>
+                    <me>\forall t \in [0,1], \quad M(t) = Z_a(t)M_1 + (1 - Z_a(t))M_2 \in (\mathbb{C}[A])^*.</me>
+                </statement>
+                <solution>
+                    <p>Apparemment <m>M(t) \in \mathbb{C}[A]</m> pour tout <m>t \in [0; 1]</m> quelque soit le choix du réel <m>a</m>. Considérons le polynôme</p>
+                    <me>P = \det(XM_1 + (1 - X)M_2)</me>
+                    <p><m>P</m> est non nul car <m>P(0) = \det M_2 \neq 0</m> donc il admet un nombre fini de racines qu'on va noter <m>z_1, z_2, \ldots, z_r</m>. Posons ensuite</p>
+                    <me>Z = \left\{ a \in \mathbb{R} \mid \exists k \in [1; r], \exists t \in [0; 1[ ; Z_a(t) = z_k] \right\}</me>
+                    <p>Par injectivité de l'application <m>\sigma</m> introduite dans la question précédente, l'ensemble des couples <m>(t, a) \in [0; 1[ \times \mathbb{R}</m> tels que</p>
+                    <me>Z_a(t) \in \{z_1, z_2, \ldots, z_r\}</me>
+                    <p>est fini. L'ensemble <m>Z</m> est donc fini. Soit <m>a \in \mathbb{C} \setminus Z</m>. Alors, pour tout <m>t \in [0; 1[</m>, <m>Z_a(t)</m> n'est pas une racine de <m>P</m>. En posant pour tout <m>t \in [0; 1]</m></p>
+                    <me>M(t) = Z_a(t)M_1 + (1 - Z_a(t))M_2</me>
+                    <p>on a donc</p>
+                    <me>\forall t \in [0; 1[ \quad \det(M(t)) \neq 0</me>
+                    <p>Cette observation s'étend aussi à <m>t \in \{0, 1\}</m> puisque <m>M(0) = M_2</m> et <m>M(1) = M_1</m>. Pour tout <m>t \in [0; 1]</m>, <m>M(t)</m> est donc un élément de <m>\mathbb{C}[A] \cap GL_n(\mathbb{C})</m>, soit</p>
+                    <me>\forall t \in [0; 1] \quad M(t) \in (\mathbb{C}[A])^*</me>
+                </solution>
+            </task>
+
+            <!-- Sous-question 10c -->
+            <task>
+                <statement>
+                    <p> En déduire que <m>(\mathbb{C}[A])^*</m> est connexe par arcs.</p>
+                </statement>
+                <solution>
+                    <p><m>M_1</m> et <m>M_2</m> étant des points quelconques de <m>(\mathbb{C}[A])^*</m>, l'application <m>M</m> ainsi définie est continue et elle est à valeurs dans <m>(\mathbb{C}[A])^*</m>. C'est un chemin continu qui permet de joindre <m>M_2</m> à <m>M_1</m> dans <m>(\mathbb{C}[A])^*</m>. Alors :</p>
+                    <me>(\mathbb{C}[A])^* \text{ est connexe par arcs}</me>
+                </solution>
+            </task>
+        </exercise>
+
+        <!-- Question 11 -->
+        <exercise>
+            <introduction>
+                <p> Montrer qu'il existe un ouvert <m>U</m> de <m>\mathbb{C}[A]</m> contenant <m>0</m> et un ouvert <m>V</m> de <m>\mathbb{C}[A]</m> contenant la matrice identité <m>I_n</m> tels que la fonction exponentielle induit une bijection continue de <m>U \subset \mathbb{C}[A]</m> sur <m>V</m> dont la réciproque est une fonction continue sur <m>V</m>.</p>
+            </introduction>
+
+            <!-- Sous-question 11a -->
+            <task>
+                <statement>
+                    <p> Montrer qu'il existe un ouvert <m>U</m> de <m>\mathbb{C}[A]</m> contenant <m>0</m> et un ouvert <m>V</m> de <m>\mathbb{C}[A]</m> contenant la matrice identité <m>I_n</m> tels que la fonction exponentielle induit une bijection continue de <m>U \subset \mathbb{C}[A]</m> sur <m>V</m> dont la réciproque est une fonction continue sur <m>V</m>.</p>
+                </statement>
+                <solution>
+                    <p>Considérons pour toute la suite de cette partie le <m>\mathbb{R}</m>-espace vectoriel <m>E = \mathbb{C}[A]</m> et l'application</p>
+                    <me>\func fEEM{e^{M}}</me>
+                    <p><m>f</m> est bien à valeur dans <m>E</m> d'après la question 9 (sol. 9). Rappelons en outre que <m>E</m> est aussi un anneau commutatif.</p>
+                    <p>Fixons <m>M \in E</m> et soit <m>H \in E</m> quelconque. Puisque <m>MH = HM</m> alors</p>
+                    <me>e^{M+H} - e^M = e^M (e^H - I_n) = e^M H + e^M \sum_{k=2}^{+\infty} \frac{1}{k!} H^k</me>
+                    <p>Par ailleurs, en utilisant une norme d'algèbre <m>\Vert .\Vert </m> de <m>E</m>, par convergence absolue de la série exponentielle on a</p>
+                    <me>\left\| e^M \sum_{k=2}^{+\infty} \frac{1}{k!} H^k \right\| \leq \left\| e^M \right\| \left( \sum_{k=2}^{+\infty} \frac{\Vert H\Vert ^k}{k!} \right) = \left\| e^M \right\| \left( e^{\Vert H\Vert } - 1 - \Vert H\Vert  \right)</me>
+                    <p>Sachant qu'au voisinage de 0 on a <m>e^t - 1 - t = o(t)</m> alors</p>
+                    <me>e^{M} \sum_{k=2}^{+\infty} \frac{1}{k!} H^k = o(\Vert H\Vert )</me>
+                    <p>En constant que l'application <m>H \longmapsto e^{M} H</m> est linéaire, la relation (6) signifie alors que <m>f</m> différentiable en <m>M</m> et que</p>
+                    <me>\forall H \in E \quad df(M)(H) = e^{M} H</me>
+                    <p>Ensuite pour tout <m>H \in E</m>, l'application <m>M \longmapsto D_H f(M) = e^{M} H</m> est continue par continuité de l'application exponentielle donc <m>f</m> est de classe <m>\mathcal{C}^1</m> sur <m>E</m>. Par ailleurs, la relation (7) implique en particulier que</p>
+                    <me>df(0) = id_E</me>
+                    <p>Finalement, selon la question 7b (sol. 7b),</p>
+                    <me>\text{Il existe un ouvert } U \text{ de } E \text{ voisinage de la matrice nulle et un ouvert } V \text{ voisinage de } I_n = e^0 \text{ telle que } f \text{ induise une bijection de classe } \mathcal{C}^1 \text{ de } U \text{ sur } V \text{ et dont la réciproque est continue.}</me>
+                </solution>
+            </task>
+
+            <!-- Sous-question 11b -->
+            <task>
+                <statement>
+                    <p> En déduire que <m>\exp(\mathbb{C}[A])</m> est un ouvert de <m>\mathbb{C}[A]</m>.</p>
+                </statement>
+                <solution>
+                    <p>Soit <m>M_0 \in E</m>. Puisque la matrice <m>e^{M_0}</m> est inversible et que <m>E</m> est stable par multiplication matricielle, l'application <m>u : H \in E \longmapsto e^{M_0} H</m> est un automorphisme de <m>E</m>. L'espace <m>E</m> étant de dimension finie, <m>u</m> et <m>u^{-1}</m> sont continues. L'ensemble <m>e^{M_0} V</m> est donc un ouvert de <m>E</m> comme image réciproque par <m>u^{-1}</m> de l'ouvert <m>V</m> de <m>E</m>. Puisque <m>I_n \in V</m> alors <m>e^{M_0} \in e^{M_0} V</m> et donc <m>e^{M_0} V</m> est un voisinage de <m>e^{M_0}</m>. Alors</p>
+                    <me>\exp(\mathbb{C}[A]) \text{ est un ouvert de } \mathbb{C}[A]</me>
+                </solution>
+            </task>
+        </exercise>
+
+        <!-- Question 12 -->
+        <exercise>
+            <statement>
+                <p> Montrer que <m>\exp(\mathbb{C}[A])</m> est un fermé de <m>(\mathbb{C}[A])^*</m>.</p>
+            </statement>
+            <solution>
+                <p>Rappelons que <m>(\mathbb{C}[A])^* = \mathbb{C}[A] \cap GL_n(\mathbb{C})</m>. Pour tout <m>M \in \mathbb{C}[A]</m>, <m>e^{M}</m> est inversible et <m>e^{M} \in \mathbb{C}[A]</m> donc on a bien <m>\exp(\mathbb{C}[A]) \subset (\mathbb{C}[A])^*</m>. Soit maintenant <m>(e^{M_k})_k</m> une suite convergente d'éléments de <m>\exp(\mathbb{C}[A])</m> et notons <m>L</m> sa limite. Rappelons que pour toute matrice <m>M \in \mathcal{M}_n(\mathbb{C})</m> on a</p>
+                <me>\det(e^{M}) = e^{\text{tr}(M)}</me>
+                <p>Considérons l'application</p>
+                <me>\func vE{\mathbb{R}}M{|\det M|}</me>
+                <p><m>v</m> est continue par composition des applications continues <m>\det</m> et <m>| \cdot |</m>. Donc la suite <m>(v(e^{M_k}))_k</m> converge vers <m>v(L)</m>. Soit</p>
+                <me>|\det L| = \lim_{k \to +\infty} |\det(e^{M_k})| = \lim_{k \to +\infty} e^{\text{Re}(\text{tr}(M_k))}</me>
+                <p>La suite <m>(e^{\text{Re}(\text{tr}(M_k))})_k</m> est ainsi convergente. Par continuité de l'application <m>\ln</m>, la suite <m>(\text{Re}(\text{tr}(M_k)))_k</m> est convergente. Si on note <m>\alpha</m> sa limite alors <m>\lim_{k \to +\infty} e^{\text{Re}(\text{tr}(M_k))} = e^{\alpha}</m> et ainsi</p>
+                <me>|\det L| = e^{\alpha} \neq 0</me>
+                <p>La matrice <m>L</m> est ainsi inversible. La suite <m>(L^{-1} e^{M_k})_k</m> converge vers la matrice <m>I_n</m>. Puisque <m>V</m> est un voisinage de <m>I_n</m> alors il existe un entier <m>k_0 \gt 0</m> tel que</p>
+                <me>\forall k \geq k_0 \quad L^{-1} e^{M_k} \in V</me>
+                <p>Puisque <m>V = f(U)</m>, il existe <m>N \in U</m> tel que <m>L^{-1} e^{M_{k_0}} = e^N</m>. Par suite</p>
+                <me>L = e^{M_{k_0}} e^{-N} = e^{M_{k_0} - N} \quad (NM_{k_0} = M_{k_0} N)</me>
+                <p>Comme <m>M_{k_0} - N \in E</m> alors <m>L \in \exp(E)</m>. Finalement :</p>
+                <me>\exp(\mathbb{C}[A]) \text{ est un fermé de } (\mathbb{C}[A])^*</me>
+            </solution>
+        </exercise>
+    </subexercises>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <subexercises>
+        <title>QUATRIÈME PARTIE</title>
+        <introduction>
+            <p>Soient <m>T \gt 0</m> un nombre réel et <m>n \in \mathbb{N}^*</m> un entier naturel. Soit</p>
+            <me>\func A{\mathbb{R}}{\mathcal{M}_n(\mathbb{C})}t{A(t)}</me>
+            <p>une application continue sur <m>\mathbb{R}</m> et <m>T</m>-périodique. On considère le système différentiel</p>
+            <me>X'(t) = A(t)X(t) \tag{2}</me>
+            <p>où <m>X</m> est une fonction de <m>\mathbb{R}</m> dans <m>\mathbb{C}^n</m>, de classe <m>\mathcal{C}^1</m> sur <m>\mathbb{R}</m>.</p>
+        </introduction>
+
+        <!-- Question 15 -->
+        <exercise>
+            <statement>
+                <p> Montrer qu'il existe <m>\mu \in \mathbb{C}^*</m> et une solution <m>Y \in \mathcal{C}^1 (\mathbb{R}, \mathbb{C}^n)</m> non nulle de (2) tels que</p>
+                <me>\forall t \in \mathbb{R}, \quad Y(t + T) = \mu Y(t).</me>
+            </statement>
+            <solution>
+                <p>Notons <m>S</m> l'ensemble des solutions de (2) et considérons l'endomorphisme</p>
+                <me>\func \Phi S SY{t \mapsto Y(t + T)}</me>
+                <p><m>\Phi</m> est linéaire et elle est bien à valeurs dans <m>S</m> puisque pour toute solution <m>Y</m> de (2), la fonction <m>t \longmapsto Y(t + T)</m> est une solution de (2). En outre, <m>\Phi</m> est bijectif de bijection réciproque l'application</p>
+                <me>\Phi^{-1} : Y \longmapsto (t \mapsto Y(t - T))</me>
+                <p>Ainsi, toutes les valeurs propres de <m>\Phi</m> sont non nulles. Soient donc <m>\mu</m> une valeur propre de <m>\Phi</m> et <m>Y</m> un vecteur propre qui lui est associé. Alors</p>
+                <me>\forall t \in \mathbb{R} \quad Y(t + T) = \mu Y(t)</me>
+            </solution>
+        </exercise>
+
+        <!-- Question 16 -->
+        <exercise>
+            <introduction>
+                <p> Soit <m>(Y_1, Y_2, \ldots, Y_n)</m> une base de <m>S</m>. Pour <m>t \in \mathbb{R}</m>, on note <m>M(t)</m> la matrice dont les colonnes sont <m>Y_1(t), \ldots, Y_n(t)</m>. On dispose ainsi d'une application <m>M</m> de <m>\mathbb{R}</m> dans <m>\mathcal{M}_n(\mathbb{C})</m>.</p>
+            </introduction>
+
+            <!-- Sous-question 16a -->
+            <task>
+                <statement>
+                    <p> Montrer que pour tout nombre réel <m>t</m>, <m>M(t) \in GL_n(\mathbb{C})</m> et <m>M'(t) = A(t)M(t)</m>.</p>
+                </statement>
+                <solution>
+                    <p>La famille <m>(Y_1, Y_2, \ldots, Y_n)</m> est un système fondamental de solutions de (2), donc pour tout <m>t \in \mathbb{R}</m>, la famille <m>(Y_1(t), Y_2(t), \ldots, Y_n(t))</m> est une base de <m>\mathbb{C}^n</m>. Ce qui signifie que les vecteurs colonnes de la matrice <m>M(t)</m> forment une base de <m>\mathbb{C}^n</m>. Elle est donc inversible. Par ailleurs, on a</p>
+                    <me>\forall k \in [1; n] \quad \forall t \in \mathbb{R} \quad Y_k'(t) = A(t)Y_k(t)</me>
+                    <p>Ce qui ne représente que l'identification colonne par colonne dans l'égalité</p>
+                    <me>\forall t \in \mathbb{R} \quad M'(t) = A(t)M(t)</me>
+                </solution>
+            </task>
+
+            <!-- Sous-question 16b -->
+            <task>
+                <statement>
+                    <p> Montrer que la matrice <m>(M(t))^{-1}M(t + T)</m> est indépendante de <m>t \in \mathbb{R}</m>.</p>
+                </statement>
+                <solution>
+                    <p>Considérons l'application <m>U</m> définie sur <m>\mathbb{R}</m> par</p>
+                    <me>\forall t \in \mathbb{R} \quad U(t) = M(t)^{-1}M(t + T)</me>
+                    <p>Rappelons que pour tout <m>t \in \mathbb{R}</m></p>
+                    <me>M(t)^{-1} = \frac{1}{\det M(t)} \cdot \text{Com}(M(t)) = \frac{1}{\det M(t)} ((-1)^{i+j}\Delta_{j,i}(t))</me>
+                    <p>où <m>(-1)^{i+j}\Delta_{i,j}(t)</m> est le cofacteur du coefficient d'indice <m>(i, j)</m> de <m>M(t)</m>. Les fonctions <m>t \mapsto \det M(t)</m> et <m>t \mapsto \Delta_{i,j}(t)</m> sont des sommes de produits des applications composantes de l'application <m>M</m>. Elles sont donc de classe <m>\mathcal{C}^1</m>. L'application <m>t \longmapsto M(t)^{-1}</m> est donc de classe <m>\mathcal{C}^1</m> car ses composantes sont de classe <m>\mathcal{C}^1</m>. En dérivant ensuite la relation</p>
+                    <me>M(t)^{-1}M(t) = I_n</me>
+                    <p>on déduit que</p>
+                    <me>\forall t \in \mathbb{R} \quad \frac{dM(t)^{-1}}{dt} = -M(t)^{-1}M'(t)M(t)^{-1}</me>
+                    <p><m>U</m> est ainsi une fonction de classe <m>\mathcal{C}^1</m> comme produit de fonctions de classe <m>\mathcal{C}^1</m> à valeurs dans une algèbre normée et on a pour tout <m>t \in \mathbb{R}</m></p>
+                    <me>U'(t) = -M(t)^{-1}M'(t)M(t)^{-1}M(t + T) + M(t)^{-1}M'(t + T)</me>
+                    <me>= -M(t)^{-1}A(t)M(t)M(t)^{-1}M(t + T) + M(t)^{-1}A(t)M(t + T)</me>
+                    <me>= 0</me>
+                    <p>Donc <m>U</m> est partout constante sur l'intervalle <m>\mathbb{R}</m>.</p>
+                    <me>\text{La matrice } M(t)^{-1}M(t + T) \text{ ne dépend pas de } t \in \mathbb{R}.</me>
+                </solution>
+            </task>
+
+            <!-- Sous-question 16c -->
+            <task>
+                <statement>
+                    <p> En déduire qu'il existe <m>B \in \mathcal{M}_n(\mathbb{C})</m> telle que :</p>
+                    <me>\forall t \in \mathbb{R}, \quad M(t + T) = M(t) \exp(TB).</me>
+                </statement>
+                <solution>
+                    <p>Posons <m>U_0 = M(0)^{-1}M(T)</m>. D'après la question précédente, on a</p>
+                    <me>\forall t \in \mathbb{R} \quad M(t + T) = M(t)U_0</me>
+                    <p>La matrice <m>U_0</m> est inversible comme produit de matrices inversibles donc par surjectivité de l'application exp, il existe <m>B \in \mathcal{M}_n(\mathbb{C})</m> telle que <m>U_0 = e^{TB}</m>. On a alors</p>
+                    <me>\forall t \in \mathbb{R} \quad M(t + T) = M(t)e^{TB}</me>
+                </solution>
+            </task>
+
+            <!-- Sous-question 16d -->
+            <task>
+                <statement>
+                    <p> En déduire qu'il existe une application <m>Q : \mathbb{R} \to GL_n(\mathbb{C})</m> continue sur <m>\mathbb{R}</m> et <m>T</m>-périodique telle que</p>
+                    <me>\forall t \in \mathbb{R}, \quad M(t) = Q(t) \exp(tB).</me>
+                </statement>
+                <solution>
+                    <p>Posons pour tout <m>t \in \mathbb{R}</m>,</p>
+                    <me>Q(t) = M(t)e^{-tB}</me>
+                    <p><m>Q(t)</m> est inversible car c'est le produit de deux matrices inversibles. Les applications <m>M</m> et <m>t \mapsto e^{-tB}</m> sont continues (cette dernière est même de classe <m>\mathcal{C}^{\infty}</m>, résultat de cours) donc <m>Q</m> est continue comme produit d'applications continues à valeurs dans une algèbre normée. Soit ensuite <m>t \in \mathbb{R}</m>.</p>
+                    <me>Q(t + T) = M(t + T)e^{-(t + T)B}</me>
+                    <me>= M(t)e^{TB}e^{-(t + T)B}</me>
+                    <me>= M(t)e^{-tB}</me>
+                    <me>= Q(t)</me>
+                    <p>Ce qui montre que <m>Q</m> est <m>T</m>-périodique.</p>
+                    <me>\text{Il existe une application } Q : \mathbb{R} \longrightarrow \mathcal{M}_n(\mathbb{C}) \text{ continue et } T\text{-périodique telle que}</me>
+                    <me>\forall t \in \mathbb{R} \quad M(t) = Q(t) e^{tB}</me>
+                </solution>
+            </task>
+        </exercise>
+
+        <!-- Question 17 -->
+        <exercise>
+            <introduction>
+                <p> On admet qu'il existe deux matrices <m>D</m> et <m>N</m> de <m>\mathcal{M}_n(\mathbb{C})</m> telles que <m>D</m> est diagonalisable, <m>N</m> est nilpotente et</p>
+                <me>B = D + N \text{ et } DN = ND.</me>
+                <p>Il existe donc une matrice <m>P \in GL_n(\mathbb{C})</m> et une matrice diagonale <m>\Delta</m> telles que <m>D = PAP^{-1}</m>.</p>
+            </introduction>
+
+            <!-- Sous-question 17a -->
+            <task>
+                <statement>
+                    <p> Pour <m>t \in \mathbb{R}</m>, on note <m>Z_1(t), Z_2(t), \ldots, Z_n(t) \in \mathbb{C}^n</m> les colonnes de la matrice <m>M(t)P</m>. Montrer que <m>(Z_1, Z_2, \ldots, Z_n)</m> est une base de l'espace <m>S</m>.</p>
+                </statement>
+                <solution>
+                    <p>Notons <m>V_1, V_2, \ldots, V_n</m> les vecteurs colonnes de la matrice <m>P</m>. On a alors pour tout <m>k \in [1; n]</m></p>
+                    <me>\forall t \in \mathbb{R} \quad Z_k(t) = M(t)V_k</me>
+                    <p>Si <m>V</m> est un vecteur quelconque de <m>\mathbb{C}^n</m>, alors pour tout <m>t \in \mathbb{R}</m></p>
+                    <me>\frac{d}{dt}(M(t)V) = M'(t)V = A(t)M(t)V</me>
+                    <p>Ce qui signifie que la fonction <m>t \longmapsto M(t)V</m> est une solution du système différentiel <m>X' = A(t)X</m>. Les fonctions <m>Z_1, Z_2, \ldots, Z_k</m> sont donc des éléments de <m>S</m>. Ensuite, puisque <m>M(t)</m> et <m>P</m> sont inversibles, alors <m>M(t)P</m> est inversible et donc <m>(Z_1(t), Z_2(t), \ldots, Z_n(t))</m> est une base de <m>\mathbb{C}^n</m> pour tout <m>t \in \mathbb{R}</m>. Alors <m>(Z_1, Z_2, \ldots, Z_n)</m> est un système fondamental de solutions du système <m>X' = A(t)X</m>.</p>
+                    <me>(Z_1, Z_2, \ldots, Z_n) \text{ est une base de } S.</me>
+                </solution>
+            </task>
+
+            <!-- Sous-question 17b -->
+            <task>
+                <statement>
+                    <p> Soient <m>\lambda_1, \ldots, \lambda_n</m> les nombres complexes tels que <m>\Delta = \text{Diag} (\lambda_1, \lambda_2, \ldots, \lambda_n)</m>. Pour tous <m>0 \leq i \leq n - 1</m>, <m>1 \leq k \leq n</m> et <m>t \in \mathbb{R}</m>, on note <m>R_{i,k}(t)</m> la <m>k^{\text{ème}}</m> colonne de la matrice <m>\frac{1}{i!}Q(t)N^iP</m>. Montrer que pour tout <m>k \in \{1, 2, \ldots, n\}</m>, on a</p>
+                    <me>Z_k(t) = e^{\lambda_k t} \left( \sum_{i=0}^{n-1} t^i R_{i,k}(t) \right)</me>
+                    <p>et vérifier que les applications <m>R_{i,k}</m> sont continues sur <m>\mathbb{R}</m> et <m>T</m>-périodiques.</p>
+                </statement>
+                <solution>
+                    <p>Comme <m>B = D + N</m>, <m>DN = ND</m> et <m>N</m> est nilpotente, alors pour tout <m>t \in \mathbb{R}</m>, on peut écrire</p>
+                    <me>e^{tB} = e^{tN} e^{tD} = \sum_{j=0}^{n-1} \frac{t^j}{j!} N^j e^{tD}</me>
+                    <p>Soit maintenant <m>k \in [1; n]</m>. Par définition du vecteur <m>V_k</m>, on a <m>DV_k = \lambda_k V_k</m> et donc <m>e^{tD} V_k = e^{\lambda_k t} V_k</m>. Alors</p>
+                    <me>Z_k(t) = Q(t) e^{tB} V_k = e^{\lambda_k t} \left( \sum_{j=0}^{n-1} \frac{t^j}{j!} Q(t) N^j V_k \right)</me>
+                    <p>En posant pour tout <m>j \in [0; n - 1]</m>, <m>R_{j,k}(t) = (1/j)! Q(t) N^j V_k</m>, on voit que :</p>
+                    <me>\text{les fonctions } R_{0,k}, R_{1,k}, \cdots, R_{n-1,k} \text{ sont continues } T\text{-périodiques et}</me>
+                    <me>\forall t \in \mathbb{R} \quad Z_k(t) = e^{\lambda_k t} \left( \sum_{k=0}^{n-1} t^j R_{j,k}(t) \right)</me>
+                </solution>
+            </task>
+
+            <!-- Sous-question 17c -->
+            <task>
+                <statement>
+                    <p> En déduire que si les parties réelles des <m>\lambda_i</m> pour <m>1 \leq i \leq n</m> sont strictement négatives et si <m>Y</m> est une solution quelconque de (2), alors</p>
+                    <me>\lim_{t \to +\infty} Y(t) = 0.</me>
+                </statement>
+                <solution>
+                    <p>On suppose que les parties réelles des scalaires <m>\lambda_1, \lambda_2, \ldots, \lambda_n</m> sont strictement négatives. Sachant que toute solution <m>Y</m> de (2) est une combinaison linéaire des fonctions <m>Z_1, Z_2, \ldots, Z_n</m>, il suffit de justifier que</p>
+                    <me>\forall k \in [1; l] \quad \lim_{t \to +\infty} Z_k(t) = 0</me>
+                    <p>Soit donc <m>k \in [1; n]</m>. Les fonctions <m>R_{j,k}, j \in [0; n - 1]</m> sont continues périodiques sur <m>\mathbb{R}</m> donc elles sont bornées sur <m>\mathbb{R}</m>. Notons <m>K</m> un majorant commun de tous les réels <m>\Vert R_{j,k}(t)\Vert </m> pour tout <m>t \in \mathbb{R}</m>. L'expression de <m>Z_k(t)</m> donnée en (14) aboutit alors à</p>
+                    <me>\forall t \in [1; +\infty] \quad \Vert Z_k(t)\Vert  \leq K e^{\text{Re}(\lambda_k)t} \sum_{j=0}^{n-1} t^j \leq nK t^n e^{\text{Re}(\lambda_k)t}</me>
+                    <p>Puisque <m>\text{Re}(\lambda_k) t 0</m>, alors <m>t^n e^{\text{Re}(\lambda_k)t} \longrightarrow 0</m> et donc <m>Z_k(t) \longrightarrow 0</m>.</p>
+                    <me>\text{Si } \text{Re}(\lambda_k) t 0 \text{ pour tout } k \in [1; n] \text{ alors pour toute solution } Y \text{ du système différentiel (2) on a}</me>
+                    <me>\lim_{t \to +\infty} Y(t) = 0</me>
+                </solution>
+            </task>
+        </exercise>
+
+        <!-- Question 18 -->
+        <exercise>
+            <introduction>
+                <p> Montrer que si <m>B</m> a une valeur propre de la forme <m>\lambda = i\frac{2k\pi}{m}</m> avec <m>k \in \mathbb{Z}</m> et <m>m \in \mathbb{N}^*</m>, alors (2) a une solution <m>mT</m>-périodique non nulle.</p>
+            </introduction>
+
+            <!-- Sous-question 18a -->
+            <task>
+                <statement>
+                    <p> Montrer que si <m>B</m> a une valeur propre de la forme <m>\lambda = i\frac{2k\pi}{m}</m> avec <m>k \in \mathbb{Z}</m> et <m>m \in \mathbb{N}^*</m>, alors (2) a une solution <m>mT</m>-périodique non nulle.</p>
+                </statement>
+                <solution>
+                    <p>On suppose que <m>B</m> admet une valeur propre de la forme <m>\lambda = i\frac{2k\pi}{m}</m> avec <m>k \in \mathbb{Z}</m> et <m>m \in \mathbb{N}^*</m>. Soit <m>V</m> un vecteur propre qui lui est associé. La fonction <m>Y : t \longmapsto M(t)V</m> est une solution de (2) et on a pour tout <m>t \in \mathbb{R}</m> :</p>
+                    <me>Y(t) = Q(t)e^{tB}V = Q(t)e^{\lambda t}V = Q(t)e^{i\frac{2k\pi}{m}t}V</me>
+                    <p>Les applications <m>Q</m> et <m>t \longmapsto e^{i\frac{2k\pi}{m}t}</m> sont respectivement <m>T</m>-périodique et <m>mT</m>-périodique donc</p>
+                    <me>Y \text{ est une solution de (2) qui est } mT\text{-périodique}</me>
+                </solution>
+            </task>
+
+            <!-- Sous-question 18b -->
+            <task>
+                <statement>
+                    <p> On suppose qu'il existe <m>m \in \mathbb{N}^*</m> tel que (2) possède une solution <m>mT</m>-périodique non nulle. Montrer que <m>\exp(TB)</m> possède une valeur propre qui est une racine <m>m^{\text{ème}}</m> de l'unité.</p>
+                </statement>
+                <solution>
+                    <p>On suppose que (2) admet une solution non nulle <m>mT</m>-périodique. Selon (11), il existe un vecteur non nul <m>V \in \mathbb{C}^n</m> tel que <m>Y(t) = M(t)V</m> pour tout <m>t \in \mathbb{R}</m>. On a alors, en utilisant l'écriture (10)</p>
+                    <me>\forall t \in \mathbb{R} \quad Y(t) = Q(t)e^{tB}V</me>
+                    <p>Puisque <m>Y</m> et <m>Q</m> sont <m>mT</m>-périodiques, on a pour tout <m>t \in \mathbb{R}</m></p>
+                    <me>Q(t)e^{(t + mT)B}V = Q(t)e^{tB}V</me>
+                    <p>et donc</p>
+                    <me>e^{mTB}V = V</me>
+                    <p>signalant que 1 est une valeur propre de la matrice <m>e^{mTB}</m>. Puisque les valeurs propres de <m>e^{mTB}</m> sont les nombres de la forme <m>\lambda^m</m> où <m>\lambda</m> décrit le spectre complexe de <m>e^{TB}</m>, on en déduit que :</p>
+                    <me>\text{Si (2) admet une solution } mT\text{-périodique alors la matrice } e^{TB} \text{ admet au moins une valeur propre qui est une racine } m^{\text{ème}} \text{ de l'unité.}</me>
+                </solution>
+            </task>
+        </exercise>
+
+        <!-- Question 19 -->
+        <exercise>
+            <statement>
+                <p> Dans cette question, on suppose que (2) possède une solution <m>T'</m>-périodique <m>X</m> avec <m>T' \notin \mathbb{Q}T</m>. Montrer que pour tous <m>t \in \mathbb{R}</m> et <m>u \in \mathbb{R}</m>, on a</p>
+                <me>A(u)X(t) = A(t)X(t).</me>
+            </statement>
+            <solution>
+                <p>On suppose que (2) admet une solution <m>X</m> qui est <m>T'</m>-périodique avec <m>T'/T \notin \mathbb{Q}</m>. On a alors la relation</p>
+                <me>\forall k \in \mathbb{Z} \quad \forall t \in \mathbb{R} \quad A(t + kT')X(t) = A(t)X(t)</me>
+                <p>découlant de l'égalité <m>X'(t + kT') = X'(t)</m>. Et puisque <m>A</m> est <m>T</m>-périodique, on a même</p>
+                <me>\forall k, h \in \mathbb{Z} \quad \forall t \in \mathbb{R} \quad A(t + kT' + hT)X(t) = A(t)X(t)</me>
+                <p>ou encore, en posant <m>G = T\mathbb{Z} + T'\mathbb{Z}</m></p>
+                <me>\forall g \in G \quad \forall t \in \mathbb{R} \quad A(g + t)X(t) = A(t)X(t)</me>
+                <p><m>G</m> est un sous-groupe de <m>(\mathbb{R}, +)</m>. Supposons qu'il existe <m>a \in \mathbb{R}</m> tel que <m>G = a\mathbb{Z}</m>. Puisque <m>T \in G</m> et <m>T' \in G</m>, il existerait <m>u, u' \in \mathbb{Z}^*</m> tels que <m>T = au</m> et <m>T' = au'</m>. Ce qui impliquerait que <m>T'/T \in \mathbb{Q}</m>, entrant en contradiction avec l'hypothèse faite sur <m>T'</m>. <m>G</m> n'est donc pas un sous-groupe discret de <m>(\mathbb{R}, +)</m> et donc il est dense dans <m>\mathbb{R}</m>. Pour un réel <m>t</m> fixé, l'application <m>s \mapsto A(s + t)X(t) - A(t)X(t)</m> est continue sur <m>\mathbb{R}</m> et elle est partout nulle sur la partie dense <m>G</m>. Elle est donc partout nulle sur <m>\mathbb{R}</m>. On conclut en posant <m>u = t + s</m> que</p>
+                <me>\forall t, u \in \mathbb{R} \quad A(u)X(t) = A(t)X(t)</me>
+            </solution>
+        </exercise>
+
+        <!-- Question 20 -->
+        <exercise>
+            <statement>
+                <p> On suppose dans cette question qu'il n'existe pas de sous-espace vectoriel <m>V \subset \mathbb{C}^n</m>, différent de <m>\{0\}</m> et <m>\mathbb{C}^n</m>, tel que, pour tout <m>t \in \mathbb{R}</m>, <m>V</m> est stable par <m>A(t)</m>. Donner une condition nécessaire et suffisante sur <m>A</m> et sur <m>B</m> pour que (2) ait au moins une solution périodique non nulle.</p>
+            </statement>
+            <solution>
+                <p>On suppose qu'il n'existe aucun sous-espace vectoriel (SEV) non trivial <m>V</m> de <m>\mathbb{C}^n</m> qui soit stable par tous les <m>A(t)</m>, <m>t \in \mathbb{R}</m> et que (2) admet au moins une solution non nulle <m>X</m> qui est <m>T'</m>-périodique. Supposons que <m>T'/T \notin \mathbb{Q}</m>. Il découle de la question précédente que</p>
+                <me>\forall t, u, v \in \mathbb{R} \quad A(u)X(t) = A(v)X(t)</me>
+                <p>Posons pour tout <m>k \in \mathbb{N}^*</m></p>
+                <me>V_k = \bigcap_{u,v \in \mathbb{R}} \text{Ker}(A(u)^k - A(v)^k)</me>
+                <p>et ensuite</p>
+                <me>V = \bigcap_{k \in \mathbb{N}^*} V_k</me>
+                <p>de telle sorte que pour tout vecteur <m>x \in \mathbb{C}^n</m> on ait</p>
+                <me>x \in V \iff \forall k \in \mathbb{N}^* \quad \forall u, v \in \mathbb{R} \quad A(u)^k x = A(v)^k x</me>
+                <p>Revenons à la relation (15) et dérivons-la par rapport à <m>t</m> :</p>
+                <me>\forall t, u, v \in \mathbb{R} \quad A(u)A(t)X(t) = A(v)A(t)X(t)</me>
+                <p>et en recourant encore à (15)</p>
+                <me>\forall t, u, v \in \mathbb{R} \quad A(u)^2X(t) = A(v)^2X(t)</me>
+                <p>Par récurrence sur <m>k</m>, on démontre selon la même idée que</p>
+                <me>\forall k \in \mathbb{N}^* \quad \forall t, u, v \in \mathbb{R} \quad A(u)^kX(t) = A(v)^kX(t)</me>
+                <p><m>V</m> contient donc tous les vecteurs <m>X(t)</m>. Puisque la fonction <m>X</m> est non nulle, alors le SEV <m>V</m> est non nul. Il est inclus strictement dans <m>E</m> car sinon on aura <m>V_1 = \mathbb{C}^n</m>. Ce qui signifierait que l'application <m>A</m> est constante, contredisant ainsi l'hypothèse de départ de la question.</p>
+                <p>Soient maintenant <m>x \in V</m>. Pour tout <m>k \in \mathbb{N}^*</m> et pour tout <m>t \in \mathbb{R}</m>, on a</p>
+                <me>\forall u, v \in \mathbb{R} \quad A(u)^kA(t)x = A(u)^{k+1}x = A(v)^{k+1}x = A^k(v)A(t)x</me>
+                <p>et donc <m>A(t)x \in V</m>. Le SEV non trivial <m>V</m> est donc stable par tous les <m>A(t)</m>, amenant une contradiction.</p>
+                <p>Ainsi <m>T'/T \in \mathbb{Q}</m>. Il existe alors des entiers <m>m, m' \in \mathbb{N}</m> premiers entre eux tels que <m>m'T' = mT</m>. La solution <m>X</m> est <m>m'T'</m>-périodique et donc <m>mT</m>-périodique. D'après la question 18b (sol. 18b), la matrice <m>e^{TB}</m> admet une valeur propre qui est une racine <m>m^{\text{ème}}</m> de l'unité.</p>
+                <p>Réciproquement, supposons que <m>e^{TB}</m> admet une telle valeur propre et notons-la <m>\mu = e^{\frac{2ik\pi}{m}}</m> avec <m>k \in [0; n - 1]</m>. Les valeurs propres de <m>e^{TB}</m> sont les complexes de la forme <m>e^{T\lambda}</m> où <m>\lambda</m> est une valeur propre de <m>B</m>. Il existe donc une valeur propre <m>\lambda</m> de <m>B</m> telle que <m>e^{T\lambda} = \mu</m> et par suite</p>
+                <me>\exists h \in \mathbb{Z} : \quad T\lambda - \frac{2ik\pi}{m} = 2ih\pi</me>
+                <p>ou encore</p>
+                <me>\lambda = \frac{2i(k + mh)\pi}{mT}</me>
+                <p>Selon la question 18a (sol. 18a), (2) admet bien une solution <m>mT</m>-périodique non nulle. Conclusions :</p>
+                <me>\text{S'il n'existe aucun SEV non trivial de } \mathbb{C}^n \text{ qui soit stable par toutes les matrices } A(t) \text{ alors (2) admet au moins une solution } T'\text{-périodique non nulle si et seulement s'il existe } m, m' \in \mathbb{N}^* \text{ tels que } e^{TB} \text{ admet une valeur propre qui est une racine } m^{\text{ème}} \text{ de l'unité et } T' = (mT)/m' \text{ (et donc } T' \in T\mathbb{Q})</me>
+            </solution>
+        </exercise>
+
+        <!-- Question 21 -->
+        <exercise>
+            <statement>
+                <p> Soit le système différentiel</p>
+                <me>X'(t) = A(t)X(t) + b(t) \tag{3}</me>
+                <p>où <m>b : \mathbb{R} \to \mathbb{C}^n</m> est une fonction continue sur <m>\mathbb{R}</m> et <m>T</m>-périodique. On suppose que 1 n'est pas valeur propre de <m>\exp(TB)</m>. Montrer que (3) possède une unique solution <m>T</m>-périodique.</p>
+            </statement>
+            <solution>
+                <p>On a vu que les solutions de l'équation homogène de (3) sont les fonctions de la forme <m>X : t \mapsto M(t)V</m> où <m>V</m> est le vecteur colonne des coordonnées de <m>X</m> dans un système fondamental de solutions de celle-ci. La méthode de la variation des constantes revient donc ici à poser <m>X(t) = M(t)V(t)</m> en supposant que <m>V</m> est une fonction de classe <m>\mathcal{C}^1</m>. Dans ce cas</p>
+                <me>X'(t) = A(t)X(t) + b(t) \iff M(t)V'(t) = b(t)</me>
+                <me>\iff V'(t) = M(t)^{-1}b(t)</me>
+                <p>Les primitives de la fonction <m>t \mapsto M(t)^{-1}b(t)</m> peuvent être écrites sous la forme</p>
+                <me>t \mapsto V_0 + \int_0^t M(s)^{-1}b(s) \, ds</me>
+                <p>où <m>V_0</m> est un vecteur quelconque de <m>\mathbb{C}^n</m>. Les solutions de (3) sont donc les fonctions</p>
+                <me>X : t \mapsto M(t)V_0 + \int_0^t M(t)M(s)^{-1}b(s) \, ds</me>
+                <p>avec <m>V_0</m> quelconque dans <m>\mathbb{C}^n</m>.</p>
+                <p>Soit <m>V_0 \in \mathbb{C}^n</m> et considérons la fonction <m>X</m> ci-dessus. Selon la question 16d (sol. 16d), <m>M(t) = Q(t)e^{tB}</m> où <m>Q</m> est une fonction continue <m>T</m>-périodique de <m>\mathbb{R}</m> dans <m>GL_n(\mathbb{C})</m>. On a donc</p>
+                <me>\forall t \in \mathbb{R} \quad X(t) = Q(t)e^{tB}V_0 + \int_0^t Q(t)e^{(t-s)B}Q(s)^{-1}b(s) \, ds</me>
+                <p>Pour tout <m>t \in \mathbb{R}</m>, on aura</p>
+                <me>X(t + T) - X(t) = Q(t)e^{tB}(e^{TB} - I_n)V_0 + Q(t)e^{tB}\left(e^{TB}\int_0^{t + T}e^{-sB}Q(s)^{-1}b(s) \, ds - \int_0^t e^{-sB}Q(s)^{-1}b(s) \, ds\right)</me>
+                <p>Sachant que <m>Q</m> et <m>b</m> sont <m>T</m>-périodiques, avec la translation de la variable <m>s = u + T</m>, on a</p>
+                <me>e^{TB}\int_0^{t + T}e^{-sB}Q(s)^{-1}b(s) \, ds = \int_{-T}^t e^{-uB}Q(u)^{-1}b(u) \, du</me>
+                <p><m>Q(t)e^{tB}</m> étant inversible, on a ainsi</p>
+                <me>X(t + T) = X(t) \iff (e^{TB} - I_n)V_0 + \int_{-T}^0 e^{-sB}Q(s)^{-1}b(s) \, ds = 0</me>
+                <p>Puisque 1 n'est pas une valeur propre de <m>e^{TB}</m>, alors <m>e^{TB} - I_n</m> est une matrice inversible. <m>X</m> est donc <m>T</m>-périodique si et seulement si</p>
+                <me>V_0 = -(e^{TB} - I_n)^{-1}\int_{-T}^0 e^{-sB}Q(s)^{-1}b(s) \, ds = 0</me>
+                <p>D'où l'existence et l'unicité d'une solution <m>T</m>-périodique de (3). Résumons :</p>
+                <me>\text{Si les applications } A \text{ et } b \text{ sont continues et } T\text{-périodiques et si la matrice } e^{TB} \text{ ne possède pas 1 comme valeur propre alors le système différentiel}</me>
+                <me>X' = A(t)X + b(t)</me>
+                <me>\text{admet une unique solution } T\text{-périodique.}</me>
+            </solution>
+        </exercise>
+
+        <!-- Question 22 -->
+        <exercise>
+            <statement>
+                <p> Résoudre le système différentiel</p>
+                <md>
+                    <mrow>x'(t) = x(t) - \cos(t)y(t)</mrow>
+                    <mrow>y'(t) = \cos(t)x(t) + y(t)</mrow>
+                </md>
+                <p>et déterminer sa forme normale (voir la question 16d).</p>
+            </statement>
+            <solution>
+                <p>En posant <m>X = (x, y)</m>, le système différentiel s'écrit matriciellement</p>
+                <me>X'(t) = A(t)X(t) \tag{16}</me>
+                <p>où</p>
+                <me>A(t) = 
+                \begin{pmatrix}
+                1 \amp  -\cos t \\
+                \cos t \amp  1
+                \end{pmatrix}
+                = I + \cos(t)J \quad \text{avec} \quad J =
+                \begin{pmatrix}
+                0 \amp  -1 \\
+                1 \amp  0
+                \end{pmatrix}
+                </me>
+                <p>La fonction <m>A</m> est ici <m>2\pi</m>-périodique. La matrice <m>J</m> se réduit dans <m>\mathcal{M}_2(\mathbb{C})</m> de la façon suivante :</p>
+                <me>J = P
+                \begin{pmatrix}
+                i \amp  0 \\
+                0 \amp  -i
+                \end{pmatrix}
+                P^{-1} \quad \text{avec} \quad P =
+                \begin{pmatrix}
+                1 \amp  1 \\
+                -i \amp  i
+                \end{pmatrix}
+                </me>
+                <p>donc</p>
+                <me>A(t) = P
+                \begin{pmatrix}
+                1 + i \cos t \amp  0 \\
+                0 \amp  1 - i \cos t
+                \end{pmatrix}
+                P^{-1}
+                </me>
+                <p>Comme à l'usage, on pose <m>Y = (\frac{u}{v}) = P^{-1}X</m>. Le système (16) équivaut alors à</p>
+                <md>
+                    <mrow>u' = (1 + i \cos t)u</mrow>
+                    <mrow>v' = (1 - i \cos t)v</mrow>
+                </md>
+                <p>Les solutions de ce dernier système sont données par</p>
+                <md>
+                    <mrow>u = \lambda e^{t + i \sin t}</mrow>
+                    <mrow>v = \mu e^{t - i \sin t} \quad \lambda, \mu \in \mathbb{C}</mrow>
+                </md>
+                <p><m>X = PY</m> donc les solutions du système (16) sont données par</p>
+                <md>
+                    <mrow>x = u + v = e^t (\lambda e^{i \sin t} + \mu e^{-i \sin t})</mrow>
+                    <mrow>y = -i(u - v) = -ie^t (\lambda e^{i \sin t} - \mu e^{-i \sin t})</mrow>
+                </md>
+                <p>Les fonctions <m>X_1 : t \mapsto e^{t + i \sin t} (\frac{1}{-i})</m> et <m>X_2 : t \mapsto e^{t - i \sin t} (\frac{1}{i})</m> forment un système fondamental de solutions de (16). Le système <m>(Y_1, Y_2)</m> en est un autre lorsqu'on pose</p>
+                <me>Y_1(t) = \frac{1}{2}(X_1(t) + X_2(t)) = e^t
+                \begin{pmatrix}
+                \cos(\sin t) \\
+                \sin(\sin t)
+                \end{pmatrix}
+                </me>
+                <me>Y_2(t) = \frac{1}{2i}(X_1(t) - X_2(t)) = e^t
+                \begin{pmatrix}
+                \sin(\sin t) \\
+                -\cos(\sin t)
+                \end{pmatrix}
+                </me>
+                <p>Sur la base du système fondamental <m>(Y_1, Y_2)</m>, on forme <m>M</m> en posant</p>
+                <me>M(t) = e^{t}
+                \begin{pmatrix}
+                \cos(\sin t) \amp  \sin(\sin t) \\
+                \sin(\sin t) \amp  -\cos(\sin t)
+                \end{pmatrix}
+                </me>
+                <p>L'écriture normale de <m>M</m> est donc <m>M(t) = Q(t)e^{tB}</m> avec</p>
+                <me>Q(t) =
+                \begin{pmatrix}
+                \cos(\sin t) \amp  \sin(\sin t) \\
+                \sin(\sin t) \amp  -\cos(\sin t)
+                \end{pmatrix}
+                \quad \text{et} \quad B = I_2
+                </me>
+            </solution>
+        </exercise>
+    </subexercises>
+
+</exercises>

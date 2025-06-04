@@ -1,5 +1,5 @@
-@use '../abstracts/variables' as v;
-@use '../abstracts/breakpoints' as bp;
+@use '../abstracts/variables'as v;
+@use '../abstracts/breakpoints'as bp;
 @use '../abstracts/placeholders';
 
 #post-list {
@@ -20,7 +20,7 @@
   }
 
   .card {
-    border: 1px solid var(--main-border-color);
+    border: 0;
     background: none;
 
     %img-radius {
@@ -51,6 +51,7 @@
         @extend %text-clip;
 
         color: var(--heading-color) !important;
+        link-color: var(--heading-color) !important;
         font-size: 1.25rem;
       }
 
@@ -94,7 +95,7 @@
           color: inherit;
         }
 
-        > div:first-child {
+        >div:first-child {
           display: block;
 
           @extend %text-ellipsis;
@@ -102,7 +103,9 @@
       }
     }
   }
-} /* #post-list */
+}
+
+/* #post-list */
 
 .pagination {
   color: var(--text-color);
@@ -163,7 +166,9 @@
         color: rgba(108, 117, 125, 0.57);
       }
     }
-  } /* .page-item */
+  }
+
+  /* .page-item */
 
   .page-index {
     @include bp.lg {

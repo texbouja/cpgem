@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-gem "jekyll-theme-chirpy", "~> 7.2", ">= 7.2.4"
+gemspec
 
 gem "html-proofer", "~> 5.0", group: :test
 
@@ -13,6 +13,8 @@ end
 
 gem "wdm", "~> 0.2.0", :platforms => [:mingw, :x64_mingw, :mswin]
 
+
+
 gem 'jekyll-compose', group: [:jekyll_plugins]
 
 gem 'jekyll-pdf-embed', group: [:jekyll_plugins] 
@@ -22,3 +24,7 @@ gem 'reveal-jekyll', group: [:jekyll_plugins]
 gem 'mini_magick' 
 gem 'ferrum'
 gem 'sassc'
+
+gem 'inline_svg', '~> 1.10'
+
+gem 'nokogiri', '~> 1.15'

@@ -7,7 +7,7 @@
 
 .categories {
   margin-bottom: 2rem;
-  border-color: var(--categories-border);
+  border-color: var(--categories-border-color);
 
   &.card,
   .list-group {
@@ -73,7 +73,7 @@
 /* only works on desktop */
 @media (hover: hover) {
   .category-trigger:hover {
-    background-color: var(--categories-hover-bg);
+    background-color: var(--categories-hover-background-color);
   }
 }
 

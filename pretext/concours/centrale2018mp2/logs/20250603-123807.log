@@ -1,0 +1,11 @@
+WARNING : Project's CLI version could not be detected from `requirements.txt`.
+WARNING : Try `pretext init --refresh` to produce a compatible file.
+CRITICAL: There is not a target named "cpem" for this project.ptx manifest.
+INFO    : The available targets to view are named: ['web', 'cpgem', 'print', 'latex', 'exer-latex', 'crc-print', 'subset', 'crc-latex', 'epub', 'ww-sets'].  Try to view on of those instead or edit your project.ptx manifest.
+CRITICAL: Exiting.
+INFO    : 
+----------------------------------------------------
+INFO    : While running pretext, the following errors occurred:
+
+INFO    : (see log messages above or in the 'logs' folder for more information)
+INFO    : ----------------------------------------------------

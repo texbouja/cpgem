@@ -1,7 +1,9 @@
 /* sidebar */
 
-$sidebar-width: 260px !default; /* the basic width */
-$sidebar-width-large: 300px !default; /* screen width: >= 1650px */
+$sidebar-width: 260px !default;
+/* the basic width */
+$sidebar-width-large: 300px !default;
+/* screen width: >= 1650px */
 $sb-btn-gap: 0.8rem !default;
 $sb-btn-gap-lg: 1rem !default;
 
@@ -10,7 +12,8 @@ $sb-btn-gap-lg: 1rem !default;
 $topbar-height: 3rem !default;
 $search-max-width: 200px !default;
 $footer-height: 5rem !default;
-$footer-height-large: 6rem !default; /* screen width: < 850px */
+$footer-height-large: 6rem !default;
+/* screen width: < 850px */
 $main-content-max-width: 1250px !default;
 $radius-sm: 6px !default;
 $radius-lg: 10px !default;
@@ -26,5 +29,8 @@ $code-icon-width: 1.75rem !default;
 
 /* fonts */
 
-$font-family-base: 'Roboto', 'Fira Sans', 'Source Sans Pro', 'Microsoft Yahei', sans-serif !default;
-$font-family-heading: Oswald, 'Roboto Condensed', Lato, 'Microsoft Yahei', sans-serif !default;
+$font-family-base: 'Fira Sans',
+sans-serif !default;
+$font-family-heading: 'Fira Sans Condensed',
+'Fira Sans',
+sans-serif !default;

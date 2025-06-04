@@ -1,35 +1,45 @@
-@use '../abstracts/variables' as v;
-@use '../abstracts/breakpoints' as bp;
-@use '../abstracts/mixins' as mx;
+@use '../abstracts/variables'as v;
+@use '../abstracts/breakpoints'as bp;
+@use '../abstracts/mixins'as mx;
 @use '../abstracts/placeholders';
-@use '../themes/nord';
-@use '../themes/light';
-@use '../themes/dark';
+@use '../themes/theme';
 
 :root {
   font-size: 16px;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 html {
   @media (prefers-color-scheme: light) {
+
     &:not([data-mode]),
     &[data-mode='light'] {
-      @include light.styles;
+      @include theme.styles-light;
     }
 
     &[data-mode='dark'] {
-      @include dark.styles;
+      @include theme.styles-dark;
     }
   }
 
   @media (prefers-color-scheme: dark) {
+
     &:not([data-mode]),
     &[data-mode='dark'] {
-      @include dark.styles;
+      @include theme.styles-dark;
     }
 
     &[data-mode='light'] {
-      @include light.styles;
+      @include theme.styles-light;
     }
   }
 
@@ -39,9 +49,8 @@ html {
 }
 
 body {
-  background: var(--main-bg);
-  padding: env(safe-area-inset-top) env(safe-area-inset-right)
-    env(safe-area-inset-bottom) env(safe-area-inset-left);
+  background: var(--main-background);
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   font-family: v.$font-family-base;
@@ -51,7 +60,7 @@ h1.dynamic-title {
   @include bp.lt(bp.get(lg)) {
     display: none;
 
-    ~ .content {
+    ~.content {
       margin-top: 2.5rem;
     }
   }
@@ -94,7 +103,7 @@ main {
   @extend %rounded;
 
   border: 0;
-  background: var(--card-bg);
+  background: var(--card-background-color);
   box-shadow: var(--card-shadow);
 
   &::before {
@@ -159,6 +168,7 @@ main {
 
   ol,
   ul {
+
     &:not([class]),
     &.task-list {
       -webkit-padding-start: 1.75rem;
@@ -187,7 +197,7 @@ main {
       padding-left: 0;
 
       /* checkbox icon */
-      > i {
+      >i {
         width: 2rem;
         margin-left: -1.25rem;
         color: var(--checkbox-color);
@@ -207,9 +217,11 @@ main {
       margin: 0 0.5rem 0.2rem -1.3rem;
       vertical-align: middle;
     }
-  } /* ul */
+  }
 
-  dl > dd {
+  /* ul */
+
+  dl>dd {
     margin-left: 1rem;
   }
 
@@ -217,12 +229,14 @@ main {
     color: var(--text-muted-color);
   }
 
-  .table-wrapper > table {
+  .table-wrapper>table {
     @include bp.lg {
       min-width: 70%;
     }
   }
-} /* .content */
+}
+
+/* .content */
 
 .tag:hover {
   @extend %tag-hover;
@@ -390,7 +404,7 @@ mjx-container {
 }
 
 @media (hover: hover) {
-  #sidebar ul > li:last-child::after {
+  #sidebar ul>li:last-child::after {
     transition: top 0.5s ease;
   }
 
@@ -408,17 +422,9 @@ mjx-container {
 }
 
 #main-wrapper {
-  // position: relative;
-
-  // @include mx.pl-pr(0);
-
-  // @include bp.lt(bp.get(lg)) {
-  //   @include mx.slide;
-  // }
   position: relative;
+
   @include mx.pl-pr(0);
-  // pour compenser la hauteur de la topbar fixe
-  margin-top: v.$topbar-height;
 
   @include bp.lt(bp.get(lg)) {
     @include mx.slide;
@@ -432,7 +438,7 @@ mjx-container {
     margin-left: v.$sidebar-width-large;
   }
 
-  > .container {
+  >.container {
     min-height: 100vh;
 
     @include bp.lte(bp.get(md)) {
@@ -453,7 +459,7 @@ mjx-container {
     }
 
     @include bp.lt(bp.get(xl)) {
-      > .row {
+      >.row {
         justify-content: center !important;
       }
     }
@@ -469,8 +475,8 @@ mjx-container {
 /* --- basic wrappers --- */
 
 #topbar-wrapper.row,
-#main-wrapper > .container > .row,
-#search-result-wrapper > .row {
+#main-wrapper>.container>.row,
+#search-result-wrapper>.row {
   @include mx.ml-mr(0);
 }
 

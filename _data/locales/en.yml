@@ -7,17 +7,11 @@ layout:
   category: Category
   tag: Tag
 
-layout:
-  post: Post
-  concours: Concours
-  tag: Tag
-
 # The tabs of sidebar
 tabs:
   # format: <filename_without_extension>: <value>
   home: Home
   categories: Categories
-  concours: Concours
   tags: Tags
   archives: Archives
   about: About
@@ -92,15 +86,6 @@ categories:
   category_measure:
     singular: category
     plural: categories
-  post_measure:
-    singular: post
-    plural: posts
-
-# concours page
-concours:
-  concour_measure:
-    singular: concours
-    plural: concours
   post_measure:
     singular: post
     plural: posts

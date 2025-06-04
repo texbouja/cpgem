@@ -1,9 +1,15 @@
-texbouja:
-    name: Sadik Boujaida
-    url: https://texbouja.github.io 
-lucas:
-    name: Édouard Lucas
+## Template › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md#setting-author-url
+# -------------------------------------
+# {author_id}:
+#   name: {full name}
+#   twitter: {twitter_of_author}
+#   url: {homepage_of_author}
+# -------------------------------------
 sadik:
-    name: Omar Sadik 
-hamani:
-    Mohammed Hamani
+  name: Sadik Boujaida
+  url: https://github.com/texbouja
+
+cotes:
+  name: Cotes Chung
+  twitter: cotes2020
+  url: https://github.com/cotes2020/

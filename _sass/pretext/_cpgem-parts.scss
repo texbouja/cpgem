@@ -1,0 +1,120 @@
+@use 'sass:map';
+@use '../abstracts/variables'as v;
+@use '../abstracts/breakpoints'as bp;
+@use '../abstracts/mixins'as mx;
+
+//Some basic variables
+$centered-content: false !default;
+$scrolling-toc: true !default;
+
+// ptx-content contains the main content.  It is contained in ptx-main
+$content-width: bp.get(md) !default;
+$content-padding: 20px !default;
+$content-padding-med: 10px !default;
+$content-padding-tight: 4px !default;
+$padding: 20px !default;
+
+
+
+$nav-height: v.$topbar-height;
+$main-content-max-width: v.$main-content-max-width;
+$border-radius: v.$radius-lg;
+$border-radius-small: v.$radius-sm;
+
+
+
+
+
+@use 'components/page-parts/banner';
+
+// @use 'cpgem-navbar'with ($nav-height: $nav-height,
+// );
+
+@use 'components/page-parts/toc-basics';
+
+// @use 'components/page-parts/extras/toc-hidden-scrollbar';
+
+// @use './components/page-parts/footer';
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin border-radius($radius...) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.ptx-page-footer {
+  display: none;
+}
+
+.pretext .ptx-content-footer {
+  display: none;
+}
+
+
+
+#ptx-content {
+  @include bp.xl {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+// Oscar - note - you might consider how to handle nested RS containers
+// see "Projects and Friends" in sample book
+$rs-max-width: $content-width+(1.5 * $content-padding);
+
+// @debug "rs-max-width: #{$rs-max-width}";
+.ptx-runestone-container:has(.parsons_section, .ac_section, .codelens) {
+  width: $rs-max-width;
+  max-width: $rs-max-width; // never wider than original size
+  margin-left: calc(-0.75 * var(--content-padding));
+}
+
+$grouping-elements: ".theorem-like, .definition-like, .example-like, .exercise-like, .project-like, .remark-like, .openproblem-like, .openproblems-like, .computation-like, .assemblage-like, .knowl__content";
+
+:is(#{$grouping-elements}) .ptx-runestone-container:has(.parsons_section, .ac_section, .codelens) {
+  //fudge for rs elements in grouping elements
+  margin-left: calc(-0.75 * var(--content-padding) - 21px);
+}
+
+
+
+// Make expanded parts of TOC look more like subsections
+.toc-item.visible {
+  font-size: .95em;
+  padding-left: 8px;
+  background: none;
+}
+
+
+// Sidebar hits the left side of page - need to lock it in place
+
+
+
+// adds from main website style
+
+
+
+@include bp.lte(bp.get(md)) {
+  .ptx-content {
+    background: none !important;
+    padding-left: $content-padding-tight;
+    padding-right: $content-padding-tight;
+
+    ol,
+    ul {
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    li {
+      margin-left: 0.5rem;
+    }
+  }
+}

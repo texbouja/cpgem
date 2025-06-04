@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<pretext xml:lang="fr-FR" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- we first include a file which contains the docinfo element: -->
+  <xi:include href="./docinfo.ptx" />
+  <book xml:id="mines2020m2" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Préparations aux concours</title>
+    <subtitle>Sessions 2025</subtitle>
+
+    <!-- Include frontmatter -->
+    <!-- <xi:include href="./frontmatter.ptx" /> -->
+    <!-- Include chapters -->
+    <part xml:id="part-anaproba" >
+      <title>Analyse et probabilités</title>
+      <chapter>
+        <title> Mines 2020, MP, Maths 2 </title>
+          <xi:include href="./mines2020m2/enocor.ptx"/>
+      </chapter>
+      <chapter>
+        <title> Mines 2024, MP, Maths 1 </title>
+          <xi:include href="./mines2024m1/enocor.ptx"/>
+      </chapter>
+    <chapter>
+        <title> XENS 2024, MP, Maths B </title>
+          <xi:include href="./xens2024mb/enocor.ptx"/>
+      </chapter>
+    <chapter>
+        <title> CENTRALE 2018, MP, Maths II </title>
+          <xi:include href="./centrale2018m2/enocor.ptx"/>
+      </chapter>
+      
+    </part>
+    <!-- Include backmatter -->
+    <!-- <xi:include href="./backmatter.ptx" /> -->
+  </book>
+</pretext>

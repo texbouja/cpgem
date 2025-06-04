@@ -1,0 +1,104 @@
+// applied to the contents of the navbar
+@use '../abstracts/variables'as v;
+@use '../abstracts/mixins'as mx;
+@use '../abstracts/breakpoints'as bp;
+@use '../abstracts/placeholders';
+
+$nav-height: v.$topbar-height;
+$border-width: 1px !default;
+$center-content: true !default;
+$padding: 20px !default;
+
+@use 'components/helpers/buttons-default'as buttons;
+@use 'components/page-parts/extras/navbar-btn-borders';
+
+.ptx-navbar {
+  position: sticky;
+  overflow: visible;
+  display: flex;
+  top: 0;
+  height: $nav-height;
+  width: 100%;
+  margin: 20px 0;
+  border: 0;
+  background: var(--navbar-background);
+  border-top: 1px solid var(--page-border);
+  border-bottom: 1px solid var(--page-border);
+  z-index: 500;
+
+  .ptx-navbar-contents {
+    position: relative;
+    display: flex;
+    flex: 1;
+    justify-content: right;
+    align-items: center;
+
+    @if $center-content {
+      margin: 0 auto;
+    }
+  }
+
+  .button {
+    @include buttons.ptx-button;
+
+    & {
+      height: 100%; //always fill container
+      // Disable normal borders - top/bottom provided by container
+      // Use extras/_navbar-btn-borders.scss for side borders if desired
+      border-width: 0;
+
+    }
+  }
+
+  .toc-toggle {
+    gap: 0.4em;
+    margin-right: 0; //assumes is first button
+    justify-content: start;
+    background: var(--exerecice-like-border-color);
+  }
+
+  :is(.treebuttons, .nav-runestone-controls, .nav-other-controls) {
+    display: flex;
+  }
+
+  .treebuttons {
+    flex: 1 1 50%;
+    justify-content: center;
+  }
+
+  .nav-runestone-controls {
+    flex: 1 1 70px;
+    justify-content: end;
+  }
+
+  .pretext .navbar .dropdown {
+    height: $nav-height;
+  }
+
+  .treebuttons>* {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: (1.25 * $nav-height);
+  }
+
+  // .treebuttons .icon {
+  //   margin: 0 -7px; // chevrons have lots of horizontal padding
+  // }
+
+  :is(.index-button) .icon {
+    display: none;
+  }
+
+  :is(.activecode-toggle, .searchbutton, .light-dark-button, .mode-toggle) .name {
+    display: none;
+  }
+
+  .index-button {
+    min-width: 70px;
+  }
+
+  // .runestone-profile {
+  //   @include buttons.ptx-dropdown-button;
+  // }
+}

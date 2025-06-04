@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<pretext xml:lang="fr-FR" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- we first include a file which contains the docinfo element: -->
+  <xi:include href="./docinfo.ptx" />
+  <book xml:id="concours" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Sujets de concours</title>
+    <subtitle>Sujets de concours avec corrigés</subtitle>
+
+    <xi:include href="centrale2018mp2/enocor.ptx"/>
+    <xi:include href="mines2020mp1/enocor.ptx"/>
+    <xi:include href="mines2024mp1/enocor.ptx"/>
+    <xi:include href="xens2024mpb/enocor.ptx"/>
+
+  </book>
+</pretext>

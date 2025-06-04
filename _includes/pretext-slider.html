@@ -1,0 +1,183 @@
+<script>
+
+  // Version avec classe pour plus de contrôle
+  class ArticleToggle {
+  constructor() {
+    this.cacheKey = 'articleToggleStates';
+    this.init();
+  }
+  
+  init() {
+    const headings = document.querySelectorAll('article > .heading:first-child');
+    
+    headings.forEach(heading => {
+      this.setupHeading(heading);
+    });
+    
+    // Restaurer les états depuis le cache
+    this.restoreStatesFromCache();
+  }
+  
+  setupHeading(heading) {
+    const slider = heading.querySelector('.slider');
+    const title = heading.querySelector('.title');
+    const collapser = heading.querySelector('.collapser');
+    const article = heading.parentElement;
+    
+    // Toggle slider/title
+    if (slider && title) {
+      slider.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.toggleSliderTitle(heading);
+      });
+    }
+    
+    // Toggle collapse
+    if (collapser) {
+      collapser.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        this.toggleCollapse(article, collapser);
+      });
+    }
+    
+    // État initial (sera écrasé par le cache si disponible)
+    article.classList.remove('collapsed');
+    collapser?.classList.remove('expanded');
+  }
+  
+  // Récupère l'ID de l'article (toujours présent)
+  getArticleId(article) {
+    return article.id;
+  }
+  
+  // Récupère les états depuis le localStorage
+  getStatesFromCache() {
+    try {
+      const cached = localStorage.getItem(this.cacheKey);
+      return cached ? JSON.parse(cached) : {};
+    } catch (e) {
+      console.warn('Erreur lors de la lecture du cache ArticleToggle:', e);
+      return {};
+    }
+  }
+  
+  // Sauvegarde les états dans le localStorage
+  saveStatesToCache(states) {
+    try {
+      localStorage.setItem(this.cacheKey, JSON.stringify(states));
+    } catch (e) {
+      console.warn('Erreur lors de la sauvegarde du cache ArticleToggle:', e);
+    }
+  }
+  
+  // Restaure les états depuis le cache
+  restoreStatesFromCache() {
+    const states = this.getStatesFromCache();
+    const articles = document.querySelectorAll('article');
+    
+    articles.forEach(article => {
+      const articleId = this.getArticleId(article);
+      const state = states[articleId];
+      
+      if (state) {
+        const heading = article.querySelector('.heading:first-child');
+        const collapser = heading?.querySelector('.collapser');
+        
+        // Restaurer l'état de collapse
+        if (state.collapsed) {
+          article.classList.add('collapsed');
+          collapser?.classList.remove('expanded');
+        } else {
+          article.classList.remove('collapsed');
+          collapser?.classList.add('expanded');
+        }
+        
+        // Restaurer l'état du slider/title
+        if (state.showTitle) {
+          heading?.classList.add('show-title');
+        } else {
+          heading?.classList.remove('show-title');
+        }
+      }
+    });
+  }
+  
+  // Sauvegarde l'état d'un article spécifique
+  saveArticleState(article) {
+    const states = this.getStatesFromCache();
+    const articleId = this.getArticleId(article);
+    const heading = article.querySelector('.heading:first-child');
+    
+    states[articleId] = {
+      collapsed: article.classList.contains('collapsed'),
+      showTitle: heading?.classList.contains('show-title') || false
+    };
+    
+    this.saveStatesToCache(states);
+  }
+  
+  toggleSliderTitle(heading) {
+    heading.classList.toggle('show-title');
+    
+    // Sauvegarder l'état
+    const article = heading.parentElement;
+    this.saveArticleState(article);
+  }
+  
+  toggleCollapse(article, collapser) {
+    const isCollapsed = article.classList.contains('collapsed');
+    
+    if (isCollapsed) {
+      this.expandArticle(article, collapser);
+    } else {
+      this.collapseArticle(article, collapser);
+    }
+    
+    // Sauvegarder l'état
+    this.saveArticleState(article);
+  }
+  
+  expandArticle(article, collapser) {
+    article.classList.remove('collapsed');
+    collapser?.classList.add('expanded');
+  }
+  
+  collapseArticle(article, collapser) {
+    article.classList.add('collapsed');
+    collapser?.classList.remove('expanded');
+  }
+  
+  // Méthodes publiques pour contrôle externe
+  showTitle(heading) {
+    heading.classList.add('show-title');
+    const article = heading.parentElement;
+    this.saveArticleState(article);
+  }
+  
+  showSlider(heading) {
+    heading.classList.remove('show-title');
+    const article = heading.parentElement;
+    this.saveArticleState(article);
+  }
+  
+  // Méthode pour nettoyer le cache (utile pour le développement)
+  clearCache() {
+    try {
+      localStorage.removeItem(this.cacheKey);
+      console.log('Cache ArticleToggle vidé');
+    } catch (e) {
+      console.warn('Erreur lors du nettoyage du cache:', e);
+    }
+  }
+  
+  // Méthode pour exporter les états (utile pour le debug)
+  exportStates() {
+    return this.getStatesFromCache();
+  }
+  }
+
+  // Initialisation
+  const articleToggle = new ArticleToggle();
+
+</script>

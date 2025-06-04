@@ -1,0 +1,59 @@
+WARNING : Project's CLI version could not be detected from `requirements.txt`.
+WARNING : Try `pretext init --refresh` to produce a compatible file.
+INFO    : Building target cpgem
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : Generating any needed assets.
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : Finished generating assets.
+
+INFO    : Building with custom xsl /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/../../xsl/cpgem-html.xsl
+INFO    : Preparing to build into /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/output/cpgem.
+INFO    : discovering source file's directory name: /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2
+INFO    : verifying and expanding input directory: /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/../generated-assets
+INFO    : input directory expanded to absolute path: /run/media/cbouja/home/GitHub/cpgem/pretext/concours/generated-assets
+INFO    : verifying and expanding input directory: /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/../assets
+INFO    : input directory expanded to absolute path: /run/media/cbouja/home/GitHub/cpgem/pretext/concours/assets
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /home/cbouja/.ptx/2.18.1/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : successful application of /home/cbouja/.ptx/2.18.1/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : Using rs services version 2.18 from the PreTeXt CDN
+INFO    : Downloading rs services file from https://cdn.jsdelivr.net/gh/pretextbook/html-static@2.18/dist/_static/runestone_services.xml.
+INFO    : converting /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx to HTML in /tmp/ptx-m359ie9c
+INFO    : XSL conversion of /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx by /tmp/ptxcli_pa7tfiip/cli_xsl/cpgem-html.xsl
+INFO    : messages from the log for XSL processing:
+INFO    : * PTX:INFO:   checking ONLY the last TWO YEARS of element deprecations.
+Rerun with the string parameter "author.deprecations.all" set to "yes" to check your source against all deprecations.
+INFO    : successful application of /tmp/ptxcli_pa7tfiip/cli_xsl/cpgem-html.xsl
+INFO    : Removing temporary directory /tmp/ptx-m359ie9c
+INFO    : Removing temporary directory /tmp/ptx-twaejs9m
+INFO    : 
+Success! Run `pretext view cpgem` to see the results.
+
+INFO    : 

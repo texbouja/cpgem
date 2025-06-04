@@ -23,7 +23,9 @@
   @if $important {
     padding-left: $val !important;
     padding-right: $val !important;
-  } @else {
+  }
+
+  @else {
     padding-left: $val;
     padding-right: $val;
   }
@@ -51,14 +53,14 @@
 
 @mixin prompt($type, $fa-content, $fa-style: 'solid', $rotate: 0) {
   &.prompt-#{$type} {
-    background-color: var(--prompt-#{$type}-bg);
+    background-color: var(--prompt-#{$type}-background-color);
 
     &::before {
       content: $fa-content;
-      color: var(--prompt-#{$type}-icon-color);
+      color: var(--prompt-#{$type}-border-color);
       font: var(--fa-font-#{$fa-style});
 
-      @if $rotate != 0 {
+      @if $rotate !=0 {
         transform: rotate(#{$rotate}deg);
       }
     }
@@ -70,7 +72,9 @@
 
   @if $append {
     transition: $basic, $append;
-  } @else {
+  }
+
+  @else {
     transition: $basic;
   }
 }

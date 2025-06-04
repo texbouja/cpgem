@@ -1,33 +1,34 @@
-# Bundler cache
+# Bundler & Ruby
 .bundle
-vendor
+vendor/
 Gemfile.lock
-
-# Jekyll cache
-.jekyll-cache
-.jekyll-metadata
-_site
-
-
-
-# RubyGems
 *.gem
 
-# NPM dependencies
-node_modules
+# Jekyll
+.jekyll-cache/
+.jekyll-metadata
+_site/
+
+# Node/NPM
+node_modules/
 package-lock.json
 
-# IDE configurations
-.idea
-.vscode/*
+# IDE & Editor
+.idea/
+.vscode/
 !.vscode/settings.json
 !.vscode/extensions.json
 !.vscode/tasks.json
 
-# Misc
-_sass/vendors
-assets/js/dist
-_site
-tmp
-templates
+# Build & Temp
+tmp/
+templates/
+assets/js/dist/
+_sass/vendors/
+pretext/output/
+pretext/cours/output/
+pretext/concours/output/
+pretext/.env
+
+# Plugins (non suivis)
 _plugins/headers_generator.rb
