@@ -1,0 +1,67 @@
+---
+layout: page
+---
+  
+{% assign LLM = DeepSeek %}
+{% assign all_sujet = site.concours | where: "division", "chapter" %}
+{% assign concours_index = site.concours | where: "division", "book" %}
+{% assign index_content = concours_index.content %}
+
+{{ concours_index | jsonify | escape }}
+
+{% assign summary = concours_index.content | extract: 'section.book' %}
+{% assign summary_attrs = summary.attrs %}
+{% assign summary_content = summary.content %}
+
+{{ summary | jsonify | escape }}
+
+
+{% comment %} <div id="post-list" class="flex-grow-1 px-xl-1">
+  {% for sujet in all_sujet %}
+    {% assign sujet_basename = sujet.sujet_id %}
+    {% assign sujet_parentname = sujet.project_id %}
+    {% assign sujet_fullpath = sujet_parentname | append: '/' | append: sujet_basename %}
+    {% assign summary = sujet.content | extract: 'section.book' %}
+    {% assign summary_attrs = summary.attrs %}
+    {% assign summary_content = summary.content | extract_all: 'a[href]' %}
+
+
+    <h2>
+      <a href="{{ sujet_fullpath }}"></a>
+    </h2>
+
+    {%- for sujet in summary_content -%}
+      {%- assign sujet_id = sujet.attrs | split: 'href="' | last | split: '.html' | first -%}
+      {%- if sujet_id != 'appendix' and site.data.pretext.chapitres.DeepSeek[sujet_id] -%}
+        {%- assign sujet_href = sujet_parentname | append: '/' | append: sujet_id | append: '.html' -%}
+        <article class="card-wrapper card">
+          <div class="sujet-preview row g-0 flex-md-row-reverse">
+            <div class="col-md-12">
+              <div class="card-body d-flex flex-column">
+                <h1 class="card-title my-2 mt-md-0">
+                  <a href="{{ sujet_href }}">{{ site.data.pretext.chapitres.DeepSeek[sujet_id].title }}</a>
+                </h1>
+                <div class="card-text content mt-0 mb-3">
+                  <p>{{ site.data.pretext.chapitres.DeepSeek[sujet_id].abstract }}</p>
+                </div>
+                <details class="born-hidden-knowl">
+                  <summary class="knowl__link">
+                    <span class="type">Objectifs</span>
+                  </summary>
+                  <div class="knowl__content">
+                    <ul>
+                      {%- for item in site.data.pretext.chapitres.DeepSeek[sujet_id].objective -%}
+                        <li>
+                          {{ item }}</li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </article>
+      {% endif %}
+    {%- endfor -%}
+  {%- endfor -%}
+</div> {% endcomment %}

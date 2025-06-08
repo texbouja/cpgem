@@ -1,5 +1,5 @@
 ---
-layout: pretext
+layout: ptx-cours
 title: "Activités numériques"
 division: section
 project: book
@@ -126,15 +126,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.0';
+eBookConfig.runestone_version = '7.6.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-runtime.5eb70769dc5e56d7.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="/assets/js/pretext/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.14.0/lunr.stemmer.support.js"></script><script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.14.0/lunr.fr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="/assets/js/pretext/pretext_search.js"></script><script src="/assets/js/pretext/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Évaluer (Sage)';
 </script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
@@ -570,12 +570,12 @@ def loi_faible_grands_nombres_geom_variable_p(
 <section class="subsubsection" id="subsec-basetheo"><h4 class="heading hide-type">
 <span class="codenumber"></span><span class="type">Sous sous-section</span><span class="title">Base théorique</span>
 </h4>
-<section class="introduction" id="subsec-basetheo-2"><div class="para" id="subsec-basetheo-2-1">Dans cette subsection, nous allons étudier le <em class="emphasis">principe d’inversion</em>, une méthode mathématique pour simuler des variables aléatoires discrètes à partir d’une variable uniforme <span class="process-math">\(U \sim \mathcal{U}([0,1]) \)</span> ( <a href="sec-prodis-varalea.html#example-U" class="internal" title="Exemple 2.75: Loi uniforme sur un segment">Exemple 2.75</a> ).</div>
+<section class="introduction" id="subsec-basetheo-2"><div class="para" id="subsec-basetheo-2-1">Dans cette subsection, nous allons étudier le <em class="emphasis">principe d’inversion</em>, une méthode mathématique pour simuler des variables aléatoires discrètes à partir d’une variable uniforme <span class="process-math">\(U \sim \mathcal{U}([0,1]) \)</span> ( <a href="sec-prodis-varalea.html#example-U" class="internal" title="Exemple 2.2.34: Loi uniforme sur un segment">Exemple 2.2.34</a> ).</div>
 <div class="para" id="subsec-basetheo-2-2">Nous appliquerons ensuite ce principe à des lois discrètes usuelles (Bernoulli, binomiale, géométrique et Poisson) et implémenterons des simulations en Python.</div></section><article class="warning remark-like" id="subsec-basetheo-3"><h5 class="heading">
-<span class="before"> </span><span class="codenumber">2.110</span><span class="type">Mise en garde</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.5.1</span><span class="type">Mise en garde</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h5>
 <div class="para" id="subsec-basetheo-3-1">Les résultats énoncés dans cette subsection ne font pas partie du programme officiel et doivent être taités comme des exercices d’approfondissement.</div></article><article class="theorem theorem-like" id="thm-prininv"><h5 class="heading">
-<span class="before"> </span><span class="codenumber">2.111</span><span class="type">Théorème</span><span class="title">Principe d’inversion (énoncé mathématique).</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.5.2</span><span class="type">Théorème</span><span class="title">Principe d’inversion (énoncé mathématique).</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h5> <div class="para logical" id="thm-prininv-2-2">
 <div class="para">Soit <span class="process-math">\(X \)</span> une <em class="emphasis">variable aléatoire réelle</em>. La fonction de répartition <span class="process-math">\(F_X \)</span> de <span class="process-math">\(X \)</span> est définie par (voir <a href="sec-prodis-varalea.html#subsec-fonction-repartition" class="internal" title="Sous-section 2.2.5: Loi d’une variable aléatoire réelle : fonction de répartition ">Sous-section 2.2.5</a>) :</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/subsec-fonction-repartition.html">
@@ -631,7 +631,7 @@ F_Y(t)=F_X(t)
 <div class="para">Alors <span class="process-math">\(Y\)</span> suit la même loi que <span class="process-math">\(X\text{.}\)</span>
 </div>
 </div></article></details><article class="corollary theorem-like" id="cor-prininv"><h5 class="heading">
-<span class="before"> </span><span class="codenumber">2.112</span><span class="type">Corollaire</span><span class="title">Cas où les valeurs de <span class="process-math">\(X\)</span> sont des points isolés.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.5.3</span><span class="type">Corollaire</span><span class="title">Cas où les valeurs de <span class="process-math">\(X\)</span> sont des points isolés.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h5>
 <div class="para logical" id="cor-prininv-2-1">
 <div class="para">Soit <span class="process-math">\(X\)</span> une <abbr class="acronym">VADR</abbr> dont l’ensemble des valeurs s’organise en une suite strictement croissante <span class="process-math">\((x_n)_{n\in I}\)</span> avec <span class="process-math">\(I=\iic{0,N}\)</span> si <span class="process-math">\(X(\Omega)\)</span> est fini et <span class="process-math">\(I=\N\)</span> sinon. On pose  pour tout <span class="process-math">\(n\in I\text{,}\)</span>

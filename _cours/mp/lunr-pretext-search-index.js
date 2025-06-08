@@ -23,7 +23,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-equdif-equations-differentielles-lineaires-ord-1-4-3",
   "type": "Proposition",
-  "number": "1.1",
+  "number": "1.2.1",
   "title": "",
   "body": "  est le sous-espace affine de passant par est de direction .     est un -ev.  Si une solution de sur alors .     Pour résoudre , il suffit de résoudre et de déterminer une solution particulière de .   "
 },
@@ -32,7 +32,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#cauchy-lipchitz",
   "type": "Théorème",
-  "number": "1.2",
+  "number": "1.2.2",
   "title": "de Cauchy-Lipchitz.",
   "body": " de Cauchy-Lipchitz  Soit . Le problème de Cauchy admet une solution unique sur . C'est la seule fonction vérifiant    Ce résultat revient à démontrer qu'il n'y a qu'une fonction de classe qui vérifie     Existence On introduit la suite de fonctions définie par et En constantant ensuite que et en posant , on démontre par récurrence que Ce qui permet de justifier que la série de fonctions continues converge uniformément sur tout segment de . La suite de fonctions converge donc uniformément sur tout segment de vers une fonction continue sur et qui vérifie naturellement l'équation intégrale.  Unicité Si et sont des solutions du problème alors Ce qui permet de justifier par récurrence que pour tout  et donc que puisque ce dernier majorant converge vers .     "
 },
@@ -41,7 +41,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-equdif-equations-differentielles-lineaires-ord-1-4-5",
   "type": "Corollaire",
-  "number": "1.3",
+  "number": "1.2.3",
   "title": "",
   "body": " Pour tout , l'application définie sur par est un isomorphisme de dans . En particulier   "
 },
@@ -50,7 +50,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#prop-superposition",
   "type": "Proposition",
-  "number": "1.4",
+  "number": "1.2.4",
   "title": "Principe de superposition.",
   "body": " Principe de superposition   On considére deux EDL du premier ordre partageant la même équation homogène : Si est une solution de et est une solution de alors est une solution de l'equation    "
 },
@@ -59,7 +59,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#prop-solreelle",
   "type": "Proposition",
-  "number": "1.5",
+  "number": "1.2.5",
   "title": "",
   "body": "  On considère un système différentiel homogène réel  étant une fonction continue de dans . Les solutions réelles de sont les parties réelles des solutions complexes.   Toute solution réelle de est sa propre partie réelle. Si maintenant est une solution complexe de alors, du fait que est une matrice réelle, est une solution de . L'ensemble des solution complexes de étant un -espace vectoriel, est une solution de .  Ce qui montre que les solutions réelles de sont les parties réelles de ses solutions complexes.   "
 },
@@ -68,7 +68,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-equdif-equations-differentielles-lineaires-ord-1-4-8",
   "type": "Remarque",
-  "number": "1.6",
+  "number": "1.2.6",
   "title": "",
   "body": " L'ensemble des solutions réelles est aussi l'ensemble des solutions à priori complexes qui prennent des valeurs réelles. Concrètement, une fois obtenu les solutions complexes, il suffit de déterminer les valeurs des paramètres en jeu qui permettent que la solution prennent uniquement des valeurs réelles.  "
 },
@@ -77,7 +77,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-equdif-equations-differentielles-lineaires-ord-1-4-10",
   "type": "Exemple",
-  "number": "1.7",
+  "number": "1.2.7",
   "title": "",
   "body": "  Résoudre le système différentiel     Le système s'ecrit La matrice est orthogonale directe donc en est un vecteur propre. C'est aussi un vecteur propre de . En multipliant la relation par on obtient l'equation en : En suivant la procédure standard de résoltion pour une EDL linéaire du premier ordre on a alors il existe tel que dans l'expression on reconnait le module et l'argument de donc En posant avec et en identifiant les parties réelle et imaginaire  est effectivement un -espace vectoriel de dimension . Il est engendré par les fonctions    "
 },
@@ -86,7 +86,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-equdif-equations-differentielles-lineaires-ord-1-4-11",
   "type": "Exemple",
-  "number": "1.8",
+  "number": "1.2.8",
   "title": "",
   "body": "  Résoudre sur l'intervalle le système différentiel     Le système équivaut à avec On constate que la somme des deux colonnes de vaut avec . Donc est une vecteur propre de associé à la valeur propre . Comme alors l'autre valeur propre de est et après un calcul rapide le vecteur est un vecteur propre qui lui est associé. Ainsi En posant avec on obtient le système différentiel d'inconnues  Il existe donc tels que La relation se traduit pas et donc    "
 },
@@ -95,7 +95,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-equdif-equations-differentielles-lineaires-ord-1-4-12",
   "type": "Exemple",
-  "number": "1.9",
+  "number": "1.2.9",
   "title": "",
   "body": "  Résoudre sur le système différentiel     Ici le système différentiel s'écrit avec    Ce qui prouve que est semblable dans à la matrice diagonale . Clairement est un vecteur propre de associé à la valeur propre et pour tout on a Comme prévu est une droite vectorielle. Elle est engendrée par le vecteur  étant une matrice réelle, est la droite engendrée par . Ainsi avec Si on pose maintenant avec alors Il existe donc tels que de quoi on déduit que les solutions complexes de sont données par cette solution est réelle si et donc en posant on peut écrire où . L'ensemble des solutions de cette forme est de dimension sur donc il est l'ensemble des solutions réelles de .   "
 },
@@ -104,7 +104,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-equdif-equations-differentielles-lineaires-ord-1-5-2",
   "type": "Vocabulaire",
-  "number": "1.10",
+  "number": "1.2.10",
   "title": "",
   "body": "   On appelle système fondamental de solutions de l'équation homogène  toute base de .  Soient des solution de . On appelle wronksien dans la base du système de solutions de la fonction définie par     "
 },
@@ -113,7 +113,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-equdif-equations-differentielles-lineaires-ord-1-5-3",
   "type": "Proposition",
-  "number": "1.11",
+  "number": "1.2.11",
   "title": "",
   "body": " Soient des solution de . Soit leurs wronksien. Les assertions suivantes sont équivalentes :  est un système fondamental de solutions de ;  pour tout , la famille est une base de ;  il existe tel que soit une base de ;  pour tout , ;  il existe tel que .    "
 },
@@ -122,7 +122,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-equdif-equations-differentielles-lineaires-ord-1-5-4",
   "type": "Remarque",
-  "number": "1.12",
+  "number": "1.2.12",
   "title": "",
   "body": " Avec les notations de la proposition précédente :    Une famille de fonctions de dans peut très bien être libre sans que soit libre pour tout .   la fonction est soit partout nulle sur , soit ne s'annule en aucun point de ;   la famille est soit une base de pour tout soit elle est liée pour tout .    "
 },
@@ -131,7 +131,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-equdif-equations-differentielles-lineaires-ord-1-5-5",
   "type": "Proposition",
-  "number": "1.13",
+  "number": "1.2.13",
   "title": "Équation du wronksien.",
   "body": " Équation du wronksien  Soient des solution de . Soit leurs wronksien dans . Alors   "
 },
@@ -140,7 +140,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-equdif-equations-differentielles-lineaires-ord-1-6",
   "type": "Remarque",
-  "number": "1.14",
+  "number": "1.2.14",
   "title": "",
   "body": " Ainsi la fonction est une solution sur de l'équation différentielle linéaire scalaire homogène du premier ordre Ce qui implique que son expression est de la forme où et est une primitive sur de la fonction . Ce qui confirme que est soit partout nulle, soit ne s'annule pas sur .  "
 },
@@ -149,7 +149,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-varconst-2",
   "type": "Lemme",
-  "number": "1.15",
+  "number": "1.2.15",
   "title": "",
   "body": " Soit un système fondamental de solutions de . Pour toute fonction de classe  , il existe des fonctions uniques de classe de dans telles que   "
 },
@@ -158,7 +158,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#variation-des-constantes",
   "type": "Théorème",
-  "number": "1.16",
+  "number": "1.2.16",
   "title": "Méthode de la variation des constantes.",
   "body": " Méthode de la variation des constantes  On suppose qu'on connait un système fondamental de l'équation homogène et on pose    Grâce aux formules de Cramer,   Alors l'équation équivaut à   "
 },
@@ -167,7 +167,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-varconst-4",
   "type": "Exemple",
-  "number": "1.17",
+  "number": "1.2.17",
   "title": "",
   "body": "  On veut résoudre complétement le système différentiel sachant que les fonctions et sont des solutions du système homogène.    Les fonctions et sont des solutions du système homogène associé à . Elles en constituent un SFS . Les solutions de sont donc données par où . En posant et , la métode de la variation des consantes aboutit à Système linéaire d'inconnues et et de déterminant . Il se résout en ce qui donne : où et sont des constantes quelconques. Les solutions du système différentiel de départ sont donc données par    "
 },
@@ -176,7 +176,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-equdif-equations-differentielles-lineaires-ord-1-8-2",
   "type": "Conventions et notations",
-  "number": "1.18",
+  "number": "1.2.18",
   "title": "",
   "body": " Soient un endomorphisme de et une application continue. Dans toute cette section, on considère l'équation différentielle et le système différentiel associé à dans la base   est dite une équation différentielle linéaire du premier ordre à coefficients constants. On notera l'équation homogène de et celle de .  "
 },
@@ -185,7 +185,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#solutions-homogenes-coefficients-constants",
   "type": "Théorème",
-  "number": "1.19",
+  "number": "1.2.19",
   "title": "Solutions d’une équation homogène à coefficients constants.",
   "body": " Solutions d'une équation homogène à coefficients constants    Les solutions de l'équation homogène sur sont les fonctions où est un vecteur quelconque de .  Soit . L'unique solution sur du problème de Cauchy de l'équation homogène en est donnée par     "
 },
@@ -194,7 +194,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-equdif-equations-differentielles-lineaires-ord-1-8-4",
   "type": "Corollaire",
-  "number": "1.20",
+  "number": "1.2.20",
   "title": "Propriétés de l’exponentielle.",
   "body": " Propriétés de l'exponentielle    On considère une algèbre de dimension finie . Pour tout , l'application est l'unique solution du problème de Cauchy Grâce à cette identification, on établit rapidement la propriété :   On se place dans l'algèbre . Si est un endomorphisme de alors     "
 },
@@ -203,7 +203,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#sec-equdif-equations-differentielles-lineaires-ord-1-8-6",
   "type": "Remarque",
-  "number": "1.21",
+  "number": "1.2.21",
   "title": "SFS et variation des constantes.",
   "body": "SFS et variation des constantes   Système fondamental de solution et wronksien  Soient et posons pour tout , .   Ces notions ont toutefois peu d'intérêt dans le cas d'une EDL à coefficients constants car on sait expliciter les solutions.    est un SFS de sur si et seulement si est une base de .  Le wronksien de dans la base est donné par      Variation des constantes  Les solutions de l'équation homogène étant les fonctions où est un vecteur quelconque de , faire varier les constantes revient à faire varier le vecteur . On pose donc de telle sorte que Cette présentation n'offre toutefois pas d'avantage pratique par rapport à la méthode générale de la variation des constantes puisqu'elle exige le calcul de l'exponentielle et donc le calcul de l'inverse de la matrice de passage dans une base de réduction.    "
 },
@@ -212,7 +212,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-ord-1.html#expression-solution-cauchy",
   "type": "Théorème",
-  "number": "1.22",
+  "number": "1.2.22",
   "title": "Expression intégrale de la solution du problème de Cauchy.",
   "body": " Expression intégrale de la solution du problème de Cauchy   Soient et . L'unique solution de l'équation complète vérifiant la condition initiale est donnée par     Notons l'unique solution de telle que et posons La fonction est de classe et on a  est donc une primitive de la fonction . Puisque alors et donc    "
 },
@@ -230,7 +230,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaires.html#sec-equdif-equations-differentielles-lineaires-scalaires-2-2",
   "type": "Conventions et notations",
-  "number": "1.23",
+  "number": "1.3.1",
   "title": "",
   "body": " désignera un entier strictement positif.  On considère des fonctions continues de dans .    L'équation différentielle   est dite une équation différentielle linéaire scalaire d'ordre . Une solution de sur est par définition une fonction de classe telle que   On notera l'ensemble de ces solutions.    L'équation homogène de est l'équation différentielle     Soient et . Une fonction est dite une solution sur du problème de Cauchy :   si c'est une solution de sur qui vérifie     En posant , l'équation se ramène au système différentiel linéaire du premier ordre :   est une matrice compagne pour tout .   avec  On notera le système homogène de .    "
 },
@@ -239,7 +239,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaires.html#sec-equdif-equations-differentielles-lineaires-scalaires-2-3",
   "type": "Proposition",
-  "number": "1.24",
+  "number": "1.3.2",
   "title": "",
   "body": " Une fonction de classe est une solution de (resp. de ) sur si et seulement si la fonction définie par   est une solution du système différentiel (resp. de ) sur .  En outre, l'application   induit une bijection de sur (resp. de sur ).   induit un isomorphisme entre les -espaces vectoriels et .   "
 },
@@ -248,7 +248,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaires.html#theo-cauchy-lipschitz",
   "type": "Théorème",
-  "number": "1.25",
+  "number": "1.3.3",
   "title": "Cauchy-Lipschitz.",
   "body": " Cauchy-Lipschitz  Pour tout , il existe une unique solution de sur telle que   "
 },
@@ -257,7 +257,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaires.html#sec-equdif-equations-differentielles-lineaires-scalaires-2-5",
   "type": "Corollaire",
-  "number": "1.26",
+  "number": "1.3.4",
   "title": "",
   "body": "  est un -espace vectoriel de dimension .  pour toute solution de sur .   "
 },
@@ -266,7 +266,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaires.html#sec-equdif-equations-differentielles-lineaires-scalaires-2-6",
   "type": "Vocabulaire",
-  "number": "1.27",
+  "number": "1.3.5",
   "title": "",
   "body": " Soient des solutions de l'équation homogène . Nous dirons que est un système fondamental de solutions de si c'est une base de . Nous appellerons wronskien des solutions , le wronskien de dans la base canonique de :   "
 },
@@ -275,7 +275,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaires.html#sec-equdif-equations-differentielles-lineaires-scalaires-2-7",
   "type": "Proposition",
-  "number": "1.28",
+  "number": "1.3.6",
   "title": "",
   "body": " Soient des solutions de l'équation homogène . Soit leur wronskien. Grâce à l'isomorphisme induit par , les assertions suivantes sont équivalentes :   est un système fondamental de solutions de ;  est un système fondamental de solutions de ;  ;  .   "
 },
@@ -284,7 +284,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaires.html#sec-equdif-equations-differentielles-lineaires-scalaires-2-8",
   "type": "Proposition",
-  "number": "1.29",
+  "number": "1.3.7",
   "title": "Équation du wronksien.",
   "body": "Équation du wronksien  Rappelons l'écriture de l'équation homogène :   Les wronskiens des solutions de ne dépendent que de la fonction .   Avec les notations de la proposition précédente, l'équation du wronskien donne ici :   "
 },
@@ -293,7 +293,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaires.html#sec-equdif-equations-differentielles-lineaires-scalaires-2-9",
   "type": "Proposition",
-  "number": "1.30",
+  "number": "1.3.8",
   "title": "Variation des constantes.",
   "body": " Variation des constantes  Rappelons l'écriture de l'équation complète :   On suppose qu'on connaît un système fondamental de solutions de l'équation homogène . En posant   on a   "
 },
@@ -302,7 +302,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaires.html#theo-eqscal",
   "type": "Théorème",
-  "number": "1.31",
+  "number": "1.3.9",
   "title": "Solution d’une EDLS homogène à coefficients constants.",
   "body": " Solution d'une EDLS homogène à coefficients constants  Soient des scalaires . On considère l'équation différentielle linéaire scalaire homogène d'ordre dite à coefficients constants :   On appelle polynôme caractéristique de le polynôme :   Les solutions de sont en fait de classe sur .     Si est scindé sur , où sont les racines distinctes de , alors     Si mais n'est pas scindé sur :   où sont les racines réelles éventuelles de et ses racines complexes non réelles, alors les solutions réelles de sur sont les fonctions    Les solutions réelles de sont les parties réelles de ses solutions complexes.   où et sont des polynômes quelconques.    "
 },
@@ -329,7 +329,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaires.html#sec-equdif-equations-differentielles-lineaires-scalaires-3-4",
   "type": "Proposition",
-  "number": "1.32",
+  "number": "1.3.10",
   "title": "Solution particulière quand <span class=\"process-math\">\\(\\varphi(t) = R(t) \\e^{\\lambda t}\\)<\/span>.",
   "body": " Solution particulière quand  Soient et . Considérons l'EDLS à coefficients constants :   Une fonction de la forme plus générale avec est une solution de si et seulement si est une solution de l'équation homogène . Comme , alors ceci n'est possible que si est un polynôme de degré .   Alors admet une solution unique de la forme , où est un polynôme de même degré que et est la multiplicité de en tant que racine de (avec si n'est pas une racine de ).   En posant pour l'instant , alors selon la remarque  est une solution de si et seulement si   Par définition de , on a et , donc cela équivaut à   Le polynôme à gauche de cette égalité a le même degré que , soit , d'où l'idée de remplacer par . Dans ce cas, serait de même degré que et l'égalité précédente équivaudrait à   En posant , il suffit maintenant de remarquer que l'application   est un endomorphisme de qui est injectif car il conserve le degré. C'est donc un isomorphisme de . Il existe donc un unique polynôme de degré (et donc ) qui vérifie l'égalité précédente. La fonction est une solution de .   "
 },
@@ -338,7 +338,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaires.html#sec-equdif-equations-differentielles-lineaires-scalaires-3-5",
   "type": "Exemple",
-  "number": "1.33",
+  "number": "1.3.11",
   "title": "",
   "body": "  Trouver les solutions complexes de l'EDLS : .  Trouver les solutions réelles de l'EDLS : .   "
 },
@@ -356,7 +356,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaire-ordre-2.html#sec-equdif-equations-differentielles-lineaires-scalaire-ordre-2-2",
   "type": "Mise en garde",
-  "number": "1.34",
+  "number": "1.4.1",
   "title": "",
   "body": " Sous le thème des équations différentielles, les équations linéaires scalaires du deuxième ordre sont les équations les plus fréquemment abordées dans les sujets de concours.  "
 },
@@ -365,7 +365,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaire-ordre-2.html#sec-equdif-equations-differentielles-lineaires-scalaire-ordre-2-3",
   "type": "Conventions et notations",
-  "number": "1.35",
+  "number": "1.4.2",
   "title": "",
   "body": " Soient et des applications continues de dans . On considère l'EDLS du deuxième ordre :  Une solution de sur est une fonction telle que :  est deux fois dérivable sur ;  .   L'équation est dite normalisée si est constante de valeur et normalisable si ne s'annule pas sur .   Remarque  Si est normalisable, alors elle est équivalente à l'équation normalisée obtenue en la divisant par . En général, est équivalente à toute équation de la forme :  où est une fonction continue qui ne s'annule pas sur .   Attention donc, les résultats du cadre général ne sont applicables à que si elle est normalisable. En particulier, la dimension de l'ensemble des solutions de l'équation homogène peut être strictement supérieure à .  Dans le cas où est normalisable, elle équivaut au système différentiel : où   On notera l'équation homogène de et celle de .  "
 },
@@ -392,7 +392,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaire-ordre-2.html#sec-equdif-equations-differentielles-lineaires-scalaire-ordre-2-8",
   "type": "Exemple",
-  "number": "1.36",
+  "number": "1.4.3",
   "title": "Exemples non génériques.",
   "body": " Exemples non génériques    Résoudre en observant que est une solution :     Résoudre en commençant par chercher des solutions polynomiales de l'équation homogène :     Résoudre sur , en commençant par chercher les solutions développables en série entière :     Résoudre sur , en commençant par chercher les solutions développables en série entière :     Résoudre sur , en posant et en étudiant le raccord en :     "
 },
@@ -401,7 +401,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaire-ordre-2.html#sec-equdif-equations-differentielles-lineaires-scalaire-ordre-2-9",
   "type": "Exemple",
-  "number": "1.37",
+  "number": "1.4.4",
   "title": "Équation de Cauchy-Euler.",
   "body": " Équation de Cauchy-Euler   On considère l'équation L'équation n'est pas normalisable en .  On cherche les solutions sur qui sont de la forme . Pour que soit une solution, il faut et il suffit que soit une racine du polynôme :  Si et sont les racines de dans , les solutions de sur sont de la forme :  si ;  si ;  si et .    Autre méthode :  Si on pose , alors équivaut sur à l'EDLS à coefficients constants : équation à coefficients constants qui a pour polynôme caractéristique .   "
 },
@@ -410,7 +410,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaire-ordre-2.html#sec-equdif-equations-differentielles-lineaires-scalaire-ordre-2-10",
   "type": "Exemple",
-  "number": "1.38",
+  "number": "1.4.5",
   "title": "Équation d’Airy.",
   "body": "Équation d'Airy   On considère l'équation : On cherche les solutions développables en série entière sur .    En remplaçant par dans , on obtient : Ce qui revient à : ou encore, pour tout : Alors les solutions de sur sont les fonctions données par : où et sont quelconques dans et : On notera que les séries entières qui interviennent dans les expressions de et sont bien de rayon de convergence infini.   "
 },
@@ -419,7 +419,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaire-ordre-2.html#sec-equdif-equations-differentielles-lineaires-scalaire-ordre-2-11",
   "type": "Exemple",
-  "number": "1.39",
+  "number": "1.4.6",
   "title": "Équation d’Hermite :.",
   "body": " Équation d'Hermite :    où est un réel positif ou nul. On cherche les solutions développables en série entière sur .    Comme pour l'équation d'Airy, admet effectivement des solutions développables en série entière sur  En remplaçant dans , on obtient : Et donc pour tout :  Si on prolonge la fonction d'Euler sur par la relation : De cette manière, elle continuera à vérifier l'équation fonctionnelle : et donc : Avec respectivement et , on obtient les écritures : d'où les solutions de : avec :   En fait, les écritures précédentes ne sont valables que si et . Dans le cas contraire, en revenant aux relations précédentes, on aura :   Si , c'est-à-dire avec , alors :    Dans ce cas, la fonction est polynomiale.  Si , c'est-à-dire avec , alors :    Dans ce cas, c'est la fonction qui est polynomiale.   On notera que si est un entier positif, alors admet au moins une solution polynomiale. Cette solution est paire si est pair et impaire si est impair.   "
 },
@@ -428,7 +428,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-lineaires-scalaire-ordre-2.html#sec-equdif-equations-differentielles-lineaires-scalaire-ordre-2-12",
   "type": "Exemple",
-  "number": "1.40",
+  "number": "1.4.7",
   "title": "Équation de Tchebytchev.",
   "body": " Équation de Tchebytchev   On considère l'équation différentielle :   où est un réel positif. On cherche les solutions développables en série entière sur .    En remplaçant par dans l'équation, on obtient la relation de récurrence :   Pour tout , on a :   Par suite, les solutions de l'équation sur sont les fonctions données par : où :   On peut de manière directe prouver que l'équation admet au moins une solution polynomiale si : c'est le polynôme de Tchebychev défini par :   On notera que :   Si est un entier positif pair, avec , alors si et est une fonction polynomiale paire de degré .  Si est un entier positif impair, avec , alors si et est une fonction polynomiale impaire de degré .  Si est un entier positif, alors l'équation admet au moins une solution polynomiale.    "
 },
@@ -932,7 +932,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#sec-equdif-equations-differentielles-themes-classiques-3-2",
   "type": "Conventions et notations",
-  "number": "1.41",
+  "number": "1.7.1",
   "title": "",
   "body": "  et sont des applications continues définies sur à valeurs respectivement dans et dans . On considère les équations différentielles   "
 },
@@ -941,7 +941,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#sec-equdif-equations-differentielles-themes-classiques-3-3",
   "type": "Remarque",
-  "number": "1.42",
+  "number": "1.7.2",
   "title": "",
   "body": " Les résultats de cette subsection sont traités dans les exercices et .  "
 },
@@ -950,7 +950,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#sec-equdif-equations-differentielles-themes-classiques-3-4-2",
   "type": "Vocabulaire",
-  "number": "1.43",
+  "number": "1.7.3",
   "title": "",
   "body": " On appelle équation résolvante de , l'équation différentielle linéaire homogène du premier ordre   l'inconnue étant une fonction dérivable de dans .  "
 },
@@ -959,7 +959,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#sec-equdif-equations-differentielles-themes-classiques-4-2",
   "type": "Conventions et notations",
-  "number": "1.44",
+  "number": "1.7.4",
   "title": "",
   "body": " Dans tout cette subsection, on se donne une EDLS d'ordre  et son équation homogène qu'on suppose normalisables sur l'intervalle , sauf mention explicite du contraire,   On suppose en outre que l'intervalle est ouvert.  "
 },
@@ -968,7 +968,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#sec-equdif-equations-differentielles-themes-classiques-4-3-4",
   "type": "Théorème",
-  "number": "1.45",
+  "number": "1.7.5",
   "title": "Cas d’une équation normalisée.",
   "body": "Cas d'une équation normalisée   On suppose que l'équation est normalisée et que les fonctions et sont développables en séries entières en sur un intervalle . Alors toutes les solutions de sur sont développables en séries entières en sur .    Voir exercice    "
 },
@@ -977,7 +977,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#sec-equdif-equations-differentielles-themes-classiques-4-3-5",
   "type": "Théorème",
-  "number": "1.46",
+  "number": "1.7.6",
   "title": "Cas d’une équation non normalisable.",
   "body": " Cas d'une équation non normalisable   Dans le cas où n'est pas normalisable en , si on peut la ramener à une équation de la forme   où et sont développables en séries entières en sur un intervalle , alors admet au moins une solution sur de la forme   où est une série entière de rayon de convergence et est une racine du polynôme   La fonction est dite une solution de Frobenius de et est dit polynôme initialisateur de .    Voir exercice .   "
 },
@@ -1040,7 +1040,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#sec-equdif-equations-differentielles-themes-classiques-4-5-10",
   "type": "Proposition",
-  "number": "1.47",
+  "number": "1.7.7",
   "title": "CNS d’existence et d’unicité.",
   "body": " CNS d'existence et d'unicité  Considérons un système fondamental de solutions de . Alors le problème aux limites admet une solution unique si et seulement si    Soit une solution particulière de et posons . On a alors   Ce dernier système d'équations, d'inconnues et , admet une solution unique si et seulement si .   "
 },
@@ -1058,7 +1058,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#sec-zeros-des-solutions-3-2-2",
   "type": "Proposition",
-  "number": "1.48",
+  "number": "1.7.8",
   "title": "",
   "body": "  Deux solutions de qui ont un zéro en commun sont nécessairement colinéaires.    Si et sont deux solutions de sur qui ont un zéro en commun et est leur wronksien, alors et donc et sont colinéaires.   "
 },
@@ -1067,7 +1067,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#prop-nbrzerosfini",
   "type": "Proposition",
-  "number": "1.49",
+  "number": "1.7.9",
   "title": "",
   "body": "  Soit une solution non nulle de sur . Alors elle admet au plus un nombre fini de zéros dans chaque segment de .    Soit un segment . Supposons par l'absurde que admet une infinité de zéros dans et considérons une suite injective dont tous les termes sont des zéros de dans . étant un segment, admet une suite extraite qui converge, on peut donc supposer que elle-même converge. Soit sa limite. Puisque pour tout , alors par continuité de on a . Ensuite   Par unicité de la solution de telle que et , la fonction serait donc nulle sur . Ce qui contredit l'hypothèse faite sur .  Alors admet au plus un nombre fini de zéros dans .   "
 },
@@ -1076,7 +1076,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#sec-zeros-des-solutions-3-4-2",
   "type": "Théorème",
-  "number": "1.50",
+  "number": "1.7.10",
   "title": "de séparation de Sturm.",
   "body": " de séparation de Sturm   Soient et deux solutions non colinéaires de sur . On suppose que admet au moins deux zéros dans . Pour tout couple de zéros successifs de dans , il y a exactement un zéro de entre et .    Les zéros et étant successifs, ne s'annule pas sur l'intervalle . Elle y garde donc un signe constant. Quitte à remplacer par , on peut supposer que pour tout . Par ailleurs, ne peut s'annuler en ou en car sinon serait partout nulle donc   Soit le wronksien de et . On a   Comme ne s'annule pas sur , elle y garde un signe constant et donc . D'après le TVI , admet au moins un zéro dans . Ce zéro est nécessairement unique car sinon, le résultat qu'on vient de démontrer impliquera l'existence d'un zéro de dans .   "
 },
@@ -1094,7 +1094,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#prop-qneg",
   "type": "Proposition",
-  "number": "1.51",
+  "number": "1.7.11",
   "title": "Cas où la fonction <span class=\"process-math\">\\(q\\)<\/span> est négative.",
   "body": " Cas où la fonction est négative   Si sur et n'est identiquement nulle sur aucun segment de , alors toute solution non nulle de admet au plus un zéro dans .    Soit une solution non nulle de et supposons qu'elle admet au moins deux zéros dans . Soient et deux zéros consécutifs de . Si par exemple sur , alors et n'est partout nulle sur aucun un segment de . La fonction est donc strictement croissante sur . C'est impossible car on a forcément et .   "
 },
@@ -1103,7 +1103,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#prop-qpos",
   "type": "Proposition",
-  "number": "1.52",
+  "number": "1.7.12",
   "title": "Cas où la fonction <span class=\"process-math\">\\(p\\)<\/span> est positive non intégrable.",
   "body": " Cas où la fonction est positive non intégrable    On suppose que l'intervalle est non majoré et que sur et n'est identiquement nulle sur aucun segment de . Soit . Si n'est pas intégrable sur , alors toute solution de admet une infinité de zéros dans .     Soit une solution non nulle de . Supposons que admet un nombre fini de zéros dans . Il existe donc tel que sur . Quitte à remplacer par , on peut supposer que sur .  Comme , alors est concave sur et donc pour tout , on a   Et on voit ainsi qu'il suffit qu'il existe tel que pour avoir , contredisant ainsi la stricte positivité de sur .  Introduisons maintenant la fonction définie pour tout par   est de classe sur et pour tout   Par suite   est positive non intégrable sur donc . Il existe donc tel que sur . On en déduit que sur tout entier. Ce qui achève la démonstration.   "
 },
@@ -1112,7 +1112,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#subsubsec-equations-normales-5",
   "type": "Théorème",
-  "number": "1.53",
+  "number": "1.7.13",
   "title": "Théorème de comparaison de Sturm.",
   "body": " Théorème de comparaison de Sturm   On suppose que et n'est partout nulle sur aucun segment de . On suppose que admet une solution qui admet au moins deux zéros dans . Alors toute solution de admet au moins un zéro entre chaque deux zéros consécutifs de .    Soient deux zéros successifs de dans . Soit une solution de sur . Soit le wronksien croisé de et . Alors   Comme et , en intégrant cette relation entre et on obtient   Comme pour le résultat précédent, on peut supposer que sur , ce qui implique en outre que et . En analysant les signes des deux membres de l'égalité précédente on voit que ne peut garder un signe constant sur . Elle admet donc au moins un zéro dans .   "
 },
@@ -1121,7 +1121,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#subsubsec-equations-normales-7",
   "type": "Exemple",
-  "number": "1.54",
+  "number": "1.7.14",
   "title": "Un exemple intéressant.",
   "body": " Un exemple intéressant   Soit . Considérons l' EDLS d'ordre à coefficients constants   Transformons la en une équation de Cauchy-Euler sur ( ) :   Et ramenons-nous à la forme normale de celle-ci sur ( ) :   ou encore, en posant ,   Au final on aurait effectué le changement mixte .  On en déduit les résultats suivants :    Si , les solutions de ont toutes une infinité de zéros dans .    Si , toute solution non nulle de admet au plus un zéro dans .      Toute solution de sur s'écrit sous la forme où est une solution de . Les zéros de dans sont donc les réels où est un zéro de dans .  Les solutions de sont de la forme si , si et si . D'où le résultat.   "
 },
@@ -1130,7 +1130,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#subsubsec-equations-normales-8",
   "type": "Remarque",
-  "number": "1.55",
+  "number": "1.7.15",
   "title": "",
   "body": " Cet exemple montre en particulier que l'hypothèse de non intégrabilité de dans n'est pas nécessaire pour que les solutions de l'équation normale admettent chacune une infinité de zéros.  Grâce au théorème de comparaison de Sturm, on en déduit aussi que si est non majoré alors    si au voisinage de , alors les solutions non nulles de ont chacune au plus un zéro dans .    s'il existe tel que au voisinage de , alors les solutions de ont chacune une infinité de zéros dans .    "
 },
@@ -1139,7 +1139,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#thm-leigh",
   "type": "Théorème",
-  "number": "1.56",
+  "number": "1.7.16",
   "title": "Théorème de Leighton.",
   "body": " Théorème de Leighton   Soit . On suppose que est non majoré, que est positive non intégrable sur et que est non intégrable sur . Alors toutes les solutions de ont une infinité de zéros dans .  C'est une généralisation du théorème     Soit une solution de . Supposons par l'absurde qu'elle admet un nombre fini de zéros dans . Il existe alors tel que ne s'annule pas sur et on peut supposer que sur .  Comme pour le théorème on introduit la fonction , sur , définie par :   On a alors   Par suite   Puisque est non intégrable sur , alors et donc il existe tel que   Une situation à la Gromwall donc.  Si on pose maintenant , alors est une fonction strictement positive et on a pour tout :   et donc   par suite   Ce qui est impossible car cela impliquerait que la fonction est intégrable sur et donc sur . Ainsi admet une infinité de zéros dans .   "
 },
@@ -1148,7 +1148,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-equdif-equations-differentielles-themes-classiques.html#subsubsec--4",
   "type": "Remarque",
-  "number": "1.57",
+  "number": "1.7.17",
   "title": "",
   "body": " On peut alléger les conditions sur en supposant que seulement, sans aucune obligation sur son signe.  et où est une primitive de sur . Les hypothèses du théorème sont donc immédiatement vérifiables sur les coefficients et de l'équation originale .  "
 },
@@ -1166,7 +1166,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#def-tribu",
   "type": "Définition",
-  "number": "2.1",
+  "number": "2.1.1",
   "title": "",
   "body": "  On appelle tribu (ou -algèbre) de tout ensemble de parties de tel que :   ;  si alors ;  si est une suite d'éléments de alors ;  Si est une tribu de alors le couple est dit un espace probabilisable. Tout élément de est dit un événement de l'espace .   "
 },
@@ -1175,7 +1175,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-tribu-3",
   "type": "Remarque",
-  "number": "2.2",
+  "number": "2.1.2",
   "title": "",
   "body": " Si est une tribu de alors    ;    si est une suite d'éléments de alors .     "
 },
@@ -1184,7 +1184,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-tribu-4",
   "type": "Exemple",
-  "number": "2.3",
+  "number": "2.1.3",
   "title": "",
   "body": "     est une tribu de . C'est la plus petite tribu de .     est une tribu de . C'est la plus grande tribu de .    Si est une partie de alors est une tribu de . C'est la plus petite tribu de contenant .     "
 },
@@ -1193,7 +1193,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-tribu-5",
   "type": "Proposition",
-  "number": "2.4",
+  "number": "2.1.4",
   "title": "",
   "body": "   tribu engéndrée par      Si est une famille quelconque de tribus de alors est une tribu de .    Soit un ensemble de parties de . L'intersection de toutes les tribus de contenant est une tribu de . Elle est appelée la tribu engendrée par . On la note .     "
 },
@@ -1202,7 +1202,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#def-tborel",
   "type": "Définition",
-  "number": "2.5",
+  "number": "2.1.5",
   "title": "Tribue de Borel de <span class=\"process-math\">\\(\\R\\)<\/span>.",
   "body": " Tribue de Borel de    tribu de Borel de    La tribu engendrée par l'ensemble des segments de est appelée la tribu de Borel de et tout élément de cette tribu est dit un borélien de On la note .   "
 },
@@ -1211,7 +1211,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-tribu-7",
   "type": "Remarque",
-  "number": "2.6",
+  "number": "2.1.6",
   "title": "",
   "body": "    Soient et deux ensembles de parties de . Si alors .    Tout intervalle de peut être écrit comme la réunion d'une suite de segments. Donc tout intervalle de est un borélien.  Tout ouvert de est une réunion au plus dénombrable d'intervalles ouverts ses composantes connexes par arcs par exemple . Donc tout ouvert de et un borélien et par stabilité d'une tribu par complémentarité, tout fermé de est un borélien.    En général si est un espace vectoriel normé de dimension finie alors la tribu de Borel de , notée est par définition la tribu engendrée par les boules fermées de . Elle contient alors tous les ouverts et tous les fermés de et est de ce fait indépendante de la norme choisie sur .     "
 },
@@ -1220,7 +1220,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-tribu-8",
   "type": "Mise en garde",
-  "number": "2.7",
+  "number": "2.1.7",
   "title": "",
   "body": " Il n'y a aucun critère gloal qui reste simple permettant de décider si une partie de est un borélien. Cela peut même être un problème très compliqué.  "
 },
@@ -1229,7 +1229,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#prop-sigmatrib",
   "type": "Proposition",
-  "number": "2.8",
+  "number": "2.1.8",
   "title": "Un cas intéressant.",
   "body": "Un cas intéressant   Soit un ensemble au plus dénombrable de parties de qui forment une partition de . Alors     Posons et montrons que est une tribu de .   Comme alors .    Si alors .    Soit est une suite d'éléments de et posons pour tout , alors .    est donc bien une tribu de . Elle contient et toute tribu qui contient tous les ensembles contient tous les éléments de . C'est donc la plus petite tribu de contenant . Soit .   "
 },
@@ -1238,7 +1238,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#prop-tribdisc",
   "type": "Corollaire",
-  "number": "2.9",
+  "number": "2.1.9",
   "title": "",
   "body": "  Si l'ensemble est au plus dénombrable alors Autrement dit la seule tribu de qui contient tous les singletons de est .   "
 },
@@ -1247,7 +1247,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-tribu-11",
   "type": "Remarque",
-  "number": "2.10",
+  "number": "2.1.10",
   "title": "",
   "body": "   Si est infini non dénombrable alors la tribu engendrée par les singletons de est définie par la condition En particulier toute tribu de qui contient tous les singletons de contient et donc contient toutes la parties dénombrables de .  C'est le cas par exemple de la tribu de Borel de tout espace vectoriel normé de dimension finie (les singletons sont des boules fermées).    La permet de construire de manière simple une tribu de en partant d'une famille au plus dénombrable d'événement deux à deux disjoints. Cette tribu est d'autant plus intéressante qu'il est très simple d'y construire une probabilité (voir la remarque ).    "
 },
@@ -1256,7 +1256,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-tribu-12",
   "type": "Proposition",
-  "number": "2.11",
+  "number": "2.1.11",
   "title": "tribu induite.",
   "body": " tribu induite   Soit une tribu de . Pour toute élément de , l'ensemble est une tribu de . On l'appelle la tribu induite par sur .   "
 },
@@ -1265,7 +1265,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-probabilite-2",
   "type": "Notations",
-  "number": "2.12",
+  "number": "2.1.12",
   "title": "",
   "body": " Dans toute cette subsection, désignera un espace probabilisable.  "
 },
@@ -1274,7 +1274,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#def-probabilite",
   "type": "Définition",
-  "number": "2.13",
+  "number": "2.1.13",
   "title": "",
   "body": "   probabilité de l'événement    On appelle probabilité de l'espace toute application telle que :    ;    si est une suite d'éléments de deux à deux disjoints alors .   Si est un probabilité de alors le triplet est dit un espace probabilisé.   "
 },
@@ -1292,7 +1292,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-probabilite-5",
   "type": "Remarque",
-  "number": "2.14",
+  "number": "2.1.14",
   "title": "",
   "body": " Dans la définition précédente, on a utilisé la notation pour désigner la somme de la série que celle-ci soit convergente ou non avec la convention que la somme d'une série divergente à termes positifs est . Ce qui pose évidemment un problème de consistence puisque est sensé être dans l'intervalle .  En fait avec les deux axiomes de la définition, la famille est toujours sommable et sa somme est dans . Voilà comment le justifier :   En posant pour tout , le deuxième axiome aboutit à .    Si sont des événements deux à deux disjoints en posant pour tout , le deuxième axiome fournit .    Soit une suite d'éléments de deux à deux disjoints. On a alors pour tout  La série à termes réels positifs est donc convergente et sa somme est dans .     "
 },
@@ -1301,7 +1301,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-probabilite-6",
   "type": "Proposition",
-  "number": "2.15",
+  "number": "2.1.15",
   "title": "",
   "body": "  Soit une probabilité sur . Alors :    ;     pour tout ;    Si alors et pour tout ;     pour tout ;     pour toute suite d'éléments de .     si est une famille au plus dénombrable d'éléments deux à deux disjoints de .       Les propriétés 1, 2 et 3 sont des conséquences immédiates des axiomes de la définition de probabilité et de la remarque précédente.   Soit une suite d'éléments de et posons et pour tout . Les sont deux à deux disjoints et avec pour tout . On a donc .    Soit une famille au plus dénombrable d'éléments de deux à deux disjoints. Si est fini alors c'est une conséquance de la remarque précédente. Si est infini alors il existe une bijection entre et et il suffit de poser pour tout pour conclure grâce au théorème de permutation des termes pour les familles sommables.      "
 },
@@ -1310,7 +1310,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#thm-contmono",
   "type": "Théorème",
-  "number": "2.16",
+  "number": "2.1.16",
   "title": "de continuité monotone.",
   "body": " de continuité monotone      Soit une suite croissante d'éléments de . Alors .    Soit une suite décroissante d'éléments de . Alors .          On pose et pour tout . Les événements sont deux à deux disjoints et . On a donc     On suppose que est décroissante. Alors est croissante et on peut ainsi écrire       "
 },
@@ -1319,7 +1319,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#cor-contmono",
   "type": "Corollaire",
-  "number": "2.17",
+  "number": "2.1.17",
   "title": "",
   "body": "  Soit une suite quelconque d'éléments de . Alors            Pour le premier point on pose pour tout .La suite et croissante et . On applique alors la formule des probabilites continues.  Pour le second on pose . La suite est décroissante et on peut appliquer le théorème de continuité monotone sachant que .   "
 },
@@ -1328,7 +1328,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#def-sce",
   "type": "Définition",
-  "number": "2.18",
+  "number": "2.1.18",
   "title": "",
   "body": "  On appelle système complet d'événements (SCE) de toute famille au plus dénombrables d'éléments qui forme une partition de .   "
 },
@@ -1337,7 +1337,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-probabilite-10",
   "type": "Exemple",
-  "number": "2.19",
+  "number": "2.1.19",
   "title": "exemples courants de SCE.",
   "body": " exemples courants de SCE      Pour tout événement , est un SCE de .    Si est au plus dénombrable, alors est un SCE de .    SCE généré par une variable aléatoire discrète (important)  si est une application définie sur telle que soit au plus dénombrable et pour tout alors est un SCE de .      "
 },
@@ -1346,7 +1346,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#prop-probatotale",
   "type": "Théorème",
-  "number": "2.20",
+  "number": "2.1.20",
   "title": "Formule des probabilités totales.",
   "body": " Formule des probabilités totales   Soit un SCE de . Alors pour tout , on a    "
 },
@@ -1355,7 +1355,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-probabilite-12",
   "type": "Remarque",
-  "number": "2.21",
+  "number": "2.1.21",
   "title": "",
   "body": "    Ce résultat reste valable si les événements sont deux à deux disjoints, sans former une partition de , à condition que   Car si on pose alors et donc . Par suite et donc     Cette formule est extrêmement utile. Elle stipule que si on sait calculer les probabilités des événements d'un SCE alors on peut exprimer la probabilité de n'importe quel événement.    Reprenons le contexte de la et considérons une famille de nombre réel positifs dont la somme vaut . Alors on définit complétement une probabilité sur l'espace en posant On a alors pour tout    Le énoncé ci-après n'est qu'un cas particulier de ce dernier résultat.     "
 },
@@ -1364,7 +1364,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-probabilite-13",
   "type": "Exemple",
-  "number": "2.22",
+  "number": "2.1.22",
   "title": "exemples génériques d’utilisation de la formule des probabilités totales.",
   "body": " exemples génériques d'utilisation de la formule des probabilités totales     si on fixe un événement alors     Si sont des événements quelconques alors    Ces relations serviront notamment dans l'étude des événements indépendants ( )  "
 },
@@ -1373,7 +1373,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#thm-probadisc",
   "type": "Théorème",
-  "number": "2.23",
+  "number": "2.1.23",
   "title": "",
   "body": "  On suppose que est au plus dénombrable et on le munit de la tribu .   Soit une probabilité de . Pour tout , on a  est entièrement détérminée par les probabilités des singletons .    Soit une famille de nombres réels positifs de somme . Alors il existe une unique probabilité sur telle que       "
 },
@@ -1382,7 +1382,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-probabilite-15",
   "type": "Remarque",
-  "number": "2.24",
+  "number": "2.1.24",
   "title": "",
   "body": " Si est au plus dénombrable alors pour toute famille sommable de nombre réels positifs de somme , on peut définir une probabilté sur en posant Cette remarque peut avoir des applications analytiques intéressantes même dans des cas où la probabilité ne correspond pas réellement à une expérience aléatoire.  "
 },
@@ -1391,7 +1391,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#prop-probcond",
   "type": "Proposition",
-  "number": "2.25",
+  "number": "2.1.25",
   "title": "Probabilité conditionnelle.",
   "body": " Probabilité conditionnelle    probabilité de sachant     probabilité de sachant    On considère un événemnt de probabilité non nulle. L'application définie sur par est une probabilité de . La probabilité est aussi notée et on l'appelle probailité de sachant .    On a bien et pour toute suite d'éléments de deux à deux disjoints, on a     Justification de la définition  la probabilité de « sachant » est la probabilité de réalisation d'un résultat favorable à quand on ne retient que les résultats favorables à . C'est une approximation du rapport des fréquences de réalisation des événements et dans une série d'expériences. . D'où la définition    "
 },
@@ -1400,7 +1400,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-probabilite-17",
   "type": "Remarque",
-  "number": "2.26",
+  "number": "2.1.26",
   "title": "",
   "body": "    Si alors par convention, pour tout , . Ce choix s'explique par le fait que tout se passe comme si l'événement n'avait pas eu lieu.  Avec cette convention on peut toujours écrire     Sachant que est une probabilité on peut lui appliquer toutes propriétés vues précédemment. Par exemple      "
 },
@@ -1409,7 +1409,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-probabilite-18",
   "type": "Mise en garde",
-  "number": "2.27",
+  "number": "2.1.27",
   "title": "",
   "body": " On parle de «probabilité de sachant », jamais de «l'événement» qui n'a pas de sens en théorie des probabilités.  "
 },
@@ -1418,7 +1418,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#thm-probatotale2",
   "type": "Théorème",
-  "number": "2.28",
+  "number": "2.1.28",
   "title": "",
   "body": "  Soit un SCE de . Alors    "
 },
@@ -1427,7 +1427,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#prop-bayes",
   "type": "Proposition",
-  "number": "2.29",
+  "number": "2.1.29",
   "title": "Formules de Bayes.",
   "body": " Formules de Bayes      Soient et deux événements de probabilités non nulles. Alors     Soit un SCE de et un événement de probabilité non nulle. Alors pour tout , on a       "
 },
@@ -1436,7 +1436,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-probabilite-21",
   "type": "Exemple",
-  "number": "2.30",
+  "number": "2.1.30",
   "title": "générique d’utilisation de la formule de Bayes.",
   "body": " générique d'utilisation de la formule de Bayes  Une chaine de production industrielle contient machines identiques mais avec des taux de production de pièces défectueuses différents. Le taux pour la machine numéro est .  On prélève une pièce au hasard parmi un lot de pièces produite par la chaîne et on constate qu'elle est défectueuse. Quelle est la probabilité que cette pièce provienne de la machine numéro ?   Si on note l'événement «la pièce est défectueuse» et l'événement «la pièce provient de la machine numéro » alors on cherche . Celle-ci est donnée par la formule de Bayes : car et pour tout .   "
 },
@@ -1445,7 +1445,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-independance-2",
   "type": "Notations",
-  "number": "2.31",
+  "number": "2.1.31",
   "title": "",
   "body": " Dans tout la suite, désignera un espace probabilisé.  "
 },
@@ -1454,7 +1454,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#def-independance",
   "type": "Définition",
-  "number": "2.32",
+  "number": "2.1.32",
   "title": "",
   "body": "     Deux événements et de sont dits indépendants si .    Une famille d'événements de est dite mutuellement indépendante (MI) si pour toute partie finie de ,       "
 },
@@ -1472,7 +1472,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-independance-5",
   "type": "Remarque",
-  "number": "2.33",
+  "number": "2.1.33",
   "title": "",
   "body": "    Si ou alors tout événement est indépendant de .    deux événements incompatibles et ne peuvent être indépendants que si ou .    Si est une famille MI alors est MI pour toute partie de . En particulier les événements sont deux à deux indépendants.    Soit est une famille d'évéments MI. Si on lui ajoute des événements presques sûrs ou négligeable alors les événements de la nouvelle famille sont MI.    Dans un SCE les événements ne peuvent être deux à deux indépendants, et a fortiori MI, que s'il existe tel que .     "
 },
@@ -1481,7 +1481,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-independance-6",
   "type": "Proposition",
-  "number": "2.34",
+  "number": "2.1.34",
   "title": "",
   "body": "  Si et sont des événements indépendants alors et sont indépendants, et sont indépendants et et sont indépendants.   "
 },
@@ -1490,7 +1490,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#thm-",
   "type": "Théorème",
-  "number": "2.35",
+  "number": "2.1.35",
   "title": "",
   "body": "  Soit une famille MI d'événements de .   Soit une partie de . On pose si et si . Alors la famille est MI (en particulier est MI).    Lemme des coalitions  Soit une famille de parties deux à deux disjointes de . On pose pour tout , . Alors la famille est MI.      "
 },
@@ -1499,7 +1499,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#prop-forcomlement",
   "type": "Proposition",
-  "number": "2.36",
+  "number": "2.1.36",
   "title": "Formule des compléments.",
   "body": " Formule des compléments   Soient des événements de . Alors     On écrit et on raisonne par récurrnece en appliquant l'hypothèse de récurrence avec la probailité    "
 },
@@ -1508,7 +1508,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-modelisation-4",
   "type": "Exemple",
-  "number": "2.37",
+  "number": "2.1.37",
   "title": "signification de certains événements courants.",
   "body": " signification de certains événements courants  Soit une suite quelconque d'événements.    est l'événement «au moins un des événements se réalise» ;     est l'événement «tous les événements se réalisent» ;     est l'événement «les événements se réalisent tous à partir d'un certain rang pour pour au moins un indice ». La probabilité de cet événement est      est l'événement «l'événement se réalise pour une infinité d'indices ». La probabilité de cet événement est      "
 },
@@ -1517,7 +1517,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-modelisation-6",
   "type": "Remarque",
-  "number": "2.38",
+  "number": "2.1.38",
   "title": "Cas où l’univers est au plus dénombrable.",
   "body": " Cas où l'univers est au plus dénombrable  Dans la pratique si l'ensemble qui contient les résultats de l'expérience est au plus plus dénombrable alors on le munit de la tribu de telle sorte que tout ensemble formé de résultats possibles de l'expérience soit un événement. Ce choix de tribu n'est pas adéquat lorsque l'ensemble des résultats est non dénombrable car cela pose des difficultés insurmontables pour définir une probabilité sur .  "
 },
@@ -1526,7 +1526,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-modelisation-7",
   "type": "Exemple",
-  "number": "2.39",
+  "number": "2.1.39",
   "title": "Lancer un dé.",
   "body": " Lancer un dé  On lance un dé à 6 faces. On peut modéliser cette expérience par et . On peut définir une probabilité sur en posant pour tout .  "
 },
@@ -1535,7 +1535,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-modelisation-8",
   "type": "Exemple",
-  "number": "2.40",
+  "number": "2.1.40",
   "title": "Lancer deux dés.",
   "body": " Lancer deux dés  On lance deux dés à 6 faces. On peut modéliser cette expérience par et . On peut définir une probabilité sur en posant pour tout .  Si on s'intéresse à l'événement : «la somme des résultats est paire», on peut créer un espace spécifique sous la forme et y adjoindre la probabilité adéquate ou bien on peut rester dans l'univers et définir la variable aléatoire sur en posant pour tout . On peut alors exprimer l'événement par   "
 },
@@ -1544,7 +1544,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-generalites.html#subsec-modelisation-9",
   "type": "Exemple",
-  "number": "2.41",
+  "number": "2.1.41",
   "title": "Suite de lancers d’une pièce de monnaie.",
   "body": " Suite de lancers d'une pièce de monnaie  On lance indéfiniment une piece de monnaie. Si on ne s'intéresse qu'au numéro du premier lancer qui donne «face» alors peut modéliser cette expérience par et . On peut définir une probabilité sur en posant pour tout .  Mais dans ce cas les événements «obtenir trois face successivement au moins une fois» ou «obtenir face une infinité de fois» ne peuvent être exprimés dans .  On peut alors se placer dans l'espace beaucoup plus vaste . Le résultat de chaque séquence infinie de lancers est modélisé par une suite de zéros et de uns. C'est un ensemble non dénombrable et y définir une tribu sur laquelle on doit ensuite définir une probabilité est non aisé. L'approche peut être la suivante : on identifie une famille d'événements élémentaires avec lesquels on peut construire d'autre événements plus complexes et qui couvrent nos besoins et on n'aura qu'à se placer dans la tribu engendrée par ces événements élémentaires.  Par exemple, on peut considérer pour tout l'événement : «le lancer donne face», ou encore On peut alors exprimer   pour tout  en particulier est l'événement «ne jamais obtenir face»    l'événement «le premier face apparaît au lancer» par     l'événement «obtenir face une infinité de fois» par .    l'événement «obtenir trois faces successivement une infinité de fois» par      "
 },
@@ -1589,7 +1589,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#def-varalea",
   "type": "Définition",
-  "number": "2.42",
+  "number": "2.2.1",
   "title": "",
   "body": "   variable aléatoire discrète     variable aléatoire réelle     variable aléatoire discrète réelle    On appelle variable aléatoire de dans toute application telle que c'est à dire que l'image réciproque par de tout événement est un événement. est dit espace de travail de et son espace des résultats (ou espace des états).  Soit une variable aléatoire de dans .    est dite variable aléatoire discrète (VAD) si l'ensemble est au plus dénombrable et . Ce qui équivaut à      est dite une variable aléatoire réelle (VAR) si .     est dite une variable aléatoire discrète réelle ( VADR ) si elle est discrète et réelle.      "
 },
@@ -1607,7 +1607,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-varalea-5",
   "type": "Remarque",
-  "number": "2.43",
+  "number": "2.2.2",
   "title": "",
   "body": "   Sauf précision du contraire, un univers au plus dénombrable sera systématiquement muni de la tribu .    Si est au plus dénombrable ( et muni de la tribu ) alors toute application définie sur est une variable aléatoire quelque soit la tribu considérée dans l'espace d'arrivée.    Soit une application quelconque définie de dans . L'ensemble est une tribu de et est une variable aléatoire de dans .  Si est au plus dénombrable et , on voit qu'une application quelconque de dans peut être considérée comme une variable aléatoire avec très peu de contraintes. Il suffit de se placer du côté de dans une tribu qui contient .  Si sont des applications définies sur telles que soit au plus dénombrable pour tout alors on peut poser :        de telle sorte que les applications soient toutes des variables aléatoires discrètes de dans .  Ses observations restent valides pour une famille dénombrable d'applications définies sur telle que soit au plus dénombrable pour tout . Notamment pour une suite de telles applications.  C'est ainsi qu'il est toujours possible de considérer un modèle dans lequel on peut combiner entre les résultats d'un nombre fini ou dénombrable d'expériences aléatoires si chacune a au plus un ensemble au plus dénombrable de résultats.    "
 },
@@ -1616,7 +1616,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#prop-compvar",
   "type": "Proposition",
-  "number": "2.44",
+  "number": "2.2.3",
   "title": "",
   "body": "    La composée de deux variables aléatoires et est une variable aléatoire. De plus si est discrète alors est discrète.    Si pour tout , est une variable aléatoire de dans un espace probabilisable alors l'application définie par est une variable aléatoire de dans . De plus si sont discrètes alors est discrète.    Soit maintenant une variable aléatoire discrète de dans . Alors pour toute application définie sur l'application est une VAD. On la note    On généralise de la façon suivante : si sont des VAD definies sur alors pour toute application définie sur on définit la variable aléatoire discrète par      "
 },
@@ -1625,7 +1625,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-varalea-7",
   "type": "Définition",
-  "number": "2.45",
+  "number": "2.2.4",
   "title": "",
   "body": "   l'événement     étant donné des variables aléatoires discrètes de dans , on note  pour tout    pour tous    pour tout ,   pour tous        Une variable aléatoire discrète est dite presque partout constante s'il existe tel que . Elle est en particulier dite presque partout nulle si .    "
 },
@@ -1634,7 +1634,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-varalea-8",
   "type": "Remarque",
-  "number": "2.46",
+  "number": "2.2.5",
   "title": "",
   "body": "   Vu la tolérance de l'image réciproque par une application envers les opérations sur les ensembles, les notations précédentes donnent                          Une variable aléatoire est non presque partout constante si et seulement s'il existe tels que . C'est aussi équivalent à l'existence d'au moins deux éléments distincts et de tels que et .    "
 },
@@ -1643,7 +1643,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-varalea-9",
   "type": "Exemple",
-  "number": "2.47",
+  "number": "2.2.6",
   "title": "d’utilisation de ces notations.",
   "body": " d'utilisation de ces notations    Si et sont des VAD à valeurs dans alors pour tout , et puisque ces événements sont deux à deux disjoints alors     Si est une VAD à valeurs dans alors et particulier      . Par exemple, si alors     "
 },
@@ -1652,7 +1652,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#prop-loivaralea",
   "type": "Proposition",
-  "number": "2.48",
+  "number": "2.2.7",
   "title": "Loi d’une variable aléatoire.",
   "body": " Loi d'une variable aléatoire    loi de la variable aléatoire    Soit une variable aléatoire de dans . Alors l'application est une probabilité de . On l'appelle loi de .   "
 },
@@ -1661,7 +1661,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-varalea-11",
   "type": "Vocabulaire",
-  "number": "2.49",
+  "number": "2.2.8",
   "title": "",
   "body": " Si et sont des variables aléatoires telle que alors on dit que et suivent la même loi et on écrit .  "
 },
@@ -1670,7 +1670,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-varalea-12",
   "type": "Remarque",
-  "number": "2.50",
+  "number": "2.2.9",
   "title": "",
   "body": " Noter que deux variables aléatoires et peuvent suivre une même loi sans qu'elles soient définies sur un même espace . Ce qui importe c'est l'espace des résultats.  Précisons : si et sont des variables aléatoires définies respectivement sur des espaces et à valeurs dans un même espace alors elles suivent la même loi si et seulement si   "
 },
@@ -1679,7 +1679,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#def-varind",
   "type": "Définition",
-  "number": "2.51",
+  "number": "2.2.10",
   "title": "",
   "body": "  Une famille de VAD définies sur (pas nécessairement à valeurs dans le même espace) est dite mutuellement indépendante (MI) si    "
 },
@@ -1688,7 +1688,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-indvar-3",
   "type": "Remarque",
-  "number": "2.52",
+  "number": "2.2.11",
   "title": "",
   "body": " Si est une famille MI de VAD alors pour toute partie de la famille est MI.  "
 },
@@ -1697,7 +1697,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#prop-varind",
   "type": "Proposition",
-  "number": "2.53",
+  "number": "2.2.12",
   "title": "",
   "body": "  Des variables aléatoires discrètes définies sur sont mutuellement indépendantes si et seulement si    "
 },
@@ -1706,7 +1706,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-indvar-5",
   "type": "Remarque",
-  "number": "2.54",
+  "number": "2.2.13",
   "title": "",
   "body": "   Cette dernière proposition simplifie considérablement la définition de l'indépendance mutuelle d'un nombre fini de VAD.    Elle implique aussi qu'une famille infinie de VAD est MI si et seulement si toutes ses sous-familles finies sont MI.    Une suite de VAD est MI si et seulement pour tout les variables sont MI.    "
 },
@@ -1715,7 +1715,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#prop-partind",
   "type": "Proposition",
-  "number": "2.55",
+  "number": "2.2.14",
   "title": "",
   "body": "  Soit une famille de VAD mutuellement indépendantes et toutes définies sur .  Soit pour tout , une partie de . Alors les événements sont mutuellement indépendants.   "
 },
@@ -1724,7 +1724,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#thm-coalition",
   "type": "Théorème",
-  "number": "2.56",
+  "number": "2.2.15",
   "title": "",
   "body": "  Soit une famille de VAD mutuellement indépendantes et toutes définies sur .    Si pour tout , est une application définie sur alors les variables sont mutuellement indépendantes.    Lemme des coalitions  Soit une famille de parties finies deux à deux disjointes de . Si pour tout , est une application définie sur alors les variables sont mutuellement indépendantes.     "
 },
@@ -1733,7 +1733,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-indvar-8",
   "type": "Remarque",
-  "number": "2.57",
+  "number": "2.2.16",
   "title": "",
   "body": "   Si est une VAD presque partout constante de alors toute autre VAD définie sur est indépendante de .   car pour tout , on a soit soit . Donc l'événement est indépendant de tou autre événement de .     Soient une VAD et une fonction définie sur . À moins que ou ne soit presque partout constante, les variables et ne peuvent être indépendantes.   On suppose que et ne sont pas presque partout constantes. Il existe alors tel que . Comme alors . Ensuite puisque est non presque partout constante alors et il existe donc tel que et . Ainsi  et ne sont donc pas indépendantes.      Exemples d'utilisations du lemme des coalitions  Soient des VAD définies sur .   Si sont MI alors et sont MI.    Réciproquement si et sont MI alors tout ce qu'on peut dire c'est que est indépendante de pour tout .    Si la variable est elle même un vecteur de la forme et et sont indépndantes alors et sont indépendantes pour tous .      Ce sont des conséquences du lemme des coalitions en utilisant respectivement les applications :    ;     ;     et         "
 },
@@ -1742,7 +1742,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#thm-loivaraleadisc",
   "type": "Théorème",
-  "number": "2.58",
+  "number": "2.2.17",
   "title": "",
   "body": "  Soit une variables aléatoire discrète de dans .    est un système complet d'événements de ;    Pour tout ,    Pour une variable aléatoire discrète  , déterminer la loi de revient ainsi à déterminer le couple . L'application est dite fonction des masses de la variable .   "
 },
@@ -1751,7 +1751,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#def-loicouple",
   "type": "Définition",
-  "number": "2.59",
+  "number": "2.2.18",
   "title": "",
   "body": "  Soient deux VAD et définies sur . La loi du couple est par définition la loi de la variable . Elle est entièrement déterminée par le couple .  En outre les lois des variables et sont appelées les lois marginales du couple .   "
 },
@@ -1760,7 +1760,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-loivaralea-4",
   "type": "Remarque",
-  "number": "2.60",
+  "number": "2.2.19",
   "title": "",
   "body": " Avec on a on n'a donc pas nécessairement mais si alors   si alors et en particulier ;    si alors et donc .   C'est pour des raisons de simplification que la loi de couple est donc définie à travers et non à tavers .  "
 },
@@ -1769,7 +1769,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#prop-loicouple",
   "type": "Proposition",
-  "number": "2.61",
+  "number": "2.2.20",
   "title": "",
   "body": "  Soient deux VAD et définies sur .            Ce qui signifie que les lois marginales du couple sont données par sa loi de couple.   "
 },
@@ -1778,7 +1778,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-loivaralea-6",
   "type": "Remarque",
-  "number": "2.62",
+  "number": "2.2.21",
   "title": "Généralisation.",
   "body": "Généralisation  Soient des variables aléatoires réelles. La variable est dite un vecteur aléatoire. Sa loi est entièrement déterminée par le couple formé de et de la famille .  "
 },
@@ -1787,7 +1787,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#cor-memeloi",
   "type": "Corollaire",
-  "number": "2.63",
+  "number": "2.2.22",
   "title": "",
   "body": "    Soient et deux VAD. Si alors pour toute fonction définie sur , .    Soient et des VAD. Si pour tout , sont mutuellement indépendantes et sont mutuellement indépendantes alors pour toute fonction définie sur          Si alors et donc . Soit ensuite , alors Ainsi     Les variables et suivent la même loi car Il suffit d'appliquer ensuite la propriété précédente à et .     "
 },
@@ -1796,7 +1796,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-loivaralea-8",
   "type": "Mise en garde",
-  "number": "2.64",
+  "number": "2.2.23",
   "title": "",
   "body": " Sans la condition d'indépendance mutuelle des variables et des variables la propriété n'est plus valide.  Par exemple :  Si et sont des variables aléatoires non presque partout constantes suivant la même loi alors les couples et ne suivent pas la même loi puisque si sont des éléments distincts de tels que et alors   "
 },
@@ -1805,7 +1805,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-loiusuelles-2",
   "type": "Liste",
-  "number": "2.65",
+  "number": "2.2.24",
   "title": "Les lois discrètes usuelles",
   "body": "Les lois discrètes usuelles   désignera une VAD définie sur    Loi uniforme finie    loi uniforme sur l'ensemble fini   On dit que suit une loi uniforme sur un ensemble fini et on écrit si Une telle variable est utilisée pour modéliser les expériences aléatoires qui possèdent un nombre fini de résultats possibles tous équiprobables. On notera que dans ce cas pour toute partie de  qu'on exprime en disant que la probabilité qu'un événement se réalise est égale au rapport entre le nombre de résultats favorables à l'événement et celui de tous les résultats possibles.    Loi de Bernouilli    loi de Bernouilli de paramètre   Soit un réel On dit que suit la loi de Bernouilli de paramètre et on écrit si est le résultat d'une expérience aléatoire qui ne possède que deux issues : succès ou échec. La probabilité du succès étant .     Loi binomiale    loi binomiale de paramètres et    Soit un réel et un entier . On dit que suit la loi de binomiale de paramètres et et on écrit si est le nombre de succès obtenus lorsque on répète fois de façon indépendante une expérience de Bernouilli de paramètre .  suit aussi la loi si elle represente le nombre de succès obtenu lorsque on effectue simultanénement et de façon indépendante test de Bernouilli de paramètre .  Si est le résultat du test de Bernouilli alors sachant que les variables sont mutuellement indépendantes et suivent toute la loi     Loi géometrique    loi géométrique de paramètre   Soit un réel On dit que suit la loi géométrique de paramètre et on écrit si est le numéro du premier test qui donne un succès lorsque on répète indéfiniment et de façon indépendante une expérience de Bernouilli de paramètre .  est aussi dite temps d'attente du premier succès.  Si est le résultat du test de Bernouilli alors Sachant que les variables sont mutuellement indépendantes et suivent toute la loi .    Loi de Poisson    loi de Poisson de paramètre   Soit un réel . On dit que suit la loi de Poisson de paramètre et on écrit si  représente le nombre de clients servis pendant une unité de temps dans une file d'attente quand on sait que le nombre moyen de clients par unité de temps est . Pour cette raison la loi de Poisson est aussi appelé loi des files d'attente.    "
 },
@@ -1814,7 +1814,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-fonction-repartition-3",
   "type": "Vocabulaire",
-  "number": "2.66",
+  "number": "2.2.25",
   "title": "",
   "body": " Si est une VAR on a vu que l'application définie par est une probabilité de l'espace appelée loi de   "
 },
@@ -1823,7 +1823,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#def-fonction-repartition",
   "type": "Définition",
-  "number": "2.67",
+  "number": "2.2.26",
   "title": "",
   "body": "  Soit une variable aléatoire réelle définie sur l'espace probabilisé . La fonction de répartition de , notée , est la fonction réelle définie par :    "
 },
@@ -1832,7 +1832,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-fonction-repartition-5",
   "type": "Proposition",
-  "number": "2.68",
+  "number": "2.2.27",
   "title": "propriétés caractéristiques d’une fonction de répartition.",
   "body": " propriétés caractéristiques d'une fonction de répartition   Soit une VAR. La fonction de répartition possède les propriétés suivantes :    est croissante ;   est bornée : pour tout .  pour tout , ie est continue à droite en tout point.   et .        Découle de si .    Conséquence de la définition .    La fonction étant croissante elle admet une limite à droite (et à gauche) en . On peut écrire La suite d'événements est decroissante donc par continuité monotone soit et donc      étant monotone bornée, elle admet des limites (finies) en et en . On peut donc écrire et de même .      "
 },
@@ -1841,7 +1841,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#cor-loidiscont",
   "type": "Corollaire",
-  "number": "2.69",
+  "number": "2.2.28",
   "title": "",
   "body": "  Soit une VAR. Alors pour tout ,   En particulier est continue en si et seulement si .     et de la même façon que dans la propriété précédente .   "
 },
@@ -1850,7 +1850,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-fonction-repartition-7",
   "type": "Remarque",
-  "number": "2.70",
+  "number": "2.2.29",
   "title": "",
   "body": "  Soit une VAR.   L'ensemble des points de discontinuité de est au plus dénombrable.  Soient . Sans perdre en généralité supposons que . Vu les propriétés des fonctions de répartition on a et donc les intervalles ouverts et sont non vides et disjoints. Or toute famille d'intervalles ouverts non vides deux à deux disjoints de est au plus dénombrable chacun des intervalles contient un rationnel et donc il existe une bijection entre la famille des intervalles et une partie de  . Donc est au plus dénombrable.    Si est une VADR alors est non vide et il est inclu dans   Si alors et donc . En outre ne peut être vide car il existe au moins un élément tel que .    "
 },
@@ -1859,7 +1859,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#prop-loirepart",
   "type": "Proposition",
-  "number": "2.71",
+  "number": "2.2.30",
   "title": "",
   "body": "  Soit une VAR. La fonction permet d'exprimer la probabilité de tous les événements de la forme où est un intervalle quelconque de . Pour deux réels tels que on a:    "
 },
@@ -1868,7 +1868,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-fonction-repartition-9",
   "type": "Remarque",
-  "number": "2.72",
+  "number": "2.2.31",
   "title": "",
   "body": "  est la tribu de engendrée par tous les intervalles de . La proposition précédente suggère donc que la fonction de répartition caractérise de façon unique sa loi . On admet le théorème suivant qui confirme cette idée.  "
 },
@@ -1877,7 +1877,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#thm-caractloi",
   "type": "Théorème",
-  "number": "2.73",
+  "number": "2.2.32",
   "title": "",
   "body": "  Deux VAR ont la même loi si et seulement si elles ont la même fonction de répartition.   "
 },
@@ -1886,7 +1886,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#subsec-fonction-repartition-11",
   "type": "Exemple",
-  "number": "2.74",
+  "number": "2.2.33",
   "title": "cas d’une <abbr class=\"acronym\">VADR<\/abbr>.",
   "body": "cas d'une VADR   Soit est une VADR dont on connait la loi. On pose et pour tout , .   La fonction de répartition de est alors donnée par Rappelons que réciproquemnt la loi de peut être exprimée en fonction de par Le est donc évident dans le cas d'une VADR .  Dans le cas où on peut organiser les valeurs possibles de en une suite strictement croissante  ce n'est pas nécessairement le cas, penser au cas où par exemple  alors pour tout , il existe un unique entier tel que et on a dans ce cas Par ailleurs, si alors et si jamais alors . Résumons :   Dans le cas où prend un nombre fini de valeurs alors est définie comme dans en remplaçant par et par .   "
 },
@@ -1895,7 +1895,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-varalea.html#example-U",
   "type": "Exemple",
-  "number": "2.75",
+  "number": "2.2.34",
   "title": "Loi uniforme sur un segment.",
   "body": " Loi uniforme sur un segment    loi uniforme sur le segment    On dit qu'une VAR suit une loi uniforme sur un segment non trivial de et on écrit si où est la longueur de l'intervalle . La variable est le résultat de l'expérience aléatoire qui consiste en le tirage d'un réel entre et de façon équiprobable. La probabilité de tirer un réel entre deux éléments et de vaut .  La fonction de répartition de est définie par Si par exemple alors La fonction est continue sur et en particulier pour tout .   "
 },
@@ -1967,7 +1967,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#def-esperance",
   "type": "Définition",
-  "number": "2.77",
+  "number": "2.3.1",
   "title": "",
   "body": "   espérance de la VADR     Soit une variable aléatoire discrète réelle définie sur .  On dit que est sommable, ou que admet une espérance, si la famille est sommable. On appelle alors espérance de le réel On notera l'ensemble des VADR sommables définies sur    "
 },
@@ -1976,7 +1976,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#subsubsec-defprop-3",
   "type": "Remarque",
-  "number": "2.78",
+  "number": "2.3.2",
   "title": "",
   "body": "   Quand elle définie, est le barycentre de la famille de points pondérés . Pour cette raison on l'appelle aussi valeur moyenne de .    Dans le cas d'une VADR  à valeurs positives ou nulles, si n'est pas sommable alors on pose par convention  est alors sommable si et seulement si .    En conséquence, pour une VADR  quelconque     La définition a un inconvénient : la somme utilisée est indexée par un ensemble qui dépend de . Ce qui pose un problème lorsqu'on combine entre plusieurs variables aléatoire. Comme lorsque on s'intéresse à par exemple.  La formule de transfert énoncée ci-après résout ce problème.    La définition de dépend seulement de la loi de . Dans ce sens deux variables qui ont la même loi ont la même espérance. Nous parlerons souvent de l'espérance d'une loi de probabilité pour désigner l'espérance des variables qui suivent cette loi.    La définition se limite aux variables aléatoires discrète réelles , mais elle est tout à fait valable sans aucune modification pour les variables aléatoires discrètes à valeurs complexes . La notion de base utilisée étant celle de familles sommables et celle-ci a été étudiée dans le cadre des familles de nombres réels ou complexes.    "
 },
@@ -1994,7 +1994,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#prop-casdenom",
   "type": "Proposition",
-  "number": "2.79",
+  "number": "2.3.3",
   "title": "",
   "body": "  On suppose que est au plus dénombrable. Une VADR  définie sur est sommable si et seulement si la famille est sommable et dans ce cas     La famille d'événemnts est une partition de et pour tout on a Donc selon le théorème de sommation par paquets et dans ce cas    "
 },
@@ -2003,7 +2003,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#subsubsec-defprop-6",
   "type": "Remarque",
-  "number": "2.80",
+  "number": "2.3.4",
   "title": "",
   "body": " Apparement ce dernier résultat résout le problème de l'ecriture de en fonction de l'ensemble (qui dépend de ). L'intérêt est toutefois relatif car dans la pratique on ne contrôle pas l'univers lui même et il n'est pas nécessairement au plus dénombrable.  "
 },
@@ -2012,7 +2012,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#thm-transfert",
   "type": "Théorème",
-  "number": "2.81",
+  "number": "2.3.5",
   "title": "formule de transfert.",
   "body": " formule de transfert   Soit une VAD définie sur (possiblement à valeurs vectorielles). Soit une application définie sur .  La variable est sommable si et seulement si la famille est sommable et dans ce cas     On pose et on imite la démonstration de la proposition précédente en observant cette fois que est une partition de . Selon le théorème de sommation par paquets, est sommable si et seulement si Or pour tout  Ce qui ramène l'équivalence à juste la deuxième condition, elle même équivalente à la sommabilité de la variable . D'où l'équivalence énoncée dans le théorème et la validité de la formule : par sommation par paquets.   "
 },
@@ -2021,7 +2021,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#cor-transfert",
   "type": "Corollaire",
-  "number": "2.82",
+  "number": "2.3.6",
   "title": "",
   "body": "  Soient et deux VADR . Soit une application définie sur . La variable est sommable si et seulement si la famille est sommable est dans ce cas     Il suffit d'appliquer la formule de transfert au couple .   "
 },
@@ -2030,7 +2030,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#subsubsec-defprop-9",
   "type": "Remarque",
-  "number": "2.83",
+  "number": "2.3.7",
   "title": "",
   "body": "   La formule de transfert permet donc de combiner les résultats de deux variables et en utilisant la loi conjointe du couple . Ce qui résout le problème de la dépendance de l'expression de de l'ensemble .  Par exemple la variable est sommable si et seulement si la famille est sommable et dans ce cas Noter qu'en considérant les application et , alors selon ce même résultat, les variables et sont respectivement sommables si et seulement si les familles et sont sommables et dans ce cas Expressions qui utilisent notablement le même ensemble des indices pour les deux sommes.    "
 },
@@ -2039,7 +2039,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#prop-proprietes",
   "type": "Proposition",
-  "number": "2.84",
+  "number": "2.3.8",
   "title": "",
   "body": "  Toutes les variables aléatoires introduites dans la suite sont supposées définies sur l'espace .    Espérance d'une variable presque partout constante  Une VADR  presque partout constante de valeur est sommable et .    Linéarité de l'espérance  Si et sont deux VADR sommables de alors pour tout , est sommable et Ce qui signifie que est un -ev et que est une forme linéaire de .    Positivité de l'espérance  Si est une VADR positive alors . De plus si et seulement si est presque partout nulle sur .    Croissance et domination  Soient et deux VADR .   Si et sont sommables et alors .    Si et est sommable alors est sommable et        Effet de l'indépendance  Si et sont deux VADR indépendantes sommables alors est sommable et .    Inégalité de Cauchy-Schwarz  Soient et deux VADR . Si et sont sommables alors est sommable et on a avec égalité si et seulement si est presque partout nulle ou s'il existe une constante telle que presque partout sur (ie )     "
 },
@@ -2048,7 +2048,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#subsubsec-defprop-11",
   "type": "Remarque",
-  "number": "2.85",
+  "number": "2.3.9",
   "title": "",
   "body": "   toute VADR  bornée est sommable. De plus     Si sont des VADR sommables alors et sont sommables.   La sommabilité de et découle de la linéarité de l'espérance et des relation      "
 },
@@ -2066,7 +2066,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#subsubsec-exemple-esperance-2",
   "type": "Liste",
-  "number": "2.86",
+  "number": "2.3.10",
   "title": "Espérances des lois usuelles",
   "body": " Espérances des lois usuelles    désignera une VADR .     Loi uniforme   Si alors .  En particulier si alors      Loi de Bernouilli   Si alors .     Loi binomiale   Si alors .     Loi géométrique   Si alors .     Loi de Poisson   Si alors .     "
 },
@@ -2120,7 +2120,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#def-carre-sommable",
   "type": "Définition",
-  "number": "2.87",
+  "number": "2.3.11",
   "title": "",
   "body": "  Une VADR  est dite de carré sommable si est sommable.  On notera l'ensemble des VADR de carrés sommables définies sur .   "
 },
@@ -2129,7 +2129,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#prop-ltwo",
   "type": "Proposition",
-  "number": "2.88",
+  "number": "2.3.12",
   "title": "",
   "body": "   est un -espace vectoriel et le produit de deux VADR de carrés sommables est une variable sommable.    Découle du fait que si alors et donc par domination. Ensuite pour tout  et donc, par domination, . Sachant que la variable nulle est dans , ceci prouve que est un sous-espace vectoriel de .   "
 },
@@ -2138,7 +2138,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#def-varcovar",
   "type": "Définition",
-  "number": "2.89",
+  "number": "2.3.13",
   "title": "",
   "body": "   variance de la VADR      covariance des VADR  et      Soit . La variable est sommable et son espérance est appelée variance de . On la note      Soient . La variable est sommable et son espérance est appelée covariance des variables et . On la note .        est la moyenne «quadratique» de . Elle mésure la moyenne de l'écart que peut prendre avec sa moyenne .   mésure le degré de corélation entre et , c'est à dire à quels points les résultats obtenus par et par s'influencent les uns les autres. On notera par exemple que si et sont indépendantes (aucune corélation) alors et sont indépendantes et donc    "
 },
@@ -2147,7 +2147,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#subsubsec-varcovar-5",
   "type": "Remarque",
-  "number": "2.90",
+  "number": "2.3.14",
   "title": "",
   "body": "   Noter que si alors .        "
 },
@@ -2156,7 +2156,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#prop-var-identite",
   "type": "Proposition",
-  "number": "2.91",
+  "number": "2.3.15",
   "title": "",
   "body": "  Soient     avec égalité si et seulement si est presque partout constante.              Si et sont indépendantes alors .      "
 },
@@ -2165,7 +2165,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#thm-varcovar",
   "type": "Théorème",
-  "number": "2.92",
+  "number": "2.3.16",
   "title": "",
   "body": "   est une forme bilinéaire symétrique positive de . L'inégalité de Cauchy-Schwarz pour cette forme s'écrit : avec égalité si et seulement si est presque partout constante ou s'il existe des réels et tels que presque partout.   "
 },
@@ -2174,7 +2174,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#prop-varcovar",
   "type": "Proposition",
-  "number": "2.93",
+  "number": "2.3.17",
   "title": "",
   "body": "  Soient des variables aleátoires discrètes de carrés sommables. Si sont deux à deux indépendantes alors en particulier    "
 },
@@ -2183,7 +2183,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#def-ecarttype-covariance",
   "type": "Définition",
-  "number": "2.94",
+  "number": "2.3.18",
   "title": "",
   "body": "   écart-type de la VADR       coefficient de corrélation des VADR  et     Soiente et des variables aléatoires de carrés sommables.   On appelle écart-type de le réel .    On suppose que et ne sont pas presque partout constantes. On appelle coefficient de corrélation de et le réel       "
 },
@@ -2192,7 +2192,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#subsubsec-varcovar-10",
   "type": "Remarque",
-  "number": "2.95",
+  "number": "2.3.19",
   "title": "",
   "body": "    est une semi-norme de . Pour tout , si et seulement si est presque partout constante.    Si on dit que les variables aléatoires et sont non corrélées . C'est le cas par exemple si elles sont indépendantes.  La non corrélation est une sorte «d'orthogonalité» pour la forme bilinéaire symétrique .    Si et ne sont pas presque partout constantes, selon l'inégalité de Cauchy-Schwarz, on a avec égalité si et seulement s'il existe des réels et tels que presque partout avec si et si . On dit que et sont linéairement corrélées (positivément ou négativement selon le signe de ).  Plus est voisin de plus les variables et sont «positivement» corrélées. Plus il est voisin de plus elles sont «négativement» corrélées.    Une VADR  est dite centrée si . Elle est dite centrée réduite si elle est centrée et .  Pour toute VADR  non partout constante, la VADR  est centrée réduite.      "
 },
@@ -2210,7 +2210,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#list-var",
   "type": "Liste",
-  "number": "2.96",
+  "number": "2.3.20",
   "title": "Variances des lois usuelles.",
   "body": " Variances des lois usuelles.   On considère une VADR  .     Loi uniforme  Si à valeurs dans alors .  En général si suit une loi uniforme à valeurs dans alors     Loi de Bernouilli  Si alors     Loi binomiale  Si alors     Loi géometrique  Si alors     Loi de Poisson  Si alors .    "
 },
@@ -2237,7 +2237,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-espvaralea.html#def-moments",
   "type": "Définition",
-  "number": "2.98",
+  "number": "2.3.22",
   "title": "",
   "body": "  Soient une VADR et . On dit que est -sommable si la variable est sommable. L'espéance est alors appelée moment d'ordre de .  On notera l'ensemble des VADR  -sommables de .   "
 },
@@ -2255,7 +2255,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-fctgen.html#def-fctgen",
   "type": "Définition",
-  "number": "2.99",
+  "number": "2.4.1",
   "title": "Fonction génératrice.",
   "body": " Fonction génératrice    fonction génératrice de la VADR      La fonction génératrice d'une variable aléatoire à valeurs dans est définie par On notera le rayon de convergence de la série entière    "
 },
@@ -2264,7 +2264,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-fctgen.html#subsec-defprop-3",
   "type": "Remarque",
-  "number": "2.100",
+  "number": "2.4.2",
   "title": "",
   "body": " Soit une variable aléatoire à valeurs dans .    Puisque la série est convergente de somme alors et .    La loi de est entièrement déterminée par sa fonction génératrice , dans le sens où si et sont des VAD à valeurs dans alors Noter aussi que dans ce cas et ont les mêmes moments, en particulier la même espérance.    Si est fini alors est polynomiale de degré .    Si alors admet des moments à tout ordre et pour tout  Noter donc que l'hypothèse simplifie considérablement la justificiation du enoncé ci-dessus.   Si alors est infiniment dérivable en et pour tout  La série est donc convergente ce qui signifie par théorème de transfert que la variable est sommable et que . Comme est une combinaison linéaire de variables de la forme alors est sommable et s'exprime en fonction des dérivées pour .     "
 },
@@ -2273,7 +2273,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-fctgen.html#lem-abel",
   "type": "Lemme",
-  "number": "2.101",
+  "number": "2.4.3",
   "title": "du à Abel.",
   "body": " du à Abel   Soit une série entière à coefficients réels positifs qu'on suppose de rayon de convergence . On note sa somme. Alors pour tout  est -fois dérivable en si et seulement si la série converge et dans ce cas    "
 },
@@ -2282,7 +2282,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-fctgen.html#subsec-defprop-5",
   "type": "Théorème",
-  "number": "2.102",
+  "number": "2.4.4",
   "title": "Fonction génératrice de la somme de deux variables indépendantes.",
   "body": " Fonction génératrice de la somme de deux variables indépendantes   Soient et deux variables aléatoires à valeurs dans . Si et sont indépendantes alors .   "
 },
@@ -2291,7 +2291,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-fctgen.html#subsec-defprop-6",
   "type": "Corollaire",
-  "number": "2.103",
+  "number": "2.4.5",
   "title": "",
   "body": "  Si sont des variables aléatoires mutuellement indépendantes à valeurs dans alors    "
 },
@@ -2300,7 +2300,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-fctgen.html#subsec-defprop-7",
   "type": "Théorème",
-  "number": "2.104",
+  "number": "2.4.6",
   "title": "Expression de l’espérance et de la variance à l’aide la fonction génératrice.",
   "body": " Expression de l'espérance et de la variance à l'aide la fonction génératrice   Soit une variable aléatoire à valeurs dans .    est sommable si et seulement si est dérivable en et dans ce cas .     est de carré sommable si et seulement si est deux fois dérivable en et dans ce cas .      "
 },
@@ -2309,7 +2309,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-fctgen.html#theo-momfact",
   "type": "Théorème",
-  "number": "2.105",
+  "number": "2.4.7",
   "title": "des moments factoriels.",
   "body": " des moments factoriels   Soit une VAD à valeurs dans . Pour tout , est -sommable si et seulement si est -fois dérivable en et dans ce cas L'espérance est appelée moment factoriel d'ordre de .   "
 },
@@ -2318,7 +2318,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-fctgen.html#subsec-generatrices-usuelles-2",
   "type": "Liste",
-  "number": "2.106",
+  "number": "2.4.8",
   "title": "",
   "body": "   Loi uniforme  Si à valeurs dans alors .    Loi de Bernouilli  Si alors     Loi binomiale  Si alors .    Loi géométrique  Si alors .    Loi de Poisson  Si alors .    "
 },
@@ -2336,7 +2336,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-fctgen.html#subsec-generatrice-3",
   "type": "Exemple",
-  "number": "2.107",
+  "number": "2.4.9",
   "title": "Fonction génératrice des coefficients binomiaux.",
   "body": " Fonction génératrice des coefficients binomiaux  On sait que pour tout réels  La fonction est donc la fonction génératrice des coefficients binomiaux .  Comme application, on peut écrire pour tous , et en identifiant les coefficients des développements en séries de Taylor des deux membres de cette égalité on obtient C'est la formule de Vandermonde.  Dans le même ordre d'idée on sait que pour tout entier  donc en identifiant les développements des deux côtés dans l'égalité suivante on obtient pour tout  Cette dernière formule est antagoniste avec la formule de Vandermonde dans le sens où ce sont les indices supérieurs des coefficients binomaux qui changent en fonction de l'indice de sommation.  "
 },
@@ -2345,7 +2345,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-fctgen.html#subsec-generatrice-4",
   "type": "Exemple",
-  "number": "2.108",
+  "number": "2.4.10",
   "title": "Somme de variables de Poisson MI.",
   "body": " Somme de variables de Poisson MI  Soient des variables aléatoires MI suivant des lois de Poissons de paramètre respectifs . On note . On veut déterminer la loi de .  On a pour tout  On en déduit que suit la loi de poisson où .  Ce résultat s'interprète par le fait que le nombre de clients servi par unité de temps dans une file d'attente qui comporte guichets indépendants est une variable aléatoire suivant une loi de Poisson de paramètre .  "
 },
@@ -2354,7 +2354,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-fctgen.html#subsec-generatrice-5",
   "type": "Exemple",
-  "number": "2.109",
+  "number": "2.4.11",
   "title": "Une formule d’inversion.",
   "body": " Une formule d'inversion  Soit une VAD à valeurs dans . On suppose que . Alors est développable en série de taylor en , ie où désigne la variable aléatoire définie par Grâce à la convergence absolue de la série à droite dans l'égalité précédente pour voisin de , on peut appliquer la formule de Fubini pour transformer l'expression de  et par identification de ce développement avec celui par défaut de on obtient Théoriquement, ces formules permettent donc de calculer la loi de connaissant les moyennes de toutes les variables .Par exemple   Noter que si est fini alors la variable et nulle pour tout supérieur à et donc que qu'on peut lier aux relations obtenues par formule de transfert   "
 },
@@ -2435,7 +2435,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-actinum.html#subsec-basetheo-3",
   "type": "Mise en garde",
-  "number": "2.110",
+  "number": "2.5.1",
   "title": "",
   "body": " Les résultats énoncés dans cette subsection ne font pas partie du programme officiel et doivent être taités comme des exercices d'approfondissement.  "
 },
@@ -2444,7 +2444,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-actinum.html#thm-prininv",
   "type": "Théorème",
-  "number": "2.111",
+  "number": "2.5.2",
   "title": "Principe d’inversion (énoncé mathématique).",
   "body": " Principe d'inversion (énoncé mathématique)   Principe de l'inversion d'une loi  Soit une variable aléatoire réelle . La fonction de répartition de est définie par (voir ) : On pose pour tout   si est bijective alors . Noter que n'est jamais bijective dans le cas d'une variable discrète.  est appelé inverse généralisé de la fonction   Si , alors la variable aléatoire suit la même loi que .     Montrons d'abords que pour tous et  Soient et .  Si alors par définition de , .  Réciproquement, supposons que .   Si alors par caractérisation de la borne inférieure il existe tel que et et par croissante de on a donc .    Si , soit , il existe une suite décroissante qui converge vers et telle que pour tout . Par continuité à droite de en , la suite converge vers et donc .   Maintenant que est acquise, on en déduit que pour tout  mais comme alors pour tout et ainsi Alors suit la même loi que .   "
 },
@@ -2453,7 +2453,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-prodis-actinum.html#cor-prininv",
   "type": "Corollaire",
-  "number": "2.112",
+  "number": "2.5.3",
   "title": "Cas où les valeurs de <span class=\"process-math\">\\(X\\)<\/span> sont des points isolés.",
   "body": " Cas où les valeurs de sont des points isolés   Soit une VADR dont l'ensemble des valeurs s'organise en une suite strictement croissante avec si est fini et sinon. On pose pour tout ,   Si pour un certain on a alors et donc l'evénement est vide. La formule reste donc valable dans ce cas.  Alors et pour tout      Pour , et pour tout      Si prend comme valeurs les termes d'une suite strictement croissantes de nombres réels , la probabilité pour la valeur se réalise est la même que si on tire un nombre selon la loi uniforme et qu'on cherche ensuite sa position dans la suite préalablement formée . La variable qui prend comme valeur l'indice tel que suit la même loi que .  Tous langage de programmation qui se respecte offre au moins une fonction pseudo-aléatoire qui simule le comportement de la loi . Trouver la position d'un nombre tiré selon cette loi dans une une liste croissante préetablie de nombres est un problème de tri. Un tri par insertion est parfaitement adapté à ce problème.  Il peut toutefois être plus rapide de trouver une expression théorique de et de l'implémenter directement comme une fonction.   "
 },

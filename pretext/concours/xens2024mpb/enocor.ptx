@@ -1,10 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="xens2024mpb" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title> concours: xens, session: 2024, filiere: mp, epreuve: B</title>
 
-
-<!-- <docinfo xmlns:xi="http://www.w3.org/2001/XInclude">
-  <rename element="solution" xml:lang="fr-FR">Précisions et rectifications</rename> 
-</docinfo> -->
-
+    <introduction>
+        <p>
+            L'objectif est d'étudier dans quelle mesure une équation différentielle dont les coefficients sont périodiques peut avoir des solutions périodiques. Sont traités le cas d'une équation différentielle scalaire normale d'ordre $2$ et celui d'une équation différentielle linéaire du premier ordre.
+        </p>
+    </introduction>
+    
 <exercises>
     <title>Solutions périodiques d'équations différentielles linéaire</title>
     
@@ -890,3 +892,4 @@
     </subexercises>
 
 </exercises>
+</chapter>

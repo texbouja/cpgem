@@ -1,5 +1,5 @@
 ---
-layout: pretext
+layout: ptx-cours
 title: "Équations différentielles linéaires scalaires, étude générale"
 division: section
 project: book
@@ -126,15 +126,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.0';
+eBookConfig.runestone_version = '7.6.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-runtime.5eb70769dc5e56d7.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="/assets/js/pretext/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.14.0/lunr.stemmer.support.js"></script><script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.14.0/lunr.fr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="/assets/js/pretext/pretext_search.js"></script><script src="/assets/js/pretext/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Évaluer (Sage)';
 </script>
 </head>
@@ -351,7 +351,7 @@ eBookConfig.enable_chatcodes =  false;
 <span class="codenumber">1.3.1</span><span class="type">Sous-section</span><span class="title">Le cadre général</span>
 </h3>
 <article class="convention remark-like" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-2"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">1.23</span><span class="type">Conventions et notations</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">1.3.1</span><span class="type">Conventions et notations</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-2-1">
 <span class="process-math">\(p\)</span> désignera un entier strictement positif.</div>
@@ -430,7 +430,7 @@ A(t) \amp = \begin{pmatrix}
 </div>
 </li>
 </ol></div></article><article class="proposition theorem-like" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-3"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">1.24</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">1.3.2</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-3-1">Une fonction <span class="process-math">\(f: I \to \K\)</span> de classe <span class="process-math">\(\mathcal{C}^p\)</span> est une solution de <span class="process-math">\((E)\)</span> (resp. de <span class="process-math">\((H)\)</span>) sur <span class="process-math">\(I\)</span> si et seulement si la fonction <span class="process-math">\(\mathbf V f: I \to \mathcal{M}_{p,1}(\K)\)</span> définie par</div>
 <div class="displaymath process-math">
@@ -450,7 +450,7 @@ A(t) \amp = \begin{pmatrix}
 <aside class="aside aside-like" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-3-7"><div class="para" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-3-7-1">
 <span class="process-math">\(\mathbf V\)</span> induit un isomorphisme entre les <span class="process-math">\(\K\)</span>-espaces vectoriels <span class="process-math">\(S_I(H)\)</span> et <span class="process-math">\(S_I(SH)\text{.}\)</span>
 </div></aside></article><article class="theorem theorem-like" id="theo-cauchy-lipschitz"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">1.25</span><span class="type">Théorème</span><span class="title">Cauchy-Lipschitz.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">1.3.3</span><span class="type">Théorème</span><span class="title">Cauchy-Lipschitz.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="theo-cauchy-lipschitz-2">Pour tout <span class="process-math">\((t_0, x_0, \ldots, x_{p-1}) \in I \times \K^p\text{,}\)</span> il existe une unique solution <span class="process-math">\(f\)</span> de <span class="process-math">\((E)\)</span> sur <span class="process-math">\(I\)</span> telle que</div>
 <div class="displaymath process-math">
@@ -458,7 +458,7 @@ A(t) \amp = \begin{pmatrix}
 f(t_0) = x_0, \; f'(t_0) = x_1, \; \ldots, \; f^{(p-1)}(t_0) = x_{p-1}
 \end{equation*}
 </div></article><article class="corollary theorem-like" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-5"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">1.26</span><span class="type">Corollaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">1.3.4</span><span class="type">Corollaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <ol class="decimal" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-5-1">
 <li id="sec-equdif-equations-differentielles-lineaires-scalaires-2-5-1-1"><div class="para" id="p-derived-sec-equdif-equations-differentielles-lineaires-scalaires-2-5-1-1">
@@ -468,7 +468,7 @@ f(t_0) = x_0, \; f'(t_0) = x_1, \; \ldots, \; f^{(p-1)}(t_0) = x_{p-1}
 <span class="process-math">\(S_I(E) = f_0 + S_I(H)\)</span> pour toute solution <span class="process-math">\(f_0\)</span> de <span class="process-math">\((E)\)</span> sur <span class="process-math">\(I\text{.}\)</span>
 </div></li>
 </ol></article><article class="insight remark-like" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-6"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">1.27</span><span class="type">Vocabulaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">1.3.5</span><span class="type">Vocabulaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-6-1">Soient <span class="process-math">\(f_1, f_2, \ldots, f_p\)</span> des solutions de l’équation homogène <span class="process-math">\((H)\text{.}\)</span> Nous dirons que <span class="process-math">\((f_1, f_2, \ldots, f_p)\)</span> est un système fondamental de solutions de <span class="process-math">\((H)\)</span> si c’est une base de <span class="process-math">\(S_I(H)\text{.}\)</span> Nous appellerons wronskien des solutions <span class="process-math">\(f_1, f_2, \ldots, f_p\text{,}\)</span> le wronskien <span class="process-math">\(W\)</span> de <span class="process-math">\((\mathbf V f_1, \mathbf V f_2, \ldots, \mathbf V f_p)\)</span> dans la base canonique de <span class="process-math">\(\mathcal{M}_{p,1}(\K)\)</span> :</div>
 <div class="displaymath process-math">
@@ -481,7 +481,7 @@ f_1^{(p-1)}(t)\amp f_2^{(p-1)}(t)\amp \cdots\amp f_p^{(p-1)}(t)
 \end{vmatrix}
 \end{equation*}
 </div></article><article class="proposition theorem-like" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-7"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">1.28</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">1.3.6</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-7-1">Soient <span class="process-math">\(f_1, f_2, \ldots, f_p\)</span> des solutions de l’équation homogène <span class="process-math">\((H)\text{.}\)</span> Soit <span class="process-math">\(W\)</span> leur wronskien. Grâce à l’isomorphisme induit par <span class="process-math">\(\mathbf V\text{,}\)</span> les assertions suivantes sont équivalentes :</div>
 <ol class="decimal" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-7-2">
@@ -493,7 +493,7 @@ f_1^{(p-1)}(t)\amp f_2^{(p-1)}(t)\amp \cdots\amp f_p^{(p-1)}(t)
 <span class="process-math">\(\forall t \in I, \; W(t) \neq 0\)</span> ;</div></li>
 <li id="sec-equdif-equations-differentielles-lineaires-scalaires-2-7-2-4"><div class="para" id="p-derived-sec-equdif-equations-differentielles-lineaires-scalaires-2-7-2-4"><span class="process-math">\(\exists t_0 \in I \; ; \; W(t_0) \neq 0\text{.}\)</span></div></li>
 </ol></article><article class="proposition theorem-like" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-8"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">1.29</span><span class="type">Proposition</span><span class="title">Équation du wronksien.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">1.3.7</span><span class="type">Proposition</span><span class="title">Équation du wronksien.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-8-2">
 <div class="para">Rappelons l’écriture de l’équation homogène <span class="process-math">\((H)\)</span> :</div>
@@ -510,7 +510,7 @@ x^{(p)} + a_{p-1}(t)x^{(p-1)} + \cdots + a_1(t)x' + a_0(t)x = 0
 \forall t \in I, \; W'(t) + a_{p-1}(t)W(t) = 0
 \end{equation*}
 </div></article><article class="proposition theorem-like" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-9"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">1.30</span><span class="type">Proposition</span><span class="title">Variation des constantes.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">1.3.8</span><span class="type">Proposition</span><span class="title">Variation des constantes.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="sec-equdif-equations-differentielles-lineaires-scalaires-2-9-2">Rappelons l’écriture de l’équation complète <span class="process-math">\((E)\)</span> :</div>
 <div class="displaymath process-math">
@@ -539,7 +539,7 @@ f_1^{(p-1)}(t)\lambda_1'(t) + f_2^{(p-1)}(t)\lambda_2'(t) + \cdots + f_p^{(p-1)}
 <span class="codenumber">1.3.2</span><span class="type">Sous-section</span><span class="title">Le cas d’une équation à coefficients constants</span>
 </h3>
 <article class="theorem theorem-like" id="theo-eqscal"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">1.31</span><span class="type">Théorème</span><span class="title">Solution d’une EDLS homogène à coefficients constants.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">1.3.9</span><span class="type">Théorème</span><span class="title">Solution d’une EDLS homogène à coefficients constants.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="theo-eqscal-2">Soient des scalaires <span class="process-math">\(b_0, b_1, \ldots, b_{p-1} \in \K\text{.}\)</span> On considère l’équation différentielle linéaire scalaire homogène d’ordre <span class="process-math">\(p\)</span> dite à coefficients constants :</div>
 <div class="displaymath process-math">
@@ -656,7 +656,7 @@ S_\R(H) = \ker P(D)
 </div>
 </li>
 </ol></div></article><article class="proposition theorem-like" id="sec-equdif-equations-differentielles-lineaires-scalaires-3-4"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">1.32</span><span class="type">Proposition</span><span class="title">Solution particulière quand <span class="process-math">\(\varphi(t) = R(t) \e^{\lambda t}\)</span>.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">1.3.10</span><span class="type">Proposition</span><span class="title">Solution particulière quand <span class="process-math">\(\varphi(t) = R(t) \e^{\lambda t}\)</span>.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="sec-equdif-equations-differentielles-lineaires-scalaires-3-4-2">
 <div class="para">Soient <span class="process-math">\(P, R \in \C[X]\)</span> et <span class="process-math">\(\lambda \in \C\text{.}\)</span> Considérons l’EDLS à coefficients constants :</div>
@@ -693,7 +693,7 @@ P(D) \cdot x = R(t) \e^{\lambda t}
 </div>
 <div class="para" id="sec-equdif-equations-differentielles-lineaires-scalaires-3-4-5-9">est un endomorphisme de <span class="process-math">\(\C_r[X]\)</span> qui est injectif car il conserve le degré. C’est donc un isomorphisme de <span class="process-math">\(\C_r[X]\text{.}\)</span> Il existe donc un unique polynôme <span class="process-math">\(Q\)</span> de degré <span class="process-math">\(\leq r\)</span> (et donc <span class="process-math">\(\deg Q = r\)</span>) qui vérifie l’égalité précédente. La fonction <span class="process-math">\(f: t \mapsto t^\beta Q(t) \e^{\lambda t}\)</span> est une solution de <span class="process-math">\((E)\text{.}\)</span>
 </div></article></details><article class="example example-like" id="sec-equdif-equations-differentielles-lineaires-scalaires-3-5"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">1.33</span><span class="type">Exemple</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">1.3.11</span><span class="type">Exemple</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <ol class="decimal" id="sec-equdif-equations-differentielles-lineaires-scalaires-3-5-1">
 <li id="sec-equdif-equations-differentielles-lineaires-scalaires-3-5-1-1"><div class="para" id="p-derived-sec-equdif-equations-differentielles-lineaires-scalaires-3-5-1-1">Trouver les solutions complexes de l’EDLS : <span class="process-math">\(x''' - 3x' + 2x = 0\text{.}\)</span>

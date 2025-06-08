@@ -1,5 +1,5 @@
 ---
-layout: pretext
+layout: ptx-cours
 title: "Fonctions génératrices"
 division: section
 project: book
@@ -126,15 +126,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.0';
+eBookConfig.runestone_version = '7.6.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-runtime.5eb70769dc5e56d7.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="/assets/js/pretext/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.14.0/lunr.stemmer.support.js"></script><script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.14.0/lunr.fr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="/assets/js/pretext/pretext_search.js"></script><script src="/assets/js/pretext/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Évaluer (Sage)';
 </script>
 </head>
@@ -351,7 +351,7 @@ eBookConfig.enable_chatcodes =  false;
 <span class="codenumber">2.4.1</span><span class="type">Sous-section</span><span class="title">Définition et propriétés</span>
 </h3>
 <article class="definition definition-like" id="def-fctgen"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.99</span><span class="type">Définition</span><span class="title">Fonction génératrice.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.4.1</span><span class="type">Définition</span><span class="title">Fonction génératrice.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="def-fctgen-3-1">
 <div class="para">La fonction génératrice d’une variable aléatoire <span class="process-math">\(X\)</span> à valeurs dans <span class="process-math">\(\N\)</span> est définie par</div>
@@ -363,7 +363,7 @@ G_X(t) = \mathbb E\left(t^X\right)=\sum_{n=0}^{\infty} \Pr{X=n} t^n.
 <div class="para">On notera <span class="process-math">\(R_X\)</span> le rayon de convergence de la série entière <span class="process-math">\(\sum \Pr{X=n}t^n\)</span>
 </div>
 </div></article><article class="remark remark-like" id="subsec-defprop-3"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.100</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.4.2</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-defprop-3-1">Soit <span class="process-math">\(X\)</span> une variable aléatoire à valeurs dans <span class="process-math">\(\N\text{.}\)</span>
 </div>
@@ -390,7 +390,7 @@ X\sim Y\Longleftrightarrow G_X=G_Y
 \EE\bigl(X(X-1)\cdots(X-k+1)\bigr)=G_X^{(k)}(1)
 \end{equation*}
 </div>
-<div class="para">Noter donc que l’hypothèse <span class="process-math">\(R_X\gt 1\)</span> simplifie considérablement la justificiation du <a href="sec-prodis-fctgen.html#theo-momfact" class="internal" title="Théorème 2.105: des moments factoriels">Théorème 2.105</a> enoncé ci-dessus.</div>
+<div class="para">Noter donc que l’hypothèse <span class="process-math">\(R_X\gt 1\)</span> simplifie considérablement la justificiation du <a href="sec-prodis-fctgen.html#theo-momfact" class="internal" title="Théorème 2.4.7: des moments factoriels">Théorème 2.4.7</a> enoncé ci-dessus.</div>
 </div>
 <details id="subsec-defprop-3-2-4-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Explication</span></h5></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-defprop-3-2-4-2-1">
 <div class="para">Si <span class="process-math">\(R_X\gt 1\)</span> alors <span class="process-math">\(G_X\)</span> est infiniment dérivable en <span class="process-math">\(1\)</span> et pour tout <span class="process-math">\(k\in\N^*\)</span>
@@ -411,7 +411,7 @@ G_X^{(k)}(1)=\sum_{n\geqslant k}n(n-1)\cdots(n-k+1)\Pr{X=n}
 </div></article></details>
 </li>
 </ol></article><article class="lemma theorem-like" id="lem-abel"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.101</span><span class="type">Lemme</span><span class="title">du à Abel.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.4.3</span><span class="type">Lemme</span><span class="title">du à Abel.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="lem-abel-2-1">
 <div class="para">Soit <span class="process-math">\(\sum a_n t^n\)</span> une série entière à coefficients réels positifs qu’on suppose de rayon de convergence <span class="process-math">\(1\text{.}\)</span> On note <span class="process-math">\(g\)</span> sa somme. Alors pour tout <span class="process-math">\(p\in\N^*\)</span> <span class="process-math">\(g\)</span> est <span class="process-math">\(p\)</span>-fois dérivable en <span class="process-math">\(1\)</span> si et seulement si la série <span class="process-math">\(\sum n^pa_n\)</span> converge et dans ce cas</div>
@@ -421,11 +421,11 @@ G_X^{(k)}(1)=\sum_{n\geqslant k}n(n-1)\cdots(n-k+1)\Pr{X=n}
 \end{equation*}
 </div>
 </div></article><article class="theorem theorem-like" id="subsec-defprop-5"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.102</span><span class="type">Théorème</span><span class="title">Fonction génératrice de la somme de deux variables indépendantes.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.4.4</span><span class="type">Théorème</span><span class="title">Fonction génératrice de la somme de deux variables indépendantes.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-defprop-5-2-1">Soient <span class="process-math">\(X\)</span> et <span class="process-math">\(Y\)</span> deux variables aléatoires à valeurs dans <span class="process-math">\(\N\text{.}\)</span> Si <span class="process-math">\(X\)</span> et <span class="process-math">\(Y\)</span> sont indépendantes alors <span class="process-math">\(G_{X+Y}=G_XG_Y\text{.}\)</span>
 </div></article><article class="corollary theorem-like" id="subsec-defprop-6"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.103</span><span class="type">Corollaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.4.5</span><span class="type">Corollaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-defprop-6-1-1">
 <div class="para">Si <span class="process-math">\(X_1,X_2,\ldots,X_k\)</span> sont des variables aléatoires mutuellement indépendantes à valeurs dans <span class="process-math">\(\N\)</span> alors</div>
@@ -435,7 +435,7 @@ G_{X_1+X_2+\cdots+X_k}=G_{X_1}G_{X_2}\cdots G_{X_k}
 \end{equation*}
 </div>
 </div></article><article class="theorem theorem-like" id="subsec-defprop-7"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.104</span><span class="type">Théorème</span><span class="title">Expression de l’espérance et de la variance à l’aide la fonction génératrice.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.4.6</span><span class="type">Théorème</span><span class="title">Expression de l’espérance et de la variance à l’aide la fonction génératrice.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-defprop-7-2-1">
 <div class="para">Soit <span class="process-math">\(X\)</span> une variable aléatoire à valeurs dans <span class="process-math">\(\N\text{.}\)</span>
@@ -461,7 +461,7 @@ G_{X_1+X_2+\cdots+X_k}=G_{X_1}G_{X_2}\cdots G_{X_k}
 </div></li>
 </ol>
 </div></article><article class="theorem theorem-like" id="theo-momfact"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.105</span><span class="type">Théorème</span><span class="title">des moments factoriels.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.4.7</span><span class="type">Théorème</span><span class="title">des moments factoriels.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="theo-momfact-2-1">
 <div class="para">Soit <span class="process-math">\(X\)</span> une VAD à valeurs dans <span class="process-math">\(\N\text{.}\)</span> Pour tout <span class="process-math">\(p\in\N^*\text{,}\)</span> <span class="process-math">\(X\)</span> est <span class="process-math">\(p\)</span>-sommable si et seulement si <span class="process-math">\(G_X\)</span> est <span class="process-math">\(p\)</span>-fois dérivable en <span class="process-math">\(1\)</span> et dans ce cas</div>
@@ -475,7 +475,7 @@ G_{X_1+X_2+\cdots+X_k}=G_{X_1}G_{X_2}\cdots G_{X_k}
 </div></article></section><section class="subsection" id="subsec-generatrices-usuelles"><h3 class="heading hide-type">
 <span class="codenumber">2.4.2</span><span class="type">Sous-section</span><span class="title">Fonctions génératrices des lois usuelles</span>
 </h3>
-<figure class="list table-like" id="subsec-generatrices-usuelles-2"><figcaption><span class="type">Liste</span><span class="codenumber">2.106</span></figcaption><div class="named-list-content"><dl class="description-list">
+<figure class="list table-like" id="subsec-generatrices-usuelles-2"><figcaption><span class="type">Liste</span><span class="codenumber">2.4.8</span></figcaption><div class="named-list-content"><dl class="description-list">
 <dt id="subsec-generatrices-usuelles-2-1-1">Loi uniforme</dt>
 <dd><div class="para" id="subsec-generatrices-usuelles-2-1-1-2">Si <span class="process-math">\(X\sim \mathscr U(\iic{1,n})\)</span> à valeurs dans <span class="process-math">\(\iic{1,n}\)</span> alors <span class="process-math">\(G_X(t)=\ds\frac{1}{n}\frac{t-t^{n+1}}{1-t}\text{.}\)</span>
 </div></dd>
@@ -504,7 +504,7 @@ G_{X_1+X_2+\cdots+X_k}=G_{X_1}G_{X_2}\cdots G_{X_k}
 <div class="para" id="subsec-generatrice-2-4">Si on connaît la fonction génératrice <span class="process-math">\(g\)</span> d’une suite alors on peut retrouver la suite en calculant le développement de Taylor de <span class="process-math">\(g\text{.}\)</span> D’où l’utilité des fonctions génératrices : si une suite est définie par une relation de récurrence alors on traduit, dans certains cas, cette relation en une équation fonctionnelle ou différentielle de la fonction génératrice. Résoudre cette équation nous permet ensuite d’identifier l’expression explicite des termes de la suite.</div>
 <div class="para" id="subsec-generatrice-2-5">La fonction génératrice d’une VAD à valeurs dans <span class="process-math">\(\N\)</span> est ainsi la fonction génératrice de la suite <span class="process-math">\((\Pr{X=n})_n\text{,}\)</span> ie de la loi de <span class="process-math">\(X\text{.}\)</span>
 </div></article><article class="example example-like" id="subsec-generatrice-3"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.107</span><span class="type">Exemple</span><span class="title">Fonction génératrice des coefficients binomiaux.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.4.9</span><span class="type">Exemple</span><span class="title">Fonction génératrice des coefficients binomiaux.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-generatrice-3-2">
 <div class="para">On sait que pour tout réels <span class="process-math">\(\alpha\)</span>
@@ -549,7 +549,7 @@ G_{X_1+X_2+\cdots+X_k}=G_{X_1}G_{X_2}\cdots G_{X_k}
 </div>
 <div class="para">Cette dernière formule est antagoniste avec la formule de Vandermonde dans le sens où ce sont les indices supérieurs des coefficients binomaux qui changent en fonction de l’indice de sommation.</div>
 </div></article><article class="example example-like" id="subsec-generatrice-4"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.108</span><span class="type">Exemple</span><span class="title">Somme de variables de Poisson MI.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.4.10</span><span class="type">Exemple</span><span class="title">Somme de variables de Poisson MI.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-generatrice-4-2">Soient <span class="process-math">\(X_1,X_2,\ldots,X_p\)</span> des variables aléatoires MI suivant des lois de Poissons de paramètre respectifs <span class="process-math">\(\lambda_1,\lambda_2,\ldots,\lambda_k\text{.}\)</span> On note <span class="process-math">\(S=X_1+X_2+\cdots+X_k\text{.}\)</span> On veut déterminer la loi de <span class="process-math">\(S\text{.}\)</span>
 </div>
@@ -566,7 +566,7 @@ G_S(t)=\prod_{i=1}^kG_{X_i}(t)=\exp\bigg((t-1)\sum_{i=1}^k\lambda_i\biggr)
 </div>
 <div class="para" id="subsec-generatrice-4-4">Ce résultat s’interprète par le fait que le nombre de clients servi par unité de temps dans une file d’attente qui comporte <span class="process-math">\(k\)</span> guichets indépendants est une variable aléatoire suivant une loi de Poisson de paramètre <span class="process-math">\(\lambda=\sum_{i=1}^k\lambda_i\text{.}\)</span>
 </div></article><article class="example example-like" id="subsec-generatrice-5"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.109</span><span class="type">Exemple</span><span class="title">Une formule d’inversion.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.4.11</span><span class="type">Exemple</span><span class="title">Une formule d’inversion.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-generatrice-5-2">
 <div class="para">Soit <span class="process-math">\(X\)</span> une VAD à valeurs dans <span class="process-math">\(\N\text{.}\)</span> On suppose que <span class="process-math">\(R_X\gt 1\text{.}\)</span> Alors <span class="process-math">\(G_X\)</span> est développable en série de taylor en <span class="process-math">\(1\text{,}\)</span> ie</div>

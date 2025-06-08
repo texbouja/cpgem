@@ -8,9 +8,9 @@
     <subtitle>Sujets de concours avec corrigés</subtitle>
 
     <xi:include href="centrale2018mp2/enocor.ptx"/>
-    <xi:include href="mines2020mp1/enocor.ptx"/>
+    <xi:include href="mines2020mp2/enocor.ptx"/>
     <xi:include href="mines2024mp1/enocor.ptx"/>
-    <xi:include href="xens2024mpb/enocor.ptx"/>
+    <!-- <xi:include href="xens2024mpb/enocor.ptx"/> -->
 
   </book>
 </pretext>

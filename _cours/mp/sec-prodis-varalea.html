@@ -1,5 +1,5 @@
 ---
-layout: pretext
+layout: ptx-cours
 title: "Variables aléatoires"
 division: section
 project: book
@@ -126,15 +126,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.0';
+eBookConfig.runestone_version = '7.6.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-runtime.5eb70769dc5e56d7.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="/assets/js/pretext/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.14.0/lunr.stemmer.support.js"></script><script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.14.0/lunr.fr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="/assets/js/pretext/pretext_search.js"></script><script src="/assets/js/pretext/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Évaluer (Sage)';
 </script>
 </head>
@@ -353,7 +353,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="subsec-varalea-2">On se donne dans ce chapitre un espace probabilisé <span class="process-math">\((\Omega,\mathscr T,\PP)\)</span> et un espace probabilisable <span class="process-math">\((\Omega',\mathscr T')\)</span>
 </div>
 <article class="definition definition-like" id="def-varalea"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.42</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.1</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="def-varalea-4-1">
 <div class="para">On appelle <dfn class="terminology">variable aléatoire</dfn> de <span class="process-math">\((\Omega,\mathscr T)\)</span> dans <span class="process-math">\((\Omega',\mathscr T')\)</span> toute application <span class="process-math">\(X:\Omega\longrightarrow \Omega'\)</span> telle que</div>
@@ -387,7 +387,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para" id="subsec-varalea-4-3">Cette approche procure l’avantage de pouvoir combiner entre les résultats de plusieurs expériences aléatoires. Ils seront tous des applications définies sur un même ensemble et on peut ainsi les additionner, les comparer...</div>
 <div class="para" id="subsec-varalea-4-4">La question est comment choisir l’espace des états <span class="process-math">\((\Omega',\mathscr T')\)</span> et de quelle tribu munir <span class="process-math">\(\Omega\)</span> pour que le résultat de l’expérience soit une variable aléatoire ? Les remarques suivantes donnent des éléments de réponse.</div></article></details><article class="remark remark-like" id="subsec-varalea-5"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.43</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.2</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-varalea-5-1"><ol class="decimal" id="subsec-varalea-5-1-1">
 <li id="subsec-varalea-5-1-1-1"><div class="para" id="subsec-varalea-5-1-1-1-1">Sauf précision du contraire, un univers <span class="process-math">\(\Omega\)</span> au plus dénombrable sera systématiquement muni de la tribu <span class="process-math">\(\mathscr P(\Omega)\text{.}\)</span>
@@ -419,7 +419,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="subsec-varalea-5-1-1-3-5">C’est ainsi qu’il est toujours possible de considérer un modèle dans lequel on peut combiner entre les résultats d’un nombre fini ou dénombrable d’expériences aléatoires si chacune a au plus un ensemble au plus dénombrable de résultats.</div>
 </li>
 </ol></div></article><article class="proposition theorem-like" id="prop-compvar"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.44</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.3</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <ol class="decimal" id="prop-compvar-1-1">
 <li id="prop-compvar-1-1-1"><div class="para" id="prop-compvar-1-1-1-1">La composée <span class="process-math">\(Y\circ X\)</span> de deux variables aléatoires <span class="process-math">\(X\)</span> et <span class="process-math">\(Y\)</span> est une variable aléatoire. De plus si <span class="process-math">\(Y\)</span> est discrète alors <span class="process-math">\(Y\circ X\)</span> est discrète.</div></li>
@@ -452,7 +452,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </li>
 </ol></article><article class="definition definition-like" id="subsec-varalea-7"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.45</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.4</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <ol class="decimal" id="subsec-varalea-7-2">
 <li id="subsec-varalea-7-2-1"><div class="para logical" id="subsec-varalea-7-2-1-1">
@@ -487,7 +487,7 @@ eBookConfig.enable_chatcodes =  false;
 <li id="subsec-varalea-7-2-2"><div class="para" id="subsec-varalea-7-2-2-1">Une variable aléatoire discrète <span class="process-math">\(X\)</span> est dite <dfn class="terminology">presque partout constante</dfn> s’il existe <span class="process-math">\(c\in X(\Omega)\)</span> tel que <span class="process-math">\(\Pr{X=c}=1\text{.}\)</span> Elle est en particulier dite presque partout nulle si <span class="process-math">\(\Pr{X=0}=1\text{.}\)</span>
 </div></li>
 </ol></article><article class="remark remark-like" id="subsec-varalea-8"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.46</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.5</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <ol class="decimal" id="subsec-varalea-8-1">
 <li id="subsec-varalea-8-1-1"><div class="para logical" id="subsec-varalea-8-1-1-1">
@@ -502,7 +502,7 @@ eBookConfig.enable_chatcodes =  false;
 <li id="subsec-varalea-8-1-2"><div class="para" id="subsec-varalea-8-1-2-1">Une variable aléatoire <span class="process-math">\(X\)</span> est non presque partout constante si et seulement s’il existe <span class="process-math">\(x\in X(\Omega)\)</span> tels que <span class="process-math">\(0\lt \PP(X=x)\lt 1\text{.}\)</span> C’est aussi équivalent à l’existence d’au moins deux éléments distincts <span class="process-math">\(x_1\)</span> et <span class="process-math">\(x_2\)</span> de <span class="process-math">\(X(\Omega)\)</span> tels que <span class="process-math">\(\PP(X=x_1)\ne0\)</span> et <span class="process-math">\(\PP(X=x_2)\ne0\text{.}\)</span>
 </div></li>
 </ol></article><article class="example example-like" id="subsec-varalea-9"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.47</span><span class="type">Exemple</span><span class="title">d’utilisation de ces notations.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.6</span><span class="type">Exemple</span><span class="title">d’utilisation de ces notations.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <ul class="disc" id="subsec-varalea-9-2">
 <li id="subsec-varalea-9-2-1"><div class="para logical" id="subsec-varalea-9-2-1-1">
@@ -538,7 +538,7 @@ eBookConfig.enable_chatcodes =  false;
 <span class="process-math">\((f(X)=y)=\bigcup\limits_{x\in f^{-1}(y)}(X=x)\text{.}\)</span> Par exemple, si <span class="process-math">\(y\in[-1,1]\)</span> alors <span class="process-math">\((\sin(X)=y)=\bigcup\limits_{k\in\Z}(X=\arcsin(y)+2k\pi)\)</span>
 </div></li>
 </ul></article><article class="proposition theorem-like" id="prop-loivaralea"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.48</span><span class="type">Proposition</span><span class="title">Loi d’une variable aléatoire.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.7</span><span class="type">Proposition</span><span class="title">Loi d’une variable aléatoire.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="prop-loivaralea-3-1">
 <div class="para">Soit <span class="process-math">\(X\)</span> une variable aléatoire de <span class="process-math">\((\Omega,\mathscr T)\)</span> dans <span class="process-math">\((\Omega',\mathscr T') \text{.}\)</span> Alors l’application</div>
@@ -553,11 +553,11 @@ A' \amp \longmapsto \amp \Pr{X\in A'}
 <div class="para">est une probabilité de <span class="process-math">\((\Omega',\mathscr T')\text{.}\)</span> On l’appelle loi de <span class="process-math">\(X\text{.}\)</span>
 </div>
 </div></article><article class="insight remark-like" id="subsec-varalea-11"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.49</span><span class="type">Vocabulaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.8</span><span class="type">Vocabulaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-varalea-11-1">Si <span class="process-math">\(X\)</span> et <span class="process-math">\(Y\)</span> sont des variables aléatoires telle que <span class="process-math">\(\PP_X=\PP_Y\)</span> alors on dit que <span class="process-math">\(X\)</span> et <span class="process-math">\(Y\)</span> suivent la même loi et on écrit  <span class="process-math">\(X\sim Y\text{.}\)</span>
 </div></article><article class="remark remark-like" id="subsec-varalea-12"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.50</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.9</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-varalea-12-1">Noter que deux variables aléatoires <span class="process-math">\(X\)</span> et <span class="process-math">\(Y\)</span> peuvent suivre une même loi sans qu’elles soient définies sur un même espace <span class="process-math">\((\Omega,\mathscr T)\text{.}\)</span> Ce qui importe c’est l’espace des résultats.</div>
 <div class="para logical" id="subsec-varalea-12-2">
@@ -571,7 +571,7 @@ A' \amp \longmapsto \amp \Pr{X\in A'}
 <span class="codenumber">2.2.2</span><span class="type">Sous-section</span><span class="title">Indépendance des variables aléatoires discrètes</span>
 </h3>
 <article class="definition definition-like" id="def-varind"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.51</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.10</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="def-varind-1-1">
 <div class="para">Une famille <span class="process-math">\((X_i)_{i\in I}\)</span> de VAD définies sur <span class="process-math">\((\Omega,\mathscr T)\)</span> (pas nécessairement à valeurs dans le même espace) est dite <dfn class="terminology">mutuellement indépendante</dfn>  (MI) si</div>
@@ -581,10 +581,10 @@ A' \amp \longmapsto \amp \Pr{X\in A'}
 \end{equation*}
 </div>
 </div></article><article class="remark remark-like" id="subsec-indvar-3"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.52</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.11</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-indvar-3-1">Si <span class="process-math">\((X_i)_{i\in I}\)</span> est une famille MI de VAD alors pour toute partie <span class="process-math">\(I'\)</span> de <span class="process-math">\(I\)</span> la famille <span class="process-math">\((X_i)_{i\in I'}\)</span> est MI.</div></article><article class="proposition theorem-like" id="prop-varind"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.53</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.12</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="prop-varind-1-1">
 <div class="para">Des variables aléatoires discrètes <span class="process-math">\(X_1,X_2,\ldots,X_p\)</span> définies sur <span class="process-math">\(\Omega\)</span> sont mutuellement indépendantes si et seulement si</div>
@@ -594,18 +594,18 @@ A' \amp \longmapsto \amp \Pr{X\in A'}
 \end{equation*}
 </div>
 </div></article><article class="remark remark-like" id="subsec-indvar-5"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.54</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.13</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <ol class="decimal" id="subsec-indvar-5-1">
 <li id="subsec-indvar-5-1-1"><div class="para" id="subsec-indvar-5-1-1-1">Cette dernière proposition simplifie considérablement la définition de l’indépendance mutuelle d’un <em class="emphasis">nombre fini</em> de VAD.</div></li>
 <li id="subsec-indvar-5-1-2"><div class="para" id="subsec-indvar-5-1-2-1">Elle implique aussi qu’une famille infinie de VAD est MI si et seulement si toutes ses sous-familles finies sont MI.</div></li>
 <li id="subsec-indvar-5-1-3"><div class="para" id="subsec-indvar-5-1-3-1">Une suite <span class="process-math">\((X_n)_{n\in \N}\)</span> de VAD est MI si et seulement pour tout <span class="process-math">\(n\in\N\)</span> les variables <span class="process-math">\(X_0,X_1,\ldots,X_n\)</span> sont MI.</div></li>
 </ol></article><article class="proposition theorem-like" id="prop-partind"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.55</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.14</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="prop-partind-1-1">Soit <span class="process-math">\((X_i)_{i\in I}\)</span> une famille de VAD mutuellement indépendantes et toutes définies sur <span class="process-math">\((\Omega,\mathscr T)\text{.}\)</span>
 </div> <div class="para" id="prop-partind-1-2">Soit pour tout <span class="process-math">\(i\in I\text{,}\)</span> une partie <span class="process-math">\(A_i'\)</span> de <span class="process-math">\(X_i(\Omega)\text{.}\)</span> Alors les événements <span class="process-math">\((X_i\in A_i'), i\in I\)</span> sont mutuellement indépendants.</div></article><article class="theorem theorem-like" id="thm-coalition"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.56</span><span class="type">Théorème</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.15</span><span class="type">Théorème</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="thm-coalition-1-1">Soit <span class="process-math">\((X_i)_{i\in I}\)</span> une famille de VAD mutuellement indépendantes et toutes définies sur <span class="process-math">\((\Omega,\mathscr T)\text{.}\)</span>
 </div> <ol class="decimal" id="thm-coalition-1-2">
@@ -614,7 +614,7 @@ A' \amp \longmapsto \amp \Pr{X\in A'}
 <span class="heading"><span class="title">Lemme des coalitions.</span></span><div class="para" id="thm-coalition-1-2-2-2">Soit <span class="process-math">\((J_k)_{k\in K}\)</span> une famille de parties finies deux à deux disjointes de <span class="process-math">\(I\text{.}\)</span> Si pour tout <span class="process-math">\(k\in K\text{,}\)</span> <span class="process-math">\(g_k\)</span> est une application définie sur <span class="process-math">\(\prod_{i\in J_k}X_i(\Omega)\)</span> alors les variables <span class="process-math">\(g_k\bigl((X_i)_{i\in J_k}\bigr),\;k\in K\)</span> sont mutuellement indépendantes.</div>
 </li>
 </ol></article><article class="remark remark-like" id="subsec-indvar-8"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.57</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.16</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <ol class="decimal" id="subsec-indvar-8-1">
 <li id="subsec-indvar-8-1-1">
@@ -664,7 +664,7 @@ A' \amp \longmapsto \amp \Pr{X\in A'}
 <span class="codenumber">2.2.3</span><span class="type">Sous-section</span><span class="title">Loi d’une variable aléatoire discrète</span>
 </h3>
 <article class="theorem theorem-like" id="thm-loivaraleadisc"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.58</span><span class="type">Théorème</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.17</span><span class="type">Théorème</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="thm-loivaraleadisc-1-1">
 <div class="para">Soit <span class="process-math">\(X\)</span> une variables aléatoire discrète de <span class="process-math">\((\Omega,\mathscr T)\)</span> dans <span class="process-math">\((\Omega',\mathscr T')\text{.}\)</span>
@@ -679,12 +679,12 @@ A' \amp \longmapsto \amp \Pr{X\in A'}
 <div class="para">Pour une variable aléatoire <em class="emphasis">discrète</em> <span class="process-math">\(X\text{,}\)</span> déterminer la loi de <span class="process-math">\(X\)</span> revient ainsi à déterminer  le couple <span class="process-math">\(\bigl(X(\Omega),(\Pr{X=x})_{x\in X(\Omega)}\bigr)\text{.}\)</span> L’application <span class="process-math">\(x\longmapsto \Pr{X=x}\)</span> est dite fonction des masses de la variable <span class="process-math">\(X\text{.}\)</span>
 </div>
 </div></article><article class="definition definition-like" id="def-loicouple"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.59</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.18</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="def-loicouple-1-1">Soient deux VAD <span class="process-math">\(X\)</span> et <span class="process-math">\(Y\)</span> définies sur <span class="process-math">\((\Omega,\mathscr T)\text{.}\)</span> La loi du couple <span class="process-math">\((X,Y)\)</span> est par définition la loi de la variable <span class="process-math">\(Z=(X,Y)\text{.}\)</span> Elle est entièrement déterminée par le couple <span class="process-math">\(\Bigl(X(\Omega)\times Y(\Omega),\bigl(\Pr{X=x,Y=y}\bigr)_{x\in X(\Omega),y\in Y(\Omega)}\Bigr)\text{.}\)</span>
 </div> <div class="para" id="def-loicouple-1-2">En outre les lois des variables <span class="process-math">\(X\)</span> et <span class="process-math">\(Y\)</span> sont appelées les lois marginales du couple <span class="process-math">\((X,Y)\text{.}\)</span>
 </div></article><article class="remark remark-like" id="subsec-loivaralea-4"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.60</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.19</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-loivaralea-4-1">
 <div class="para">Avec <span class="process-math">\(Z=(X,Y)\)</span> on a</div>
@@ -703,7 +703,7 @@ Z(\Omega)=\bigl\{(x,y)\in X(\Omega)\times Y(\Omega)\mid \exists \omega\in\Omega\
 <div class="para">C’est pour des raisons de simplification que la loi de couple est donc définie à travers <span class="process-math">\(X(\Omega)\times Y(\Omega)\)</span> et non à tavers <span class="process-math">\((X,Y)(\Omega)\text{.}\)</span>
 </div>
 </div></article><article class="proposition theorem-like" id="prop-loicouple"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.61</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.20</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="prop-loicouple-1-1">
 <div class="para">Soient deux VAD <span class="process-math">\(X\)</span> et <span class="process-math">\(Y\)</span> définies sur <span class="process-math">\((\Omega,\mathscr T)\text{.}\)</span>
@@ -714,11 +714,11 @@ Z(\Omega)=\bigl\{(x,y)\in X(\Omega)\times Y(\Omega)\mid \exists \omega\in\Omega\
 </ol>
 <div class="para">Ce qui signifie que les lois marginales du couple <span class="process-math">\((X,Y)\)</span> sont données par sa loi de couple.</div>
 </div></article><article class="remark remark-like" id="subsec-loivaralea-6"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.62</span><span class="type">Remarque</span><span class="title">Généralisation.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.21</span><span class="type">Remarque</span><span class="title">Généralisation.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-loivaralea-6-2">Soient <span class="process-math">\(X_1,X_2,\ldots,X_n\)</span> des variables aléatoires réelles. La variable <span class="process-math">\(X=(X_1,X_2,\ldots,X_n)\)</span> est dite un vecteur aléatoire. Sa loi est entièrement déterminée par le couple formé de <span class="process-math">\(E=X_1(\Omega)\times X_2(\Omega)\times\cdots\times X_n(\Omega)\)</span> et de la famille <span class="process-math">\((\Pr{X_1=x_1,\ldots,X_n=x_n})_{(x_1,\cdots,x_n)\in E}\text{.}\)</span>
 </div></article><article class="corollary theorem-like" id="cor-memeloi"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.63</span><span class="type">Corollaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.22</span><span class="type">Corollaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <ol class="decimal" id="cor-memeloi-1-1">
 <li id="cor-memeloi-1-1-1"><div class="para" id="cor-memeloi-1-1-1-1">Soient <span class="process-math">\(X\)</span> et <span class="process-math">\(Y\)</span> deux VAD. Si <span class="process-math">\(X\sim Y\)</span>  alors pour toute fonction <span class="process-math">\(f\)</span> définie sur <span class="process-math">\(X(\Omega)\text{,}\)</span> <span class="process-math">\(f(X)\sim f(Y)\text{.}\)</span>
@@ -764,7 +764,7 @@ g(X_1,X_2,\ldots,X_n)\sim g(Y_1,Y_2,\ldots,Y_n)
 </div>
 </div></li>
 </ol></article></details><article class="warning remark-like" id="subsec-loivaralea-8"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.64</span><span class="type">Mise en garde</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.23</span><span class="type">Mise en garde</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-loivaralea-8-1">Sans la condition d’indépendance mutuelle des variables <span class="process-math">\(X_1,X_2,\ldots,X_n\)</span> et des variables <span class="process-math">\(Y_1,Y_2,\ldots, Y_n\)</span> la propriété <a href="sec-prodis-varalea.html#cor-indsim" class="internal" title="Point 2">Point 2</a> n’est plus valide.</div>
 <div class="para" id="subsec-loivaralea-8-2">Par exemple :</div>
@@ -781,7 +781,7 @@ g(X_1,X_2,\ldots,X_n)\sim g(Y_1,Y_2,\ldots,Y_n)
 </div></article></section><section class="subsection" id="subsec-loiusuelles"><h3 class="heading hide-type">
 <span class="codenumber">2.2.4</span><span class="type">Sous-section</span><span class="title">Lois discrètes usuelles</span>
 </h3>
-<figure class="list table-like" id="subsec-loiusuelles-2"><figcaption><span class="type">Liste</span><span class="codenumber">2.65</span>Les lois discrètes usuelles</figcaption><div class="named-list-content">
+<figure class="list table-like" id="subsec-loiusuelles-2"><figcaption><span class="type">Liste</span><span class="codenumber">2.2.24</span>Les lois discrètes usuelles</figcaption><div class="named-list-content">
 <div class="introduction" id="subsec-loiusuelles-2-2"><div class="para" id="subsec-loiusuelles-2-2-1">
 <span class="process-math">\(X\)</span> désignera une VAD définie sur <span class="process-math">\((\Omega,\mathscr T)\)</span>
 </div></div>
@@ -886,7 +886,7 @@ X \amp =\min\{n\in\N^*\mid X_n=1\} \\
 <section class="introduction" id="subsec-fonction-repartition-2"><div class="para" id="subsec-fonction-repartition-2-1">On suppose que <span class="process-math">\(\R\)</span> est muni de sa tribu de Borel <span class="process-math">\(\mathscr B(\R)\text{.}\)</span> Dans la suite toutes les variables alétoires réelles considérées sont supposées à valeurs dans l’espace probabilisable <span class="process-math">\((\R,\mathscr B(\R))\text{.}\)</span> L’espace de travail <span class="process-math">\((\Omega,\mathscr T)\)</span> est supposé muni d’une probabilité <span class="process-math">\(\PP\text{.}\)</span>
 </div>
 <div class="para" id="subsec-fonction-repartition-2-2">Il s’agit dans cette section de fournir un moyen de caractériser la loi d’une variable aléatoire <em class="emphasis">réelle</em> non nécessairement discrète. Bien que les notions abordées ne soit pas citées dans le programme français des classes MP, elles peuvent s’avérer indispensables pour vos travaux de recherche (pour le TIPE par exemple) et elles sont utiles même dans le cas des variables aléatoire discrètes. Elles font en outre partie du programme marocain.</div></section><article class="insight remark-like" id="subsec-fonction-repartition-3"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.66</span><span class="type">Vocabulaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.25</span><span class="type">Vocabulaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-fonction-repartition-3-1">
 <div class="para">Si <span class="process-math">\(X\)</span> est une VAR on a vu que l’application <span class="process-math">\(\PP_X\)</span> définie par</div>
@@ -899,7 +899,7 @@ X \amp =\min\{n\in\N^*\mid X_n=1\} \\
 <div class="para">est une probabilité de l’espace <span class="process-math">\((\R,\mathscr B(\R))\)</span> appelée loi de <span class="process-math">\(X\)</span>
 </div>
 </div></article><article class="definition definition-like" id="def-fonction-repartition"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.67</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.26</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="def-fonction-repartition-1-1">Soit <span class="process-math">\(X\)</span> une <dfn class="terminology">variable aléatoire réelle</dfn> définie sur l’espace probabilisé <span class="process-math">\((\Omega, \mathscr T, \PP\text{.}\)</span> La <em class="emphasis">fonction de répartition</em> de <span class="process-math">\(X\text{,}\)</span> notée <span class="process-math">\(F_X\text{,}\)</span> est la fonction réelle définie par :</div>
 <div class="displaymath process-math">
@@ -907,7 +907,7 @@ X \amp =\min\{n\in\N^*\mid X_n=1\} \\
 F_X(x) = \Pr{X \leq x}, \quad \forall x \in \mathbb{R}.
 \end{equation*}
 </div></article><article class="proposition theorem-like" id="subsec-fonction-repartition-5"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.68</span><span class="type">Proposition</span><span class="title">propriétés caractéristiques d’une fonction de répartition.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.27</span><span class="type">Proposition</span><span class="title">propriétés caractéristiques d’une fonction de répartition.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-fonction-repartition-5-2-1">Soit <span class="process-math">\(X\)</span> une VAR. La fonction de répartition <span class="process-math">\(F_X\)</span> possède les propriétés suivantes :</div> <ol class="decimal" id="subsec-fonction-repartition-5-2-2">
 <li id="subsec-fonction-repartition-5-2-2-1"><div class="para" id="p-derived-subsec-fonction-repartition-5-2-2-1">
@@ -955,7 +955,7 @@ F_X(x) = \Pr{X \leq x}, \quad \forall x \in \mathbb{R}.
 </div>
 </div></li>
 </ol></div></article></details><article class="corollary theorem-like" id="cor-loidiscont"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.69</span><span class="type">Corollaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.28</span><span class="type">Corollaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="cor-loidiscont-1-1">
 <div class="para">Soit <span class="process-math">\(X\)</span> une VAR. Alors pour tout <span class="process-math">\(x\in\R\text{,}\)</span>
@@ -969,7 +969,7 @@ F_X(x) = \Pr{X \leq x}, \quad \forall x \in \mathbb{R}.
 </div></article><details id="cor-loidiscont-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Démonstration</span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-loidiscont-2-1">
 <span class="process-math">\(\Pr{X=x}=\Pr{X\leq x}-\Pr{X\lt x}\)</span> et de la même façon que dans la propriété précédente <span class="process-math">\(\Pr{X\lt x}=\lim\Pr{X\leq x-1/n}=F_X(x^-)\text{.}\)</span>
 </div></article></details><article class="remark remark-like" id="subsec-fonction-repartition-7"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.70</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.29</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <ol class="decimal" id="subsec-fonction-repartition-7-1">
 <li id="subsec-fonction-repartition-7-1-2">
@@ -992,7 +992,7 @@ F_X(x^-)\lt F_X(x)\leq F_X(y^-)\lt F_X(y)
 </div></article></details>
 </li>
 </ol></article><article class="proposition theorem-like" id="prop-loirepart"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.71</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.30</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="prop-loirepart-1-1">
 <div class="para">Soit <span class="process-math">\(X\)</span> une VAR. La fonction <span class="process-math">\(F_X\)</span> permet d’exprimer la probabilité de tous les événements de la forme <span class="process-math">\((X\in I)\)</span> où <span class="process-math">\(I\)</span> est un intervalle quelconque de <span class="process-math">\(\R\text{.}\)</span> Pour deux réels <span class="process-math">\(a,b\in\R\)</span> tels que <span class="process-math">\(a\lt b\)</span> on a:</div>
@@ -1009,14 +1009,14 @@ F_X(x^-)\lt F_X(x)\leq F_X(y^-)\lt F_X(y)
 \end{align*}
 </div>
 </div></article><article class="remark remark-like" id="subsec-fonction-repartition-9"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.72</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.31</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-fonction-repartition-9-1">
 <span class="process-math">\(\mathscr B(\R)\)</span> est la tribu de <span class="process-math">\(\R\)</span> engendrée par tous les intervalles de <span class="process-math">\(\R\text{.}\)</span> La proposition précédente suggère donc que la fonction de répartition  <span class="process-math">\(F_X\)</span> caractérise de façon unique sa loi <span class="process-math">\(\PP_X\text{.}\)</span> On admet le théorème suivant qui confirme cette idée.</div></article><article class="theorem theorem-like" id="thm-caractloi"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.73</span><span class="type">Théorème</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.32</span><span class="type">Théorème</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="thm-caractloi-1-1">Deux VAR ont la même loi si et seulement si elles ont la même fonction de répartition.</div></article><article class="example example-like" id="subsec-fonction-repartition-11"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.74</span><span class="type">Exemple</span><span class="title">cas d’une <abbr class="acronym">VADR</abbr>.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.33</span><span class="type">Exemple</span><span class="title">cas d’une <abbr class="acronym">VADR</abbr>.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-fonction-repartition-11-2">Soit <span class="process-math">\(X\)</span> est une <abbr class="acronym">VADR</abbr> dont on connait la loi. On pose <span class="process-math">\(X(\Omega)=\{x_n\mid n\in\N\}\)</span> et pour tout <span class="process-math">\(n\in\N\text{,}\)</span> <span class="process-math">\(p_n=\Pr{X=x_n}\text{.}\)</span>
 </div>
@@ -1035,7 +1035,7 @@ F_X(t)=\sum_{\substack{n\in\N\\ x_n\leq t}} p_n=
 \forall n\in\N^*,\; \Pr{X=x_n}=F_X(x_n)-F(x_n^-)=F_X(x_n)-F_X(x_{n-1})
 \end{equation*}
 </div>
-<div class="para">Le <a href="sec-prodis-varalea.html#thm-caractloi" class="internal" title="Théorème 2.73">Théorème 2.73</a> est donc évident dans le cas d’une <abbr class="acronym">VADR</abbr>.</div>
+<div class="para">Le <a href="sec-prodis-varalea.html#thm-caractloi" class="internal" title="Théorème 2.2.32">Théorème 2.2.32</a> est donc évident dans le cas d’une <abbr class="acronym">VADR</abbr>.</div>
 </div></li>
 <li id="subsec-fonction-repartition-11-3-2"><div class="para logical" id="subsec-fonction-repartition-11-3-2-1">
 <div class="para">Dans le cas où on peut organiser les valeurs possibles de <span class="process-math">\(X\)</span> en une <em class="emphasis">suite strictement croissante</em> <details class="ptx-footnote" aria-live="polite" id="subsec-fonction-repartition-11-3-2-1-3"><summary class="ptx-footnote__number" title="Note de bas de page 2.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="subsec-fonction-repartition-11-3-2-1-3">ce n’est pas nécessairement le cas, penser au cas où <span class="process-math">\(X(\Omega)=\Q\)</span> par exemple</div></details> <span class="process-math">\((x_n)_n\)</span> alors pour tout <span class="process-math">\(t\in]x_0,\lim x_n[\text{,}\)</span> il existe un unique entier <span class="process-math">\(n(t)\)</span> tel que <span class="process-math">\(x_{n(t)}\leq t\lt x_{n(t)+1}\)</span> et on a dans ce cas</div>
@@ -1058,7 +1058,7 @@ F_X(t)=\begin{cases}
 <li id="subsec-fonction-repartition-11-3-3"><div class="para" id="subsec-fonction-repartition-11-3-3-1">Dans le cas où <span class="process-math">\(X\)</span> prend un nombre fini de valeurs <span class="process-math">\(x_0\lt x_1\lt\cdots\lt x_N\)</span> alors <span class="process-math">\(F_X\)</span> est définie comme dans <a href="sec-prodis-varalea.html#eq-repdisc" class="internal" title="Équation 2.1">(2.1)</a> en remplaçant <span class="process-math">\(\N\)</span> par <span class="process-math">\(\iic{0,N-1}\)</span> et <span class="process-math">\(\lim x_n\)</span> par <span class="process-math">\(x_N\text{.}\)</span>
 </div></li>
 </ul></article><article class="example example-like" id="example-U"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.75</span><span class="type">Exemple</span><span class="title">Loi uniforme sur un segment.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.2.34</span><span class="type">Exemple</span><span class="title">Loi uniforme sur un segment.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="example-U-3-1">
 <div class="para">On dit qu’une VAR <span class="process-math">\(U\)</span> suit une loi uniforme sur un segment non trivial <span class="process-math">\([a,b]\)</span> de <span class="process-math">\(\R\)</span> et on écrit <span class="process-math">\(U\sim\mathscr U([a,b])\)</span> si</div>
@@ -1403,8 +1403,8 @@ X_n = a + \sum_{k=1}^n (2B_k - 1) = 2S_n + a - n,
 </div></details></div></article><article class="task exercise-like" id="marche-aleatoire-deepseek-4"><h5 class="heading">
 <span class="codenumber">2</span><span class="title">Nombre de chemins et loi de <span class="process-math">\(X_n\)</span>.</span>
 </h5>
-<div class="para" id="marche-aleatoire-deepseek-4-2-1">On représente chaque parcours de l’objet entre les instants <span class="process-math">\(0\)</span> et <span class="process-math">\(n\)</span> par la ligne brisée passant par les points <span class="process-math">\((k, X_k)\)</span> tel que illustré dans la <a href="sec-prodis-varalea.html#chemin-marche" class="internal" title="Figure 2.76">Figure 2.76</a> par la ligne tracée en continu. On note <span class="process-math">\(C_n(a, b)\)</span> le nombre de ces lignes qui vont du point <span class="process-math">\((0, a)\)</span> au point <span class="process-math">\((n, b)\text{.}\)</span> Expliciter <span class="process-math">\(C_n(a, b)\)</span> et exprimer la loi de <span class="process-math">\(X_n\)</span> en fonction de ces nombres. <figure class="figure figure-like" id="chemin-marche"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/chemin-marche.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="codenumber">2.76</span></figcaption></figure>
+<div class="para" id="marche-aleatoire-deepseek-4-2-1">On représente chaque parcours de l’objet entre les instants <span class="process-math">\(0\)</span> et <span class="process-math">\(n\)</span> par la ligne brisée passant par les points <span class="process-math">\((k, X_k)\)</span> tel que illustré dans la <a href="sec-prodis-varalea.html#chemin-marche" class="internal" title="Figure 2.2.35">Figure 2.2.35</a> par la ligne tracée en continu. On note <span class="process-math">\(C_n(a, b)\)</span> le nombre de ces lignes qui vont du point <span class="process-math">\((0, a)\)</span> au point <span class="process-math">\((n, b)\text{.}\)</span> Expliciter <span class="process-math">\(C_n(a, b)\)</span> et exprimer la loi de <span class="process-math">\(X_n\)</span> en fonction de ces nombres. <figure class="figure figure-like" id="chemin-marche"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/chemin-marche.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="codenumber">2.2.35</span></figcaption></figure>
 </div>
 <div class="solutions"><details id="marche-aleatoire-deepseek-4-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="marche-aleatoire-deepseek-4-3-1">
@@ -1450,7 +1450,7 @@ C_n(a, b) = \begin{cases} \displaystyle \binom{n}{\frac{n + b - a}{2}} \amp \tex
 <div class="para" id="marche-aleatoire-deepseek-5-2-1">On suppose que <span class="process-math">\(a, b &gt; 0\)</span> et on note <span class="process-math">\(C_n^0(a, b)\)</span> le nombre de parcours entre <span class="process-math">\((0, a)\)</span> et <span class="process-math">\((n, b)\)</span> qui passent au moins une fois par un point de la forme <span class="process-math">\((k, 0)\text{.}\)</span> Justifier que <span class="process-math">\(C_n^0(a, b) = C_n(-a, b)\text{.}\)</span>
 </div>
 <div class="solutions"><details id="marche-aleatoire-deepseek-5-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="marche-aleatoire-deepseek-5-3-1">Pour chaque chemin <span class="process-math">\(\mathcal{C}\)</span> allant de <span class="process-math">\((0, a)\)</span> vers <span class="process-math">\((n, b)\)</span> et touchant au moins une fois l’axe <span class="process-math">\(Ox\text{,}\)</span> il existe un unique chemin <span class="process-math">\(\mathcal{C}'\)</span> allant de <span class="process-math">\((0, -a)\)</span> vers <span class="process-math">\((n, b)\)</span> qui est symétrique par rapport à l’axe <span class="process-math">\(Ox\)</span> entre les instants <span class="process-math">\(0\)</span> et <span class="process-math">\(k\text{,}\)</span> où <span class="process-math">\(k\)</span> est le premier instant où <span class="process-math">\(\mathcal{C}\)</span> touche l’axe <span class="process-math">\(Ox\text{.}\)</span> Réciproquement, chaque chemin <span class="process-math">\(\mathcal{C}'\)</span> de <span class="process-math">\((0, -a)\)</span> vers <span class="process-math">\((n, b)\)</span> doit toucher l’axe <span class="process-math">\(Ox\)</span> au moins une fois et est le symétrique d’un chemin <span class="process-math">\(\mathcal{C}\)</span> de <span class="process-math">\((0, a)\)</span> vers <span class="process-math">\((n, b)\text{.}\)</span> Voir la <a href="sec-prodis-varalea.html#chemin-marche" class="internal" title="Figure 2.76">Figure 2.76</a> pour une illustration des chemins <span class="process-math">\(\mathcal C\)</span> et <span class="process-math">\(\mathcal C'\text{.}\)</span>
+<div class="para" id="marche-aleatoire-deepseek-5-3-1">Pour chaque chemin <span class="process-math">\(\mathcal{C}\)</span> allant de <span class="process-math">\((0, a)\)</span> vers <span class="process-math">\((n, b)\)</span> et touchant au moins une fois l’axe <span class="process-math">\(Ox\text{,}\)</span> il existe un unique chemin <span class="process-math">\(\mathcal{C}'\)</span> allant de <span class="process-math">\((0, -a)\)</span> vers <span class="process-math">\((n, b)\)</span> qui est symétrique par rapport à l’axe <span class="process-math">\(Ox\)</span> entre les instants <span class="process-math">\(0\)</span> et <span class="process-math">\(k\text{,}\)</span> où <span class="process-math">\(k\)</span> est le premier instant où <span class="process-math">\(\mathcal{C}\)</span> touche l’axe <span class="process-math">\(Ox\text{.}\)</span> Réciproquement, chaque chemin <span class="process-math">\(\mathcal{C}'\)</span> de <span class="process-math">\((0, -a)\)</span> vers <span class="process-math">\((n, b)\)</span> doit toucher l’axe <span class="process-math">\(Ox\)</span> au moins une fois et est le symétrique d’un chemin <span class="process-math">\(\mathcal{C}\)</span> de <span class="process-math">\((0, a)\)</span> vers <span class="process-math">\((n, b)\text{.}\)</span> Voir la <a href="sec-prodis-varalea.html#chemin-marche" class="internal" title="Figure 2.2.35">Figure 2.2.35</a> pour une illustration des chemins <span class="process-math">\(\mathcal C\)</span> et <span class="process-math">\(\mathcal C'\text{.}\)</span>
 </div>
 <div class="para logical" id="marche-aleatoire-deepseek-5-3-2">
 <div class="para">Cette correspondance établit une bijection entre l’ensemble des chemins <span class="process-math">\(\mathcal{C}\)</span> et celui des chemins <span class="process-math">\(\mathcal{C}'\text{.}\)</span> Ainsi :</div>

@@ -1,5 +1,5 @@
 /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx:2:0:ERROR:RELAXNGV:RELAXNG_ERR_NOTELEM: Expecting an element got text
 /run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx:2:0:ERROR:RELAXNGV:RELAXNG_ERR_CONTENTVALID: Element title failed to validate content
-/run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx:4:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element exercises there
-/run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx:4:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element sidebyside, got exercises
-/run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx:4:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element proof, got exercises
+/run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx:3:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element introduction there
+/run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx:3:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element sidebyside, got introduction
+/run/media/cbouja/home/GitHub/cpgem/pretext/concours/centrale2018mp2/main.ptx:3:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element proof, got introduction

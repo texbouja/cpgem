@@ -198,16 +198,16 @@ defaults:
       permalink: /:title/
   - scope:
       path: _cours
-      type: pretext
+      type: ptx-cours
     values:
-      layout: pretext
+      layout: ptx-cours
       comments: true
       permalink: "/:collection/:path"
   - scope:
       path: _concours
-      type: pretext
+      type: ptx-concours
     values:
-      layout: pretext
+      layout: ptx-concours
       comments: true
       permalink: "/:collection/:path"
 
@@ -239,7 +239,6 @@ compress_html:
   ignore:
     envs: [development]
 
-<<<<<<< HEAD
 exclude:
   - "*.gem"
   - "*.gemspec"
@@ -254,8 +253,6 @@ exclude:
   - templates
   - pretext
 
-=======
->>>>>>> 14c9c3a (	deleted:    .devcontainer/devcontainer.json)
 jekyll-archives:
   enabled: [categories, tags]
   layouts:

@@ -1,5 +1,5 @@
 ---
-layout: pretext
+layout: ptx-cours
 title: "Espaces de probabilité"
 division: section
 project: book
@@ -126,15 +126,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.0';
+eBookConfig.runestone_version = '7.6.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-runtime.5eb70769dc5e56d7.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.19/dist/_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/PreTeXtBook/html-static@2.18/dist/_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="/assets/js/pretext/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.14.0/lunr.stemmer.support.js"></script><script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.14.0/lunr.fr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="/assets/js/pretext/pretext_search.js"></script><script src="/assets/js/pretext/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Évaluer (Sage)';
 </script>
 </head>
@@ -355,7 +355,7 @@ eBookConfig.enable_chatcodes =  false;
 <span class="codenumber">2.1.1</span><span class="type">Sous-section</span><span class="title">Tribus</span>
 </h3>
 <article class="definition definition-like" id="def-tribu"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.1</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.1</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="def-tribu-1-1">
 <div class="para">On appelle tribu (ou <span class="process-math">\(\sigma\)</span>-algèbre) de <span class="process-math">\(\Omega\)</span> tout ensemble <span class="process-math">\(\mathscr T\)</span> de parties de <span class="process-math">\(\Omega\)</span> tel que :</div>
@@ -368,7 +368,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">Si <span class="process-math">\(\mathscr T\)</span> est une tribu de <span class="process-math">\(\Omega\)</span> alors le couple <span class="process-math">\((\Omega,\mathscr T)\)</span> est dit un espace probabilisable. Tout élément de <span class="process-math">\(\mathscr T\)</span> est dit un événement de l’espace <span class="process-math">\((\Omega,\mathscr T)\text{.}\)</span>
 </div>
 </div></article><article class="remark remark-like" id="subsec-tribu-3"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.2</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.2</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-tribu-3-1">
 <div class="para">Si <span class="process-math">\(\mathscr T\)</span> est une tribu de <span class="process-math">\(\Omega\)</span> alors</div>
@@ -378,7 +378,7 @@ eBookConfig.enable_chatcodes =  false;
 </div></li>
 </ul>
 </div></article><article class="example example-like" id="subsec-tribu-4"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.3</span><span class="type">Exemple</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.3</span><span class="type">Exemple</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-tribu-4-1"><ol class="decimal" id="subsec-tribu-4-1-1">
 <li id="subsec-tribu-4-1-1-1"><div class="para" id="subsec-tribu-4-1-1-1-1">
@@ -390,7 +390,7 @@ eBookConfig.enable_chatcodes =  false;
 <li id="subsec-tribu-4-1-1-3"><div class="para" id="subsec-tribu-4-1-1-3-1">Si <span class="process-math">\(A\)</span> est une partie de <span class="process-math">\(\Omega\)</span> alors <span class="process-math">\(\{\emptyset,A,A^c,\Omega\}\)</span> est une tribu de <span class="process-math">\(\Omega\text{.}\)</span> C’est la plus petite tribu de <span class="process-math">\(\Omega\)</span> contenant <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 </ol></div></article><article class="proposition theorem-like" id="subsec-tribu-5"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.4</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.4</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-tribu-5-2"><ol class="decimal" id="subsec-tribu-5-2-1">
 <li id="subsec-tribu-5-2-1-1"><div class="para" id="subsec-tribu-5-2-1-1-1">Si <span class="process-math">\((\mathscr T_i)_{i\in I}\)</span> est une famille quelconque  de tribus de <span class="process-math">\(\Omega\)</span> alors <span class="process-math">\(\bigcap\limits_{i\in I} \mathscr T_i\)</span> est une tribu de <span class="process-math">\(\Omega\text{.}\)</span>
@@ -398,11 +398,11 @@ eBookConfig.enable_chatcodes =  false;
 <li id="subsec-tribu-5-2-1-2"><div class="para" id="subsec-tribu-5-2-1-2-1">Soit <span class="process-math">\(\mathcal A\)</span> un ensemble de parties de <span class="process-math">\(\Omega\text{.}\)</span> L’intersection de toutes les tribus de <span class="process-math">\(\Omega\)</span> contenant <span class="process-math">\(\mathcal A\)</span> est une tribu de <span class="process-math">\(\Omega\text{.}\)</span> Elle est appelée la tribu engendrée par <span class="process-math">\(\mathcal A\text{.}\)</span> On la note <span class="process-math">\(\sigma(\mathcal A)\text{.}\)</span>
 </div></li>
 </ol></div></article><article class="definition definition-like" id="def-tborel"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.5</span><span class="type">Définition</span><span class="title">Tribue de Borel de <span class="process-math">\(\R\)</span>.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.5</span><span class="type">Définition</span><span class="title">Tribue de Borel de <span class="process-math">\(\R\)</span>.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="def-tborel-3-1">La tribu engendrée par l’ensemble des segments de <span class="process-math">\(\R\)</span> est appelée la tribu de Borel de <span class="process-math">\(\R\)</span> et tout élément de cette tribu est dit un borélien de <span class="process-math">\(\R\)</span> On la note <span class="process-math">\(\mathscr B(\R)\text{.}\)</span>
 </div></article><article class="remark remark-like" id="subsec-tribu-7"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.6</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.6</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-tribu-7-1"><ol class="decimal" id="subsec-tribu-7-1-1">
 <li id="subsec-tribu-7-1-1-1"><div class="para" id="subsec-tribu-7-1-1-1-1">Soient <span class="process-math">\(\mathcal A\)</span> et <span class="process-math">\(\mathcal B\)</span> deux ensembles de parties de <span class="process-math">\(\Omega\text{.}\)</span> Si <span class="process-math">\(\mathcal A\subset \mathcal B\subset \sigma(A)\)</span> alors <span class="process-math">\(\sigma(\mathcal A)=\sigma(\mathcal B)\text{.}\)</span>
@@ -412,10 +412,10 @@ eBookConfig.enable_chatcodes =  false;
 <li id="subsec-tribu-7-1-1-4"><div class="para" id="subsec-tribu-7-1-1-4-1">En général si <span class="process-math">\(E\)</span> est un espace vectoriel normé de dimension finie alors la tribu de Borel de <span class="process-math">\(E\text{,}\)</span> notée <span class="process-math">\(\mathscr B(E),\)</span> est par définition la tribu engendrée par les boules fermées de <span class="process-math">\(E\text{.}\)</span> Elle contient alors tous les ouverts et tous les fermés de <span class="process-math">\(E\)</span> et est de ce fait indépendante de la norme choisie sur <span class="process-math">\(E\text{.}\)</span>
 </div></li>
 </ol></div></article><article class="warning remark-like" id="subsec-tribu-8"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.7</span><span class="type">Mise en garde</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.7</span><span class="type">Mise en garde</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-tribu-8-1">Il n’y a aucun critère gloal qui reste simple permettant de décider si une partie de <span class="process-math">\(\R\)</span> est un borélien. Cela peut même être un problème très compliqué.</div></article><article class="proposition theorem-like" id="prop-sigmatrib"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.8</span><span class="type">Proposition</span><span class="title">Un cas intéressant.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.8</span><span class="type">Proposition</span><span class="title">Un cas intéressant.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="prop-sigmatrib-2-1">
 <div class="para">Soit <span class="process-math">\(\mathcal A=\{A_i\mid i\in I\}\)</span> un ensemble au plus dénombrable de parties de <span class="process-math">\(\Omega\)</span> qui  <em class="emphasis">forment une partition</em> de <span class="process-math">\(\Omega\text{.}\)</span> Alors</div>
@@ -445,7 +445,7 @@ eBookConfig.enable_chatcodes =  false;
 <span class="process-math">\(\mathscr T\)</span> est donc bien une tribu de <span class="process-math">\(\Omega\text{.}\)</span> Elle contient <span class="process-math">\(\mathcal A\)</span> et toute tribu qui contient tous les ensembles <span class="process-math">\(A_i\)</span> contient tous les éléments de <span class="process-math">\(\mathscr T\text{.}\)</span> C’est donc la plus petite tribu de <span class="process-math">\(\Omega\)</span> contenant <span class="process-math">\(\mathcal A\text{.}\)</span> Soit <span class="process-math">\(\sigma(\mathcal A)=\mathscr T\text{.}\)</span>
 </div>
 </div></article></details><article class="corollary theorem-like" id="prop-tribdisc"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.9</span><span class="type">Corollaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.9</span><span class="type">Corollaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="prop-tribdisc-1-1">
 <div class="para">Si l’ensemble <span class="process-math">\(\Omega\)</span> est au plus dénombrable alors</div>
@@ -457,7 +457,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">Autrement dit la seule tribu de <span class="process-math">\(\Omega\)</span> qui contient tous les singletons de <span class="process-math">\(\Omega\)</span> est <span class="process-math">\(\mathscr P(\Omega)\text{.}\)</span>
 </div>
 </div></article><article class="remark remark-like" id="subsec-tribu-11"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.10</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.10</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <ol class="decimal" id="subsec-tribu-11-1">
 <li id="subsec-tribu-11-1-1">
@@ -473,9 +473,9 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para" id="subsec-tribu-11-1-1-2">C’est le cas par exemple de la tribu de Borel de tout espace vectoriel normé de dimension finie (les singletons sont des boules fermées).</div>
 </li>
-<li id="subsec-tribu-11-1-2"><div class="para" id="subsec-tribu-11-1-2-1">La <a href="sec-prodis-generalites.html#prop-sigmatrib" class="internal" title="Proposition 2.8: Un cas intéressant">Proposition 2.8</a> permet de construire de manière simple une tribu de <span class="process-math">\(\Omega\)</span> en partant d’une famille au plus dénombrable d’événement deux à deux disjoints. Cette tribu est d’autant plus intéressante qu’il est très simple d’y construire une probabilité (voir la remarque <a href="sec-prodis-generalites.html#rem-progsigmatrib" class="internal" title="Point 3">Point 3</a>).</div></li>
+<li id="subsec-tribu-11-1-2"><div class="para" id="subsec-tribu-11-1-2-1">La <a href="sec-prodis-generalites.html#prop-sigmatrib" class="internal" title="Proposition 2.1.8: Un cas intéressant">Proposition 2.1.8</a> permet de construire de manière simple une tribu de <span class="process-math">\(\Omega\)</span> en partant d’une famille au plus dénombrable d’événement deux à deux disjoints. Cette tribu est d’autant plus intéressante qu’il est très simple d’y construire une probabilité (voir la remarque <a href="sec-prodis-generalites.html#rem-progsigmatrib" class="internal" title="Point 3">Point 3</a>).</div></li>
 </ol></article><article class="proposition theorem-like" id="subsec-tribu-12"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.11</span><span class="type">Proposition</span><span class="title">tribu induite.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.11</span><span class="type">Proposition</span><span class="title">tribu induite.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-tribu-12-2-1">
 <div class="para">Soit <span class="process-math">\(\mathscr T\)</span> une tribu de <span class="process-math">\(\Omega\text{.}\)</span> Pour toute élément <span class="process-math">\(B\)</span> de <span class="process-math">\(\mathscr T\text{,}\)</span> l’ensemble</div>
@@ -490,10 +490,10 @@ eBookConfig.enable_chatcodes =  false;
 <span class="codenumber">2.1.2</span><span class="type">Sous-section</span><span class="title">Probabilités</span>
 </h3>
 <article class="note remark-like" id="subsec-probabilite-2"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.12</span><span class="type">Notations</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.12</span><span class="type">Notations</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-probabilite-2-1">Dans toute cette subsection, <span class="process-math">\((\Omega,\mathscr T)\)</span> désignera un espace probabilisable.</div></article><article class="definition definition-like" id="def-probabilite"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.13</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.13</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="def-probabilite-2-1">
 <div class="para">On appelle probabilité de l’espace <span class="process-math">\((\Omega,\mathscr T)\)</span> toute application <span class="process-math">\(\PP:\mathscr T\to[0,1]\)</span> telle que :</div>
@@ -520,7 +520,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">
 <span class="process-math">\(k_N(A)\)</span> étant le nombre de fois où l’événement <span class="process-math">\(A\)</span> se réalise quand on répète l’expérience aléatoire <span class="process-math">\(N\)</span> fois, pour <span class="process-math">\(N\)</span> très grand.</div>
 </div></article></details><article class="remark remark-like" id="subsec-probabilite-5"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.14</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.14</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-probabilite-5-1">Dans la définition précédente, on a utilisé la notation <span class="process-math">\(\sum\limits_{n=0}^\infty \Pr{A_n}\)</span> pour désigner la somme de la série <span class="process-math">\(\sum\limits \Pr{A_n}\)</span> que celle-ci soit convergente ou non avec la convention que la somme d’une série divergente à termes positifs est <span class="process-math">\(+\infty\text{.}\)</span> Ce qui pose évidemment un problème de consistence puisque <span class="process-math">\(\Pr{\bigcup\limits_{n\in\N}A_n}\)</span> est sensé être dans l’intervalle <span class="process-math">\([0,1]\text{.}\)</span>
 </div>
@@ -550,7 +550,7 @@ eBookConfig.enable_chatcodes =  false;
 </div></li>
 </ul>
 </div></article><article class="proposition theorem-like" id="subsec-probabilite-6"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.15</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.15</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-probabilite-6-1-1">
 <div class="para">Soit <span class="process-math">\(\PP\)</span> une probabilité sur <span class="process-math">\((\Omega,\mathscr T)\text{.}\)</span> Alors :</div>
@@ -583,7 +583,7 @@ eBookConfig.enable_chatcodes =  false;
 <li id="subsec-probabilite-6-2-1-1-2"><div class="para" id="subsec-probabilite-6-2-1-1-2-1">Soit <span class="process-math">\((A_i)_{i\in I}\)</span> une famille au plus dénombrable d’éléments de <span class="process-math">\(\mathscr T\)</span> deux à deux disjoints. Si <span class="process-math">\(I\)</span> est fini alors c’est une conséquance de la remarque précédente. Si <span class="process-math">\(I\)</span> est infini alors il existe une bijection <span class="process-math">\(\sigma\)</span> entre <span class="process-math">\(\N\)</span> et <span class="process-math">\(I\)</span> et il suffit de poser <span class="process-math">\(B_n=A_{\sigma(n)}\)</span> pour tout <span class="process-math">\(n\in\N\)</span> pour conclure grâce au théorème de permutation des termes pour les familles sommables.</div></li>
 </ol>
 </div></article></details><article class="theorem theorem-like" id="thm-contmono"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.16</span><span class="type">Théorème</span><span class="title">de continuité monotone.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.16</span><span class="type">Théorème</span><span class="title">de continuité monotone.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="thm-contmono-2-1"><ol class="decimal" id="thm-contmono-2-1-1">
 <li id="thm-contmono-2-1-1-1"><div class="para logical" id="thm-contmono-2-1-1-1-1">
@@ -625,7 +625,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div></li>
 </ol></div></article></details><article class="corollary theorem-like" id="cor-contmono"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.17</span><span class="type">Corollaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.17</span><span class="type">Corollaire</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="cor-contmono-1-1">
 <div class="para">Soit <span class="process-math">\((A_n)_{n\in\N}\)</span> une suite quelconque d’éléments de <span class="process-math">\(\mathscr T\text{.}\)</span> Alors</div>
@@ -636,11 +636,11 @@ eBookConfig.enable_chatcodes =  false;
 </div></article><details id="cor-contmono-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Démonstration</span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-contmono-2-1">Pour le premier point on pose <span class="process-math">\(B_n=\bigcup_{k=0}^n A_k\)</span> pour tout <span class="process-math">\(n\in\N\text{.}\)</span>La suite <span class="process-math">\((B_n)_n\)</span> et croissante et <span class="process-math">\(\bigcup_{n\in\N} A_n=\bigcup_{n\in\N} B_n\text{.}\)</span> On applique alors la formule des probabilites continues.</div>
 <div class="para" id="cor-contmono-2-2">Pour le second on pose <span class="process-math">\(C_n=\bigcap_{k=0}^nA_k\text{.}\)</span> La suite <span class="process-math">\((C_n)_n\)</span> est décroissante et on peut appliquer le théorème de continuité monotone sachant que <span class="process-math">\(\bigcap_{n\in\N}A_n=\bigcap_{n\in\N}C_n\text{.}\)</span>
 </div></article></details><article class="definition definition-like" id="def-sce"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.18</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.18</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="def-sce-1-1">On appelle système complet d’événements (SCE) de <span class="process-math">\((\Omega,\mathscr T)\)</span> toute famille <span class="process-math">\((B_i)_{i\in I}\)</span> au plus dénombrables d’éléments <span class="process-math">\(\mathscr T\)</span> qui forme une partition de <span class="process-math">\(\Omega\text{.}\)</span>
 </div></article><article class="example example-like" id="subsec-probabilite-10"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.19</span><span class="type">Exemple</span><span class="title">exemples courants de SCE.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.19</span><span class="type">Exemple</span><span class="title">exemples courants de SCE.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-probabilite-10-2-1"><ol class="decimal" id="subsec-probabilite-10-2-1-1">
 <li id="subsec-probabilite-10-2-1-1-1"><div class="para" id="subsec-probabilite-10-2-1-1-1-1">Pour tout événement <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\((A,A^c)\)</span> est un SCE de <span class="process-math">\((\Omega,\mathscr T)\text{.}\)</span>
@@ -652,7 +652,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </li>
 </ol></div></article><article class="theorem theorem-like" id="prop-probatotale"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.20</span><span class="type">Théorème</span><span class="title">Formule des probabilités totales.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.20</span><span class="type">Théorème</span><span class="title">Formule des probabilités totales.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="prop-probatotale-2-1">
 <div class="para">Soit <span class="process-math">\((B_i)_{i\in I}\)</span> un SCE de <span class="process-math">\((\Omega,\mathscr T)\text{.}\)</span> Alors pour tout <span class="process-math">\(A\in\mathscr T\text{,}\)</span> on a</div>
@@ -662,7 +662,7 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation*}
 </div>
 </div></article><article class="remark remark-like" id="subsec-probabilite-12"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.21</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.21</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-probabilite-12-1"><ol class="decimal" id="subsec-probabilite-12-1-1">
 <li id="subsec-probabilite-12-1-1-1">
@@ -686,7 +686,7 @@ eBookConfig.enable_chatcodes =  false;
 <li id="subsec-probabilite-12-1-1-2"><div class="para" id="subsec-probabilite-12-1-1-2-1">Cette formule est extrêmement utile. Elle stipule que si on sait calculer les probabilités des événements d’un SCE alors on peut exprimer la probabilité de n’importe quel événement.</div></li>
 <li id="rem-progsigmatrib">
 <div class="para logical" id="rem-progsigmatrib-1">
-<div class="para">Reprenons le contexte de la <a href="sec-prodis-generalites.html#prop-sigmatrib" class="internal" title="Proposition 2.8: Un cas intéressant">Proposition 2.8</a> et considérons une famille <span class="process-math">\((p_i)_{i\in I}\)</span> de nombre réel positifs dont la somme vaut <span class="process-math">\(1\text{.}\)</span> Alors on définit complétement une probabilité <span class="process-math">\(\PP\)</span> sur l’espace <span class="process-math">\((\Omega,\sigma(\mathcal A))\)</span> en posant</div>
+<div class="para">Reprenons le contexte de la <a href="sec-prodis-generalites.html#prop-sigmatrib" class="internal" title="Proposition 2.1.8: Un cas intéressant">Proposition 2.1.8</a> et considérons une famille <span class="process-math">\((p_i)_{i\in I}\)</span> de nombre réel positifs dont la somme vaut <span class="process-math">\(1\text{.}\)</span> Alors on définit complétement une probabilité <span class="process-math">\(\PP\)</span> sur l’espace <span class="process-math">\((\Omega,\sigma(\mathcal A))\)</span> en posant</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-sigmatrib.html">
 \begin{equation*}
 \forall i\in I,\; \Pr{A_i}=p_i
@@ -700,10 +700,10 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation*}
 </div>
 </div>
-<div class="para" id="rem-progsigmatrib-2">Le <a href="sec-prodis-generalites.html#thm-probadisc" class="internal" title="Théorème 2.23">Théorème 2.23</a> énoncé ci-après n’est qu’un cas particulier de ce dernier résultat.</div>
+<div class="para" id="rem-progsigmatrib-2">Le <a href="sec-prodis-generalites.html#thm-probadisc" class="internal" title="Théorème 2.1.23">Théorème 2.1.23</a> énoncé ci-après n’est qu’un cas particulier de ce dernier résultat.</div>
 </li>
 </ol></div></article><article class="example example-like" id="subsec-probabilite-13"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.22</span><span class="type">Exemple</span><span class="title">exemples génériques d’utilisation de la formule des probabilités totales.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.22</span><span class="type">Exemple</span><span class="title">exemples génériques d’utilisation de la formule des probabilités totales.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-probabilite-13-2">
 <ol class="decimal" id="subsec-probabilite-13-2-1">
@@ -724,9 +724,9 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div></li>
 </ol>
-<div class="para">Ces relations serviront notamment dans l’étude des événements indépendants (<a href="sec-prodis-generalites.html#def-independance" class="internal" title="Définition 2.32">Définition 2.32</a>)</div>
+<div class="para">Ces relations serviront notamment dans l’étude des événements indépendants (<a href="sec-prodis-generalites.html#def-independance" class="internal" title="Définition 2.1.32">Définition 2.1.32</a>)</div>
 </div></article><article class="theorem theorem-like" id="thm-probadisc"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.23</span><span class="type">Théorème</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.23</span><span class="type">Théorème</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="thm-probadisc-1-1">
 <div class="para">On suppose que <span class="process-math">\(\Omega\)</span> est au plus dénombrable et on le munit de la tribu <span class="process-math">\(\mathscr P(\Omega)\text{.}\)</span>
@@ -753,7 +753,7 @@ eBookConfig.enable_chatcodes =  false;
 </div></li>
 </ol>
 </div></article><article class="remark remark-like" id="subsec-probabilite-15"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.24</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.24</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-probabilite-15-1">
 <div class="para">Si <span class="process-math">\(\Omega\)</span> est au plus dénombrable alors pour toute famille sommable <span class="process-math">\(x=(x_\omega)_{\omega\in\Omega}\)</span> de nombre réels positifs de somme <span class="process-math">\(S&gt;0\text{,}\)</span> on peut définir une probabilté sur <span class="process-math">\((\Omega,\mathscr P(\Omega)\)</span> en posant</div>
@@ -764,7 +764,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para">Cette remarque peut avoir des applications analytiques intéressantes même dans des cas où la probabilité <span class="process-math">\(\PP_x\)</span> ne correspond pas réellement à une expérience aléatoire.</div>
 </div></article><article class="proposition theorem-like" id="prop-probcond"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.25</span><span class="type">Proposition</span><span class="title">Probabilité conditionnelle.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.25</span><span class="type">Proposition</span><span class="title">Probabilité conditionnelle.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="prop-probcond-4-1">
 <div class="para">On considère un événemnt <span class="process-math">\(B\)</span> de probabilité non nulle. L’application <span class="process-math">\(\PP_B\)</span> définie sur <span class="process-math">\(\mathscr T\)</span> par</div>
@@ -796,7 +796,7 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation*}
 </div>
 </div></article></details><article class="remark remark-like" id="subsec-probabilite-17"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.26</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.26</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-probabilite-17-1"><ol class="decimal" id="subsec-probabilite-17-1-1">
 <li id="subsec-probabilite-17-1-1-1">
@@ -819,10 +819,10 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div></li>
 </ol></div></article><article class="warning remark-like" id="subsec-probabilite-18"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.27</span><span class="type">Mise en garde</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.27</span><span class="type">Mise en garde</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-probabilite-18-1">On parle de «probabilité de <span class="process-math">\(A\)</span> sachant <span class="process-math">\(B\)</span>», jamais de «l’événement» <span class="process-math">\((A\mid B)\)</span> qui n’a pas de sens en théorie des probabilités.</div></article><article class="theorem theorem-like" id="thm-probatotale2"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.28</span><span class="type">Théorème</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.28</span><span class="type">Théorème</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="thm-probatotale2-1-1">
 <div class="para">Soit <span class="process-math">\((B_i)_{i\in I}\)</span> un SCE de <span class="process-math">\((\Omega,\mathscr T)\text{.}\)</span> Alors</div>
@@ -832,7 +832,7 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation*}
 </div>
 </div></article><article class="proposition theorem-like" id="prop-bayes"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.29</span><span class="type">Proposition</span><span class="title">Formules de Bayes.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.29</span><span class="type">Proposition</span><span class="title">Formules de Bayes.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="prop-bayes-2-1"><ol class="decimal" id="prop-bayes-2-1-1">
 <li id="prop-bayes-2-1-1-1"><div class="para logical" id="prop-bayes-2-1-1-1-1">
@@ -852,7 +852,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div></li>
 </ol></div></article><article class="example example-like" id="subsec-probabilite-21"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.30</span><span class="type">Exemple</span><span class="title">générique d’utilisation de la formule de Bayes.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.30</span><span class="type">Exemple</span><span class="title">générique d’utilisation de la formule de Bayes.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-probabilite-21-2">Une chaine de production industrielle contient <span class="process-math">\(N\)</span> machines identiques  mais avec des taux de production de pièces défectueuses différents. Le taux pour la machine numéro <span class="process-math">\(k\)</span> est <span class="process-math">\(p_k\text{.}\)</span>
 </div>
@@ -870,10 +870,10 @@ eBookConfig.enable_chatcodes =  false;
 <span class="codenumber">2.1.3</span><span class="type">Sous-section</span><span class="title">Indépendance des événements</span>
 </h3>
 <article class="note remark-like" id="subsec-independance-2"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.31</span><span class="type">Notations</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.31</span><span class="type">Notations</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-independance-2-1">Dans tout la suite, <span class="process-math">\((\Omega,\mathscr T,\PP\)</span> désignera un espace probabilisé.</div></article><article class="definition definition-like" id="def-independance"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.32</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.32</span><span class="type">Définition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="def-independance-1-1"><ol class="decimal" id="def-independance-1-1-1">
 <li id="def-independance-1-1-1-1"><div class="para" id="def-independance-1-1-1-1-1">Deux événements <span class="process-math">\(A\)</span> et <span class="process-math">\(B\)</span> de <span class="process-math">\(\mathscr T\)</span> sont dits indépendants si <span class="process-math">\(\Pr{A\cap B}=\Pr{A}\Pr{B}\text{.}\)</span>
@@ -912,7 +912,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </li>
 </ul></div></article></details><article class="remark remark-like" id="subsec-independance-5"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.33</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.33</span><span class="type">Remarque</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-independance-5-1"><ol class="decimal" id="subsec-independance-5-1-1">
 <li id="subsec-independance-5-1-1-1"><div class="para" id="subsec-independance-5-1-1-1-1">Si <span class="process-math">\(\Pr{A}=0\)</span> ou <span class="process-math">\(\Pr{A}=1\)</span> alors tout événement <span class="process-math">\(B\)</span> est indépendant de <span class="process-math">\(A\text{.}\)</span>
@@ -930,10 +930,10 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div></li>
 </ol></div></article><article class="proposition theorem-like" id="subsec-independance-6"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.34</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.34</span><span class="type">Proposition</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-independance-6-1-1">Si <span class="process-math">\(A\)</span> et <span class="process-math">\(B\)</span> sont des événements indépendants alors <span class="process-math">\(A^c\)</span> et <span class="process-math">\(B\)</span> sont indépendants, <span class="process-math">\(A\)</span> et <span class="process-math">\(B^c\)</span> sont indépendants et <span class="process-math">\(A^c\)</span> et <span class="process-math">\(B^c\)</span> sont indépendants.</div></article><article class="theorem theorem-like" id="thm-"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.35</span><span class="type">Théorème</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.35</span><span class="type">Théorème</span><span class="after"> </span><span class="space"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="thm--1-1">
 <div class="para">Soit <span class="process-math">\((A_i)_{i\in I}\)</span> une famille MI d’événements de <span class="process-math">\(\mathscr T\text{.}\)</span>
@@ -945,7 +945,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ol>
 </div></article><article class="proposition theorem-like" id="prop-forcomlement"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.36</span><span class="type">Proposition</span><span class="title">Formule des compléments.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.36</span><span class="type">Proposition</span><span class="title">Formule des compléments.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="prop-forcomlement-2-1">
 <div class="para">Soient <span class="process-math">\(A_1,A_2,\ldots,A_n\)</span> des événements de <span class="process-math">\((\Omega,\mathscr T)\text{.}\)</span> Alors</div>
@@ -978,7 +978,7 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </div>
 <article class="example example-like" id="subsec-modelisation-4"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.37</span><span class="type">Exemple</span><span class="title">signification de certains événements courants.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.37</span><span class="type">Exemple</span><span class="title">signification de certains événements courants.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para logical" id="subsec-modelisation-4-2">
 <div class="para">Soit <span class="process-math">\((A_n)_n\)</span> une suite quelconque d’événements.</div>
@@ -1014,15 +1014,15 @@ eBookConfig.enable_chatcodes =  false;
 </ol>
 </div>
 <article class="remark remark-like" id="subsec-modelisation-6"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.38</span><span class="type">Remarque</span><span class="title">Cas où l’univers est au plus dénombrable.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.38</span><span class="type">Remarque</span><span class="title">Cas où l’univers est au plus dénombrable.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-modelisation-6-2">Dans la pratique si l’ensemble <span class="process-math">\(\Omega\)</span> qui contient les résultats de l’expérience est au plus plus dénombrable alors on le munit de la tribu <span class="process-math">\(\mathscr T=\mathscr P(\Omega)\)</span> de telle sorte que tout ensemble formé de résultats possibles de l’expérience soit un événement. Ce choix de tribu n’est pas adéquat lorsque l’ensemble des résultats est non dénombrable car cela pose des difficultés insurmontables pour définir une probabilité sur <span class="process-math">\(\mathscr P(\Omega)\text{.}\)</span>
 </div></article><article class="example example-like" id="subsec-modelisation-7"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.39</span><span class="type">Exemple</span><span class="title">Lancer un dé.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.39</span><span class="type">Exemple</span><span class="title">Lancer un dé.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-modelisation-7-2">On lance un dé à 6 faces. On peut modéliser cette expérience par <span class="process-math">\(\Omega=\{1,2,3,4,5,6\}\)</span> et <span class="process-math">\(\mathscr T=\mathscr P(\Omega)\text{.}\)</span> On peut définir une probabilité sur <span class="process-math">\(\mathscr T\)</span> en posant <span class="process-math">\(\Pr{\{i\}}=\frac 16\)</span> pour tout <span class="process-math">\(i\in\Omega\text{.}\)</span>
 </div></article><article class="example example-like" id="subsec-modelisation-8"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.40</span><span class="type">Exemple</span><span class="title">Lancer deux dés.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.40</span><span class="type">Exemple</span><span class="title">Lancer deux dés.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-modelisation-8-2">On lance deux dés à 6 faces. On peut modéliser cette expérience par <span class="process-math">\(\Omega=\{1,2,3,4,5,6\}^2\)</span> et <span class="process-math">\(\mathscr T=\mathscr P(\Omega)\text{.}\)</span> On peut définir une probabilité sur <span class="process-math">\(\mathscr T\)</span> en posant <span class="process-math">\(\Pr{\{(i,j)\}}=\frac 1{36}\)</span> pour tout <span class="process-math">\((i,j)\in\Omega\text{.}\)</span>
 </div>
@@ -1034,7 +1034,7 @@ A=\{(i,j)\in\Omega \mid X(i,j) \text{ est paire}\}
 \end{equation*}
 </div>
 </div></article><article class="example example-like" id="subsec-modelisation-9"><h4 class="heading">
-<span class="before"> </span><span class="codenumber">2.41</span><span class="type">Exemple</span><span class="title">Suite de lancers d’une pièce de monnaie.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
+<span class="before"> </span><span class="codenumber">2.1.41</span><span class="type">Exemple</span><span class="title">Suite de lancers d’une pièce de monnaie.</span><span class="after"> </span><span class="space"> </span><span class="slider button-box-custom"> </span><span class="collapser button-box-custom"> </span>
 </h4>
 <div class="para" id="subsec-modelisation-9-2">On lance indéfiniment une piece de monnaie. Si on ne s’intéresse qu’au numéro du premier lancer qui donne «face» alors peut modéliser cette expérience par <span class="process-math">\(\Omega=\N^*\)</span> et <span class="process-math">\(\mathscr T=\mathscr P(\Omega)\text{.}\)</span> On peut définir une probabilité sur <span class="process-math">\(\mathscr T\)</span> en posant <span class="process-math">\(\Pr{\{n\}}=\frac 1{2^n}\)</span> pour tout <span class="process-math">\(n\in\N^*\text{.}\)</span>
 </div>

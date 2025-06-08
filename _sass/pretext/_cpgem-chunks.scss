@@ -1,77 +1,42 @@
 $h-hpadding: 1rem !default;
 $h-vpadding: 0.2rem !default;
 
-@use 'sass:map';
-@use 'sass:meta';
+@use "sass:map";
+@use "sass:meta";
 
-@use '../abstracts/mixins' as mx;
-@use '../abstracts/breakpoints' as bp;
+@use "../abstracts/mixins" as mx;
+@use "../abstracts/breakpoints" as bp;
 
 // One stop include for heading-box dominant content blocks
-@use 'components/chunks/asides-floating';
-@use 'components/chunks/codelike';
-@use 'components/chunks/exercises';
-@use 'components/chunks/solutions';
-@use 'components/chunks/sidebyside';
-@use 'components/chunks/knowls' with (
+@use "components/chunks/asides-floating";
+@use "components/chunks/codelike";
+@use "components/chunks/exercises";
+@use "components/chunks/solutions";
+@use "components/chunks/sidebyside";
+@use "components/chunks/knowls" with (
   $border-radius: 2px
 );
 
 // @use 'components/chunks/helpers/sidebar-mixin'with ($border-width: 4px);
-@use 'components/chunks/helpers/horizontal-bars-mixin';
+@use "components/chunks/helpers/horizontal-bars-mixin";
 // @use 'components/chunks/helpers/inline-heading-mixin';
 
-@use 'cpgem-boxes' as *;
+@use "cpgem-boxes" as *;
 
-.collapsible-content:not(.is-expnaded) {
-  content-visibility: hidden;
-  overflow: hidden;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  opacity: 0;
-  transition: all 0.3s allow-discrete;
-}
-
-.collapsible-content.is-expanded {
-  content-visibility: visible;
-  margin-top: 1rem;
-  opacity: 1;
-}
-
-/* Exemple de gestion d'icône purement en CSS */
-// .collapser::after {
-//   content: "+";
-//   display: inline-block;
-// }
-
-// .is-expanded .collapser::after {
-//   content: "−";
-// }
-
-/* Vous pouvez complètement personnaliser l'apparence */
-// .collapser {
-//   cursor: pointer;
-//   margin-left: auto;
-//   /* Ajoutez vos styles ici */
-// }
-
-$block-elements: '.theorem-like, .definition-like, .example-like,.remark-like';
-
-:is(article[class$='-like']):not(
-    article[class$='-like'] article[class$='-like'],
+:is(article[class$="-like"]):not(
+    article[class$="-like"] article[class$="-like"],
     .aside-like,
-    .task,
+    .exercise-like,
     .knowl__content,
     .born-hidden-knowl
   ),
-.exercise-like:not(
+#ptx-content
+  .exercise-like:not(
     .project-like .exercise-like,
     .exercise-like .exercise-like,
     .reading-questions .exercise-like,
-    .task,
-    .worksheet .exercise-like
+    .worksheet .exercise-like,
+    .task
   ) {
   display: block;
   width: 100%;
@@ -132,7 +97,7 @@ $block-elements: '.theorem-like, .definition-like, .example-like,.remark-like';
       }
 
       &::before {
-        font-family: 'Hosted-Material';
+        font-family: "Hosted-Material";
         font-size: 95%;
       }
     }
@@ -153,7 +118,7 @@ $block-elements: '.theorem-like, .definition-like, .example-like,.remark-like';
       rotate: 90deg;
 
       &::before {
-        content: '\e948';
+        content: "\e948";
       }
     }
 
@@ -167,7 +132,7 @@ $block-elements: '.theorem-like, .definition-like, .example-like,.remark-like';
 
       .slider {
         &::before {
-          content: '\e947';
+          content: "\e947";
         }
       }
     }
@@ -176,13 +141,13 @@ $block-elements: '.theorem-like, .definition-like, .example-like,.remark-like';
       transform: translateY(6%);
 
       &:before {
-        content: '\e948';
+        content: "\e948";
       }
     }
 
     .collapser.is-expanded {
       &::before {
-        content: '\e947';
+        content: "\e947";
       }
     }
   }
@@ -200,7 +165,7 @@ $block-elements: '.theorem-like, .definition-like, .example-like,.remark-like';
 }
 
 .theorem-like {
-  @include box-colors('theorem-like');
+  @include box-colors("theorem-like");
   @include box-borders($bwt: 2px, $bwb: 1px, $btr: 1em);
   @include box-heading(
     full,
@@ -212,68 +177,114 @@ $block-elements: '.theorem-like, .definition-like, .example-like,.remark-like';
 }
 
 .definition-like {
-  @include box-colors('definition-like');
+  @include box-colors("definition-like");
   @include box-borders($bw: 1px);
   @include box-heading(full, $hoffset: $padding, $shadow: small);
 }
 
 .remark-like {
-  @include box-colors('remark-like');
+  @include box-colors("remark-like");
   @include box-borders($bwl: 2px, $bwr: 2px);
   @include box-heading(full, $hoffset: $padding);
 }
 .insight .remark-like {
-  @include box-colors('definition-like');
+  @include box-colors("definition-like");
   @include box-borders($bwl: 2px, $bwr: 2px);
   @include box-heading(full, $hoffset: $padding);
 }
 
 .example-like {
-  @include box-colors('example-like');
+  @include box-colors("example-like");
   @include box-borders($bwl: 2px, $bwr: 2px);
   @include box-heading(full, $hoffset: $padding);
 }
 
-.project-like {
-  @include box-colors('example-like');
-  @include box-borders($bwb: 1px, $btr: 1em);
-  @include box-heading(
-    full,
-    $btr: 1em,
-    $bbr: 1em,
-    $hoffset: $padding,
-    $voffset: 0.75rem
-  );
-}
+#ptx-content {
+  .project-like {
+    @include box-colors("example-like");
+    @include box-borders($bwb: 1px, $btr: 1em);
+    @include box-heading(
+      full,
+      $btr: 1em,
+      $bbr: 1em,
+      $hoffset: $padding,
+      $voffset: 0.75rem
+    );
+  }
 
-.exercise-like:not(
-    .project-like .exercise-like,
-    .exercise-like .exercise-like,
-    .reading-questions .exercise-like,
-    .task,
-    .worksheet .exercise-like
-  ) {
-  @include box-colors('exercise-like');
-  @include box-borders($bwb: 2px, $btr: 1em);
-  @include box-heading(
-    notype,
-    $btr: 3em,
-    $bbr: 3em,
-    $hoffset: $padding,
-    $voffset: 1rem
-  );
+  .exercise-like:not(
+      .project-like .exercise-like,
+      .exercise-like .exercise-like,
+      .reading-questions .exercise-like,
+      .task,
+      .worksheet .exercise-like
+    ) {
+    @include box-colors("exercise-like");
+    @include box-borders($bwb: 2px, $btr: 1em);
+    @include box-heading(
+      notype,
+      $btr: 3em,
+      $bbr: 3em,
+      $hoffset: $padding,
+      $voffset: 1rem
+    );
+  }
+  .task,
+  .exercise-like .exercise-like,
+  .project-like .exercise-like {
+    @include inline-heading();
+  }
+}
+#ptx-concours {
+  .exercise-like {
+    // --body-title: var(--exercise-like-border-color);
+    & > .heading:first-child {
+      display: inline;
+      line-height: initial;
+      border-bottom: 0;
+      font-size: inherit;
+      font-weight: 600;
+
+      &:after {
+        content: "\2009";
+      }
+
+      & + .para {
+        display: inline;
+      }
+
+      & + .introduction {
+        display: inline;
+      }
+
+      & + .introduction > .para:first-child {
+        display: inline;
+      }
+      .codenumber {
+        &::after {
+          content: ".";
+        }
+        font-variant-numeric: oldstyle-nums;
+        margin-right: 0.5em;
+        color: var(--alt-heading-color);
+      }
+      .title {
+        color: var(--body-title);
+      }
+      .space,
+      .after,
+      .before,
+      .button-box-custom {
+        display: none;
+      }
+    }
+  }
 }
 
 .assemblage-like {
-  @include box-colors('main');
+  @include box-colors("main");
   @include box-borders($bwt: 2px);
   @include box-heading(titleonly, $bbr: 1em, $h-align: center);
-}
-
-.task,
-.exercise-like .exercise-like,
-.project-like .exercise-like {
-  @include inline-heading();
 }
 
 .proof {
@@ -282,7 +293,7 @@ $block-elements: '.theorem-like, .definition-like, .example-like,.remark-like';
   padding-right: 1em;
 
   &::after {
-    content: 'QED';
+    content: "QED";
     font-size: smaller;
     font-style: oblique;
     font-variant: small-caps;
@@ -315,7 +326,7 @@ $block-elements: '.theorem-like, .definition-like, .example-like,.remark-like';
   @include chunk-heading;
 }
 
-.exercise-like.born-hidden-knowl {
+.exercise-like .born-hidden-knowl {
   @include heading-box(
     $border-color: var(--exercise-like-border-color),
     $heading-background: var(--exercise-like-border-color)
@@ -367,49 +378,3 @@ $block-elements: '.theorem-like, .definition-like, .example-like,.remark-like';
     }
   }
 }
-
-$block-elements: '.theorem-like, .definition-like, .example-like, .exercise-like, .project-like, .remark-like, .openproblem-like, .openproblems-like, .computation-like, .assemblage-like, .knowl__content';
-
-// @include bp.lt(bp.get(sm)) {
-
-//   #{$block-elements} {
-
-//     &:not(.knowl__content, .born-hidden-knowl) {
-//       border-left: none !important;
-//       border-right: none !important;
-//       margin-left: -1rem;
-//       margin-right: -1rem;
-//       width: 100vw;
-//       border-radius: 0;
-
-//       &>.heading:first-child {
-//         margin-left: -$padding;
-
-//         .codenumber {
-//           border-radius: 0;
-//           border: none;
-//         }
-//       }
-//     }
-//   }
-
-// .example-like,
-// .project-like,
-// .exercise-like {
-//   &:not(.knowl__content, .born-hidden-knowl) {
-//     @include border-radius(1em 0 0 0);
-
-//     &>.heading:first-child {
-//       margin-left: calc(-1 * $padding - 1em);
-//       padding-left: ($padding);
-//     }
-//   }
-// }
-
-// .exercise-like>.exercise-like.task,
-// .project-like>.exercise-like.task {
-//   padding-left: 0;
-//   padding-right: 0;
-//   margin-left: 0;
-// }
-// }

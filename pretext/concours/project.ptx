@@ -2,31 +2,30 @@
 <!-- This file, the project manifest, provides the overall configuration for your PreTeXt project. To edit the content of your document, open `source/main.ptx`. See https://pretextbook.org/doc/guide/html/processing-CLI.html#cli-project-manifest. -->
 
 <project
-  ptx-version="2" 
+  ptx-version="2"
   source="."
-  publication="../../publication"
-  xsl="../../xsl"
-  output-dir="../../output"
+  publication="../publication"
+  xsl="../xsl"
 >
   <targets>
+    <target
+      name="cpgem"
+      format="html"
+      source="main.ptx"
+      publication="publication-concours.ptx"
+      xsl="concours-html.xsl"
+      output-dir="../../cpgem/_concours"
+    >
+    </target>
     <target 
-      name="web" 
+      name="web"
       format="html"
-      source="main.ptx" 
+      source="main.ptx"
       publication="publication.ptx"
+      output-dir="web"
     >
     </target>
-     <target 
-      name="cpgem" 
-      format="html"
-      source="main.ptx" 
-      publication="publication-cpgem.ptx"
-      xsl="cpgem-html.xsl"
-      output-dir="centrale2018mp2"
-      deploy-dir="centrale2018mp2"
-    >
-    </target>
-
+  
     <target 
       name="print" 
       format="pdf"

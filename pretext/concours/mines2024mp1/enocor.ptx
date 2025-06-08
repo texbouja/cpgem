@@ -1,10 +1,21 @@
 
+<chapter xml:id="mines2024mp2" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title> concours: ccmp, session: 2024, filiere: mp, epreuve: 1</title>
+
+     <warning>
+        <p> Les solutions ont été générées avec l'aide de DeepSeek-V3™, un modèle d'intelligence artificielle développé par DeepSeek avec une exigence de fournir des solutions détaillées. Les réponses seront optimisées, voir corrigées durant la séance</p>
+    </warning>
+
+    <introduction>
+        <p>
+            L'objectif est d'établir certaines identités à base d'intégrales à paramètres et de sommes de séries de fonctions et ensuite de les utiliser de manière originale dans le calcul de l'espérence d'une variable aléatoire.
+        </p>
+    </introduction>
+    
 
 <exercises><title>Généralisation d’une intégrale de Dirichlet et application</title>
 
-    <warning>
-        <p> Les solutions ont été générées avec l'aide de DeepSeek-V3™, un modèle d'intelligence artificielle développé par DeepSeek avec une exigence de fournir des solutions détaillées. Les réponses seront optimisées, voir corrigées durant la séance</p>
-    </warning>
+   
 
 
     <introduction>
@@ -15,7 +26,7 @@
             </p>
         </introduction>
 
-    <subexercises>
+    <subsection>
     <title>Calcul d’une intégrale</title>
     <introduction>
         <p>
@@ -329,9 +340,9 @@
         </p>
     </answer>
 </exercise>
-</subexercises>
+</subsection>
 
-<subexercises>
+<subsection>
     <title>Une expression (utile) de la fonction sinus</title>
 
     <introduction>
@@ -476,9 +487,9 @@
         </p>
     </answer>
 </exercise>
-</subexercises>
+</subsection>
 
-<subexercises>
+<subsection>
     <title>Calcul d'une intégrale de Dirichlet généralisée</title>
 
     <exercise>
@@ -596,10 +607,10 @@
     </answer>
 </exercise>
     
-</subexercises>
+</subsection>
 
 
-<subexercises>
+<subsection>
     <title>Calcul de <m> \EE(|S_n|) </m></title>
     <introduction>
         <p>
@@ -828,6 +839,7 @@
 
 
 
-    </subexercises>
+    </subsection>
 
     </exercises>
+    </chapter>

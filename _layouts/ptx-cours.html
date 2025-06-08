@@ -1,0 +1,155 @@
+---
+layout: compress
+panel_includes:
+  - pretext-toc
+---
+{%- assign full_content = page.content -%}
+{%- assign doctype_split = content | split: '<html' -%}
+{%- assign doctype = doctype_split[0] -%}
+{%- assign components = content | extract: 'head' -%}
+{%- assign pretext_head_attrs = components.attrs -%}
+{%- assign pretext_head = components.content -%}
+{%- assign components = content | extract: '.treebuttons' -%}
+{%- assign pretext_treebuttons_attrs = components.attrs -%}
+{%- assign pretext_treebuttons = components.content -%}
+{%- assign components = content | extract: '#ptx-masthead' -%}
+{%- assign pretext_header_attrs = components.attrs -%}
+{%- assign pretext_header = components.content -%}
+{%- assign components = content | extract: '#ptx-toc' -%}
+{%- assign pretext_plaintoc = components.content -%}
+{%- assign components = content | extract: '#latex-macros' -%}
+{%- assign pretext_latex_attrs = components.attrs -%}
+{%- assign pretext_latex = components.content -%}
+{%- assign components = content | extract: '#ptx-content' -%}
+{%- assign pretext_main_attrs = components.attrs -%}
+{%- assign pretext_main = components.content -%}
+{% if doctype or doctype == null %}
+  <!DOCTYPE html>
+{% else %}
+  {{ doctype }}{% endif %}
+
+{% include origin-type.html %}
+{%- include lang.html -%}
+{%- if site.theme_mode -%}{%- capture prefer_mode -%}data-mode="{{ site.theme_mode }}"{%- endcapture -%}
+{%- endif -%}
+{%- capture page_lang -%}
+    {{- page.lang | default: site.alt_lang | default: site.lang -}}
+{%- endcapture -%}
+  <html lang="{{ page_lang }}" {{ prefer_mode }}> <head {{ pretext_head_attrs }}>
+    {% include pretext-head.html %}
+    {{- pretext_head -}}
+    <template id="head-toc">
+      {{ pretext_plaintoc }}
+    </template>
+  </head>
+  <body>
+    {%- include sidebar.html lang=lang -%}
+    {%- include topbar.html lang=lang -%}
+    <div id="main-wrapper" class="d-flex justify-content-center">
+      <div class="container d-flex flex-column px-xxl-5">
+        <div {{ pretext_latex_attrs }}>
+          {{- pretext_latex -}}
+        </div>
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            <article class="px-1">
+              <header {{ pretext_header_attrs }}>
+                {{- pretext_header -}}
+                {% if page.chapter_title %}
+                  <div class="chapter-title">
+                    {{ page.chapter_title }}
+                  </div>
+                {% endif %}
+              </header>
+              {% include pretext-tocbar.html %}
+              <div {{ pretext_treebuttons_attrs }}>
+                {{ pretext_treebuttons }}
+              </div>
+              <div id="ptx-content" class="content">
+                {{- pretext_main -}}
+              </div>
+              <div class="post-tail-wrapper text-muted">
+                <!-- categories -->
+                {% if page.categories.size > 0 %}
+                  <div class="post-meta mb-3">
+                    <i class="far fa-folder-open fa-fw me-1"></i>
+                    {% for category in page.categories %}
+                      <a href="{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/">{{ category }}</a>
+                      {%- unless forloop.last -%},{%- endunless -%}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                <!-- tags -->
+                {% if page.tags.size > 0 %}
+                  <div class="post-tags">
+                    <i class="fa fa-tags fa-fw me-1"></i>
+                    {% for tag in page.tags %}
+                      <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/" class="post-tag no-text-decoration">
+                        {{- tag -}}
+                      </a>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                <div class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      ">
+                  <div class="license-wrapper">
+                    {% if site.data.locales[lang].copyright.license.template %}
+                      {% capture _replacement %}
+                            <a href="{{ site.data.locales[lang].copyright.license.link }}">
+                              {{ site.data.locales[lang].copyright.license.name }}
+                            </a>
+                            {% endcapture %}
+                      {{ site.data.locales[lang].copyright.license.template | replace: ':LICENSE_NAME', _replacement }}
+                    {% endif %}
+                  </div>
+                  {% include post-sharing.html lang=lang %}
+                </div>
+              <!-- .post-tail-bottom -->
+              </div>
+            </article>
+          </main>
+          <!-- panel -->
+          <aside
+            aria-label="Panel"
+            id="panel-wrapper"
+            class="col-xl-3 ps-2 text-muted">
+            {% include pretext-toc.html %}
+          </aside>
+        </div>
+        <div class="row">
+          <!-- tail -->
+          <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            {% for _include in layout.tail_includes %}
+              {% assign _include_path = _include | append: '.html' %}
+              {% include {{ _include_path }} lang=lang %}
+            {% endfor %}
+            {% include_cached footer.html lang=lang %}
+          </div>
+        </div>
+        {% include_cached search-results.html lang=lang %}
+      </div>
+      <aside aria-label="Scroll to Top">
+        <button
+          id="back-to-top"
+          type="button"
+          class="btn btn-lg btn-box-shadow">
+          <i class="fas fa-up-long"></i>
+        </button>
+      </aside>
+    </div>
+    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
+    {% if site.pwa.enabled %}
+      {% include_cached notification.html lang=lang %}
+    {% endif %}
+    <!-- Embedded scripts -->
+    {% for _include in layout.script_includes %}
+      {% assign _include_path = _include | append: '.html' %}
+      {% include {{ _include_path }} %}
+    {% endfor %}
+    {% include_cached search-loader.html lang=lang %}
+    {% include_cached pretext-search.html %}
+    {% include_cached pretext-slicol.html %}
+  </body>
+</html>

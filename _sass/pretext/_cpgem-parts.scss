@@ -56,13 +56,14 @@ $border-radius-small: v.$radius-sm;
 
 
 
-#ptx-content {
+#ptx-content, #ptx-concours {
   @include bp.xl {
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
   }
 }
+
 
 
 // Oscar - note - you might consider how to handle nested RS containers

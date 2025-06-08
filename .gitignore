@@ -25,10 +25,7 @@ tmp/
 templates/
 assets/js/dist/
 _sass/vendors/
-pretext/output/
-pretext/cours/output/
-pretext/concours/output/
 pretext/.env
-
+pretext/*output
 # Plugins (non suivis)
 _plugins/headers_generator.rb
