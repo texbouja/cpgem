@@ -26,6 +26,7 @@ templates/
 assets/js/dist/
 _sass/vendors/
 pretext/.env
-pretext/*output
+pretext/cpgem
+*logs*
 # Plugins (non suivis)
 _plugins/headers_generator.rb
